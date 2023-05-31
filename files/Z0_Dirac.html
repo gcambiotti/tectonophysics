@@ -1,0 +1,662 @@
+
+
+<!DOCTYPE html>
+
+
+<html >
+
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
+
+    <title>16. Dirac delta function &#8212; Tectonophysics</title>
+  
+  
+  
+  <script data-cfasync="false">
+    document.documentElement.dataset.mode = localStorage.getItem("mode") || "";
+    document.documentElement.dataset.theme = localStorage.getItem("theme") || "light";
+  </script>
+  
+  <!-- Loaded before other Sphinx assets -->
+  <link href="../_static/styles/theme.css?digest=12da95d707ffb74b382d" rel="stylesheet" />
+<link href="../_static/styles/bootstrap.css?digest=12da95d707ffb74b382d" rel="stylesheet" />
+<link href="../_static/styles/pydata-sphinx-theme.css?digest=12da95d707ffb74b382d" rel="stylesheet" />
+
+  
+  <link href="../_static/vendor/fontawesome/6.1.2/css/all.min.css?digest=12da95d707ffb74b382d" rel="stylesheet" />
+  <link rel="preload" as="font" type="font/woff2" crossorigin href="../_static/vendor/fontawesome/6.1.2/webfonts/fa-solid-900.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="../_static/vendor/fontawesome/6.1.2/webfonts/fa-brands-400.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="../_static/vendor/fontawesome/6.1.2/webfonts/fa-regular-400.woff2" />
+
+    <link rel="stylesheet" type="text/css" href="../_static/pygments.css" />
+    <link rel="stylesheet" href="../_static/styles/sphinx-book-theme.css?digest=14f4ca6b54d191a8c7657f6c759bf11a5fb86285" type="text/css" />
+    <link rel="stylesheet" type="text/css" href="../_static/togglebutton.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/copybutton.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/mystnb.4510f1fc1dee50b3e5859aac5469c37c29e427902b24a333a5f9fcb2f0b3ac41.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/sphinx-thebe.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/design-style.4045f2051d55cab465a707391d5b2007.min.css" />
+  
+  <!-- Pre-loaded scripts that we'll load fully later -->
+  <link rel="preload" as="script" href="../_static/scripts/bootstrap.js?digest=12da95d707ffb74b382d" />
+<link rel="preload" as="script" href="../_static/scripts/pydata-sphinx-theme.js?digest=12da95d707ffb74b382d" />
+
+    <script data-url_root="../" id="documentation_options" src="../_static/documentation_options.js"></script>
+    <script src="../_static/jquery.js"></script>
+    <script src="../_static/underscore.js"></script>
+    <script src="../_static/doctools.js"></script>
+    <script src="../_static/clipboard.min.js"></script>
+    <script src="../_static/copybutton.js"></script>
+    <script src="../_static/scripts/sphinx-book-theme.js?digest=5a5c038af52cf7bc1a1ec88eea08e6366ee68824"></script>
+    <script>let toggleHintShow = 'Click to show';</script>
+    <script>let toggleHintHide = 'Click to hide';</script>
+    <script>let toggleOpenOnPrint = 'true';</script>
+    <script src="../_static/togglebutton.js"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
+    <script src="../_static/design-tabs.js"></script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"
+const thebe_selector = ".thebe,.cell"
+const thebe_selector_input = "pre"
+const thebe_selector_output = ".output, .cell_output"
+</script>
+    <script async="async" src="../_static/sphinx-thebe.js"></script>
+    <script>window.MathJax = {"options": {"processHtmlClass": "tex2jax_process|mathjax_process|math|output_area"}}</script>
+    <script defer="defer" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+    <script>DOCUMENTATION_OPTIONS.pagename = 'files/Z0_Dirac';</script>
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
+    <link rel="prev" title="13. Homogeneous incompressible Earth model" href="C1_Codes.html" />
+  <meta name="viewport" content="width=device-width, initial-scale=1"/>
+  <meta name="docsearch:language" content="None"/>
+  </head>
+  
+  
+  <body data-bs-spy="scroll" data-bs-target=".bd-toc-nav" data-offset="180" data-bs-root-margin="0px 0px -60%" data-default-mode="">
+
+  
+  
+  <a class="skip-link" href="#main-content">Skip to main content</a>
+  
+  <input type="checkbox"
+          class="sidebar-toggle"
+          name="__primary"
+          id="__primary"/>
+  <label class="overlay overlay-primary" for="__primary"></label>
+  
+  <input type="checkbox"
+          class="sidebar-toggle"
+          name="__secondary"
+          id="__secondary"/>
+  <label class="overlay overlay-secondary" for="__secondary"></label>
+  
+  <div class="search-button__wrapper">
+    <div class="search-button__overlay"></div>
+    <div class="search-button__search-container">
+<form class="bd-search d-flex align-items-center"
+      action="../search.html"
+      method="get">
+  <i class="fa-solid fa-magnifying-glass"></i>
+  <input type="search"
+         class="form-control"
+         name="q"
+         id="search-input"
+         placeholder="Search this book..."
+         aria-label="Search this book..."
+         autocomplete="off"
+         autocorrect="off"
+         autocapitalize="off"
+         spellcheck="false"/>
+  <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd>K</kbd></span>
+</form></div>
+  </div>
+  
+    <nav class="bd-header navbar navbar-expand-lg bd-navbar">
+    </nav>
+  
+  <div class="bd-container">
+    <div class="bd-container__inner bd-page-width">
+      
+      <div class="bd-sidebar-primary bd-sidebar">
+        
+
+  
+  <div class="sidebar-header-items sidebar-primary__section">
+    
+    
+    
+    
+  </div>
+  
+    <div class="sidebar-primary-items__start sidebar-primary__section">
+        <div class="sidebar-primary-item">
+  
+
+<a class="navbar-brand logo" href="../intro.html">
+  
+  
+  
+  
+    
+    
+      
+    
+    
+    <img src="../_static/gc_logo.png" class="logo__image only-light" alt="Logo image"/>
+    <script>document.write(`<img src="../_static/gc_logo.png" class="logo__image only-dark" alt="Logo image"/>`);</script>
+  
+  
+</a></div>
+        <div class="sidebar-primary-item"><nav class="bd-links" id="bd-docs-nav" aria-label="Main">
+    <div class="bd-toc-item navbar-nav active">
+        <p aria-level="2" class="caption" role="heading"><span class="caption-text">Introduction</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="A0_Setup.html">1. Working with JupyterLab</a></li>
+<li class="toctree-l1"><a class="reference internal" href="A1_Tutorial.html">2. Tutorial on Python</a></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Methods</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="L1_Laplace.html">3. The Laplace transform</a></li>
+<li class="toctree-l1"><a class="reference internal" href="L0_Harmonic_Scalar.html">4. Spherical harmonics</a></li>
+<li class="toctree-l1"><a class="reference internal" href="L0_Harmonic_Vectors.html">5. Spherical harmonic vectors</a></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Theory</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="T1_Potentials.html">6. Gravitatational potentials</a></li>
+<li class="toctree-l1"><a class="reference internal" href="T2_Kinematics.html">7. Kinematics and reference systems</a></li>
+<li class="toctree-l1"><a class="reference internal" href="T2_Reference.html">8. The Earth reference system</a></li>
+<li class="toctree-l1"><a class="reference internal" href="T2_Equations.html">9. Momentum and Poisson equations</a></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Solution</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="L3_Self.html">10. Perturbation theory</a></li>
+<li class="toctree-l1"><a class="reference internal" href="L4_Analytical.html">11. Analytical solutions</a></li>
+<li class="toctree-l1"><a class="reference internal" href="L5_Euler.html">12. Rotational dynamics</a></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Codes</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="C1_Codes.html">13. Homogeneous incompressible Earth model</a></li>
+
+
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Appendix</span></p>
+<ul class="current nav bd-sidenav">
+<li class="toctree-l1 current active"><a class="current reference internal" href="#">16. Dirac delta function</a></li>
+</ul>
+
+    </div>
+</nav></div>
+    </div>
+  
+  
+  <div class="sidebar-primary-items__end sidebar-primary__section">
+  </div>
+  
+  <div id="rtd-footer-container"></div>
+
+
+      </div>
+      
+      <main id="main-content" class="bd-main">
+        
+        
+
+<div class="sbt-scroll-pixel-helper"></div>
+
+          <div class="bd-content">
+            <div class="bd-article-container">
+              
+              <div class="bd-header-article">
+<div class="header-article-items header-article__inner">
+  
+    <div class="header-article-items__start">
+      
+        <div class="header-article-item"><label class="sidebar-toggle primary-toggle btn btn-sm" for="__primary" title="Toggle primary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+  <span class="fa-solid fa-bars"></span>
+</label></div>
+      
+    </div>
+  
+  
+    <div class="header-article-items__end">
+      
+        <div class="header-article-item">
+
+<div class="article-header-buttons">
+
+
+
+
+
+<div class="dropdown dropdown-download-buttons">
+  <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Download this page">
+    <i class="fas fa-download"></i>
+  </button>
+  <ul class="dropdown-menu">
+      
+      
+      
+      <li><a href="../_sources/files/Z0_Dirac.ipynb" target="_blank"
+   class="btn btn-sm btn-download-source-button dropdown-item"
+   title="Download source file"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-file"></i>
+  </span>
+<span class="btn__text-container">.ipynb</span>
+</a>
+</li>
+      
+      
+      
+      
+      <li>
+<button onclick="window.print()"
+  class="btn btn-sm btn-download-pdf-button dropdown-item"
+  title="Print to PDF"
+  data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-file-pdf"></i>
+  </span>
+<span class="btn__text-container">.pdf</span>
+</button>
+</li>
+      
+  </ul>
+</div>
+
+
+
+
+<button onclick="toggleFullScreen()"
+  class="btn btn-sm btn-fullscreen-button"
+  title="Fullscreen mode"
+  data-bs-placement="bottom" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-expand"></i>
+  </span>
+
+</button>
+
+
+<script>
+document.write(`
+  <button class="theme-switch-button btn btn-sm btn-outline-primary navbar-btn rounded-circle" title="light/dark" aria-label="light/dark" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <span class="theme-switch" data-mode="light"><i class="fa-solid fa-sun"></i></span>
+    <span class="theme-switch" data-mode="dark"><i class="fa-solid fa-moon"></i></span>
+    <span class="theme-switch" data-mode="auto"><i class="fa-solid fa-circle-half-stroke"></i></span>
+  </button>
+`);
+</script>
+
+<script>
+document.write(`
+  <button class="btn btn-sm navbar-btn search-button search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass"></i>
+  </button>
+`);
+</script>
+<label class="sidebar-toggle secondary-toggle btn btn-sm" for="__secondary"title="Toggle secondary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <span class="fa-solid fa-list"></span>
+</label>
+</div></div>
+      
+    </div>
+  
+</div>
+</div>
+              
+              
+
+<div id="jb-print-docs-body" class="onlyprint">
+    <h1>Dirac delta function</h1>
+    <!-- Table of contents -->
+    <div id="print-main-content">
+        <div id="jb-print-toc">
+            
+            <div>
+                <h2> Contents </h2>
+            </div>
+            <nav aria-label="Page">
+                <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#definition">16.1. Definition</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#dirac-delta-derivative">16.2. Dirac delta derivative</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#basic-propetries">16.3. Basic propetries</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#three-dimensional-dirac-delta">16.4. Three-dimensional Dirac delta</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#the-laplacian-of-the-inverse-of-the-radial-distance">16.4.1. The Laplacian of the inverse of the radial distance</a></li>
+</ul>
+</li>
+</ul>
+            </nav>
+        </div>
+    </div>
+</div>
+
+              
+                
+<div id="searchbox"></div>
+                <article class="bd-article" role="main">
+                  
+  <section class="tex2jax_ignore mathjax_ignore" id="dirac-delta-function">
+<span id="chap-dirac-delta"></span><h1><span class="section-number">16. </span>Dirac delta function<a class="headerlink" href="#dirac-delta-function" title="Permalink to this headline">#</a></h1>
+<div class="contents local topic" id="sections">
+<p class="topic-title">Sections</p>
+<ul class="simple">
+<li><p><a class="reference internal" href="#definition" id="id1">Definition</a></p></li>
+<li><p><a class="reference internal" href="#dirac-delta-derivative" id="id2">Dirac delta derivative</a></p></li>
+<li><p><a class="reference internal" href="#basic-propetries" id="id3">Basic propetries</a></p></li>
+<li><p><a class="reference internal" href="#three-dimensional-dirac-delta" id="id4">Three-dimensional Dirac delta</a></p>
+<ul>
+<li><p><a class="reference internal" href="#the-laplacian-of-the-inverse-of-the-radial-distance" id="id5">The Laplacian of the inverse of the radial distance</a></p></li>
+</ul>
+</li>
+</ul>
+</div>
+<section id="definition">
+<h2><a class="toc-backref" href="#id1"><span class="section-number">16.1. </span>Definition</a><a class="headerlink" href="#definition" title="Permalink to this headline">#</a></h2>
+<div class="full-width docutils">
+<p>The Dirac delta can be loosely thought of as a function on the real line which is zero everywhere except at the origin, where it is infinite,</p>
+<div class="math notranslate nohighlight" id="equation-a0-1">
+<span class="eqno">(16.1)<a class="headerlink" href="#equation-a0-1" title="Permalink to this equation">#</a></span>\[\begin{split}\begin{align}
+\delta(x) = \begin{cases} \infty &amp; x=0 \\ 0 &amp; x\neq 0 \end{cases}
+\end{align}\end{split}\]</div>
+<p>and which is also constrained to satisfy the identity</p>
+<div class="math notranslate nohighlight" id="equation-a0-2">
+<span class="eqno">(16.2)<a class="headerlink" href="#equation-a0-2" title="Permalink to this equation">#</a></span>\[\begin{align}
+\int_{-\infty}^\infty \delta(x)\,\mathrm{d}x = 1
+\end{align}\]</div>
+<p>A better characterization consists in consdering the Dirac delta function as a generalized function. In the theory of distributions, a generalized function is considered not a function in itself but only about how it affects other functions when “integrated” against them. In keeping with this philosophy, to define the delta function properly, it is enough to say what the “integral” of the delta function is against a sufficiently “good” test function <span class="math notranslate nohighlight">\(f\)</span></p>
+<div class="math notranslate nohighlight" id="equation-a0-3">
+<span class="eqno">(16.3)<a class="headerlink" href="#equation-a0-3" title="Permalink to this equation">#</a></span>\[\begin{split}\begin{align}
+\int_{\mathcal{I}} f(x)\,\delta(x)\,\mathrm{d}x = 
+\begin{cases} f(0) &amp; 0\in\mathcal{I} \\ 
+0 &amp; 0\notin\mathcal{I}
+\end{cases}
+\end{align}\end{split}\]</div>
+<p>where <span class="math notranslate nohighlight">\(\mathcal{I}\)</span> is an open interval of the real axis. In this respect, the Dirac delta can be defined as the distributional derivative of the Heaviside step function</p>
+<div class="math notranslate nohighlight" id="equation-a0-4">
+<span class="eqno">(16.4)<a class="headerlink" href="#equation-a0-4" title="Permalink to this equation">#</a></span>\[
+\begin{align}
+\delta(x) = \dot{H}(x) 
+\end{align}
+\]</div>
+<p>where the dot <span class="math notranslate nohighlight">\(\cdot\)</span> stands for the first-order derivative and <span class="math notranslate nohighlight">\(H\)</span> is the Heaviside step function</p>
+<div class="math notranslate nohighlight" id="equation-a0-5">
+<span class="eqno">(16.5)<a class="headerlink" href="#equation-a0-5" title="Permalink to this equation">#</a></span>\[\begin{split}
+\begin{align}
+H(x) = \begin{cases} 1 &amp; x \geq 0 \\ 0 &amp; x&lt;0 \end{cases}
+\end{align} 
+\end{split}\]</div>
+</div>
+<div class="note full-width admonition">
+<p class="admonition-title">Proof of </p>
+<p>Let us consider the integration by parts of two function <span class="math notranslate nohighlight">\(f(x)\)</span> and <span class="math notranslate nohighlight">\(g(x)\)</span></p>
+<div class="math notranslate nohighlight" id="equation-a0-6">
+<span class="eqno">(16.6)<a class="headerlink" href="#equation-a0-6" title="Permalink to this equation">#</a></span>\[\begin{align}
+\int_a^b f(x)\,\dot{g}(x)\,\mathrm{d}x = \left. f(x)\,g(x)\,\right|_a^b - \int_a^b \dot{f}(x)\,g(x)\,\mathrm{d}x
+\end{align}\]</div>
+<p>and apply it to the case in which <span class="math notranslate nohighlight">\(g(x)=H(x)\)</span> and <span class="math notranslate nohighlight">\(a&lt;0&lt;b\)</span></p>
+<div class="math notranslate nohighlight" id="equation-a0-7">
+<span class="eqno">(16.7)<a class="headerlink" href="#equation-a0-7" title="Permalink to this equation">#</a></span>\[\begin{split}\begin{align}
+\int_a^b f(x)\,\delta(x)\,\mathrm{d}x &amp;= \left.f(x)\,H(x)\,\right|_a^b - \int_a^b \dot{f}(x)\,H(x)\,\mathrm{d}x \\
+&amp;= f(b) - \int_0^b \dot{f}(x)\,\mathrm{d}x = f(b) - \left. f(x)\,\right|_0^b = f(0)
+\end{align}\end{split}\]</div>
+</div>
+</section>
+<section id="dirac-delta-derivative">
+<h2><a class="toc-backref" href="#id2"><span class="section-number">16.2. </span>Dirac delta derivative</a><a class="headerlink" href="#dirac-delta-derivative" title="Permalink to this headline">#</a></h2>
+<div class="full-width docutils">
+<p>The Dirac delta derivative is defined as follows</p>
+<div class="math notranslate nohighlight" id="equation-a0-8">
+<span class="eqno">(16.8)<a class="headerlink" href="#equation-a0-8" title="Permalink to this equation">#</a></span>\[\begin{align}
+\int_a^b f(x)\,\delta'(x)\,\mathrm{d}x &amp;= \left. f(x)\,\delta(x)\,\right|_a^b - \int_a^b \dot{f}(x)\,\delta(x)\,\mathrm{d}x =  -\dot{f}(0)
+\end{align}\]</div>
+<p>For higher-order derivatives one obtians</p>
+<div class="math notranslate nohighlight" id="equation-a0-9">
+<span class="eqno">(16.9)<a class="headerlink" href="#equation-a0-9" title="Permalink to this equation">#</a></span>\[\begin{align}
+\int_a^b f(x)\,\delta^{(n)}(x)\,\mathrm{d}x &amp;= (-1)^n\,f^{(n)}(0)
+\end{align}\]</div>
+</div>
+</section>
+<section id="basic-propetries">
+<h2><a class="toc-backref" href="#id3"><span class="section-number">16.3. </span>Basic propetries</a><a class="headerlink" href="#basic-propetries" title="Permalink to this headline">#</a></h2>
+<div class="full-width docutils">
+<p>The Dirac delta is symmetric</p>
+<div class="math notranslate nohighlight" id="equation-a0-10">
+<span class="eqno">(16.10)<a class="headerlink" href="#equation-a0-10" title="Permalink to this equation">#</a></span>\[\begin{align}
+\delta(-x) = \delta(x)
+\end{align}\]</div>
+<p>and the product of the Dirac delta with <span class="math notranslate nohighlight">\(x\)</span> is equal to zero</p>
+<div class="math notranslate nohighlight" id="equation-a0-11">
+<span class="eqno">(16.11)<a class="headerlink" href="#equation-a0-11" title="Permalink to this equation">#</a></span>\[\begin{align}
+x\,\delta(x) = 0
+\end{align}\]</div>
+<p>The Dirac delta derivative satisfies a number of basic properties</p>
+<div class="math notranslate nohighlight" id="equation-a0-12">
+<span class="eqno">(16.12)<a class="headerlink" href="#equation-a0-12" title="Permalink to this equation">#</a></span>\[\begin{split}\begin{align}
+&amp; \dot{\delta}(-x) = -\dot{\delta}(x) \\
+&amp; x\,\dot{\delta}(x) = -\delta(x)
+\end{align}\end{split}\]</div>
+</div>
+</section>
+<section id="three-dimensional-dirac-delta">
+<h2><a class="toc-backref" href="#id4"><span class="section-number">16.4. </span>Three-dimensional Dirac delta</a><a class="headerlink" href="#three-dimensional-dirac-delta" title="Permalink to this headline">#</a></h2>
+<p>The three-dimensional Dirac delta can be defined in the Cartesian reference frame as</p>
+<div class="math notranslate nohighlight" id="equation-a0-13">
+<span class="eqno">(16.13)<a class="headerlink" href="#equation-a0-13" title="Permalink to this equation">#</a></span>\[
+\begin{align}
+\delta(\mathbf{x}) = \delta(x_1)\,\delta(x_2)\,\delta(x_3)
+\end{align}\]</div>
+<p>where <span class="math notranslate nohighlight">\(\mathbf{x}\)</span> is the vector position and <span class="math notranslate nohighlight">\(x_j\)</span> are its Cartesian coordinates</p>
+<div class="math notranslate nohighlight" id="equation-a0-14">
+<span class="eqno">(16.14)<a class="headerlink" href="#equation-a0-14" title="Permalink to this equation">#</a></span>\[
+\begin{align}
+\mathbf{x} = x_j\,\hat{\mathbf{x}}_j
+\end{align}\]</div>
+<p>with <span class="math notranslate nohighlight">\(\hat{\mathbf{x}}_j\)</span> being the Cartesian unit vectors.</p>
+<p>Similar to the one-dimensional case, eq. <a class="reference internal" href="#equation-a0-3">(16.3)</a>, it satify the following identity</p>
+<div class="math notranslate nohighlight" id="equation-a0-15">
+<span class="eqno">(16.15)<a class="headerlink" href="#equation-a0-15" title="Permalink to this equation">#</a></span>\[\begin{split}\begin{align}
+\int_{\mathcal{V}} f(\mathbf{x})\,\delta(\mathbf{x})\,\mathrm{d}V = 
+\begin{cases} f(\mathbf{0}) &amp; \mathbf{0}\in\mathcal{V} \\ 
+0 &amp; \mathbf{0}\notin\mathcal{V}
+\end{cases}
+\end{align}\end{split}\]</div>
+<p>for any (scalar, vector or tensor) field <span class="math notranslate nohighlight">\(f\)</span> that is continuous and has continuous first order partial derivatives. Here, <span class="math notranslate nohighlight">\(\mathcal{V}\subseteq\mathbb{R}^3\)</span> is a open region of the three-dimensional space and <span class="math notranslate nohighlight">\(dV=dx_1\,dx_2\,dx_3\)</span> is the infinitesimal volume element.</p>
+<section id="the-laplacian-of-the-inverse-of-the-radial-distance">
+<h3><a class="toc-backref" href="#id5"><span class="section-number">16.4.1. </span>The Laplacian of the inverse of the radial distance</a><a class="headerlink" href="#the-laplacian-of-the-inverse-of-the-radial-distance" title="Permalink to this headline">#</a></h3>
+<div class="full-width admonition tip">
+<p class="admonition-title">Tip</p>
+<p>To understand the content of this section, you should have been studied the Prerequisits</p>
+</div>
+<p>Let us consider the radial distance from the origin</p>
+<div class="math notranslate nohighlight" id="equation-a0-16">
+<span class="eqno">(16.16)<a class="headerlink" href="#equation-a0-16" title="Permalink to this equation">#</a></span>\[
+\begin{align}
+r = \sqrt{\mathbf{x}\cdot\mathbf{x}}
+\end{align}\]</div>
+<p>It can be shown that the Laplacian of the inverse of the radial distance is proportional to the three-dimensional Dirac delta. In particular, we can write</p>
+<div class="math notranslate nohighlight" id="equation-a0-17">
+<span class="eqno">(16.17)<a class="headerlink" href="#equation-a0-17" title="Permalink to this equation">#</a></span>\[
+\begin{align}
+\nabla^2 a(r) = \delta(\mathbf{x})    
+\end{align}\]</div>
+<p>with <span class="math notranslate nohighlight">\(a\)</span> being the following function proportional to the inverse of the radial distance</p>
+<div class="math notranslate nohighlight" id="equation-a0-18">
+<span class="eqno">(16.18)<a class="headerlink" href="#equation-a0-18" title="Permalink to this equation">#</a></span>\[
+\begin{align}
+a(r) = -\frac{1}{4\,\pi\,r}
+\end{align}\]</div>
+<p>First of all, let us consider that</p>
+<div class="math notranslate nohighlight">
+\[
+\begin{align}
+\nabla^2 a(r)= 0
+\end{align}\]</div>
+<p>everywhere but at the origin <span class="math notranslate nohighlight">\(\mathbf{x}=\mathbf{0}\)</span>, where the function <span class="math notranslate nohighlight">\(a\)</span> is singular. In this respect, as far as the region <span class="math notranslate nohighlight">\(\mathcal{V}\)</span> does not contain the origin, the following integral yields always zero</p>
+<div class="math notranslate nohighlight">
+\[
+\int_\mathcal{V} f(\mathbf{x})\,\nabla^2 a(r)\,d V = 0 \qquad \mathbf{0}\notin\mathcal{V}
+\]</div>
+<p>as expected from eq. <a class="reference internal" href="#equation-a0-15">(16.15)</a>.</p>
+<p>In order to better understand the behaviour  at the origin, let us now consider the following integral over an open volume <span class="math notranslate nohighlight">\(\mathcal{V}\)</span> containing the origin, <span class="math notranslate nohighlight">\(\mathbf{0}\in\mathcal{V}\)</span>,</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}
+\begin{align}
+\int_{\mathcal{V}} \nabla^2 a(r)\,d V &amp;= -\frac{1}{4\,\pi}\,\int_{\mathcal{B}}\nabla^2\frac{1}{r}\,d V  
+= -\frac{1}{4\,\pi}\,\int_{\partial\mathcal{B}}\hat{\mathbf{r}}\cdot\boldsymbol{\nabla}\frac{1}{r}\,d S \\
+&amp;= \frac{1}{4\,\pi\,R^2}\,\int_{\partial \mathcal{B}} d S = 1 &amp;
+\end{align}
+\end{split}\]</div>
+<p>Here, <span class="math notranslate nohighlight">\(\mathcal{B}\subset \mathcal{V}\)</span> is a sphere of radius <span class="math notranslate nohighlight">\(R\)</span> centered at the origin, <span class="math notranslate nohighlight">\(\partial \mathcal{B}\)</span> is its boundary of area <span class="math notranslate nohighlight">\(4\,\pi\,R^2\)</span> and we made use of the divergence theorem to relate the volume and surface integrals. As expected setting <span class="math notranslate nohighlight">\(f(\mathbf{x})=1\)</span> in eq. <a class="reference internal" href="#equation-a0-15">(16.15)</a>, the integral yields <span class="math notranslate nohighlight">\(1\)</span>.</p>
+<p>In order to prove eq. <a class="reference internal" href="#equation-a0-17">(16.17)</a>, we have still to verify it for the case of <span class="math notranslate nohighlight">\(\mathbf{0}\in\mathcal{V}\)</span> and for any (scalar, vector or tensor) field <span class="math notranslate nohighlight">\(f\)</span>. By making use of the following general identity</p>
+<div class="math notranslate nohighlight">
+\[
+\begin{align}
+\boldsymbol{\nabla}\cdot\big((\boldsymbol{\nabla}a(\mathbf{x}))\,f(\mathbf{x})\big) &amp;= (\nabla^2 a(\mathbf{x}))\,f(\mathbf{x}) + \big(\boldsymbol{\nabla} a(\mathbf{x})\big)\cdot\big(\boldsymbol{\nabla} f(\mathbf{x}) \big) &amp;
+\end{align}\]</div>
+<p>for <span class="math notranslate nohighlight">\(a\)</span> given by eq. <a class="reference internal" href="#equation-a0-18">(16.18)</a>, we can write</p>
+<div class="math notranslate nohighlight">
+\[
+\begin{align}
+(\nabla^2 a(r))\,f(\mathbf{x}) &amp;=  \frac{1}{4\,\pi}\,\left[\boldsymbol{\nabla}\cdot\left(\frac{\hat{\mathbf{r}}}{r^2}\,f(\mathbf{x})\right) -  \frac{1}{r^2}\,\frac{\partial f(\mathbf{x})}{\partial r}\right] &amp;
+\end{align}\]</div>
+<p>Then, by considering the desired integral and proceed as follows</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}
+\begin{align}
+\int_\mathcal{V} f(\mathbf{x})\,\nabla^2 a(r)\,d V &amp;= \int_\mathcal{B} f(\mathbf{x})\,\nabla^2 a(r)\,d V  = \frac{1}{4\,\pi}\,\left(\int_{\partial\mathcal{B}} \frac{f(\mathbf{x})}{r^2}\,d S - \int_{\mathcal{B}} \frac{1}{r^2}\,\frac{\partial f(\mathbf{x})}{\partial r}\,d V \right)&amp;
+\\
+&amp; = \frac{1}{4\,\pi}\,\left(\int_{\Omega}\,f(\mathbf{x})|_{r=R}\,d \Omega - \int_{\Omega}\int_0^R \frac{\partial f(\mathbf{x})}{\partial r}\,d r\,d \Omega \right)
+\\
+&amp;= \frac{1}{4\,\pi}\,\left(\int_{\Omega}\,f(\mathbf{x})|_{r=R}\,d \Omega - \int_{\Omega}\Big(f(\mathbf{x})|_{r=R}-f(\mathbf{x})|_{r=0}\Big)\,d \Omega \right)
+\\
+&amp; = \frac{1}{4\,\pi}\,\int_{\Omega}f(\mathbf{0})\,d \Omega = f(\mathbf{0})  \qquad \mathbf{0}\in\mathcal{V}
+\end{align}
+\end{split}\]</div>
+<p>we can see that, as expected, it yields the field evaluated at the origin when <span class="math notranslate nohighlight">\(\mathbf{0}\in\mathcal{V}\)</span>.</p>
+<p style="page-break-after:always;"></p></section>
+</section>
+</section>
+
+    <script type="text/x-thebe-config">
+    {
+        requestKernel: true,
+        binderOptions: {
+            repo: "binder-examples/jupyter-stacks-datascience",
+            ref: "master",
+        },
+        codeMirrorConfig: {
+            theme: "abcdef",
+            mode: "python"
+        },
+        kernelOptions: {
+            name: "python3",
+            path: "./files"
+        },
+        predefinedOutput: true
+    }
+    </script>
+    <script>kernelName = 'python3'</script>
+
+                </article>
+              
+
+              
+              
+                <footer class="bd-footer-article">
+                  <!-- Previous / next buttons -->
+<div class="prev-next-area">
+    <a class="left-prev"
+       href="C1_Codes.html"
+       title="previous page">
+      <i class="fa-solid fa-angle-left"></i>
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">previous</p>
+        <p class="prev-next-title"><span class="section-number">13. </span>Homogeneous incompressible Earth model</p>
+      </div>
+    </a>
+</div>
+                </footer>
+              
+            </div>
+            
+            
+              
+                <div class="bd-sidebar-secondary bd-toc"><div class="sidebar-secondary-items sidebar-secondary__inner">
+
+  <div class="sidebar-secondary-item">
+  <div class="page-toc tocsection onthispage">
+    <i class="fa-solid fa-list"></i> Contents
+  </div>
+  <nav class="bd-toc-nav page-toc">
+    <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#definition">16.1. Definition</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#dirac-delta-derivative">16.2. Dirac delta derivative</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#basic-propetries">16.3. Basic propetries</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#three-dimensional-dirac-delta">16.4. Three-dimensional Dirac delta</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#the-laplacian-of-the-inverse-of-the-radial-distance">16.4.1. The Laplacian of the inverse of the radial distance</a></li>
+</ul>
+</li>
+</ul>
+  </nav></div>
+
+</div></div>
+              
+            
+          </div>
+          <footer class="bd-footer-content">
+            <div class="bd-footer-content__inner">
+<div class="bd-footer-content__inner container">
+  
+  <div class="footer-item">
+    
+<p class="component-author">
+By <a href="https://sites.unimi.it/gcambiotti/">Gabriele Cambiotti</a>
+</p>
+
+  </div>
+  
+  <div class="footer-item">
+    
+  <p class="copyright">
+    
+      © Copyright 2022.
+      <br/>
+    
+  </p>
+
+  </div>
+  
+  <div class="footer-item">
+    
+  </div>
+  
+  <div class="footer-item">
+    
+  </div>
+  
+</div></div>
+          </footer>
+        
+
+      </main>
+    </div>
+  </div>
+  
+  <!-- Scripts loaded after <body> so the DOM is not blocked -->
+  <script src="../_static/scripts/bootstrap.js?digest=12da95d707ffb74b382d"></script>
+<script src="../_static/scripts/pydata-sphinx-theme.js?digest=12da95d707ffb74b382d"></script>
+
+  <footer class="bd-footer">
+  </footer>
+  </body>
+</html>

@@ -1,0 +1,1706 @@
+
+
+<!DOCTYPE html>
+
+
+<html >
+
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
+
+    <title>10. Perturbation theory &#8212; Tectonophysics</title>
+  
+  
+  
+  <script data-cfasync="false">
+    document.documentElement.dataset.mode = localStorage.getItem("mode") || "";
+    document.documentElement.dataset.theme = localStorage.getItem("theme") || "light";
+  </script>
+  
+  <!-- Loaded before other Sphinx assets -->
+  <link href="../_static/styles/theme.css?digest=12da95d707ffb74b382d" rel="stylesheet" />
+<link href="../_static/styles/bootstrap.css?digest=12da95d707ffb74b382d" rel="stylesheet" />
+<link href="../_static/styles/pydata-sphinx-theme.css?digest=12da95d707ffb74b382d" rel="stylesheet" />
+
+  
+  <link href="../_static/vendor/fontawesome/6.1.2/css/all.min.css?digest=12da95d707ffb74b382d" rel="stylesheet" />
+  <link rel="preload" as="font" type="font/woff2" crossorigin href="../_static/vendor/fontawesome/6.1.2/webfonts/fa-solid-900.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="../_static/vendor/fontawesome/6.1.2/webfonts/fa-brands-400.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="../_static/vendor/fontawesome/6.1.2/webfonts/fa-regular-400.woff2" />
+
+    <link rel="stylesheet" type="text/css" href="../_static/pygments.css" />
+    <link rel="stylesheet" href="../_static/styles/sphinx-book-theme.css?digest=14f4ca6b54d191a8c7657f6c759bf11a5fb86285" type="text/css" />
+    <link rel="stylesheet" type="text/css" href="../_static/togglebutton.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/copybutton.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/mystnb.4510f1fc1dee50b3e5859aac5469c37c29e427902b24a333a5f9fcb2f0b3ac41.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/sphinx-thebe.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/design-style.4045f2051d55cab465a707391d5b2007.min.css" />
+  
+  <!-- Pre-loaded scripts that we'll load fully later -->
+  <link rel="preload" as="script" href="../_static/scripts/bootstrap.js?digest=12da95d707ffb74b382d" />
+<link rel="preload" as="script" href="../_static/scripts/pydata-sphinx-theme.js?digest=12da95d707ffb74b382d" />
+
+    <script data-url_root="../" id="documentation_options" src="../_static/documentation_options.js"></script>
+    <script src="../_static/jquery.js"></script>
+    <script src="../_static/underscore.js"></script>
+    <script src="../_static/doctools.js"></script>
+    <script src="../_static/clipboard.min.js"></script>
+    <script src="../_static/copybutton.js"></script>
+    <script src="../_static/scripts/sphinx-book-theme.js?digest=5a5c038af52cf7bc1a1ec88eea08e6366ee68824"></script>
+    <script>let toggleHintShow = 'Click to show';</script>
+    <script>let toggleHintHide = 'Click to hide';</script>
+    <script>let toggleOpenOnPrint = 'true';</script>
+    <script src="../_static/togglebutton.js"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
+    <script src="../_static/design-tabs.js"></script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"
+const thebe_selector = ".thebe,.cell"
+const thebe_selector_input = "pre"
+const thebe_selector_output = ".output, .cell_output"
+</script>
+    <script async="async" src="../_static/sphinx-thebe.js"></script>
+    <script>window.MathJax = {"options": {"processHtmlClass": "tex2jax_process|mathjax_process|math|output_area"}}</script>
+    <script defer="defer" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+    <script>DOCUMENTATION_OPTIONS.pagename = 'files/L3_Self';</script>
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
+    <link rel="next" title="11. Analytical solutions" href="L4_Analytical.html" />
+    <link rel="prev" title="9. Momentum and Poisson equations" href="T2_Equations.html" />
+  <meta name="viewport" content="width=device-width, initial-scale=1"/>
+  <meta name="docsearch:language" content="None"/>
+  </head>
+  
+  
+  <body data-bs-spy="scroll" data-bs-target=".bd-toc-nav" data-offset="180" data-bs-root-margin="0px 0px -60%" data-default-mode="">
+
+  
+  
+  <a class="skip-link" href="#main-content">Skip to main content</a>
+  
+  <input type="checkbox"
+          class="sidebar-toggle"
+          name="__primary"
+          id="__primary"/>
+  <label class="overlay overlay-primary" for="__primary"></label>
+  
+  <input type="checkbox"
+          class="sidebar-toggle"
+          name="__secondary"
+          id="__secondary"/>
+  <label class="overlay overlay-secondary" for="__secondary"></label>
+  
+  <div class="search-button__wrapper">
+    <div class="search-button__overlay"></div>
+    <div class="search-button__search-container">
+<form class="bd-search d-flex align-items-center"
+      action="../search.html"
+      method="get">
+  <i class="fa-solid fa-magnifying-glass"></i>
+  <input type="search"
+         class="form-control"
+         name="q"
+         id="search-input"
+         placeholder="Search this book..."
+         aria-label="Search this book..."
+         autocomplete="off"
+         autocorrect="off"
+         autocapitalize="off"
+         spellcheck="false"/>
+  <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd>K</kbd></span>
+</form></div>
+  </div>
+  
+    <nav class="bd-header navbar navbar-expand-lg bd-navbar">
+    </nav>
+  
+  <div class="bd-container">
+    <div class="bd-container__inner bd-page-width">
+      
+      <div class="bd-sidebar-primary bd-sidebar">
+        
+
+  
+  <div class="sidebar-header-items sidebar-primary__section">
+    
+    
+    
+    
+  </div>
+  
+    <div class="sidebar-primary-items__start sidebar-primary__section">
+        <div class="sidebar-primary-item">
+  
+
+<a class="navbar-brand logo" href="../intro.html">
+  
+  
+  
+  
+    
+    
+      
+    
+    
+    <img src="../_static/gc_logo.png" class="logo__image only-light" alt="Logo image"/>
+    <script>document.write(`<img src="../_static/gc_logo.png" class="logo__image only-dark" alt="Logo image"/>`);</script>
+  
+  
+</a></div>
+        <div class="sidebar-primary-item"><nav class="bd-links" id="bd-docs-nav" aria-label="Main">
+    <div class="bd-toc-item navbar-nav active">
+        <p aria-level="2" class="caption" role="heading"><span class="caption-text">Introduction</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="A0_Setup.html">1. Working with JupyterLab</a></li>
+<li class="toctree-l1"><a class="reference internal" href="A1_Tutorial.html">2. Tutorial on Python</a></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Methods</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="L1_Laplace.html">3. The Laplace transform</a></li>
+<li class="toctree-l1"><a class="reference internal" href="L0_Harmonic_Scalar.html">4. Spherical harmonics</a></li>
+<li class="toctree-l1"><a class="reference internal" href="L0_Harmonic_Vectors.html">5. Spherical harmonic vectors</a></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Theory</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="T1_Potentials.html">6. Gravitatational potentials</a></li>
+<li class="toctree-l1"><a class="reference internal" href="T2_Kinematics.html">7. Kinematics and reference systems</a></li>
+<li class="toctree-l1"><a class="reference internal" href="T2_Reference.html">8. The Earth reference system</a></li>
+<li class="toctree-l1"><a class="reference internal" href="T2_Equations.html">9. Momentum and Poisson equations</a></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Solution</span></p>
+<ul class="current nav bd-sidenav">
+<li class="toctree-l1 current active"><a class="current reference internal" href="#">10. Perturbation theory</a></li>
+<li class="toctree-l1"><a class="reference internal" href="L4_Analytical.html">11. Analytical solutions</a></li>
+<li class="toctree-l1"><a class="reference internal" href="L5_Euler.html">12. Rotational dynamics</a></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Codes</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="C1_Codes.html">13. Homogeneous incompressible Earth model</a></li>
+
+
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Appendix</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="Z0_Dirac.html">16. Dirac delta function</a></li>
+</ul>
+
+    </div>
+</nav></div>
+    </div>
+  
+  
+  <div class="sidebar-primary-items__end sidebar-primary__section">
+  </div>
+  
+  <div id="rtd-footer-container"></div>
+
+
+      </div>
+      
+      <main id="main-content" class="bd-main">
+        
+        
+
+<div class="sbt-scroll-pixel-helper"></div>
+
+          <div class="bd-content">
+            <div class="bd-article-container">
+              
+              <div class="bd-header-article">
+<div class="header-article-items header-article__inner">
+  
+    <div class="header-article-items__start">
+      
+        <div class="header-article-item"><label class="sidebar-toggle primary-toggle btn btn-sm" for="__primary" title="Toggle primary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+  <span class="fa-solid fa-bars"></span>
+</label></div>
+      
+    </div>
+  
+  
+    <div class="header-article-items__end">
+      
+        <div class="header-article-item">
+
+<div class="article-header-buttons">
+
+
+
+
+
+<div class="dropdown dropdown-download-buttons">
+  <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Download this page">
+    <i class="fas fa-download"></i>
+  </button>
+  <ul class="dropdown-menu">
+      
+      
+      
+      <li><a href="../_sources/files/L3_Self.ipynb" target="_blank"
+   class="btn btn-sm btn-download-source-button dropdown-item"
+   title="Download source file"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-file"></i>
+  </span>
+<span class="btn__text-container">.ipynb</span>
+</a>
+</li>
+      
+      
+      
+      
+      <li>
+<button onclick="window.print()"
+  class="btn btn-sm btn-download-pdf-button dropdown-item"
+  title="Print to PDF"
+  data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-file-pdf"></i>
+  </span>
+<span class="btn__text-container">.pdf</span>
+</button>
+</li>
+      
+  </ul>
+</div>
+
+
+
+
+<button onclick="toggleFullScreen()"
+  class="btn btn-sm btn-fullscreen-button"
+  title="Fullscreen mode"
+  data-bs-placement="bottom" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-expand"></i>
+  </span>
+
+</button>
+
+
+<script>
+document.write(`
+  <button class="theme-switch-button btn btn-sm btn-outline-primary navbar-btn rounded-circle" title="light/dark" aria-label="light/dark" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <span class="theme-switch" data-mode="light"><i class="fa-solid fa-sun"></i></span>
+    <span class="theme-switch" data-mode="dark"><i class="fa-solid fa-moon"></i></span>
+    <span class="theme-switch" data-mode="auto"><i class="fa-solid fa-circle-half-stroke"></i></span>
+  </button>
+`);
+</script>
+
+<script>
+document.write(`
+  <button class="btn btn-sm navbar-btn search-button search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass"></i>
+  </button>
+`);
+</script>
+<label class="sidebar-toggle secondary-toggle btn btn-sm" for="__secondary"title="Toggle secondary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <span class="fa-solid fa-list"></span>
+</label>
+</div></div>
+      
+    </div>
+  
+</div>
+</div>
+              
+              
+
+<div id="jb-print-docs-body" class="onlyprint">
+    <h1>Perturbation theory</h1>
+    <!-- Table of contents -->
+    <div id="print-main-content">
+        <div id="jb-print-toc">
+            
+            <div>
+                <h2> Contents </h2>
+            </div>
+            <nav aria-label="Page">
+                <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#incremental-poisson-and-momentum-equations">10.1. Incremental Poisson and momentum equations</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#incremental-traction-over-spherical-surface">10.1.1. Incremental traction over spherical surface</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#earth-surface-boundary-conditions">10.1.2. Earth surface boundary conditions</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#internal-interface-boundary-conditions">10.1.3. Internal interface boundary conditions</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#divergence-of-the-incremental-stress">10.1.4. Divergence of the incremental stress</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#spherical-harmonic-expansion">10.2. Spherical harmonic expansion</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#internal-and-earth-surface-boundary-conditions">10.2.1. Internal and Earth surface boundary conditions</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#incremental-traction-and-divergence-of-the-incremental-stress">10.2.2. Incremental traction and divergence of the incremental stress</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#poisson-and-momentum-equations">10.2.3. Poisson and momentum equations</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#linear-differential-systems">10.3. Linear differential systems</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#toroidal-differential-system">10.3.1. Toroidal differential system</a><ul class="nav section-nav flex-column">
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#toroidal-earth-surface-boundary-conditions">10.3.1.1. Toroidal Earth surface boundary conditions</a></li>
+</ul>
+</li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#spheroidal-differential-system">10.3.2. Spheroidal differential system</a><ul class="nav section-nav flex-column">
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#spheroidal-earth-surface-boundary-conditions">10.3.2.1. Spheroidal Earth surface boundary conditions</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#core-mantle-boundary-cmb-conditions">10.4. Core-mantle boundary (CMB) conditions</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#toroidal-cmb-conditions">10.4.1. Toroidal CMB conditions</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#spheroidal-cmb-conditions">10.4.2. Spheroidal CMB conditions</a><ul class="nav section-nav flex-column">
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#compositional-stratifications-alpha-neq0">10.4.2.1. Compositional stratifications <span class="math notranslate nohighlight">\(\alpha\neq0\)</span></a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#compressional-stratifications-alpha-0">10.4.2.2. Compressional stratifications <span class="math notranslate nohighlight">\(\alpha=0\)</span></a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#surface-loading-and-tidal-forcings">10.5. Surface loading and tidal forcings</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#the-fluid-earth">10.5.1. The Fluid Earth</a><ul class="nav section-nav flex-column">
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#homogeneous-earth-model">10.5.1.1. Homogeneous Earth model</a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#surface-loadings">10.5.1.2. Surface loadings</a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#tidal-and-centrifugal-forcings">10.5.1.3. Tidal and centrifugal forcings</a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#equatorial-flattening">10.5.1.4. Equatorial flattening</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#correspondence-principle">10.6. Correspondence principle</a></li>
+</ul>
+            </nav>
+        </div>
+    </div>
+</div>
+
+              
+                
+<div id="searchbox"></div>
+                <article class="bd-article" role="main">
+                  
+  <section class="tex2jax_ignore mathjax_ignore" id="perturbation-theory">
+<h1><span class="section-number">10. </span>Perturbation theory<a class="headerlink" href="#perturbation-theory" title="Permalink to this headline">#</a></h1>
+<div class="contents local topic" id="sections">
+<p class="topic-title">Sections</p>
+<ul class="simple">
+<li><p><a class="reference internal" href="#incremental-poisson-and-momentum-equations" id="id1">Incremental Poisson and momentum equations</a></p>
+<ul>
+<li><p><a class="reference internal" href="#incremental-traction-over-spherical-surface" id="id2">Incremental traction over spherical surface</a></p></li>
+<li><p><a class="reference internal" href="#earth-surface-boundary-conditions" id="id3">Earth surface boundary conditions</a></p></li>
+<li><p><a class="reference internal" href="#internal-interface-boundary-conditions" id="id4">Internal interface boundary conditions</a></p></li>
+<li><p><a class="reference internal" href="#divergence-of-the-incremental-stress" id="id5">Divergence of the incremental stress</a></p></li>
+</ul>
+</li>
+<li><p><a class="reference internal" href="#spherical-harmonic-expansion" id="id6">Spherical harmonic expansion</a></p>
+<ul>
+<li><p><a class="reference internal" href="#internal-and-earth-surface-boundary-conditions" id="id7">Internal and Earth surface boundary conditions</a></p></li>
+<li><p><a class="reference internal" href="#incremental-traction-and-divergence-of-the-incremental-stress" id="id8">Incremental traction and divergence of the incremental stress</a></p></li>
+<li><p><a class="reference internal" href="#poisson-and-momentum-equations" id="id9">Poisson and momentum equations</a></p></li>
+</ul>
+</li>
+<li><p><a class="reference internal" href="#linear-differential-systems" id="id10">Linear differential systems</a></p>
+<ul>
+<li><p><a class="reference internal" href="#toroidal-differential-system" id="id11">Toroidal differential system</a></p></li>
+<li><p><a class="reference internal" href="#spheroidal-differential-system" id="id12">Spheroidal differential system</a></p></li>
+</ul>
+</li>
+<li><p><a class="reference internal" href="#core-mantle-boundary-cmb-conditions" id="id13">Core-mantle boundary (CMB) conditions</a></p>
+<ul>
+<li><p><a class="reference internal" href="#toroidal-cmb-conditions" id="id14">Toroidal CMB conditions</a></p></li>
+<li><p><a class="reference internal" href="#spheroidal-cmb-conditions" id="id15">Spheroidal CMB conditions</a></p></li>
+</ul>
+</li>
+<li><p><a class="reference internal" href="#surface-loading-and-tidal-forcings" id="id16">Surface loading and tidal forcings</a></p>
+<ul>
+<li><p><a class="reference internal" href="#the-fluid-earth" id="id17">The Fluid Earth</a></p></li>
+</ul>
+</li>
+<li><p><a class="reference internal" href="#correspondence-principle" id="id18">Correspondence principle</a></p></li>
+</ul>
+</div>
+<p><span class="math notranslate nohighlight">\(\newcommand{\md}{\mathrm{d} \hspace{0cm}}\)</span>
+<span class="math notranslate nohighlight">\(\newcommand{\mdd}{\md^2}\)</span>
+<span class="math notranslate nohighlight">\(\newcommand{\grad}{\boldsymbol{\nabla}\hspace{-0.01cm}}\)</span>
+<span class="math notranslate nohighlight">\(\newcommand{\stress}{\boldsymbol{\sigma}}\)</span>
+<span class="math notranslate nohighlight">\(\newcommand{\bn}[1]{\hat{\mathbf{#1}}}\)</span>
+<span class="math notranslate nohighlight">\(\newcommand{\bb}[1]{\mathbf{#1}}\)</span>
+<span class="math notranslate nohighlight">\(\newcommand{\sn}[1]{\hat{\boldsymbol{#1}}}\)</span>
+<span class="math notranslate nohighlight">\(\newcommand{\sb}[1]{\boldsymbol{#1}}\)</span>
+<span class="math notranslate nohighlight">\(\newcommand{\zero}{\mathbf{0}}\)</span>
+<span class="math notranslate nohighlight">\(\newcommand{\one}{\mathbf{1}}\)</span>
+<span class="math notranslate nohighlight">\(\newcommand{\loc}{\Delta\hspace{0cm}}\)</span>
+<span class="math notranslate nohighlight">\(\newcommand{\mat}{\delta\hspace{0cm}}\)</span>
+<span class="math notranslate nohighlight">\(\newcommand{\det}{\mathrm{\det}\hspace{0cm}}\)</span>
+<span class="math notranslate nohighlight">\(\newcommand{\cm}[1]{\bar{\bb{#1}}}\)</span>
+<span class="math notranslate nohighlight">\(\newcommand{\lmsum}{\sum_n\sum_m}\)</span>
+<span class="math notranslate nohighlight">\(\newcommand{\kqsum}{\sum_{k=0}^\infty\sum_{q=-k}^k}\)</span>
+<span class="math notranslate nohighlight">\(\newcommand{\dif}[1]{#1\hspace{0cm}\prime}\)</span>
+<span class="math notranslate nohighlight">\(\newcommand{\dermat}[1]{\frac{\md \hspace{0.02cm}#1}{\md \hspace{0.02cm} t}}\)</span>
+<span class="math notranslate nohighlight">\(\newcommand{\dercla}[1]{\frac{\md \hspace{0.02cm}#1}{\md \hspace{0.02cm} t}}\)</span>
+<span class="math notranslate nohighlight">\(\newcommand{\derpar}[1]{\frac{\partial\hspace{0.02cm}#1}{\partial\hspace{0.02cm} t}}\)</span>
+<span class="math notranslate nohighlight">\(\newcommand{\rpar}[2]{\frac{\partial\hspace{0.02cm}#1}{\partial\hspace{0.02cm} r_{#2}}}\)</span>
+<span class="math notranslate nohighlight">\(\newcommand{\xpar}[2]{\frac{\partial\hspace{0.02cm}#1}{\partial\hspace{0.02cm} x_{#2}}}\)</span>
+<span class="math notranslate nohighlight">\(\newcommand{\ddermat}[1]{\frac{\md ^2\hspace{0.02cm}#1}{\md \hspace{0.02cm} t^2}}\)</span>
+<span class="math notranslate nohighlight">\(\newcommand{\ddercla}[1]{\frac{\md ^2\hspace{0.02cm}#1}{\md \hspace{0.02cm} t^2}}\)</span>
+<span class="math notranslate nohighlight">\(\newcommand{\dderpar}[1]{\frac{\partial^2\hspace{0.02cm}#1}{\partial\hspace{0.02cm} t^2}}\)</span>
+<span class="math notranslate nohighlight">\(\newcommand{\drpar}[2]{\frac{\partial^2\hspace{0.02cm}#1}{\partial\hspace{0.02cm} r_{#2}^2}}\)</span>
+<span class="math notranslate nohighlight">\(\newcommand{\dxpar}[2]{\frac{\partial^2\hspace{0.02cm}#1}{\partial\hspace{0.02cm} x_{#2}^2}}\)</span></p>
+<section id="incremental-poisson-and-momentum-equations">
+<h2><a class="toc-backref" href="#id1"><span class="section-number">10.1. </span>Incremental Poisson and momentum equations</a><a class="headerlink" href="#incremental-poisson-and-momentum-equations" title="Permalink to this headline">#</a></h2>
+<div class="full-width docutils">
+<p>In the following we will expand in spherical harmonics the incremental Poisson and momentum equations within the assumption of a spherically symmetric initial state and of infinitesimal quasi-static perturbations</p>
+<div class="math notranslate nohighlight" id="equation-mm-1">
+<span class="eqno">(10.1)<a class="headerlink" href="#equation-mm-1" title="Permalink to this equation">#</a></span>\[\begin{split}
+\begin{align}
+&amp; \nabla^2\loc\Psi= C\,\big(\loc\rho^E+\rho^I+\rho^S+\rho^A\big) - 2\,\omega^2
+\\
+&amp; \grad\cdot\mat\sb{\sigma} -\grad\big(\varrho_0\,g_0\,u\big) -\varrho_0\,\grad\loc\Psi-(\loc\rho^E+\rho^I)\,g_0\,\hat{\bb{r}} + \bb{f}= \bb{0}
+\end{align}
+\end{split}\]</div>
+<p>with</p>
+<div class="math notranslate nohighlight" id="equation-mm-1a">
+<span class="eqno">(10.2)<a class="headerlink" href="#equation-mm-1a" title="Permalink to this equation">#</a></span>\[
+C = 4\,\pi\,G
+\]</div>
+<p>Here,  <span class="math notranslate nohighlight">\(\loc\Psi\)</span> and <span class="math notranslate nohighlight">\(\loc\rho^E\)</span> are the local incremental total potential and the local incremental Earth density, <span class="math notranslate nohighlight">\(\mat\sb{\sigma}\)</span> is the material incremental Cauchy stress tensor and <span class="math notranslate nohighlight">\(u\)</span> is the radial component of the displacement field <span class="math notranslate nohighlight">\(\bb{u}\)</span></p>
+<div class="math notranslate nohighlight" id="equation-mm-2a">
+<span class="eqno">(10.3)<a class="headerlink" href="#equation-mm-2a" title="Permalink to this equation">#</a></span>\[
+\begin{align}
+&amp; u = \bb{u}\cdot\hat{\bb{r}}
+\end{align}
+\]</div>
+<p>Furthermore, <span class="math notranslate nohighlight">\(\rho^I\)</span> and <span class="math notranslate nohighlight">\(\rho^S\)</span> are the internal and surface loading density distributions, <span class="math notranslate nohighlight">\(\rho^A\)</span> is the athmosphere density distribution, <span class="math notranslate nohighlight">\(\omega=\mid\sb{\omegs}\|\)</span> is the angular rate and <span class="math notranslate nohighlight">\(\bb{f}\)</span> is an additional body force which can be set to zero or to the equivalent body force for describing earthquakes. In the end, <span class="math notranslate nohighlight">\(\varrho_0\)</span> and <span class="math notranslate nohighlight">\(g_0\)</span> are the initial Earth density and (scalar) gravity acceleration which are sphericall symmetric (i.e., they depend only on the radial distance from the Earth centre <span class="math notranslate nohighlight">\(r\)</span>).</p>
+<p>We recall that the local incremental total potential composes of the local incremental gravitational potential of the solid Earth, <span class="math notranslate nohighlight">\(\loc\phi^E\)</span>, of the athmosphere and internal and surface loadings gravitational potentials, <span class="math notranslate nohighlight">\(\phi^A\)</span>, <span class="math notranslate nohighlight">\(\phi^I\)</span> ad <span class="math notranslate nohighlight">\(\phi^S\)</span>, and the tidal and centrifugal potential, <span class="math notranslate nohighlight">\(\psi^T\)</span> and <span class="math notranslate nohighlight">\(\psi^C\)</span>,</p>
+<div class="math notranslate nohighlight" id="equation-mm-2">
+<span class="eqno">(10.4)<a class="headerlink" href="#equation-mm-2" title="Permalink to this equation">#</a></span>\[
+\begin{align}
+&amp; \loc\Psi= \loc\phi^E+ \phi^I + \phi^S + \phi^A + \psi^C+\psi^T
+\end{align}
+\]</div>
+<p>For the sake of simplicity, we have not explicited the dependence on space and time and we have assumed that we will solve the momentum equation in eq. <a class="reference internal" href="#equation-mm-1">(10.1)</a> within only the solid (<span class="math notranslate nohighlight">\(x&lt;a\)</span>), where the density distributions of the athmosphere, the surface load and the celestial body are zero. Different, the Poisson equation will be solved also in the surrounding of the Earth (<span class="math notranslate nohighlight">\(x\leq a^+\)</span>) where only the density distribution of the celestial body is zero.  Afterwards, starting from <a class="reference internal" href="#sec-internal-poisson"><span class="std std-numref">Section 10.2.3</span></a> - <a class="reference internal" href="#sec-internal-poisson"><span class="std std-ref">Poisson and momentum equations</span></a>, we will also omit the density distributions of the surface load and the athmosphere because we will solve the incremental momentum and Poisson equation only within the solid Earth, below the Earth surface, for <span class="math notranslate nohighlight">\(r&lt; a\)</span>.</p>
+<p>Furthermore, we will assume linear elasticity for describing the material incremental Cauchy stress tensor</p>
+<div class="math notranslate nohighlight" id="equation-mm-3">
+<span class="eqno">(10.5)<a class="headerlink" href="#equation-mm-3" title="Permalink to this equation">#</a></span>\[
+\mat\sb{\sigma} = \lambda\,\chi\,\bb{1} + \mu\,\big(\grad\,\bb{u}+(\grad\,\bb{u})^\mathrm{T}\big)
+\]</div>
+<p>where <span class="math notranslate nohighlight">\(\chi\)</span> is the divergence of the displacement</p>
+<div class="math notranslate nohighlight">
+\[
+\begin{align} &amp;
+\chi = \grad\cdot\bb{u}
+\end{align}\]</div>
+<p>while <span class="math notranslate nohighlight">\(\lambda\)</span> and <span class="math notranslate nohighlight">\(\mu\)</span> are the Lamè parameters which are also spherically symmetric.</p>
+<p>In view of the fact that <span class="math notranslate nohighlight">\(\varrho_0\)</span>, <span class="math notranslate nohighlight">\(g_0\)</span>, <span class="math notranslate nohighlight">\(\lambda\)</span> and <span class="math notranslate nohighlight">\(\mu\)</span> only depend on the radial distance, their gradients read</p>
+<div class="math notranslate nohighlight" id="equation-mm-4">
+<span class="eqno">(10.6)<a class="headerlink" href="#equation-mm-4" title="Permalink to this equation">#</a></span>\[
+\begin{align}
+&amp; \grad\varrho_0 = \dot{\varrho}_0\,\hat{\bb{r}} \qquad \grad g_0 = \dot{g}_0\,\hat{\bb{r}} \qquad \grad\lambda = \dot{\lambda}\,\hat{\bb{r}}
+\qquad \grad\mu = \dot{\mu}\,\hat{\bb{r}}
+\end{align}
+\]</div>
+<p>where the dot <span class="math notranslate nohighlight">\(\cdot\)</span> stands for the radial derivative. Also, the initial (scalar) gravity acceleration and its radial derivative read</p>
+<div class="math notranslate nohighlight" id="equation-mm-5">
+<span class="eqno">(10.7)<a class="headerlink" href="#equation-mm-5" title="Permalink to this equation">#</a></span>\[\begin{split}
+\begin{align}
+&amp; g_0(x) = \frac{C}{x^2}\,\int_0^x \varrho_0(\dif{x})\,\dif{x}^2\,\md  \dif{x}
+\\
+&amp;\dot{g}_0(x) = -\frac{2}{x}\,g_0+C\,\varrho_0
+\end{align}
+\end{split}\]</div>
+<p>Let us now exploit further the spherical symmetry and the defintion of local incremental density</p>
+<div class="math notranslate nohighlight" id="equation-mm-6">
+<span class="eqno">(10.8)<a class="headerlink" href="#equation-mm-6" title="Permalink to this equation">#</a></span>\[
+\loc\rho^E = -\grad\cdot(\varrho_0\,\bb{u}) = -\varrho_0\,\chi-\dot{\varrho}_0\,u
+\]</div>
+<p>In light of this, eq. <a class="reference internal" href="#equation-mm-1">(10.1)</a> gives</p>
+<div class="math notranslate nohighlight" id="equation-mm-7">
+<span class="eqno">(10.9)<a class="headerlink" href="#equation-mm-7" title="Permalink to this equation">#</a></span>\[\begin{split}
+\begin{align}
+&amp; \nabla^2\loc\Psi= C\,\big(\rho^I + \rho^S + \rho^A -\varrho_0\,\chi-\dot{\varrho}_0\,u\big) - 2\,\omega^2
+\\
+&amp; \grad\cdot\mat\sb{\sigma} -\varrho_0\,\grad(g_0\,u)-\varrho_0\,\grad\loc\Psi+\varrho_0\,g_0\,\chi\,\hat{\bb{r}} - \rho^I\,g_0\,\hat{\bb{r}} = \bb{0}
+\end{align}
+\end{split}\]</div>
+</div>
+<section id="incremental-traction-over-spherical-surface">
+<h3><a class="toc-backref" href="#id2"><span class="section-number">10.1.1. </span>Incremental traction over spherical surface</a><a class="headerlink" href="#incremental-traction-over-spherical-surface" title="Permalink to this headline">#</a></h3>
+<div class="full-width docutils">
+<p>Making use of the following identities</p>
+<div class="math notranslate nohighlight" id="equation-mm-9">
+<span class="eqno">(10.10)<a class="headerlink" href="#equation-mm-9" title="Permalink to this equation">#</a></span>\[\begin{split}
+\begin{align}
+&amp; \grad\,\hat{\bb{r}} = x^{-1}\,\big(\bb{1}-\hat{\bb{r}}\,\hat{\bb{r}}\big)
+\\
+&amp;
+\hat{\bb{r}}\cdot\big(\grad\,\bb{u}\big)^\mathrm{T}  = \grad\,u - x^{-1}\,\big(\bb{u}-u\,\hat{\bb{r}}\big)
+\end{align}
+\end{split}\]</div>
+<p>the material incremental traction over spherical surfaces gives</p>
+<div class="math notranslate nohighlight" id="equation-mm-10">
+<span class="eqno">(10.11)<a class="headerlink" href="#equation-mm-10" title="Permalink to this equation">#</a></span>\[
+\begin{align} &amp;
+\mat \bb{t} = \hat{\bb{r}}\cdot\mat\sb{\sigma} = \lambda\,\chi\,\hat{\bb{r}}+\mu\,\left(\dot{\bb{u}}+ \hat{\bb{r}}\cdot(\grad\bb{u})^\mathrm{T} \right)= \lambda\,\chi\,\hat{\bb{r}}+\mu\,\left(\dot{\bb{u}}+ \grad\,u - x^{-1}\,\big(\bb{u}-u\,\hat{\bb{r}}\big) \right)
+\end{align}\]</div>
+<p>In order to expand eq. <a class="reference internal" href="#equation-mm-10">(10.11)</a> in spherical harmonics, we shall later consider the spherical harmonic expansion of the displacement field.</p>
+</div>
+</section>
+<section id="earth-surface-boundary-conditions">
+<h3><a class="toc-backref" href="#id3"><span class="section-number">10.1.2. </span>Earth surface boundary conditions</a><a class="headerlink" href="#earth-surface-boundary-conditions" title="Permalink to this headline">#</a></h3>
+<div class="full-width docutils">
+<p>In order to solve the incremental Poisson and momentum equation, we will need to set boundary conditions at the Earth surface and, for the sake of simplicity, we set to zero the effects of the athmosphere. Within this assumption, we set <span class="math notranslate nohighlight">\(\rho^A=\phi^A=0\)</span> and the athmosphere does not exterct any traction on the solid Earth and, so, the solid Earth must compensate only the weight of the surface load. We thus can write</p>
+<div class="math notranslate nohighlight" id="equation-mm-11bc">
+<span class="eqno">(10.12)<a class="headerlink" href="#equation-mm-11bc" title="Permalink to this equation">#</a></span>\[
+\begin{align} &amp;
+\mat\bb{t}(\bb{a}^-,t) = -\sigma^S(\vartheta,\varphi,t)\,g_0(a)\,\hat{\bb{r}}(\vartheta,\varphi)
+\end{align}\]</div>
+<p>where the supscript <span class="math notranslate nohighlight">\(-\)</span> denotes points just below the Earth surface, <span class="math notranslate nohighlight">\(\bb{a}^-=a^-\,\hat{\bb{r}}(\vartheta,\varphi)\)</span>, and we define the density distribution of the surface load as follows</p>
+<div class="math notranslate nohighlight">
+\[
+\rho^S(\bb{x}) = \mat(x-a)\,\sigma^S(\vartheta,\varphi)
+\]</div>
+<p>Also,by integrating the incremental Poisson equation over a pill-box, we obtain the following constrain on the radial derivative of the local incremental total potential</p>
+<div class="math notranslate nohighlight" id="equation-mm-12bc">
+<span class="eqno">(10.13)<a class="headerlink" href="#equation-mm-12bc" title="Permalink to this equation">#</a></span>\[
+\begin{align} &amp;
+\loc\dot{\Psi}(\bb{a}^-,t) = \loc\dot{\Psi}(\bb{a}^+,t) -c\,\varrho_0(a)\,u(a,t) -c\,\sigma^S(\vartheta,\varphi)
+\end{align}\]</div>
+<p>where the supscript <span class="math notranslate nohighlight">\(+\)</span> denotes points just above the Earth surface, <span class="math notranslate nohighlight">\(\bb{a}^+=a^+\,\hat{\bb{r}}(\vartheta,\varphi)\)</span>.</p>
+</div>
+</section>
+<section id="internal-interface-boundary-conditions">
+<h3><a class="toc-backref" href="#id4"><span class="section-number">10.1.3. </span>Internal interface boundary conditions</a><a class="headerlink" href="#internal-interface-boundary-conditions" title="Permalink to this headline">#</a></h3>
+<div class="full-width docutils">
+<p>At the internal interfaces between different layers of the Earth, where the material parameters <span class="math notranslate nohighlight">\(\lambda\)</span>, <span class="math notranslate nohighlight">\(\mu\)</span> and <span class="math notranslate nohighlight">\(\varrho_0\)</span> can be discontinuous, we will require the continuity of the displacement field and of the incremental radial traction</p>
+<div class="math notranslate nohighlight" id="equation-mm-13bc">
+<span class="eqno">(10.14)<a class="headerlink" href="#equation-mm-13bc" title="Permalink to this equation">#</a></span>\[
+\begin{align} &amp;
+\bb{u}(\bb{x}^+,t) = \bb{u}(\bb{x}^-,t) \qquad \mat\bb{t}(\bb{x}^+,t) = \mat\bb{t}(\bb{x}^-,t)
+\end{align}\]</div>
+<p>with <span class="math notranslate nohighlight">\(\bb{x}^\pm\)</span> denoting points just below and above the internal (spherical) interface. As it concerns the local incremental total potential, instead, we can require that is continuous</p>
+<div class="math notranslate nohighlight" id="equation-mm-14bc">
+<span class="eqno">(10.15)<a class="headerlink" href="#equation-mm-14bc" title="Permalink to this equation">#</a></span>\[
+\begin{align} &amp;
+\loc\Psi(\bb{x}^+,t) = \loc\Psi(\bb{x}^-,t) 
+\end{align}\]</div>
+<p>Furthermore, by integrating the incremental Poisso equation over a pill-box we obtain that</p>
+<div class="math notranslate nohighlight" id="equation-mm-15bc">
+<span class="eqno">(10.16)<a class="headerlink" href="#equation-mm-15bc" title="Permalink to this equation">#</a></span>\[
+\begin{align} &amp;
+\loc\dot{\Psi}(\bb{x}^+,t) - \loc\dot{\Psi}(\bb{x}^-,t) = c\,\big( \varrho_0(x^-) - \varrho_0(x^+)\big)\,u(\bb{x},t) 
+\end{align}\]</div>
+</div>
+</section>
+<section id="divergence-of-the-incremental-stress">
+<h3><a class="toc-backref" href="#id5"><span class="section-number">10.1.4. </span>Divergence of the incremental stress</a><a class="headerlink" href="#divergence-of-the-incremental-stress" title="Permalink to this headline">#</a></h3>
+<div class="full-width docutils">
+<p>In the perspective of expanding in spherical harmonic the incremental momentum equation, let us consider the divergence of the material incremental stress. By making use of the fact that the Lamè parameters depend only on the radial distance <span class="math notranslate nohighlight">\(x\)</span> and of eq. <a class="reference internal" href="#equation-mm-9">(10.10)</a> and the following identities</p>
+<div class="math notranslate nohighlight" id="equation-mm-11">
+<span class="eqno">(10.17)<a class="headerlink" href="#equation-mm-11" title="Permalink to this equation">#</a></span>\[\begin{split}
+\begin{align}
+&amp; \nabla^2\bb{u} = \grad\,\chi - \grad\times \grad\times\bb{u}
+\\
+&amp;
+\grad\cdot\big(\grad\bb{u}\big)^\mathrm{T} = \grad\,\chi
+\end{align}
+\end{split}\]</div>
+<p>we first obtain</p>
+<div class="math notranslate nohighlight" id="equation-mm-12">
+<span class="eqno">(10.18)<a class="headerlink" href="#equation-mm-12" title="Permalink to this equation">#</a></span>\[\begin{split}
+\begin{align}
+\grad\cdot\mat\sb{\sigma} &amp;= \dot{\lambda}\,\chi\,\hat{\bb{r}} + \dot{\mu}\,\big[\hat{\bb{r}}\cdot\grad\,\bb{u}+\hat{\bb{r}}\cdot\big(\grad\,\bb{u}\big)^\mathrm{T}\big]+ \big(\lambda+\mu\big)\,\grad\,\chi +\mu\,\nabla^2\bb{u}
+\\
+&amp;= \dot{\lambda}\,\chi\,\hat{\bb{r}} + \dot{\mu}\,\left(\dot{\bb{u}}+\grad u- x^{-1}\,\big(\bb{u}-u\,\hat{\bb{r}}\big)\right)+ \beta\,\grad\,\chi- \mu\,\grad\times\grad\times\bb{u}
+\end{align}
+\end{split}\]</div>
+<p>with</p>
+<div class="math notranslate nohighlight" id="equation-mm-13bb">
+<span class="eqno">(10.19)<a class="headerlink" href="#equation-mm-13bb" title="Permalink to this equation">#</a></span>\[
+\begin{align}
+&amp;\beta = \lambda+2\,\mu
+\end{align}
+\]</div>
+<p>We note that the first two terms in the right-hand side of eq. <a class="reference internal" href="#equation-mm-12">(10.18)</a> differ from zero only when the radial derivatives of the Lamè parameters differ from zero, that is when the Lamè parameters vary with the radial distance and are not simply constant.</p>
+<p>Making use of the material incremental traction, eq. <a class="reference internal" href="#equation-mm-10">(10.11)</a>, we can also rewrite eq <a class="reference internal" href="#equation-mm-12">(10.18)</a> as follows</p>
+<div class="math notranslate nohighlight" id="equation-mm-12b">
+<span class="eqno">(10.20)<a class="headerlink" href="#equation-mm-12b" title="Permalink to this equation">#</a></span>\[
+\begin{align}
+\grad\cdot\mat\sb{\sigma} &amp;= \mat \dot{\bb{t}} -\lambda\,\dot{\chi}\,\hat{\bb{r}} - \mu\,\frac{\partial}{\partial x}\left[\dot{\bb{u}}+\grad u- x^{-1}\,\big(\bb{u}-u\,\hat{\bb{r}}\big)\right]+ \beta\,\grad\,\chi- \mu\,\grad\times\grad\times\bb{u}
+\end{align}
+\]</div>
+<p>where the radial derivative of the Lamè parameters have been removed. In order to expand eq. <a class="reference internal" href="#equation-mm-12b">(10.20)</a> in spherical harmonics, we shall later consider the spherical harmonic expansion of the displacement field and of the total potential.</p>
+</div>
+</section>
+</section>
+<section id="spherical-harmonic-expansion">
+<h2><a class="toc-backref" href="#id6"><span class="section-number">10.2. </span>Spherical harmonic expansion</a><a class="headerlink" href="#spherical-harmonic-expansion" title="Permalink to this headline">#</a></h2>
+<div class="full-width docutils">
+<p>Let us consider the spherical harmonic expansion of the local incremental total potential and of the internal and surface loading denisties</p>
+<div class="math notranslate nohighlight" id="equation-mm-13">
+<span class="eqno">(10.21)<a class="headerlink" href="#equation-mm-13" title="Permalink to this equation">#</a></span>\[
+\begin{align}
+\loc\Psi = \sum_n\sum_m \loc\Psi_{n,m}\,Y_{n,m}
+\qquad
+\rho^I  = \sum_n\sum_m\rho^I_{n,m}\,Y_{n,m}
+\qquad
+\sigma^S  = \sum_n\sum_m\sigma^S_{n,m}\,Y_{n,m}
+\end{align}
+\]</div>
+<p>Vector fields like the displacement field <span class="math notranslate nohighlight">\(\bb{u}\)</span>, the incremental traction <span class="math notranslate nohighlight">\(\mat\bb{t}\)</span> and the equivalent body force <span class="math notranslate nohighlight">\(\bb{f}\)</span>, instead, can be decomposed as follows</p>
+<div class="math notranslate nohighlight" id="equation-mm-14">
+<span class="eqno">(10.22)<a class="headerlink" href="#equation-mm-14" title="Permalink to this equation">#</a></span>\[\begin{split}
+\begin{align}
+&amp;\bb{u} = \sum_n\sum_m \big(U_{n,m}\,\bb{P}_n^m+ V_{n,m}\,\bb{B}_n^m + W_{n,m}\,\bb{C}_n^m\big)
+\\
+&amp; \mat\bb{t} = \sum_n\sum_m \big(R_{n,m}\,\bb{P}_n^m+ S_{n,m}\,\bb{B}_n^m + T_{n,m}\,\bb{C}_n^m\big)
+\\
+&amp; \bb{f} = \sum_n\sum_m \big(f^P_{n,m}\,\bb{P}_n^m+ f^B_{n,m}\,\bb{B}_n^m + f^C_{n,m}\,\bb{C}_n^m\big)
+\end{align}
+\end{split}\]</div>
+<p>where <span class="math notranslate nohighlight">\(\bb{P}_n^m\)</span>, <span class="math notranslate nohighlight">\(\bb{B}_n^m\)</span> and <span class="math notranslate nohighlight">\(\bb{C}_n^m\)</span> are the spherical harmonic vectors of degree <span class="math notranslate nohighlight">\(n\)</span> and order <span class="math notranslate nohighlight">\(m\)</span> discussed in <a class="reference internal" href="L0_Harmonic_Vectors.html#chap-vectors"><span class="std std-numref">Chapter 5</span></a> - <a class="reference internal" href="L0_Harmonic_Vectors.html#chap-vectors"><span class="std std-ref">Spherical harmonic vectors</span></a>.</p>
+<p>We also recall that the following properties of the spherical harmonic coefficients of the gravitational potentials that we are considering</p>
+<div class="math notranslate nohighlight" id="equation-mm-15q">
+<span class="eqno">(10.23)<a class="headerlink" href="#equation-mm-15q" title="Permalink to this equation">#</a></span>\[\begin{split}
+\begin{align}
+&amp; \loc\phi^E_{n,m}(x&gt;a,t) = \left(\frac{x}{a}\right)^{-(n+1)}\,\loc\phi^E_{n,m}(a,t)
+\\
+&amp; \phi^I_{n,m}(x&gt;a,t) = \left(\frac{x}{a}\right)^{-(n+1)}\,\phi^I_{n,m}(a,t)
+\\
+&amp; \phi^T_{n,m}(x,t) = \left(\frac{x}{a}\right)^{n}\,\phi^T_{n,m}(a,t)
+\\
+&amp; \phi^S_{n,m}(x,t) = \phi^S_{n,m}(a,t)\,\begin{cases} \left(\frac{x}{a}\right)^{-(n+1)} &amp; x\geq a\\
+\left(\frac{x}{a}\right)^{n} &amp; x\leq a
+\end{cases}
+\end{align}
+\end{split}\]</div>
+<p>and that those of the centrifugal potential behaves as the tidal potential for <span class="math notranslate nohighlight">\(n\geq 1\)</span> (i.e., for <span class="math notranslate nohighlight">\(n=2\)</span>)</p>
+<div class="math notranslate nohighlight" id="equation-mm-16q">
+<span class="eqno">(10.24)<a class="headerlink" href="#equation-mm-16q" title="Permalink to this equation">#</a></span>\[
+\qquad
+\phi^{C}_{n,m}(x,t) = \left(\frac{x}{a}\right)^{n}\,\phi^{C}_{n,m}(a,t) \qquad\forall n\geq 1
+\]</div>
+<p>For the surface loading gravitational potential, we can also establish the following relation with the surface density distribution</p>
+<div class="math notranslate nohighlight" id="equation-mm-17q">
+<span class="eqno">(10.25)<a class="headerlink" href="#equation-mm-17q" title="Permalink to this equation">#</a></span>\[
+\phi_{n,m}^S(a,t) = -\frac{C\,\sigma_{n,m}^S(t)\,a}{2\,n+1}
+\]</div>
+<p>and we note that</p>
+<div class="math notranslate nohighlight" id="equation-mm-17qq">
+<span class="eqno">(10.26)<a class="headerlink" href="#equation-mm-17qq" title="Permalink to this equation">#</a></span>\[
+\dot{\phi}_{n,m}^S(a^-,t) = \dot{\phi}_{n,m}^S(a^+,t) + \frac{2\,n+1}{a}\,\phi_{n,m}^S(a,t)
+\]</div>
+</div>
+<section id="internal-and-earth-surface-boundary-conditions">
+<span id="sec-m-boundary"></span><h3><a class="toc-backref" href="#id7"><span class="section-number">10.2.1. </span>Internal and Earth surface boundary conditions</a><a class="headerlink" href="#internal-and-earth-surface-boundary-conditions" title="Permalink to this headline">#</a></h3>
+<div class="full-width docutils">
+<p>The internal boundary conditions implies the continuity of the spherical harmonic coefficients of the displacements, of local incremental total potential, of the incremental traction over spherical surface</p>
+<div class="math notranslate nohighlight" id="equation-mm-18q">
+<span class="eqno">(10.27)<a class="headerlink" href="#equation-mm-18q" title="Permalink to this equation">#</a></span>\[\begin{split}
+\begin{align}
+&amp; U_{n,m}(x^-,t) = U_{n,m}(x^+,t)
+\qquad
+V_{n,m}(x^-,t) = V_{n,m}(x^+,t)
+\qquad
+W_{n,m}(x^-,t) = W_{n,m}(x^+,t)
+\qquad
+\loc\Psi_{n,m}(x^-,t) = \loc\Psi_{n,m}(x^+,t)
+\\
+&amp; R_{n,m}(x^-,t) = R_{n,m}(x^+,t)
+\qquad
+S_{n,m}(x^-,t) = S_{n,m}(x^+,t)
+\qquad
+T_{n,m}(x^-,t) = T_{n,m}(x^+,t)
+\qquad
+\end{align}
+\end{split}\]</div>
+<p>Also, by defining the so-called total potential flux as follows</p>
+<div class="math notranslate nohighlight" id="equation-mm-19q">
+<span class="eqno">(10.28)<a class="headerlink" href="#equation-mm-19q" title="Permalink to this equation">#</a></span>\[
+Q_{n,m} = \loc\dot{\Psi}_{n,m} + \frac{n+1}{x}\,\loc\Psi_{n,m} + c\,\varrho_0\,U_{n,m}
+\]</div>
+<p>we note that, in view of eq. <a class="reference internal" href="#equation-mm-15bc">(10.16)</a>, it is also continuous at the internal interfaces</p>
+<div class="math notranslate nohighlight" id="equation-mm-20qq">
+<span class="eqno">(10.29)<a class="headerlink" href="#equation-mm-20qq" title="Permalink to this equation">#</a></span>\[
+Q_{n,m}(x^-,t) = Q_{n,m}(x^+,t)
+\]</div>
+<p>but at the Earth surface where we have to consider the discontinuity of the radial derivative of the total potential perturbation due to the presence of the surface loads</p>
+<div class="math notranslate nohighlight" id="equation-mm-20q">
+<span class="eqno">(10.30)<a class="headerlink" href="#equation-mm-20q" title="Permalink to this equation">#</a></span>\[
+Q_{n,m}(a^-,t) = Q_{n,m}(a^+,t) + \frac{2\,n+1}{a}\,\phi_{n,m}^S(a,t) 
+\]</div>
+<p>As it concerns the Earth surface boundary conditions, instead, we can write</p>
+<div class="math notranslate nohighlight" id="equation-mm-21q">
+<span class="eqno">(10.31)<a class="headerlink" href="#equation-mm-21q" title="Permalink to this equation">#</a></span>\[\begin{split}
+\begin{align}
+&amp; R_{n,m}(a^-,t) = \frac{2\,n+1}{a}\,\frac{g_0(a)}{c}\,\phi_{n,m}^S(a,t) \qquad S_{n,m}(a^-,t) = 0 \qquad T_{n,m}(a^-,t) = 0 \\
+&amp; Q_{n,m}(a^-,t) = \frac{2\,n+1}{a}\,\left(\phi_{n,m}^S(a,t) + (1+2\,\mat_{n,0})\,\phi_{n,m}^C(a,t) + \phi_{n,m}^T(a,t)\right)
+\end{align}
+\end{split}\]</div>
+<p>where the spherical harmonic coefficients of the surface density distribution, <span class="math notranslate nohighlight">\(\sigma_{n,m}^s\)</span>, have been substituted using eq. <a class="reference internal" href="#equation-mm-17qq">(10.26)</a> and we have notice that</p>
+<div class="math notranslate nohighlight" id="equation-mm-22q">
+<span class="eqno">(10.32)<a class="headerlink" href="#equation-mm-22q" title="Permalink to this equation">#</a></span>\[
+Q_{n,m}(a^+,t) = \frac{2\,n+1}{a}\,\left((1+2\,\mat_{n,0})\, \phi_{n,m}^C(a,t) + \phi_{n,m}^T(a,t)\right) 
+\]</div>
+<p>Indeed, the radial derivatives of the spherical harmonic coefficients of the local incremental gravitational potential <span class="math notranslate nohighlight">\(\loc\Psi\)</span> and of the internal and surface loading gravitational potentials, <span class="math notranslate nohighlight">\(\phi^I\)</span> and <span class="math notranslate nohighlight">\(\phi^S\)</span>, are compensated by the second term in the defintion of local incremental total potential flux.</p>
+</div>
+</section>
+<section id="incremental-traction-and-divergence-of-the-incremental-stress">
+<h3><a class="toc-backref" href="#id8"><span class="section-number">10.2.2. </span>Incremental traction and divergence of the incremental stress</a><a class="headerlink" href="#incremental-traction-and-divergence-of-the-incremental-stress" title="Permalink to this headline">#</a></h3>
+<div class="full-width docutils">
+<p>After substitution of the spherical harmonic expansion of the displacement, the spherical harmonic coefficients of the material incremental traction can be expressed in terms of those of the displacement</p>
+<div class="math notranslate nohighlight" id="equation-mm-20">
+<span class="eqno">(10.33)<a class="headerlink" href="#equation-mm-20" title="Permalink to this equation">#</a></span>\[
+\begin{align}
+&amp; R_{n,m} =  \lambda\,\chi_{n,m}+2\,\mu\,\dot{U}_{n,m} 
+\qquad S_{n,m} = 
+ \mu\,Z_{n,m}
+\qquad T_{n,m} = 
+\mu\,\left(\dot{W}_{n,m} - \frac{W_{n,m}}{x}\right)
+\end{align}
+\]</div>
+<p>We note that the radial derivative of the spherical harmonic coefficients of the displacement field can be expressed in terms of those of the material incremntal traction</p>
+<div class="math notranslate nohighlight" id="equation-mm-21">
+<span class="eqno">(10.34)<a class="headerlink" href="#equation-mm-21" title="Permalink to this equation">#</a></span>\[
+\dot{U}_{n,m} = \frac{1}{\lambda+2\,\mu}\,\left( R_{n,m} +\lambda\,\frac{\gamma_n\,V_{n,m}-2\,U_{n,m}}{x}\right)
+\qquad
+\dot{V}_{n,m} = \frac{1}{\mu}\,S_{n,m} + \frac{V_{n,m} - \gamma_n\,U_{n,m}}{x}
+\qquad
+\dot{W}_{n,m} = \frac{1}{\mu}\,T_{n,m} + \frac{W_{n,m}}{x}
+\]</div>
+<p>After substitution of the spherical harmonic expansion of the displacement, the divergence of the incremental stress, instead, becomes</p>
+<div class="math notranslate nohighlight" id="equation-mm-22">
+<span class="eqno">(10.35)<a class="headerlink" href="#equation-mm-22" title="Permalink to this equation">#</a></span>\[\begin{split}
+\begin{align}
+\grad\cdot\mat\sb{\sigma} =\sum_n\sum_m\Bigg[ &amp;\left(\dot{R}_{n,m} 
+ - \frac{\mu}{x^2}\,\left(\gamma_n\,x\,H_{n,m}-4\,x\,\chi_{n,m}+2\,(6+\gamma_n^2)\,U_{n,m}-8\,\gamma_n\,V_{n,m}\right)\right)\,\bb{P}_n^m
+\\
++&amp;\left(\dot{S}_{n,m} 
++ \frac{\gamma_n}{x}\,\lambda\,\chi_{n,m} + \frac{\mu}{x^2}\,\left(3\,x\,H_{n,m} +8\,\gamma_n\,U-2\,(2+\gamma_n^2)\,V_{n,m}\right)\right)\,\bb{B}_n^m
+\\
++&amp; \left(\dot{T}_{n,m} + \frac{3}{x}\,T_{n,m} - \frac{\mu}{x^2}\,(\gamma_n^2-2)\,W_{n,m}\right)\,\bb{C}_n^m\Bigg]
+\end{align}
+\end{split}\]</div>
+</div>
+</section>
+<section id="poisson-and-momentum-equations">
+<span id="sec-internal-poisson"></span><h3><a class="toc-backref" href="#id9"><span class="section-number">10.2.3. </span>Poisson and momentum equations</a><a class="headerlink" href="#poisson-and-momentum-equations" title="Permalink to this headline">#</a></h3>
+<div class="full-width docutils">
+<p>In the following we will focus on the incremental momentum and Poisson equations only within the solid Earth and we will solve it from the Earth’s centre (<span class="math notranslate nohighlight">\(x=0\)</span>) up to just below the Earth surface (<span class="math notranslate nohighlight">\(x=a^-\)</span>) where we will set the Earth surface boundary condition</p>
+<div class="math notranslate nohighlight" id="equation-mm-1bis">
+<span class="eqno">(10.36)<a class="headerlink" href="#equation-mm-1bis" title="Permalink to this equation">#</a></span>\[\begin{split}
+\begin{align}
+&amp; \nabla^2\loc\Psi= c\,\big(\loc\rho^E+\rho^I\big) - 2\,\omega^2
+\\
+&amp; \grad\cdot\mat\sb{\sigma} -\grad\big(\varrho_0\,g_0\,u\big) -\varrho_0\,\grad\loc\Psi-(\loc\rho^E+\rho^I)\,g_0\,\hat{\bb{r}} + \bb{f}= \bb{0}
+\end{align}
+\end{split}\]</div>
+<p>In view of the above results, the incremental Poisson equation gives</p>
+<div class="math notranslate nohighlight" id="equation-mm-23">
+<span class="eqno">(10.37)<a class="headerlink" href="#equation-mm-23" title="Permalink to this equation">#</a></span>\[
+\begin{align}
+\sum_n\sum_m\Bigg[ \nabla_n^2 \loc\Psi_{n,m} + c\,\big(\varrho_0\,\chi_{n,m}-\dot{\varrho}_0\,U_{n,m}-\rho^I_{n,m}\big)+2\,\omega^2\,\mat_{n,0}\bigg]\,Y_n^m = 0
+\end{align}
+\]</div>
+<p>while the momentum equation gives</p>
+<div class="math notranslate nohighlight" id="equation-mm-24">
+<span class="eqno">(10.38)<a class="headerlink" href="#equation-mm-24" title="Permalink to this equation">#</a></span>\[\begin{split}
+\begin{align}
+\sum_n\sum_m\Bigg[ &amp;\bigg(\dot{R}_{n,m} 
+ - \frac{\mu\,\big(r\,\gamma_n\,H_{n,m}-4\,x\,\chi_{n,m}+2\,(6+\gamma_n^2)\,U_{n,m}-8\,\gamma_n\,V_{n,m}\big)}{x^2} +\varrho_0\,\chi_{n,m}\,g-\varrho_0\,\frac{\partial \big(g_0\,U_{n,m}+\loc\Psi_{n,m}\big)}{\partial x}  -\rho_{n,m}^I\,g_0+f_{n,m}^P\bigg)\,\bb{P}_n^m
+\\
++&amp;\left(\dot{S}_{n,m} 
+ + \frac{\mu \left(3\,x\,H_{n,m} +8\,\gamma_n\,U-2\,(2+\gamma_n^2)\,V_{n,m}\right)}{x^2} +\frac{\gamma_n\big(\lambda\,\chi_{n,m}-\varrho_0\,g_0\,U_{n,m}-\varrho_0\,\loc\Psi_{n,m}\big)}{x} +f_{n,m}^B\right)\,\bb{B}_n^m
+\\
++&amp; \left(\dot{T}_{n,m}  + \frac{3\,T_{n,m}}{x} - \frac{\mu\,(\gamma_n^2-2)\,W_{n,m}}{x^2} +f_{n,m}^C\right)\,\bb{C}_n^m\Bigg] = \bb{0}
+\end{align}
+\end{split}\]</div>
+<p>We note that, in view of the orthogonality of the spherical harmonics and of the spherical harmonic vectors, we have just obtained four differential equations for each harmonic degree <span class="math notranslate nohighlight">\(n\)</span> and order <span class="math notranslate nohighlight">\(m\)</span>. One equation comes from the Poisson equation</p>
+<div class="math notranslate nohighlight" id="equation-mm-25a">
+<span class="eqno">(10.39)<a class="headerlink" href="#equation-mm-25a" title="Permalink to this equation">#</a></span>\[
+\begin{align}
+&amp; \nabla_n^2 \loc\Psi_{n,m} + c\,\big(\varrho_0\,\chi_{n,m}+\dot{\varrho}_0\,U_{n,m}-\rho^I_{n,m}\big)+2\,\omega^2\,\mat_{n,0} = 0 
+\end{align}
+\]</div>
+<p>and the other three come from the momentum equation</p>
+<div class="math notranslate nohighlight" id="equation-mm-25">
+<span class="eqno">(10.40)<a class="headerlink" href="#equation-mm-25" title="Permalink to this equation">#</a></span>\[\begin{split}
+\begin{align}
+&amp; \dot{R}_{n,m} 
+ - \frac{\mu \left(\gamma_n\,x\,H_{n,m}-4\,x\,\chi_{n,m}+2\,(6+\gamma_n^2)\,U_{n,m}-8\,\gamma_n\,V_{n,m}\right)}{x^2}-\varrho_0\,\frac{\partial \big(g_0\,U_{n,m}-\loc\Psi_{n,m}\big)}{\partial x}  + \varrho_0\,\chi_{n,m}\,g_0-\rho_{n,m}^I\,g_0+f_{n,m}^P = 0
+\\
+&amp;
+\dot{S}_{n,m} 
+ + \frac{\mu \left(3\,x\,H_{n,m} +8\,\gamma\,U-2\,(2+\gamma_n^2)\,V_{n,m}\right)}{x^2} +\frac{\gamma_n\big(\lambda\,\chi_{n,m}-\varrho_0\,g_0\,U_{n,m}-\varrho_0\,\loc\Psi_{n,m}\big)}{x} +f_{n,m}^B = 0
+\\
+&amp;\dot{T}_{n,m} + \frac{3\,T_{n,m}}{x} - \frac{\mu\,(\gamma_n^2-2)\,W_{n,m}}{x^2}+f_{n,m}^C = 0
+\end{align}
+\end{split}\]</div>
+<p>Furthermore, the Poisson equation and the first two equations (i.e, the <span class="math notranslate nohighlight">\(P\)</span>- and <span class="math notranslate nohighlight">\(B\)</span>-components) of the momentum equation are coupled and consitute the differential system for the spheroidal perturbations <span class="math notranslate nohighlight">\(U_{n,m}\)</span>, <span class="math notranslate nohighlight">\(V_{n,m}\)</span> and <span class="math notranslate nohighlight">\(\loc\Psi_{n,m}\)</span>. The third equation (i.e., the <span class="math notranslate nohighlight">\(C\)</span>-component) of the momentum equation, instead, is decoupled by the spheroidal perturbations and constitutes the differential equation governing the toroidal perturbation <span class="math notranslate nohighlight">\(W_{n,m}\)</span>.</p>
+</div>
+</section>
+</section>
+<section id="linear-differential-systems">
+<h2><a class="toc-backref" href="#id10"><span class="section-number">10.3. </span>Linear differential systems</a><a class="headerlink" href="#linear-differential-systems" title="Permalink to this headline">#</a></h2>
+<div class="full-width docutils">
+<p>Let us now recast the incremental Poisson and momentum equations in the form of linear differential systems and solve them assuming that we know the solution at a specific radius <span class="math notranslate nohighlight">\(x_0\)</span>, i.e., the Cauchy datum. Afterwards, we will understand also how we can fully determine also the Cauchy datum.</p>
+</div>
+<section id="toroidal-differential-system">
+<span id="sec-m-toroidal"></span><h3><a class="toc-backref" href="#id11"><span class="section-number">10.3.1. </span>Toroidal differential system</a><a class="headerlink" href="#toroidal-differential-system" title="Permalink to this headline">#</a></h3>
+<div class="full-width docutils">
+<p>By considering that toroidal deformations are decoupled from the spheroidal perturbations, let us first consider the only <span class="math notranslate nohighlight">\(C\)</span>-components of the incremental momentum equation <a class="reference internal" href="#equation-mm-25">(10.40)</a>. After some straightforward algebra, we can recast it in the following <span class="math notranslate nohighlight">\(2\times 2\)</span>-linear differential system</p>
+<div class="math notranslate nohighlight" id="equation-mm-1d">
+<span class="eqno">(10.41)<a class="headerlink" href="#equation-mm-1d" title="Permalink to this equation">#</a></span>\[
+\begin{align}
+&amp; \dot{\bb{y}}_{n,m}(x,t) = \bb{A}_n(x)\,\bb{y}_{n,m}(x,t) - \bb{q}_{n,m}(x,t)
+\end{align}
+\]</div>
+<p>where <span class="math notranslate nohighlight">\(\bb{y}_{n,m}\)</span> is the so called toroidal <span class="math notranslate nohighlight">\(2\)</span>-vector and <span class="math notranslate nohighlight">\(\bb{q}_{n,m}\)</span> accounts for the dishomogeneous terms resulting from the only earthquake forcings</p>
+<div class="math notranslate nohighlight" id="equation-mm-2d">
+<span class="eqno">(10.42)<a class="headerlink" href="#equation-mm-2d" title="Permalink to this equation">#</a></span>\[\begin{split}
+\bb{y}_{n,m} = \left(\begin{matrix} W_{n,m} \\ T_{n,m} \end{matrix}\right) \qquad \bb{q}_{n,m} = \left(\begin{matrix}  0 \\ f_{n,m}^C \end{matrix}\right) 
+\end{split}\]</div>
+<p>and <span class="math notranslate nohighlight">\(\bb{A}_n\)</span> is the following <span class="math notranslate nohighlight">\(2\times 2\)</span>-matrix</p>
+<div class="math notranslate nohighlight" id="equation-mm-3d">
+<span class="eqno">(10.43)<a class="headerlink" href="#equation-mm-3d" title="Permalink to this equation">#</a></span>\[\begin{split}
+\bb{A}_n = \left(\begin{matrix} \frac{1}{x} &amp; \frac{1}{\mu} \\ \frac{\mu\,\big(\gamma_n^2-2\big)}{x^2} &amp; -\frac{3}{x}
+\end{matrix}\right)
+\end{split}\]</div>
+<p>Let us now define the propagator matrix which solve the following homogeneous differential system</p>
+<div class="math notranslate nohighlight" id="equation-mm-4d">
+<span class="eqno">(10.44)<a class="headerlink" href="#equation-mm-4d" title="Permalink to this equation">#</a></span>\[
+\begin{align}
+&amp; \frac{\md  \sb{\Pi}_n(x,x_0)}{\md  x} = \bb{A}_n(x)\,\sb{\Pi}_n(x,x_0)
+\qquad\mathrm{with}\qquad \sb{\Pi}_n(x_0,x_0) = \bb{1}
+\end{align}
+\]</div>
+<p>In this respect, the following toroidal vector</p>
+<div class="math notranslate nohighlight" id="equation-mm-5d">
+<span class="eqno">(10.45)<a class="headerlink" href="#equation-mm-5d" title="Permalink to this equation">#</a></span>\[
+\bb{y}_{n,m}^h(x,t) = \sb{\Pi}_n(x,x_0)\,\bb{y}_{n,m}(x_0,t)
+\]</div>
+<p>can be seen as the solution of the homogeneous toroidal differential system, eq. <a class="reference internal" href="#equation-mm-1d">(10.41)</a> with <span class="math notranslate nohighlight">\(\bb{q}_{n,m}=\bb{0}\)</span>, that matches the inititial condition <span class="math notranslate nohighlight">\(\bb{y}_{n,m}(x_0,t)\)</span> at <span class="math notranslate nohighlight">\(x=x_0\)</span>.</p>
+<p>We note that, without forcing, the homogeneous toroidal solution must be continuous across the internal interfaces of the solid Earth model due to the continuity of the components of the displacement <span class="math notranslate nohighlight">\(\bb{u}\)</span> and of the incremental traction <span class="math notranslate nohighlight">\(\mat\bb{t}\)</span>. In this respect, the toroidal propagator matrix is also continuous across the internal interfaces of the solid Earth model.</p>
+</div>
+<div class="full-width dropdown admonition">
+<p class="admonition-title">A property of the propagator matrix</p>
+<p>In view of the following elementary property of the propagator matrix</p>
+<div class="math notranslate nohighlight" id="equation-mm-6d">
+<span class="eqno">(10.46)<a class="headerlink" href="#equation-mm-6d" title="Permalink to this equation">#</a></span>\[
+\sb{\Pi}_n(x,x_0) = \sb{\Pi}_n(x,\dif{x})\,\sb{\Pi}_n(\dif{x},x_0)
+\]</div>
+<p>we have also</p>
+<div class="math notranslate nohighlight" id="equation-mm-7d">
+<span class="eqno">(10.47)<a class="headerlink" href="#equation-mm-7d" title="Permalink to this equation">#</a></span>\[
+\bb{1} = \sb{\Pi}_n(x_0,\dif{x})\,\sb{\Pi}_n(\dif{x},x_0)
+\]</div>
+<p>in view of the fact that <span class="math notranslate nohighlight">\(\sb{\Pi}_{n}(x_0,x_0)=\bb{1}\)</span>. By differentiating  eq. <a class="reference internal" href="#equation-mm-7d">(10.47)</a> with respect to <span class="math notranslate nohighlight">\(x\)</span>, we obtain</p>
+<div class="math notranslate nohighlight" id="equation-mm-8d">
+<span class="eqno">(10.48)<a class="headerlink" href="#equation-mm-8d" title="Permalink to this equation">#</a></span>\[
+\mathrm{0} = \frac{\md  \sb{\Pi}_n(x_0,\dif{x})}{\md  \dif{x}}\,\sb{\Pi}_n(\dif{x},x_0) + \sb{\Pi}_n(x_0,\dif{x})\,\frac{\md \sb{\Pi}_n(\dif{x},x_0)}{\md  \dif{x}} = \frac{\md  \sb{\Pi}_n(x_0,\dif{x})}{\md  \dif{x}}\,\sb{\Pi}_n(\dif{x},x_0) + \sb{\Pi}_n(x_0,\dif{x})\,\bb{A}_n(\dif{x})\,\sb{\Pi}_n(\dif{x},x_0)
+\]</div>
+<p>and, so, we learn that the propagator matrix solves also the following differential system</p>
+<div class="math notranslate nohighlight" id="equation-mm-9d">
+<span class="eqno">(10.49)<a class="headerlink" href="#equation-mm-9d" title="Permalink to this equation">#</a></span>\[
+\frac{\md  \sb{\Pi}_n(x,x_0)}{\md  x_0}= -\sb{\Pi}_n(x,x_0)\,\bb{A}_n(x_0)
+\]</div>
+</div>
+<div class="full-width docutils">
+<p>Let us now show that</p>
+<div class="math notranslate nohighlight" id="equation-mm-10d">
+<span class="eqno">(10.50)<a class="headerlink" href="#equation-mm-10d" title="Permalink to this equation">#</a></span>\[
+\bb{y}_{n,m}(x,t) = \bb{y}_{n,m}^h(x,t) - \bb{w}_{n,m}(x,t)
+\]</div>
+<p>with</p>
+<div class="math notranslate nohighlight" id="equation-mm-10dd">
+<span class="eqno">(10.51)<a class="headerlink" href="#equation-mm-10dd" title="Permalink to this equation">#</a></span>\[
+\begin{align}
+\bb{w}_{n,m}(x,t) = \int_{x_0}^x\sb{\Pi}_{n}(x,\dif{x})\,\bb{q}_{n,m}(\dif{x},t)\,\md  x
+\end{align}
+\]</div>
+<p>is the solution of the dishomogeneous toroidal differential system, eq. <a class="reference internal" href="#equation-mm-1d">(10.41)</a>. By definition, the second term  <span class="math notranslate nohighlight">\(\bb{w}_{n,m}\)</span> is a particular solution which yields zero at <span class="math notranslate nohighlight">\(x=x_0\)</span>.</p>
+<p>To prove it, we differenitate eq. <a class="reference internal" href="#equation-mm-10d">(10.50)</a> with respect to <span class="math notranslate nohighlight">\(r\)</span></p>
+<div class="math notranslate nohighlight" id="equation-mm-11d">
+<span class="eqno">(10.52)<a class="headerlink" href="#equation-mm-11d" title="Permalink to this equation">#</a></span>\[\begin{split}
+\begin{align}
+\dot{\bb{y}}_{n,m}(x,t) &amp;= \bb{A}_n(x)\,\bb{y}_{n,m}^h(x,t) - \bb{A}_n(x)\,\bb{w}_{n,m}(x,t)  - \sb{\Pi}_{n}(x,x)\,\bb{q}_{n,m}(x,t)  \\
+&amp;= \bb{A}_n(x)\,\bb{y}_{n,m}(x,t) - \bb{q}_{n,m}(x,t)
+\end{align}
+\end{split}\]</div>
+<p>that coincides, indeed, with the dishomogeneous differential equation <a class="reference internal" href="#equation-mm-1d">(10.41)</a>.</p>
+</div>
+<section id="toroidal-earth-surface-boundary-conditions">
+<h4><span class="section-number">10.3.1.1. </span>Toroidal Earth surface boundary conditions<a class="headerlink" href="#toroidal-earth-surface-boundary-conditions" title="Permalink to this headline">#</a></h4>
+<div class="full-width docutils">
+<p>The tecquines of the propagator matrix can be used for propagating the toroidal vector to the Earth surface, where we can implement the Earth surface boundary conditions. We will thus propagate the toroidal <span class="math notranslate nohighlight">\(2\)</span>-vector up to just below the Earth surface, at <span class="math notranslate nohighlight">\(x=a^-\)</span>, and, according to the discussion of <a class="reference internal" href="#sec-m-boundary"><span class="std std-numref">Lecture 10.2.1</span></a> <a class="reference internal" href="#sec-m-boundary"><span class="std std-ref">Internal and Earth surface boundary conditions</span></a>, eq. <a class="reference internal" href="#equation-mm-14bc">(10.15)</a>, we write</p>
+<div class="math notranslate nohighlight" id="equation-mm-11dd">
+<span class="eqno">(10.53)<a class="headerlink" href="#equation-mm-11dd" title="Permalink to this equation">#</a></span>\[
+T_{n,m}(a^-,t) = \bb{P}_2\,\bb{y}_{n,m}(a^-,t) = \bb{0}
+\]</div>
+<p>with <span class="math notranslate nohighlight">\(\bb{P}_2\)</span> being the projector  <span class="math notranslate nohighlight">\(1\times 2\)</span>-matrix for the second component of the toroidal <span class="math notranslate nohighlight">\(2\)</span>-vector</p>
+<div class="math notranslate nohighlight" id="equation-mm-12dd">
+<span class="eqno">(10.54)<a class="headerlink" href="#equation-mm-12dd" title="Permalink to this equation">#</a></span>\[
+\bb{P}_2 = \left(\begin{matrix} 0 &amp; 1 \end{matrix}\right)
+\]</div>
+<p>In particular, making use of eq. <a class="reference internal" href="#equation-mm-10d">(10.50)</a>, we can write</p>
+<div class="math notranslate nohighlight" id="equation-mm-13dd">
+<span class="eqno">(10.55)<a class="headerlink" href="#equation-mm-13dd" title="Permalink to this equation">#</a></span>\[
+\bb{P}_2\,\sb{\Pi}_n(a,r_0)\,\bb{y}_{n,m}(r_0,t) = \bb{P}_2\, \bb{w}_{n,m}(a,t)
+\]</div>
+<p>that is a one equation that can be used for constraining one of the two components of the Cauchy datum <span class="math notranslate nohighlight">\(\bb{y}_{n,m}(r_0,t)\)</span>.</p>
+</div>
+</section>
+</section>
+<section id="spheroidal-differential-system">
+<span id="sec-m-spheroidal"></span><h3><a class="toc-backref" href="#id12"><span class="section-number">10.3.2. </span>Spheroidal differential system</a><a class="headerlink" href="#spheroidal-differential-system" title="Permalink to this headline">#</a></h3>
+<div class="full-width docutils">
+<p>Similar to the toroidal differential system, eq. <a class="reference internal" href="#equation-mm-1d">(10.41)</a>, we can recast recast the <span class="math notranslate nohighlight">\(P\)</span>- and <span class="math notranslate nohighlight">\(B\)</span>-components of the incremental momentum equation and the incremental Poisson equation in the following linear <span class="math notranslate nohighlight">\(6\times 6\)</span> differential system</p>
+<div class="math notranslate nohighlight" id="equation-mm-12d">
+<span class="eqno">(10.56)<a class="headerlink" href="#equation-mm-12d" title="Permalink to this equation">#</a></span>\[
+\begin{align}
+&amp; \dot{\bb{y}}_{n,m}(x,t) = \bb{A}_n(x)\,\bb{y}_{n,m}(x,t) - \bb{q}_{n,m}(x,t)
+\end{align}
+\]</div>
+<p>where <span class="math notranslate nohighlight">\(\bb{y}_{n,m}\)</span> is the so called spheroidal <span class="math notranslate nohighlight">\(6\)</span>-vector solution and <span class="math notranslate nohighlight">\(\bb{q}_{n,m}\)</span> accounts for the dishomogeneous terms resulting from loading densities and earthquake forcings</p>
+<div class="math notranslate nohighlight" id="equation-mm-13d">
+<span class="eqno">(10.57)<a class="headerlink" href="#equation-mm-13d" title="Permalink to this equation">#</a></span>\[\begin{split}
+\bb{y}_{n,m} = \left(\begin{matrix} U_{n,m} \\ V_{n,m} \\ \loc\Psi_{n,m} \\ R_{n,m} \\ S_{n,m} \\ Q_{n,m} \end{matrix}\right) \qquad \bb{q}_{n,m} = -\rho_{n,m}^I\,\left(\begin{matrix} 0 \\ 0 \\ 0 \\ g_0 \\ 0 \\ c \end{matrix}\right) + \left(\begin{matrix} 0 \\ 0 \\ 0 \\ f_{n,m}^P \\ f_{n,m}^B \\ 0 \end{matrix}\right) 
+\end{split}\]</div>
+<p>and <span class="math notranslate nohighlight">\(\bb{A}_n\)</span> is the following <span class="math notranslate nohighlight">\(6\times 6\)</span>-matrix</p>
+<div class="math notranslate nohighlight" id="equation-mm-14d">
+<span class="eqno">(10.58)<a class="headerlink" href="#equation-mm-14d" title="Permalink to this equation">#</a></span>\[\begin{split}
+\bb{A}_n = \left(\begin{matrix} -\frac{2\,\lambda}{x\,\beta} &amp; \frac{\gamma_n\,\lambda}{x\,\beta} &amp; 0 &amp; \frac{1}{\beta} &amp; 0 &amp; 0 \\
+-\frac{\gamma_n}{x} &amp; \frac{1}{x} &amp; 0 &amp; 0 &amp; \frac{1}{\mu} &amp; 0 \\
+-C\,\varrho_0 &amp; 0 &amp; -\frac{n+1}{x} &amp; 0 &amp; 0 &amp; 1 
+\\
+\frac{4\,\big(3\,\kappa\,\mu/\beta-\varrho_0\,g_0\,x\big)}{x^2} &amp; \frac{\gamma_n\,\big(\varrho_0\,g_0 \,x-6\,\kappa\,\mu/\beta\big)}{x^2} &amp; -\frac{\varrho_0\,(n+1)}{x} &amp; -\frac{4\,\mu}{x\,\beta} &amp; \frac{\gamma_n}{x} &amp; \varrho_0 \\
+ \frac{\gamma_n\,\big(\varrho_0\,g_0 \,x-6\,\kappa\,\mu/\beta\big)}{x^2} &amp; \frac{2\,\mu\,\big(\gamma_n^2\,(1+\lambda/\beta)-1\big)}{x^2} &amp; \frac{\gamma_n\,\varrho_0}{x} &amp; -\frac{\gamma_n\,\lambda}{x\,\beta} &amp; -\frac{3}{x} &amp; 0 \\
+-\frac{C\,\varrho_0\,(n+1)}{x} &amp; \frac{C\,\varrho_0\,\gamma_n}{x} &amp; 0 &amp; 0 &amp; 0 &amp; \frac{n-1}{x}
+\end{matrix}\right)
+\end{split}\]</div>
+<p>Similar to the toroidal solution, we can define the spheroidal propagator <span class="math notranslate nohighlight">\(6\times 6\)</span>-matrix</p>
+<div class="math notranslate nohighlight" id="equation-mm-15d">
+<span class="eqno">(10.59)<a class="headerlink" href="#equation-mm-15d" title="Permalink to this equation">#</a></span>\[
+\begin{align}
+&amp; \frac{\partial \sb{\Pi}_n(x,x_0)}{\partial x} = \bb{A}_n(x)\,\sb{\Pi}_n(x,x_0)
+\qquad\mathrm{with}\qquad \sb{\Pi}_n(x_0,x_0) = \bb{1}
+\end{align}
+\]</div>
+<p>and show that</p>
+<div class="math notranslate nohighlight" id="equation-mm-16d">
+<span class="eqno">(10.60)<a class="headerlink" href="#equation-mm-16d" title="Permalink to this equation">#</a></span>\[
+\bb{y}_{n,m}(x,t) = \bb{y}_{n,m}^h(x,t) - \bb{w}_{n,m}(x,t)
+\]</div>
+<p>solve the original dishomogeneous system, eq. <a class="reference internal" href="#equation-mm-12d">(10.56)</a>.</p>
+<p>We note that, without forcing, the homogeneous solution is continuous across the internal interfaces of the solid Earth model because of the continuity of the displacement, of incremental traction, of the local incremental potential and of the variable <span class="math notranslate nohighlight">\(Q_{n,m}\)</span>.  In this respect, the spheroidal propagator matrix is also continuous across the internal interfaces of the solid Earth model.</p>
+</div>
+<section id="spheroidal-earth-surface-boundary-conditions">
+<h4><span class="section-number">10.3.2.1. </span>Spheroidal Earth surface boundary conditions<a class="headerlink" href="#spheroidal-earth-surface-boundary-conditions" title="Permalink to this headline">#</a></h4>
+<div class="full-width docutils">
+<p>Similar to the toroidal deformations, the techniques of the propagator matrix can be used for propagating the spheroidal vector to the Earth surface, where we can implement the Earth surface boundary conditions. We will thus propagate the spheroidal <span class="math notranslate nohighlight">\(6\)</span>-vector up to just below the Earth surface (at <span class="math notranslate nohighlight">\(x=a^-\)</span>) and, according to the discussion of <a class="reference internal" href="#sec-m-boundary"><span class="std std-numref">Lecture 10.2.1</span></a> <a class="reference internal" href="#sec-m-boundary"><span class="std std-ref">Internal and Earth surface boundary conditions</span></a>, eq. <a class="reference internal" href="#equation-mm-21q">(10.31)</a>, we write</p>
+<div class="math notranslate nohighlight" id="equation-mm-17d">
+<span class="eqno">(10.61)<a class="headerlink" href="#equation-mm-17d" title="Permalink to this equation">#</a></span>\[\begin{split}
+\left(\begin{matrix}
+R_{n,m}(a^-,t) \\
+S_{n,m}(a^-,t) \\
+Q_{n,m}(a^-,t)
+\end{matrix}\right)
+= \bb{P}_2\,\bb{y}_{n,m}(a^-,t) = \bb{b}_{n,m}(t)
+\end{split}\]</div>
+<p>where <span class="math notranslate nohighlight">\(\bb{P}_2\)</span> is the projector  <span class="math notranslate nohighlight">\(3\times 6\)</span>-matrix for the forth, fifth and sixth components of the spheroidal <span class="math notranslate nohighlight">\(6\)</span>-vector solution</p>
+<div class="math notranslate nohighlight" id="equation-mm-18d">
+<span class="eqno">(10.62)<a class="headerlink" href="#equation-mm-18d" title="Permalink to this equation">#</a></span>\[\begin{split}
+\bb{P}_2 = \left(\begin{matrix} 0 &amp; 0 &amp; 0 &amp; 1 &amp; 0 &amp; 0  \\  0 &amp; 0 &amp; 0 &amp; 0 &amp; 1 &amp; 0 \\  0 &amp; 0 &amp; 0 &amp; 0 &amp; 0 &amp; 1 \end{matrix}\right)
+\end{split}\]</div>
+<p>and <span class="math notranslate nohighlight">\(\bb{b}\)</span> is the <span class="math notranslate nohighlight">\(3\)</span>-vector collecting the Earth surface boundary condition</p>
+<div class="math notranslate nohighlight" id="equation-mm-18d-plus">
+<span class="eqno">(10.63)<a class="headerlink" href="#equation-mm-18d-plus" title="Permalink to this equation">#</a></span>\[
+\bb{b}_{n,m}(t) = \phi_{n,m}^S(a,t)\,\bb{b}_n^L+ \big(\phi_{n,m}^{T}(a,t)+\phi_{n,m}^{C}(a,t)\big)\,\bb{b}_n^T 
+\]</div>
+<p>with</p>
+<div class="math notranslate nohighlight" id="equation-mm-19d">
+<span class="eqno">(10.64)<a class="headerlink" href="#equation-mm-19d" title="Permalink to this equation">#</a></span>\[\begin{split}
+\bb{b}_n^L = \frac{2\,n+1}{a}\,\left(\begin{matrix} \frac{g_0(a)}{c} \\ 0 \\ 1\end{matrix}\right) \qquad \bb{b}_n^T = \frac{2\,n+1}{a}\,\left(\begin{matrix} 0 \\ 0 \\ 1\end{matrix}\right)
+\end{split}\]</div>
+<p>In particular, making use of eq. <a class="reference internal" href="#equation-mm-10d">(10.50)</a>, we can write</p>
+<div class="math notranslate nohighlight" id="equation-mm-20d">
+<span class="eqno">(10.65)<a class="headerlink" href="#equation-mm-20d" title="Permalink to this equation">#</a></span>\[
+\bb{P}_2\,\sb{\Pi}_n(a,x_0)\,\bb{y}_{n,m}(x_0,t) = \bb{P}_2\, \bb{w}_{n,m}(a,t) + \bb{b}_{n,m}(t)
+\]</div>
+<p>that is a set of three equations that can be used for constraining three of the six components of the Cauchy datum <span class="math notranslate nohighlight">\(\bb{y}_{n,m}(x_0,t)\)</span>.</p>
+<p>We note that internal loading and earthquakes will characterize the spheroidal perturbations through the dishomogeneous solution <span class="math notranslate nohighlight">\(\bb{w}_{n,m}\)</span>, while surface loading and tidal and centrifugal forcings will characterize it through the implementation of the Earth surface boundary condition. It is also noteworthy to notice that centrifugal and tidal forcings behaves similarly, but for the fact that they may have different values of the spherical harmonic coefficients.</p>
+</div>
+</section>
+</section>
+</section>
+<section id="core-mantle-boundary-cmb-conditions">
+<h2><a class="toc-backref" href="#id13"><span class="section-number">10.4. </span>Core-mantle boundary (CMB) conditions</a><a class="headerlink" href="#core-mantle-boundary-cmb-conditions" title="Permalink to this headline">#</a></h2>
+<div class="full-width docutils">
+<p>For the sake of simplicity we will assume that the Earth core is an inviscid fluid, thus neglecting the fact that the inner core is actyually solid and that the outer core is a viscous fluid. This is reasonable considering that the inner and outer cores have very low viscosities <span class="math notranslate nohighlight">\(\eta\)</span> and, so, shear stress can be neglected: in the fluid outer core because the viscosity is low and so deviatoric viscous stress are small; and in the solid inner core because the elastic deviatoric stress relax in short times considering that the smallness of the Maxwell time <span class="math notranslate nohighlight">\(\tau_\mathrm{m}=\eta/\mu\)</span> and the remaining deviatoric viscous stress are small as in the case of the outer fluid core. Within the elastic framework that we are considering now, this means that we can set to zero the shear modulus</p>
+<div class="math notranslate nohighlight" id="equation-mm-1cmb">
+<span class="eqno">(10.66)<a class="headerlink" href="#equation-mm-1cmb" title="Permalink to this equation">#</a></span>\[
+\mu = 0
+\]</div>
+<p>which simplifies the Hooke law as follows</p>
+<div class="math notranslate nohighlight" id="equation-mm-2cmb">
+<span class="eqno">(10.67)<a class="headerlink" href="#equation-mm-2cmb" title="Permalink to this equation">#</a></span>\[
+\mat\sb{\sigma} = \kappa\,\chi\,\bb{1}
+\]</div>
+<p>In this respect, the inviscid fluid only reacts through isotropic stresses.</p>
+<p>Within these assumption, no shear stress can be transitted to the mantle from the core and, so, the (tangential) <span class="math notranslate nohighlight">\(B\)</span>- and <span class="math notranslate nohighlight">\(C\)</span>-components of the incremental traction <span class="math notranslate nohighlight">\(\mat\bb{t}\)</span> are zero at the CMB, Also, the solid mantle is free to slip over the below CMB boundary, which makes the (tangential) <span class="math notranslate nohighlight">\(B\)</span>- and <span class="math notranslate nohighlight">\(C\)</span>-components of the displacement <span class="math notranslate nohighlight">\(\bb{u}\)</span> unconstrained.</p>
+</div>
+<section id="toroidal-cmb-conditions">
+<h3><a class="toc-backref" href="#id14"><span class="section-number">10.4.1. </span>Toroidal CMB conditions</a><a class="headerlink" href="#toroidal-cmb-conditions" title="Permalink to this headline">#</a></h3>
+<div class="full-width docutils">
+<p>Within these assumptions and assuming that there are earthquake forcings within the core, the <span class="math notranslate nohighlight">\(C\)</span>- component of the incremental momentum equation is already solved for any value of <span class="math notranslate nohighlight">\(W_{n,m}\)</span> and <span class="math notranslate nohighlight">\(T_{n,m}\)</span> because it is multiplied by the shear modulus, that is zero in the present case.</p>
+<p>In this respect, denoting with <span class="math notranslate nohighlight">\(b\)</span> the core radius, we can already write the toroidal <span class="math notranslate nohighlight">\(2\)</span>-vector at <span class="math notranslate nohighlight">\(x_0=b\)</span> as follows</p>
+<div class="math notranslate nohighlight" id="equation-mm-3cmb">
+<span class="eqno">(10.68)<a class="headerlink" href="#equation-mm-3cmb" title="Permalink to this equation">#</a></span>\[\begin{split}
+\bb{y}_{n,m}(b,t) = \left(\begin{matrix} W_{n,m}(b,t) \\ 0 \end{matrix}\right) = \bb{J}_n(b)\,\bb{C}(t)
+\end{split}\]</div>
+<p>where <span class="math notranslate nohighlight">\(W_{n,m}(b,t)\)</span> is an arbitrary time-dependent constant of integration that we shall determine using the Earth surface boundary conditions. In the perspective of developing a formalism common with the spheroidal perturbations, we have also defined the so-called CMB <span class="math notranslate nohighlight">\(2\times 1\)</span>-matrix <span class="math notranslate nohighlight">\(\bb{J}_n\)</span> and the <span class="math notranslate nohighlight">\(1\)</span>-vector <span class="math notranslate nohighlight">\(\bb{C}\)</span> collecting the constant of integration</p>
+<div class="math notranslate nohighlight" id="equation-mm-3cmb-plus">
+<span class="eqno">(10.69)<a class="headerlink" href="#equation-mm-3cmb-plus" title="Permalink to this equation">#</a></span>\[\begin{split}
+\bb{J}_n(b) = \left(\begin{matrix} 1 \\ 0 \end{matrix}\right)
+\qquad \bb{C}(t) = \left(\begin{matrix} W_{n,m}(b,t) \end{matrix}\right)
+\end{split}\]</div>
+<p>In view of the solution of the toroidal differential system expressed in terms of the Cauchy datum discussed in  <a class="reference internal" href="#sec-m-toroidal"><span class="std std-numref">Lecture 10.3.1</span></a> <a class="reference internal" href="#sec-m-toroidal"><span class="std std-ref">Toroidal differential system</span></a>, we can now use the above CMB conditions to represent the Cauchy datum although we have not yet fully specified it. In fact, the toroidal CMB condition depends on the one constant of integration. On the other hand, jointly using the Earth surface boundary conditions, we dispose of an additional equation which thus can be used to obatin the remaing constant of integration. In other words, thanks to the joint use of the CMB and Earth surface conditions, we can determine the two unknowns of the Cauchy datum and, so, fully determine the solution of the toroidal problem.</p>
+<div class="math notranslate nohighlight" id="equation-mm-3cmb-plus1">
+<span class="eqno">(10.70)<a class="headerlink" href="#equation-mm-3cmb-plus1" title="Permalink to this equation">#</a></span>\[
+\bb{C}(t) = \big(\bb{P}_2\,\sb{\Pi}_n(a,b)\,\bb{J}_n(b)\big)^{-1}\,\bb{P}_2\,\bb{w}_{n,m}(a,t)
+\]</div>
+<p>with</p>
+<div class="math notranslate nohighlight" id="equation-mm-3cmb-plus2">
+<span class="eqno">(10.71)<a class="headerlink" href="#equation-mm-3cmb-plus2" title="Permalink to this equation">#</a></span>\[
+\bb{w}_{n,m}(a,t) = \int_b^a \sb{\Pi}_n(a,x)\,\bb{q}_{n,m}(x,t)\,\md x
+\]</div>
+</div>
+</section>
+<section id="spheroidal-cmb-conditions">
+<h3><a class="toc-backref" href="#id15"><span class="section-number">10.4.2. </span>Spheroidal CMB conditions</a><a class="headerlink" href="#spheroidal-cmb-conditions" title="Permalink to this headline">#</a></h3>
+<div class="full-width docutils">
+<p>Within the assumption of an inviscid fluid core and assuming that there are no loading density and earthquake forcing within the core, the <span class="math notranslate nohighlight">\(P\)</span>- and <span class="math notranslate nohighlight">\(B\)</span>-components of the incremental momentum equation simplify into</p>
+<div class="math notranslate nohighlight" id="equation-mm-4cmb">
+<span class="eqno">(10.72)<a class="headerlink" href="#equation-mm-4cmb" title="Permalink to this equation">#</a></span>\[\begin{split}
+\begin{align}
+&amp; \nabla_n^2\loc\Psi_{n,m} = \frac{C\,\dot{\varrho}_0}{g_0}\,\loc\Psi_{n,m} -C\,(\dot{\varrho}_0\,\loc U_{n,m} + \varrho_0\,\chi_{n,m}) \\
+&amp; \frac{1}{\varrho_0}\,\frac{\partial \big(\kappa\,\chi_{n,m}\big)}{\partial x} + \chi_{n,m}\,g_0-\frac{\partial \big(g_0\,\loc U_{n,m}\big)}{\partial x} = 0
+\\
+&amp; \frac{\kappa\,\chi_{n,m}}{\varrho_0}-g_0\,\loc U_{n,m} = 0
+\end{align}
+\end{split}\]</div>
+<p>but for multypling factors and with <span class="math notranslate nohighlight">\(\loc U_{n,m}\)</span> being the departure of the radial displacement from the geoid perturbation</p>
+<div class="math notranslate nohighlight" id="equation-mm-5cmb">
+<span class="eqno">(10.73)<a class="headerlink" href="#equation-mm-5cmb" title="Permalink to this equation">#</a></span>\[
+\loc U_{n,m} = U_{n,m}-\left(-\frac{\loc\Psi_{n,m}}{g_0}\right)
+\]</div>
+<p>By subtracting the radial derivative of the <span class="math notranslate nohighlight">\(B\)</span>-component to the <span class="math notranslate nohighlight">\(P\)</span>-component,  we can obtain the following constrain on the relative volume variations</p>
+<div class="math notranslate nohighlight" id="equation-mm-6cmb">
+<span class="eqno">(10.74)<a class="headerlink" href="#equation-mm-6cmb" title="Permalink to this equation">#</a></span>\[
+\begin{align}
+&amp; \left(g_0+\frac{\kappa}{\varrho_0^2}\,\dot{\varrho}_0\right)\,\chi_{n,m} 
+= \frac{\varrho_0^2}{\kappa}\,\alpha\,\chi_{n,m} = 0
+\end{align}
+\]</div>
+<p>with <span class="math notranslate nohighlight">\(\alpha\)</span> being the so called compositional coefficient</p>
+<div class="math notranslate nohighlight" id="equation-mm-7cmb">
+<span class="eqno">(10.75)<a class="headerlink" href="#equation-mm-7cmb" title="Permalink to this equation">#</a></span>\[
+\alpha = \dot{\varrho}_0 + \frac{g_0\,\varrho_0^2}{\kappa}
+\]</div>
+</div>
+<section id="compositional-stratifications-alpha-neq0">
+<h4><span class="section-number">10.4.2.1. </span>Compositional stratifications <span class="math notranslate nohighlight">\(\alpha\neq0\)</span><a class="headerlink" href="#compositional-stratifications-alpha-neq0" title="Permalink to this headline">#</a></h4>
+<div class="full-width docutils">
+<p>In the case of <span class="math notranslate nohighlight">\(\alpha\neq 0\)</span>, we have that <span class="math notranslate nohighlight">\(\chi_{n,m}=0\)</span> and <span class="math notranslate nohighlight">\(R_{n,m} = \kappa\,\chi_{n,m} = 0\)</span>. Furthermore, from eq. <a class="reference internal" href="#equation-mm-5cmb">(10.73)</a>, we also have the the radial displacement coincides with the geoid perturbations, <span class="math notranslate nohighlight">\(\loc U_{n,m}=0\)</span> and <span class="math notranslate nohighlight">\(U_{n,m}=-\loc\Psi_{n,m}/g_0\)</span>. The incremental Poisson equation thus becomes</p>
+<div class="math notranslate nohighlight" id="equation-mm-8cmb">
+<span class="eqno">(10.76)<a class="headerlink" href="#equation-mm-8cmb" title="Permalink to this equation">#</a></span>\[
+\nabla_n^2\loc\Psi_{n,m} = \frac{C\,\dot{\varrho}_0}{g_0}\,\loc\Psi_{n,m}
+\]</div>
+<p>As we can understand, strictly speaking, the local incremental total potential is the only perturbations allowed with the compositional core. Indeed, radial displacement are constrained to coincides with the geoid perturbation and the core cannot exercts any traction on the solid mantle. This conclusion is not physically sound and has been pointed out by Longmann (1963) and name the Longman paradox. This paradox has been debated for several decades starting from the seventies and several solution has been proposed.</p>
+</div>
+</section>
+<section id="compressional-stratifications-alpha-0">
+<h4><span class="section-number">10.4.2.2. </span>Compressional stratifications <span class="math notranslate nohighlight">\(\alpha=0\)</span><a class="headerlink" href="#compressional-stratifications-alpha-0" title="Permalink to this headline">#</a></h4>
+<div class="full-width docutils">
+<p>In the case of <span class="math notranslate nohighlight">\(\alpha=0\)</span>, instead, the relative volume variations <span class="math notranslate nohighlight">\(\chi_{n,m}\)</span> are not constrained to zero and depends on the departure of the vertical displacement and the geoid perturbation</p>
+<div class="math notranslate nohighlight" id="equation-mm-9cmb">
+<span class="eqno">(10.77)<a class="headerlink" href="#equation-mm-9cmb" title="Permalink to this equation">#</a></span>\[
+R_{n,m} = \kappa\,\chi_{n,m} = \varrho_0\,g_0\,\loc U_{n,m}
+\]</div>
+<p>Furthermore, the Poisson equation yield the same equation of the case <span class="math notranslate nohighlight">\(\alpha\neq 0\)</span></p>
+<div class="math notranslate nohighlight" id="equation-mm-10cmb">
+<span class="eqno">(10.78)<a class="headerlink" href="#equation-mm-10cmb" title="Permalink to this equation">#</a></span>\[
+\nabla_n^2\loc\Psi_{n,m} = \frac{C\,\dot{\varrho}_0}{g_0}\,\loc\Psi_{n,m}
+\]</div>
+<p>We thus can solve the above version of the Poisson equation to find <span class="math notranslate nohighlight">\(\loc\Psi_{n,m}\)</span>. Just because it is an homogeneous second-order equation that we have to solve at Earth centre too, we only keep the regular solution</p>
+<div class="math notranslate nohighlight" id="equation-mm-11cmb">
+<span class="eqno">(10.79)<a class="headerlink" href="#equation-mm-11cmb" title="Permalink to this equation">#</a></span>\[
+\loc\Psi_{n,m}(x,t) = A(t)\,\Psi_{n,m}(x)
+\]</div>
+<p>with <span class="math notranslate nohighlight">\(A\)</span> being a time-dependent constant of integration and <span class="math notranslate nohighlight">\(\Psi_{n,m}\)</span> being the regular independent solution. In the simple case of a core with an homogeneous density, <span class="math notranslate nohighlight">\(\dot{\varrho}_0=0\)</span>, it reads</p>
+<div class="math notranslate nohighlight" id="equation-mm-12cmb">
+<span class="eqno">(10.80)<a class="headerlink" href="#equation-mm-12cmb" title="Permalink to this equation">#</a></span>\[
+\Psi_{n,m}(x) = x^n
+\]</div>
+</div>
+<div class="full-width admonition">
+<p class="admonition-title">General core denisty profile</p>
+<p>In the case in which the core density varies with <span class="math notranslate nohighlight">\(r\)</span>, we can use eq. () as solution in a small neighborhood of the Earth centre and integrate numerically starting from it.   MAKE SYSTEM and starting conditions</p>
+</div>
+<div class="full-width docutils">
+<p>The other constant of integration comes from the fact that the B-component of the displacement, <span class="math notranslate nohighlight">\(V_{n,m}\)</span>, is free and that the discrepancy radial displacement is not constrained although linked to the radial traction. We thus can write</p>
+<div class="math notranslate nohighlight" id="equation-mm-13cmb">
+<span class="eqno">(10.81)<a class="headerlink" href="#equation-mm-13cmb" title="Permalink to this equation">#</a></span>\[\begin{split}
+y_{n,m}(b,t)=\left(\begin{matrix} -A(t)\,\frac{\Psi_{n,m}(b)}{g_0(b)} +\loc U_{n,m}(b,t) \\ V_{n,m}(b,t) \\ A(t)\,\Psi_{n,m}(b) \\ \varrho_0\,g_0\,\loc U_{n,m}(b,t) \\ 0 \\ A(t)\,q_{n,m}(b) + C\,\varrho_0(b)\,\loc U_{n,m}(b,t)\end{matrix}\right) = \bb{J}_n(b)\,\bb{C}(t)
+\end{split}\]</div>
+<p>where <span class="math notranslate nohighlight">\(\bb{J}_n\)</span> is a <span class="math notranslate nohighlight">\(6\times 3\)</span>-matrix and <span class="math notranslate nohighlight">\(\bb{C}\)</span> is a <span class="math notranslate nohighlight">\(3\)</span>-vector collecting the constant of integration.</p>
+<div class="math notranslate nohighlight" id="equation-mm-14cmb">
+<span class="eqno">(10.82)<a class="headerlink" href="#equation-mm-14cmb" title="Permalink to this equation">#</a></span>\[\begin{split}
+\bb{J}_n(b) = \left(\begin{matrix} -\frac{\Psi_{n,m}(b)}{g_0(b)} &amp; 0 &amp;  1 \\ 0 &amp; 1 &amp; 0  \\ \Psi_{n,m}(b) &amp; 0 &amp; 0 \\ 0 &amp; 0 &amp; \varrho_0(b)\,g_0(b) \\ 0 &amp; 0 &amp; 0 \\ q_{n,m}(b) &amp; 0 &amp; C\,\varrho_0(b)\end{matrix}\right) 
+\qquad \bb{C}(t) = \left(\begin{matrix} A(t) \\ \loc U_{n,m}(b,t) \\ V_{n,m}(b,t)\end{matrix} \right)
+\end{split}\]</div>
+<p>and</p>
+<div class="math notranslate nohighlight" id="equation-mm-15cmb">
+<span class="eqno">(10.83)<a class="headerlink" href="#equation-mm-15cmb" title="Permalink to this equation">#</a></span>\[
+q_{n,m} =  \dot{\Psi}_{n,m} + \left(\frac{n+1}{x}-\frac{C\,\varrho_0}{g_0}\right)\,\Psi_{n,m}
+\]</div>
+<p>In view of the solution of the spheroidal differential system expressed in terms of the Cauchy datum  discussed in  <a class="reference internal" href="#sec-m-spheroidal"><span class="std std-numref">Section 10.3.2</span></a> <a class="reference internal" href="#sec-m-spheroidal"><span class="std std-ref">Spheroidal differential system</span></a>, we can now use the above CMB conditions to represent the Cauchy datum although we have not yet fully specified it. In fact, the spheroidal CMB conditions depends on the three constants of integrations <span class="math notranslate nohighlight">\(\bb{C}\)</span>. On the other hand, jointly using the Earth surface boundary conditions, we dispose of an additional set of three equation which thus can be used to obatin <span class="math notranslate nohighlight">\(\bb{C}\)</span>. In other words, thanks to the joint use of the CMB and Earth surface conditions, we can determine the six unknowns of the Cauchy datum and, so, fully determine the solution of the spheroidal problem.</p>
+<div class="math notranslate nohighlight" id="equation-mm-15cmb-plus">
+<span class="eqno">(10.84)<a class="headerlink" href="#equation-mm-15cmb-plus" title="Permalink to this equation">#</a></span>\[
+\bb{C}(t) = \big(\bb{P}_2\,\sb{\Pi}_n(a,b)\,\bb{J}_n(b)\big)^{-1}\,\big(\bb{P}_2\,\bb{w}_{n,m}(a,t)+\bb{b}_{n,m}(t)\big)
+\]</div>
+<p>with</p>
+<div class="math notranslate nohighlight" id="equation-mm-15cmb-plus1">
+<span class="eqno">(10.85)<a class="headerlink" href="#equation-mm-15cmb-plus1" title="Permalink to this equation">#</a></span>\[
+\bb{w}_{n,m}(a,t) = \int_b^a \sb{\Pi}_n(a,x)\,\bb{q}_{n,m}(x,t)\,\md x
+\]</div>
+</div>
+</section>
+</section>
+</section>
+<section id="surface-loading-and-tidal-forcings">
+<h2><a class="toc-backref" href="#id16"><span class="section-number">10.5. </span>Surface loading and tidal forcings</a><a class="headerlink" href="#surface-loading-and-tidal-forcings" title="Permalink to this headline">#</a></h2>
+<div class="full-width docutils">
+<p>As it results from the results of the previous sections, toroidal deformations are triggered only by earthquake forcings but not by loadings and tidal and centrifugal forcings. Let us thus forget earthquake forcings and internal loadings for a while and focus on the only spheroidal perturbations and, in particular, on the radial and tangential spheroidal displacements and the total potential perturbation</p>
+<div class="math notranslate nohighlight" id="equation-mm-1sol">
+<span class="eqno">(10.86)<a class="headerlink" href="#equation-mm-1sol" title="Permalink to this equation">#</a></span>\[\begin{split}
+\left(\begin{matrix} 
+U_{n,m}(x,t)
+\\
+V_{n,m} (x,t)
+\\
+\loc\Psi_{n,m}(x,t)
+\end{matrix}\right) = \bb{P}_1\,\bb{y}_{n,m}(x,t) = \bb{Z}_n(x)\,\bb{b}_n(t) = \bb{Z}_n(x)\,\bb{b}_n^L\,\phi_{n,m}^S(a,t) +  \bb{Z}_n(x)\,\bb{b}_n^T\,\big(\phi_{n,m}^{C}(a,t)+\phi_{n,m}^{T}(a,t)\big)
+\end{split}\]</div>
+<p>where <span class="math notranslate nohighlight">\(\bb{P}_1\)</span> is the projector  <span class="math notranslate nohighlight">\(3\times 6\)</span>-matrix for the first, second and third components of the spheroidal <span class="math notranslate nohighlight">\(6\)</span>-vector</p>
+<div class="math notranslate nohighlight" id="equation-mm-2sol">
+<span class="eqno">(10.87)<a class="headerlink" href="#equation-mm-2sol" title="Permalink to this equation">#</a></span>\[\begin{split}
+\bb{P}_1 = \left(\begin{matrix} 1 &amp; 0 &amp; 0 &amp; 0 &amp; 0 &amp; 0  \\  0 &amp; 1 &amp; 0 &amp; 0 &amp; 0 &amp; 0 \\  0 &amp; 0 &amp; 1 &amp; 0 &amp; 0 &amp; 0 \end{matrix}\right)
+\end{split}\]</div>
+<p>and</p>
+<div class="math notranslate nohighlight" id="equation-mm-3sol">
+<span class="eqno">(10.88)<a class="headerlink" href="#equation-mm-3sol" title="Permalink to this equation">#</a></span>\[
+\bb{Z}_n(x) =  \bb{P}_1\,\bb{Q}_n(x)\,\big(\bb{P}_2\,\bb{Q}_n(a)\big)^{-1}\qquad \bb{Q}_n(x) = \sb{\Pi}_n(x,b)\,\bb{J}_n(b)
+\]</div>
+<p>Let us now recast eq. <a class="reference internal" href="#equation-mm-1sol">(10.86)</a> as follows</p>
+<div class="math notranslate nohighlight" id="equation-mm-1sol-bis">
+<span class="eqno">(10.89)<a class="headerlink" href="#equation-mm-1sol-bis" title="Permalink to this equation">#</a></span>\[\begin{split}
+\begin{align}
+&amp; U_{n,m}(x,t) = -g_0(x)\,\left(\frac{a}{x}\right)^n\,\big[\bb{Z}_n(x)\,\bb{b}_n^L]_1\,\loc G_{n,m}^S(x,t) -g_0(x)\,\left(\frac{a}{x}\right)^n\,\big[\bb{Z}_n(x)\,\bb{b}_n^T]_1\,\big(\loc G_{n,m}^{T}(x,t)+\loc G_{n,m}^{C}(x,t)\big)
+\\
+&amp; V_{n,m}(x,t) = -g_0(x)\,\left(\frac{a}{x}\right)^n\,\big[\bb{Z}_n(x)\,\bb{b}_n^L]_2\,\loc G_{n,m}^S(x,t) -g_0(x)\,\left(\frac{a}{x}\right)^n\,\big[\bb{Z}_n(x)\,\bb{b}_n^T]_2\,\big(\loc G_{n,m}^{T}(x,t)+\loc G_{n,m}^{C}(x,t)\big)
+\\
+&amp; \loc G_{n,m}(x,t) = \left(\frac{a}{x}\right)^n\,\big[\bb{Z}_n(x)\,\bb{b}_n^L]_3\,\loc G_{n,m}^S(x,t) + \left(\frac{a}{x}\right)^n\,\big[\bb{Z}_n(x)\,\bb{b}_n^T]_3\,\big(\loc G_{n,m}^{T}(x,t)+\loc G_{n,m}^{C}(x,t)\big)
+\end{align}
+\end{split}\]</div>
+<p>where we have introduced the total geoid perturbation <span class="math notranslate nohighlight">\(\loc G\)</span> and the the geoid perturbations associated to surface loads, <span class="math notranslate nohighlight">\(\loc G^S\)</span>, and tidal, <span class="math notranslate nohighlight">\(\loc G^{T}\)</span>, and centrifugal, <span class="math notranslate nohighlight">\(\loc G^{G}\)</span>, forcings</p>
+<div class="math notranslate nohighlight" id="equation-mm-bho">
+<span class="eqno">(10.90)<a class="headerlink" href="#equation-mm-bho" title="Permalink to this equation">#</a></span>\[
+\loc G_{n,m}(x,t) = -\frac{\loc\Psi_{n,m}(x,t)}{g_0(x)}
+\qquad
+\loc G_{n,m}^X(x,t) = -\frac{\phi^X_{n,m}(x,t)}{g_0(x)}
+\]</div>
+<p>with <span class="math notranslate nohighlight">\(X=S,T,C\)</span>, and we have made use of the fact that</p>
+<div class="math notranslate nohighlight" id="equation-mm-6sol">
+<span class="eqno">(10.91)<a class="headerlink" href="#equation-mm-6sol" title="Permalink to this equation">#</a></span>\[
+\phi_{n,m}^{X}(x\leq a,t) = \left(\frac{x}{a}\right)^n\,\phi_{n,m}^{X}(a,t) \qquad x\leq a
+\]</div>
+<p>Within this framework, we can recast eq. <a class="reference internal" href="#equation-mm-1sol-bis">(10.89)</a> in the following compact form</p>
+<div class="math notranslate nohighlight" id="equation-mm-1sol-tris">
+<span class="eqno">(10.92)<a class="headerlink" href="#equation-mm-1sol-tris" title="Permalink to this equation">#</a></span>\[\begin{split}
+\begin{align}
+\left(\begin{matrix} 
+U_{n,m}(x,t)
+\\
+V_{n,m} (x,t)
+\\
+\loc G_{n,m}(x,t)
+\end{matrix}\right) 
+&amp;=\bb{k}_n^L(x)\,\loc G_{n,m}^S(x,t) + \bb{k}_n^T(x)\,\big(\loc G_{n,m}^{T}(x,t) +\loc G_{n,m}^{C}(x,t) \big)
+\end{align}
+\end{split}\]</div>
+<p>where <span class="math notranslate nohighlight">\(\bb{k}^X\)</span> is the array collecting the radial, <span class="math notranslate nohighlight">\(h_n^X\)</span>, tangential, <span class="math notranslate nohighlight">\(l_n^X\)</span>, and gravitational, <span class="math notranslate nohighlight">\(k_n^X\)</span>, Love numbers</p>
+<div class="math notranslate nohighlight" id="equation-mm-8sol">
+<span class="eqno">(10.93)<a class="headerlink" href="#equation-mm-8sol" title="Permalink to this equation">#</a></span>\[\begin{split}
+\bb{k}^X(x) = \left(\begin{matrix} h_n^X(x) \\ l_n^X(x) \\ 1+k_n^X(x)\end{matrix}\right) = \bb{N}_n(x)\,\bb{Z}_n(x)\,\bb{b}_n^X  
+\end{split}\]</div>
+<p>with</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}
+\bb{N}_n(x) = \left(\frac{a}{x}\right)^n\,\left(\begin{matrix} -g_0(x) &amp; 0 &amp; 0 \\ 0 &amp; -g_0(x) &amp; 0 \\ 0 &amp; 0 &amp; 1 \end{matrix}\right)
+\end{split}\]</div>
+<p>We can understand that the Love numbers are adimensional and that radial and tangential displacements are linked to the geoid perturbations due to surface loads and centrifugal and tidal forcings.</p>
+<p>We note that the geoid perturbations due to solid Earth deformation can be obtained as follows</p>
+<div class="math notranslate nohighlight" id="equation-mm-7sol">
+<span class="eqno">(10.94)<a class="headerlink" href="#equation-mm-7sol" title="Permalink to this equation">#</a></span>\[
+\loc G^E_{n,m}(x,t) = -\frac{\loc \phi_{n,m}^E(x,t)}{g_0(x)} = k_n^L(x)\,\loc G_{n,m}^S(x,t) + k_n^T(x)\,\big(\loc G_{n,m}^{C}(x,t)+\loc G_{n,m}^T(x,t)\big)
+\]</div>
+<p>once we removed the direct effects of the surface loading, centrifugal and tidal potentials.</p>
+</div>
+<section id="the-fluid-earth">
+<span id="sec-fluid-earth"></span><h3><a class="toc-backref" href="#id17"><span class="section-number">10.5.1. </span>The Fluid Earth</a><a class="headerlink" href="#the-fluid-earth" title="Permalink to this headline">#</a></h3>
+<div class="full-width docutils">
+<p>Before considering the solution for elastic or viscoelastic Earth models, let us consider the simpler problem of an inviscid fluid Earth subjected to surface loading and tidal and centrifugal forcings. In this case, we can simply apply all the reasoning that we have just made for the case of an inviscid fluid core to the whole Earth and write the spheroidal vector solution at the Earth surface as</p>
+<div class="math notranslate nohighlight" id="equation-mm-1flu">
+<span class="eqno">(10.95)<a class="headerlink" href="#equation-mm-1flu" title="Permalink to this equation">#</a></span>\[
+\bb{y}_{n,m}(a,t) = \bb{J}_n(a)\,\bb{C}(t)
+\]</div>
+<p>Then, by applying the Earth surface boundary conditions, eq. <a class="reference internal" href="#equation-mm-17d">(10.61)</a>, we can write</p>
+<div class="math notranslate nohighlight" id="equation-mm-2flu">
+<span class="eqno">(10.96)<a class="headerlink" href="#equation-mm-2flu" title="Permalink to this equation">#</a></span>\[
+\bb{P}_2\,\bb{J}_n(a)\,\bb{C}(t) = \bb{b}_{n,m}(t)
+\]</div>
+<p>In the fluid case, the <span class="math notranslate nohighlight">\(3\times 3\)</span>-matrix is not invertible. Nevertheless the above system of equations can be solved for the forcings here considered. They indeed do not involve tangential stress. In particular, we can write eq. <a class="reference internal" href="#equation-mm-2flu">(10.96)</a> as follows</p>
+<div class="math notranslate nohighlight" id="equation-mm-3flu">
+<span class="eqno">(10.97)<a class="headerlink" href="#equation-mm-3flu" title="Permalink to this equation">#</a></span>\[
+\frac{a}{2\,n+1}\,\big(q_n(a)\,\bb{b}_n^T\,A(t) + c\,\varrho_0(a)\,\bb{b}_n^I\,\loc U_{n,m}(a,t)\big) = \phi_{n,m}^S(a,t)\,\bb{b}_n^I + \big(\phi_{n,m}^{C}(a,t)+\phi_{n,m}^{T}(a,t)\big)\,\bb{b}_n^T
+\]</div>
+<p>and, so, determine <span class="math notranslate nohighlight">\(A\)</span> and <span class="math notranslate nohighlight">\(\loc U_{n,m}\)</span> at the Earth surface$</p>
+<div class="math notranslate nohighlight" id="equation-mm-4flu">
+<span class="eqno">(10.98)<a class="headerlink" href="#equation-mm-4flu" title="Permalink to this equation">#</a></span>\[
+\begin{align}
+&amp; A(t) =  \frac{2\,n+1}{a\,q_n(a)}\,\big(\phi_{n,m}^{C}(a,t)+\phi_{n,m}^{T}(a,t)\big)
+\qquad \loc U_{n,m}(a,t) = \frac{2\,n+1}{c\,\varrho_0(a)\,a}\,\phi_{n,m}^S(a,t)
+\end{align}
+\]</div>
+<p>The second constant of integration <span class="math notranslate nohighlight">\(V_{n,m}(a)\)</span>, instead, remains undetermined, which means that we cannot predict tangential displacements within the present formalism. Then, we obtain</p>
+<div class="math notranslate nohighlight" id="equation-mm-5flu">
+<span class="eqno">(10.99)<a class="headerlink" href="#equation-mm-5flu" title="Permalink to this equation">#</a></span>\[\begin{split}
+\begin{align}
+&amp; U_{n,m}(a,t) = -\frac{\Psi_n(a)}{g_0(a)}\,A(t) + \loc U_{n,m}(a,t) = \frac{2\,n+1}{c\,\varrho_0(a)\,a}\,\phi_{n,m}^S(a,t) -\frac{\Psi_n(a)}{g_0(a)}\,\frac{2\,n+1}{a\,q_n(a)}\,\big(\phi_{n,m}^{C}(a,t)+\phi_{n,m}^{T}(a,t)\big)
+\\
+&amp; \loc \Psi_{n,m}(a,t) = \Psi_n(a)\,\frac{2\,n+1}{a\,q_n(a)}\,\big(\phi_{n,m}^{C}(a,t)+\phi_{n,m}^{T}(a,t)\big)
+\end{align}
+\end{split}\]</div>
+<p>By comparison with eq. <a class="reference internal" href="#equation-mm-1sol-bis">(10.89)</a>, we thus obtain the following expression for the load and tidal fluid Love numbers at the Earth surface</p>
+<div class="math notranslate nohighlight" id="equation-mm-5flubis">
+<span class="eqno">(10.100)<a class="headerlink" href="#equation-mm-5flubis" title="Permalink to this equation">#</a></span>\[\begin{split}
+\begin{align}
+&amp; h_n^{L,F}(a) = - (2\,n+1)\,\frac{g_0(a)}{c\,\varrho_0(a)\,a}
+\\
+&amp; h_n^{T,F}(a) = (2\,n+1)\,\frac{\Psi_n(a)}{a\,q_n(a)}
+\\
+&amp; 1+k_2^{L,F}(a) = 0 
+\\
+&amp;
+1 + k_2^{T,F}(a) =  (2\,n+1)\,\frac{\Psi_n(a)}{a\,q_n(a)}
+\end{align}
+\end{split}\]</div>
+<p>We note that, within the present framework, we cannot establish the fluid tangential displacements and, so, we cannot determine the tangential load and tidal Love numbers.</p>
+</div>
+<section id="homogeneous-earth-model">
+<h4><span class="section-number">10.5.1.1. </span>Homogeneous Earth model<a class="headerlink" href="#homogeneous-earth-model" title="Permalink to this headline">#</a></h4>
+<div class="full-width docutils">
+<p>For an homogeneous Earth model with constant density <span class="math notranslate nohighlight">\(\varrho_0\)</span>, we have</p>
+<div class="math notranslate nohighlight" id="equation-mm-15flua">
+<span class="eqno">(10.101)<a class="headerlink" href="#equation-mm-15flua" title="Permalink to this equation">#</a></span>\[
+g_0(x) = \frac{c\,\varrho_0\,x}{3} \qquad \Psi_n(x) = x^n  \qquad q_n(x) = 2\,(n-1)\,x^{n-1}
+\]</div>
+<p>and, so, eq. <a class="reference internal" href="#equation-mm-5flubis">(10.100)</a> becomes</p>
+<div class="math notranslate nohighlight" id="equation-mm-5flua">
+<span class="eqno">(10.102)<a class="headerlink" href="#equation-mm-5flua" title="Permalink to this equation">#</a></span>\[\begin{split}
+\begin{align}
+&amp; h_n^{L,F}(a) = - \frac{2\,n+1}{3}
+\\
+&amp; h_n^{T,F}(a) = \frac{2\,n+1}{2\,(n-1)}
+\\
+&amp; 1+k_2^{L,F}(a) = 0
+\\
+&amp; k_2^{T,F}(a) = \frac{3}{2\,(n-1)}
+\end{align}
+\end{split}\]</div>
+</div>
+</section>
+<section id="surface-loadings">
+<h4><span class="section-number">10.5.1.2. </span>Surface loadings<a class="headerlink" href="#surface-loadings" title="Permalink to this headline">#</a></h4>
+<div class="full-width docutils">
+<p>In the case of surface loading and making use of eq. <a class="reference internal" href="#equation-mm-17q">(10.25)</a>, eq. <a class="reference internal" href="#equation-mm-5flu">(10.99)</a> simplifies into</p>
+<div class="math notranslate nohighlight" id="equation-mm-6flua">
+<span class="eqno">(10.103)<a class="headerlink" href="#equation-mm-6flua" title="Permalink to this equation">#</a></span>\[
+\begin{align}
+&amp; U_{n,m}(a,t) = \frac{2\,n+1}{c\,\varrho_0(a)\,a}\,\phi_{n,m}^S(a,t) = -\frac{\sigma_{n,m}^I(t)}{\varrho_0(a)}
+\end{align}
+\]</div>
+<div class="math notranslate nohighlight" id="equation-mm-6flu">
+<span class="eqno">(10.104)<a class="headerlink" href="#equation-mm-6flu" title="Permalink to this equation">#</a></span>\[
+\begin{align}
+&amp; \loc \Psi_{n,m}(a,t) = 0\end{align}
+\]</div>
+<p>Let us now consider the case of an ice shield of height <span class="math notranslate nohighlight">\(h\)</span> and write</p>
+<div class="math notranslate nohighlight" id="equation-mm-7flu">
+<span class="eqno">(10.105)<a class="headerlink" href="#equation-mm-7flu" title="Permalink to this equation">#</a></span>\[
+\sigma^S_{n,m}(t)=\rho_\mathrm{ice}\,h_{n,m}(t)
+\]</div>
+<p>Then</p>
+<div class="math notranslate nohighlight" id="equation-mm-8flu">
+<span class="eqno">(10.106)<a class="headerlink" href="#equation-mm-8flu" title="Permalink to this equation">#</a></span>\[
+U_{n,m}(a,,t) = -\frac{\rho_\mathrm{ice}}{\varrho_0(a)}\,h_{n,m}(t)
+\]</div>
+<p>which is consistent with the Archimede’s principle or the Airy isostatic compensation. It is noteworthy that isostatic compensation implies that the total gravitational potential perturbation is zero and that the Earth surface topography perturbation to surface loads depends only on the initial density at the Earth surface. It does not require the solution of any differential equation.</p>
+</div>
+</section>
+<section id="tidal-and-centrifugal-forcings">
+<h4><span class="section-number">10.5.1.3. </span>Tidal and centrifugal forcings<a class="headerlink" href="#tidal-and-centrifugal-forcings" title="Permalink to this headline">#</a></h4>
+<div class="full-width docutils">
+<p>For tidal and centrifugal forcings, instead, eq. <a class="reference internal" href="#equation-mm-5flu">(10.99)</a>  simplifies into</p>
+<div class="math notranslate nohighlight" id="equation-mm-9flu">
+<span class="eqno">(10.107)<a class="headerlink" href="#equation-mm-9flu" title="Permalink to this equation">#</a></span>\[\begin{split}
+\begin{align}
+&amp; U_{n,m}(a,t) = -\frac{\loc\Psi_{n,m}(a,t)}{g_0(a)}
+\\
+&amp; \loc \Psi_{n,m}(a,t) = \frac{(2\,n+1)\,\Psi_{n}(a)}{a\,q_n(a)}\,\big(\phi_{n,m}^{C}(a,t)+\phi_{n,m}^{T}(a,t)\big)
+\end{align}
+\end{split}\]</div>
+<p>which means that vertical displacements correspond to the geoid perturbations, as we expect that a fluid behaves.</p>
+</div>
+</section>
+<section id="equatorial-flattening">
+<h4><span class="section-number">10.5.1.4. </span>Equatorial flattening<a class="headerlink" href="#equatorial-flattening" title="Permalink to this headline">#</a></h4>
+<div class="full-width docutils">
+<p>Let us now consider the only centrifugal potential and focus only on the degree <span class="math notranslate nohighlight">\(n=2\)</span> perturbations</p>
+<div class="math notranslate nohighlight" id="equation-mm-10flu">
+<span class="eqno">(10.108)<a class="headerlink" href="#equation-mm-10flu" title="Permalink to this equation">#</a></span>\[
+\phi^C_{2,m}(a,t) = \frac{\omega^2(t)\,a^2}{15}\,Y_{2,m}(\vartheta_C(t),\varphi_C(t))
+\]</div>
+<p>In this case, we have</p>
+<div class="math notranslate nohighlight" id="equation-mm-11flu">
+<span class="eqno">(10.109)<a class="headerlink" href="#equation-mm-11flu" title="Permalink to this equation">#</a></span>\[\begin{split}
+\begin{align}
+&amp; U_{2,m}(a,t) = -\frac{\loc\Psi_{2,m}(a,t)}{g_0(a)}
+\\
+&amp; \loc \Psi_{2,m}(a,t) = \frac{\Psi_n(a)}{a\,q_n(a)}\,\frac{\omega^2(t)\,a^2}{3}\,Y_{2,m}(\vartheta_C(t),\varphi_C(t))
+\end{align}
+\end{split}\]</div>
+<p>and the vertical displacement at the Earth surface can be obtained by summing all the spherical harmonic contributions involved</p>
+<div class="math notranslate nohighlight" id="equation-mm-12flu">
+<span class="eqno">(10.110)<a class="headerlink" href="#equation-mm-12flu" title="Permalink to this equation">#</a></span>\[\begin{split}
+\begin{align}
+U(\bb{a},t) &amp;= U_{0,0}(a,t)-\sum_{m=-2}^2\frac{\loc\Psi_{2,m}(a,t)}{g_0(a)}\,Y_n^m(\vartheta,\varphi) 
+\\
+&amp;= U_{0,0}(a,t) - \frac{\Psi_2(a)}{3\,a\,q_2(a)}\,\frac{\omega^2(t)\,a^2}{g_0(a)}\,\sum_{m=-2}^2 Y_{2,m}(\vartheta_C(t),\varphi_C(t))\,Y_{2,m}(\vartheta,\varphi) 
+\end{align}
+\end{split}\]</div>
+<p>Then, making use of the spherical harmonic addition theorem, eq. <a class="reference internal" href="L0_Harmonic_Scalar.html#equation-p-33">(4.35)</a>, for the degree <span class="math notranslate nohighlight">\(n=2\)</span></p>
+<div class="math notranslate nohighlight" id="equation-mm-12flua">
+<span class="eqno">(10.111)<a class="headerlink" href="#equation-mm-12flua" title="Permalink to this equation">#</a></span>\[
+\sum_{m=-2}^2 Y_{2,m}(\vartheta_C(t),\varphi_C(t))\,Y_{2,m}(\vartheta,\varphi) = 5\,P_2(\cos\gamma(t))
+\]</div>
+<p>eq. <a class="reference internal" href="#equation-mm-12flu">(10.110)</a> becomes</p>
+<div class="math notranslate nohighlight" id="equation-mm-13flu">
+<span class="eqno">(10.112)<a class="headerlink" href="#equation-mm-13flu" title="Permalink to this equation">#</a></span>\[
+\begin{align}
+U(\bb{a},t) = U(a,\gamma,t) &amp; = U_{0,0}(a,t) - \frac{5\,\Psi_2(a)}{3\,a\,q_2(a)}\,\frac{\omega^2(t)\,a^2}{g_0(a)}\,P_2(\cos\gamma)
+\end{align}
+\]</div>
+<p>and the difference between the equatorial and polar radius (i.e. the flatteining of the Earth) gives</p>
+<div class="math notranslate nohighlight" id="equation-mm-14flu">
+<span class="eqno">(10.113)<a class="headerlink" href="#equation-mm-14flu" title="Permalink to this equation">#</a></span>\[\begin{split}
+\begin{align}
+\loc U(t) &amp;= U(a,\pi/2,t) - U(a,0,t) = \frac{5\,\Psi_2(a)}{3\,a\,q_2(a)}\,\frac{\omega^2(t)\,a^2}{g_0(a)}\,\big(P_2(1)-P_2(0)\big) \\
+&amp;= \frac{5\,\Psi_2(a)}{2\,a\,q_2(a)}\,\frac{\omega^2(t)\,a^2}{g_0(a)}
+\end{align}
+\end{split}\]</div>
+<p>For an homogeneous Earth model with constant density <span class="math notranslate nohighlight">\(\varrho_0\)</span> we can use eq. <a class="reference internal" href="#equation-mm-15flua">(10.101)</a> and, so, we can estimate</p>
+<div class="math notranslate nohighlight" id="equation-mm-16flu">
+<span class="eqno">(10.114)<a class="headerlink" href="#equation-mm-16flu" title="Permalink to this equation">#</a></span>\[
+\loc U(t) = \frac{5}{4}\,\frac{\omega^2(t)\,a^2}{g_0(a)} \approx 27.4\,\mathrm{km}
+\]</div>
+<p>that is of the order of the observed flatting of <span class="math notranslate nohighlight">\(21.384\)</span> km. The discrepancy of about <span class="math notranslate nohighlight">\(6\)</span> km comes from the depth dependent density profile of the real Earth, compared to the homogeneopus one here considered.</p>
+</div>
+</section>
+</section>
+</section>
+<section id="correspondence-principle">
+<h2><a class="toc-backref" href="#id18"><span class="section-number">10.6. </span>Correspondence principle</a><a class="headerlink" href="#correspondence-principle" title="Permalink to this headline">#</a></h2>
+<div class="full-width docutils">
+<p>As already mentioed in section  <a class="reference internal" href="T2_Kinematics.html#sec-equivalent-shear"><span class="std std-numref">Section 7.5.1</span></a> <a class="reference internal" href="T2_Kinematics.html#sec-equivalent-shear"><span class="std std-ref">Equivalent shear modulus</span></a>, the viscoelastic problem in the Laplace domain is formally equivalent to the elastic problem. Indeed, after Laplace transform, the toroidal or spheroidal differential system becomes</p>
+<div class="math notranslate nohighlight" id="equation-mm-1cor">
+<span class="eqno">(10.115)<a class="headerlink" href="#equation-mm-1cor" title="Permalink to this equation">#</a></span>\[
+\frac{\md \tilde{\bb{y}}_{n,m}(x,s)}{\md  r} = \hat{\bb{A}}_n(x,s)\,\tilde{\bb{y}}_{n,m}(x,s)  - \tilde{\bb{q}}_{n,m}(x,s)
+\]</div>
+<p>where <span class="math notranslate nohighlight">\(\tilde{\bb{y}}_{n,m}\)</span> and <span class="math notranslate nohighlight">\(\tilde{\bb{q}}_{n,m}\)</span> are the Laplace transform of eq. <a class="reference internal" href="#equation-mm-13d">(10.57)</a> and the <span class="math notranslate nohighlight">\(6\times 6\)</span>-matrix <span class="math notranslate nohighlight">\(\hat{\bb{A}}_n\)</span>  now depends on the Laplace variable <span class="math notranslate nohighlight">\(s\)</span> just because the shear modulus <span class="math notranslate nohighlight">\(\mu\)</span> entering <span class="math notranslate nohighlight">\(\bb{A}_n\)</span> given by eq. <a class="reference internal" href="#equation-mm-14d">(10.58)</a> have to be replaced with the equivalent shera modulus <span class="math notranslate nohighlight">\(\hat{\mu}(s)\)</span>. The same similarity holds also for the Earth’s surface boundary conditions which become</p>
+<div class="math notranslate nohighlight" id="equation-mm-2cor">
+<span class="eqno">(10.116)<a class="headerlink" href="#equation-mm-2cor" title="Permalink to this equation">#</a></span>\[
+\bb{P}_2\,\tilde{\bb{y}}_{n,m}(a,s) = \tilde{\bb{b}}_{n,m}(s)
+\]</div>
+<p>with</p>
+<div class="math notranslate nohighlight" id="equation-mm-3cor">
+<span class="eqno">(10.117)<a class="headerlink" href="#equation-mm-3cor" title="Permalink to this equation">#</a></span>\[
+\tilde{\bb{b}}_{n,m}(s) = \tilde{\phi}_{n,m}^S(a,s)\,\bb{b}_n^L+ \big(\tilde{\phi}_{n,m}^{T}(a,s)+\tilde{\phi}_{n,m}^{C}(a,s)\big)\,\bb{b}_n^T 
+\]</div>
+<p>Also, the viscoelastic Love numbers in the Laplace domain read</p>
+<div class="math notranslate nohighlight" id="equation-mm-3corbis">
+<span class="eqno">(10.118)<a class="headerlink" href="#equation-mm-3corbis" title="Permalink to this equation">#</a></span>\[\begin{split}
+\tilde{\bb{k}}^X(x,s) = \left(\begin{matrix} \tilde{h}_n^X(x,s) \\ \tilde{l}_n^X(x,s) \\ 1+\tilde{k}_n^X(x,s)\end{matrix}\right) = \bb{N}_n(x)\,\bb{Z}_n(x,s)\,\bb{b}_n^X  
+\end{split}\]</div>
+<p>with</p>
+<div class="math notranslate nohighlight" id="equation-mm-3cortris">
+<span class="eqno">(10.119)<a class="headerlink" href="#equation-mm-3cortris" title="Permalink to this equation">#</a></span>\[
+\bb{Z}_n(x,s) =  \bb{P}_1\,\bb{Q}_n(x,s)\,\big(\bb{P}_2\,\bb{Q}_n(a,s)\big)^{-1}\qquad \bb{Q}_n(x,s) = \sb{\Pi}_n(x,b,s)\,\bb{J}_n(b)
+\]</div>
+<p>Focusing only on surface loading, centrifugal and tidal forcings, we thus obtain the following equation describing spheroidal perturbation in the Laplace domain</p>
+<div class="math notranslate nohighlight" id="equation-mm-4cor">
+<span class="eqno">(10.120)<a class="headerlink" href="#equation-mm-4cor" title="Permalink to this equation">#</a></span>\[\begin{split}
+\begin{align}
+\left(\begin{matrix} 
+\tilde{U}_{n,m}(x,s)
+\\
+\tilde{V}_{n,m} (x,s)
+\\
+\loc \tilde{G}_{n,m}(x,s)
+\end{matrix}\right) 
+&amp;=\tilde{\bb{k}}_n^L(x,s)\,\loc \tilde{G}_{n,m}^S(x,s) + \tilde{\bb{k}}_n^T(x,s)\,\big(\loc \tilde{G}_{n,m}^{T}(x,s) +\loc \tilde{G}_{n,m}^{C}(x,s) \big)
+\end{align}
+\end{split}\]</div>
+<p>and, after inverse Laplace transform, we can write as follows</p>
+<div class="math notranslate nohighlight" id="equation-mm-5cor">
+<span class="eqno">(10.121)<a class="headerlink" href="#equation-mm-5cor" title="Permalink to this equation">#</a></span>\[\begin{split}
+\begin{align}
+\left(\begin{matrix} 
+U_{n,m}(x,t)
+\\
+V_{n,m} (x,t)
+\\
+\loc G_{n,m}(x,t)
+\end{matrix}\right) 
+&amp;=\int_{-\infty}^\infty \Big[\bb{k}_n^L(x,\tau)\,\loc G_{n,m}^S(x,t-\tau) + \bb{k}_n^T(x,\tau)\,\big(\loc G_{n,m}^{T}(x,t-\tau) +\loc G_{n,m}^{C}(x,t-\tau) \big)\Big]\,\md \tau
+\end{align}
+\end{split}\]</div>
+<p>Within the assumption that the viscoelastic Love numbers in the Laplace domain take the following form</p>
+<div class="math notranslate nohighlight" id="equation-mm-6cor">
+<span class="eqno">(10.122)<a class="headerlink" href="#equation-mm-6cor" title="Permalink to this equation">#</a></span>\[\begin{split}
+\tilde{\bb{k}}^X_n(x,s) = \left(\begin{matrix} \tilde{h}_n^X(x,s) \\ \tilde{l}_n^X(x,s) \\ 1+\tilde{k}_n^X(x,s)\end{matrix}\right) = \bb{k}_n^{X,E}(x) + \sum_{j=1}^N\,\frac{\bb{k}_{n,j}^X(x)}{s+\frac{1}{\tau_{n,j}}}
+\end{split}\]</div>
+<p>with <span class="math notranslate nohighlight">\(X=L,T\)</span>, their inverse Laplace transform gives</p>
+<div class="math notranslate nohighlight" id="equation-mm-7cor">
+<span class="eqno">(10.123)<a class="headerlink" href="#equation-mm-7cor" title="Permalink to this equation">#</a></span>\[\begin{split}
+\bb{k}^X_n(x,t) = \left(\begin{matrix} h_n^X(x,t) \\ l_n^X(x,t) \\ \mat(t) + k_n^X(x,t)\end{matrix}\right) = \bb{k}_n^{X,E}(x)\,\mat(t) + \sum_{j=1}^N \bb{k}_{n,j}^X(x)\,e^{-t/\tau_{n,j}}
+\end{split}\]</div>
+<p>with <span class="math notranslate nohighlight">\(\bb{k}_n^{X,E}\)</span> being the elastic Love numbers, while <span class="math notranslate nohighlight">\(\bb{k}_{n,j}^X\)</span> and <span class="math notranslate nohighlight">\(\tau_{n,j}\)</span> are the residue and the relaxation time of the <span class="math notranslate nohighlight">\(j\)</span>-th relaxation modes.</p>
+<p>Further assuming that the forcings are step like</p>
+<div class="math notranslate nohighlight" id="equation-mm-8cor">
+<span class="eqno">(10.124)<a class="headerlink" href="#equation-mm-8cor" title="Permalink to this equation">#</a></span>\[
+\loc\tilde{G}_{n,m}^X(x,t) = \loc\bar{G}^X_{n,m}(x)\,H(t)
+\]</div>
+<p>and considering that</p>
+<div class="math notranslate nohighlight" id="equation-mm-9cor">
+<span class="eqno">(10.125)<a class="headerlink" href="#equation-mm-9cor" title="Permalink to this equation">#</a></span>\[\begin{split}
+\bb{K}_n^X(x,t) =\left(\begin{matrix} H_n^X(x,t) \\ L_n^X(x,t) \\ H(t) + K_n^X(x,t)\end{matrix}\right) =  \int_{-\infty}^\infty \bb{k}_n^X(x,\tau)\,H(t-\tau) = \left[\bb{k}_n(x) + \sum_{j=1}^N \tau_{n,j}\,\bb{k}_n^j(x)\,\left(1-e^{-t/\tau_{n,j}}\right)\right]\,H(t)
+\end{split}\]</div>
+<p>eq. <a class="reference internal" href="#equation-mm-5cor">(10.121)</a> can be specified as follows</p>
+<div class="math notranslate nohighlight" id="equation-mm-10cor">
+<span class="eqno">(10.126)<a class="headerlink" href="#equation-mm-10cor" title="Permalink to this equation">#</a></span>\[\begin{split}
+\begin{align}
+\left(\begin{matrix} 
+U_{n,m}(x,t)
+\\
+V_{n,m} (x,t)
+\\
+\loc G_{n,m}(x,t)
+\end{matrix}\right)  = \bb{K}_n^L(x,t)\,\loc \bar{G}_{n,m}^S(x) + \bb{K}_n^T(x,t)\,\left(\loc \bar{G}_{n,m}^{C}(x)+\loc \bar{G}_{n,m}^{T}(x)\right)
+\end{align}
+\end{split}\]</div>
+<p>In the limit for <span class="math notranslate nohighlight">\(t\rightarrow\infty\)</span>, we can also obatin the fluid Love numbers</p>
+<div class="math notranslate nohighlight" id="equation-mm-11cor">
+<span class="eqno">(10.127)<a class="headerlink" href="#equation-mm-11cor" title="Permalink to this equation">#</a></span>\[
+\bb{k}_n^{X,F}(x) = \lim_{t\rightarrow\infty} \bb{K}_n^X(x,t) = \bb{k}_n^{X,E}(x) + \sum_{j=1}^N \tau_{n,j}\,\bb{k}^X_{n,j}(x)
+\]</div>
+<p>which describes the response to a step-like forcings in the limit for <span class="math notranslate nohighlight">\(t\rightarrow\infty\)</span>, i.e. when all the shear stress have been relaxed by viscous flow,</p>
+<div class="math notranslate nohighlight" id="equation-mm-12cor">
+<span class="eqno">(10.128)<a class="headerlink" href="#equation-mm-12cor" title="Permalink to this equation">#</a></span>\[\begin{split}
+\begin{align}
+\lim_{t\rightarrow\infty} \left(\begin{matrix} 
+U_{n,m}(x,t)
+\\
+V_{n,m} (x,t)
+\\
+\loc G_{n,m}(x,t)
+\end{matrix}\right)  = \bb{k}_n^{L,F}(x)\,\loc \bar{G}_{n,m}^S(x) + \bb{k}_n^{T,F}(x)\,\left(\loc \bar{G}_{n,m}^{C}(x)+\loc \bar{G}_{n,m}^{T}(x)\right)
+\end{align}
+\end{split}\]</div>
+</div>
+</section>
+</section>
+
+    <script type="text/x-thebe-config">
+    {
+        requestKernel: true,
+        binderOptions: {
+            repo: "binder-examples/jupyter-stacks-datascience",
+            ref: "master",
+        },
+        codeMirrorConfig: {
+            theme: "abcdef",
+            mode: "python"
+        },
+        kernelOptions: {
+            name: "python3",
+            path: "./files"
+        },
+        predefinedOutput: true
+    }
+    </script>
+    <script>kernelName = 'python3'</script>
+
+                </article>
+              
+
+              
+              
+                <footer class="bd-footer-article">
+                  <!-- Previous / next buttons -->
+<div class="prev-next-area">
+    <a class="left-prev"
+       href="T2_Equations.html"
+       title="previous page">
+      <i class="fa-solid fa-angle-left"></i>
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">previous</p>
+        <p class="prev-next-title"><span class="section-number">9. </span>Momentum and Poisson equations</p>
+      </div>
+    </a>
+    <a class="right-next"
+       href="L4_Analytical.html"
+       title="next page">
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">next</p>
+        <p class="prev-next-title"><span class="section-number">11. </span>Analytical solutions</p>
+      </div>
+      <i class="fa-solid fa-angle-right"></i>
+    </a>
+</div>
+                </footer>
+              
+            </div>
+            
+            
+              
+                <div class="bd-sidebar-secondary bd-toc"><div class="sidebar-secondary-items sidebar-secondary__inner">
+
+  <div class="sidebar-secondary-item">
+  <div class="page-toc tocsection onthispage">
+    <i class="fa-solid fa-list"></i> Contents
+  </div>
+  <nav class="bd-toc-nav page-toc">
+    <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#incremental-poisson-and-momentum-equations">10.1. Incremental Poisson and momentum equations</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#incremental-traction-over-spherical-surface">10.1.1. Incremental traction over spherical surface</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#earth-surface-boundary-conditions">10.1.2. Earth surface boundary conditions</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#internal-interface-boundary-conditions">10.1.3. Internal interface boundary conditions</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#divergence-of-the-incremental-stress">10.1.4. Divergence of the incremental stress</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#spherical-harmonic-expansion">10.2. Spherical harmonic expansion</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#internal-and-earth-surface-boundary-conditions">10.2.1. Internal and Earth surface boundary conditions</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#incremental-traction-and-divergence-of-the-incremental-stress">10.2.2. Incremental traction and divergence of the incremental stress</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#poisson-and-momentum-equations">10.2.3. Poisson and momentum equations</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#linear-differential-systems">10.3. Linear differential systems</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#toroidal-differential-system">10.3.1. Toroidal differential system</a><ul class="nav section-nav flex-column">
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#toroidal-earth-surface-boundary-conditions">10.3.1.1. Toroidal Earth surface boundary conditions</a></li>
+</ul>
+</li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#spheroidal-differential-system">10.3.2. Spheroidal differential system</a><ul class="nav section-nav flex-column">
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#spheroidal-earth-surface-boundary-conditions">10.3.2.1. Spheroidal Earth surface boundary conditions</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#core-mantle-boundary-cmb-conditions">10.4. Core-mantle boundary (CMB) conditions</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#toroidal-cmb-conditions">10.4.1. Toroidal CMB conditions</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#spheroidal-cmb-conditions">10.4.2. Spheroidal CMB conditions</a><ul class="nav section-nav flex-column">
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#compositional-stratifications-alpha-neq0">10.4.2.1. Compositional stratifications <span class="math notranslate nohighlight">\(\alpha\neq0\)</span></a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#compressional-stratifications-alpha-0">10.4.2.2. Compressional stratifications <span class="math notranslate nohighlight">\(\alpha=0\)</span></a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#surface-loading-and-tidal-forcings">10.5. Surface loading and tidal forcings</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#the-fluid-earth">10.5.1. The Fluid Earth</a><ul class="nav section-nav flex-column">
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#homogeneous-earth-model">10.5.1.1. Homogeneous Earth model</a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#surface-loadings">10.5.1.2. Surface loadings</a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#tidal-and-centrifugal-forcings">10.5.1.3. Tidal and centrifugal forcings</a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#equatorial-flattening">10.5.1.4. Equatorial flattening</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#correspondence-principle">10.6. Correspondence principle</a></li>
+</ul>
+  </nav></div>
+
+</div></div>
+              
+            
+          </div>
+          <footer class="bd-footer-content">
+            <div class="bd-footer-content__inner">
+<div class="bd-footer-content__inner container">
+  
+  <div class="footer-item">
+    
+<p class="component-author">
+By <a href="https://sites.unimi.it/gcambiotti/">Gabriele Cambiotti</a>
+</p>
+
+  </div>
+  
+  <div class="footer-item">
+    
+  <p class="copyright">
+    
+      © Copyright 2022.
+      <br/>
+    
+  </p>
+
+  </div>
+  
+  <div class="footer-item">
+    
+  </div>
+  
+  <div class="footer-item">
+    
+  </div>
+  
+</div></div>
+          </footer>
+        
+
+      </main>
+    </div>
+  </div>
+  
+  <!-- Scripts loaded after <body> so the DOM is not blocked -->
+  <script src="../_static/scripts/bootstrap.js?digest=12da95d707ffb74b382d"></script>
+<script src="../_static/scripts/pydata-sphinx-theme.js?digest=12da95d707ffb74b382d"></script>
+
+  <footer class="bd-footer">
+  </footer>
+  </body>
+</html>

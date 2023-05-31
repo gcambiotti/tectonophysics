@@ -1,0 +1,917 @@
+
+
+<!DOCTYPE html>
+
+
+<html >
+
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
+
+    <title>3. The Laplace transform &#8212; Tectonophysics</title>
+  
+  
+  
+  <script data-cfasync="false">
+    document.documentElement.dataset.mode = localStorage.getItem("mode") || "";
+    document.documentElement.dataset.theme = localStorage.getItem("theme") || "light";
+  </script>
+  
+  <!-- Loaded before other Sphinx assets -->
+  <link href="../_static/styles/theme.css?digest=12da95d707ffb74b382d" rel="stylesheet" />
+<link href="../_static/styles/bootstrap.css?digest=12da95d707ffb74b382d" rel="stylesheet" />
+<link href="../_static/styles/pydata-sphinx-theme.css?digest=12da95d707ffb74b382d" rel="stylesheet" />
+
+  
+  <link href="../_static/vendor/fontawesome/6.1.2/css/all.min.css?digest=12da95d707ffb74b382d" rel="stylesheet" />
+  <link rel="preload" as="font" type="font/woff2" crossorigin href="../_static/vendor/fontawesome/6.1.2/webfonts/fa-solid-900.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="../_static/vendor/fontawesome/6.1.2/webfonts/fa-brands-400.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="../_static/vendor/fontawesome/6.1.2/webfonts/fa-regular-400.woff2" />
+
+    <link rel="stylesheet" type="text/css" href="../_static/pygments.css" />
+    <link rel="stylesheet" href="../_static/styles/sphinx-book-theme.css?digest=14f4ca6b54d191a8c7657f6c759bf11a5fb86285" type="text/css" />
+    <link rel="stylesheet" type="text/css" href="../_static/togglebutton.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/copybutton.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/mystnb.4510f1fc1dee50b3e5859aac5469c37c29e427902b24a333a5f9fcb2f0b3ac41.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/sphinx-thebe.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/design-style.4045f2051d55cab465a707391d5b2007.min.css" />
+  
+  <!-- Pre-loaded scripts that we'll load fully later -->
+  <link rel="preload" as="script" href="../_static/scripts/bootstrap.js?digest=12da95d707ffb74b382d" />
+<link rel="preload" as="script" href="../_static/scripts/pydata-sphinx-theme.js?digest=12da95d707ffb74b382d" />
+
+    <script data-url_root="../" id="documentation_options" src="../_static/documentation_options.js"></script>
+    <script src="../_static/jquery.js"></script>
+    <script src="../_static/underscore.js"></script>
+    <script src="../_static/doctools.js"></script>
+    <script src="../_static/clipboard.min.js"></script>
+    <script src="../_static/copybutton.js"></script>
+    <script src="../_static/scripts/sphinx-book-theme.js?digest=5a5c038af52cf7bc1a1ec88eea08e6366ee68824"></script>
+    <script>let toggleHintShow = 'Click to show';</script>
+    <script>let toggleHintHide = 'Click to hide';</script>
+    <script>let toggleOpenOnPrint = 'true';</script>
+    <script src="../_static/togglebutton.js"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
+    <script src="../_static/design-tabs.js"></script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"
+const thebe_selector = ".thebe,.cell"
+const thebe_selector_input = "pre"
+const thebe_selector_output = ".output, .cell_output"
+</script>
+    <script async="async" src="../_static/sphinx-thebe.js"></script>
+    <script>window.MathJax = {"options": {"processHtmlClass": "tex2jax_process|mathjax_process|math|output_area"}}</script>
+    <script defer="defer" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+    <script>DOCUMENTATION_OPTIONS.pagename = 'files/L1_Laplace';</script>
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
+    <link rel="next" title="4. Spherical harmonics" href="L0_Harmonic_Scalar.html" />
+    <link rel="prev" title="2. Tutorial on Python" href="A1_Tutorial.html" />
+  <meta name="viewport" content="width=device-width, initial-scale=1"/>
+  <meta name="docsearch:language" content="None"/>
+  </head>
+  
+  
+  <body data-bs-spy="scroll" data-bs-target=".bd-toc-nav" data-offset="180" data-bs-root-margin="0px 0px -60%" data-default-mode="">
+
+  
+  
+  <a class="skip-link" href="#main-content">Skip to main content</a>
+  
+  <input type="checkbox"
+          class="sidebar-toggle"
+          name="__primary"
+          id="__primary"/>
+  <label class="overlay overlay-primary" for="__primary"></label>
+  
+  <input type="checkbox"
+          class="sidebar-toggle"
+          name="__secondary"
+          id="__secondary"/>
+  <label class="overlay overlay-secondary" for="__secondary"></label>
+  
+  <div class="search-button__wrapper">
+    <div class="search-button__overlay"></div>
+    <div class="search-button__search-container">
+<form class="bd-search d-flex align-items-center"
+      action="../search.html"
+      method="get">
+  <i class="fa-solid fa-magnifying-glass"></i>
+  <input type="search"
+         class="form-control"
+         name="q"
+         id="search-input"
+         placeholder="Search this book..."
+         aria-label="Search this book..."
+         autocomplete="off"
+         autocorrect="off"
+         autocapitalize="off"
+         spellcheck="false"/>
+  <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd>K</kbd></span>
+</form></div>
+  </div>
+  
+    <nav class="bd-header navbar navbar-expand-lg bd-navbar">
+    </nav>
+  
+  <div class="bd-container">
+    <div class="bd-container__inner bd-page-width">
+      
+      <div class="bd-sidebar-primary bd-sidebar">
+        
+
+  
+  <div class="sidebar-header-items sidebar-primary__section">
+    
+    
+    
+    
+  </div>
+  
+    <div class="sidebar-primary-items__start sidebar-primary__section">
+        <div class="sidebar-primary-item">
+  
+
+<a class="navbar-brand logo" href="../intro.html">
+  
+  
+  
+  
+    
+    
+      
+    
+    
+    <img src="../_static/gc_logo.png" class="logo__image only-light" alt="Logo image"/>
+    <script>document.write(`<img src="../_static/gc_logo.png" class="logo__image only-dark" alt="Logo image"/>`);</script>
+  
+  
+</a></div>
+        <div class="sidebar-primary-item"><nav class="bd-links" id="bd-docs-nav" aria-label="Main">
+    <div class="bd-toc-item navbar-nav active">
+        <p aria-level="2" class="caption" role="heading"><span class="caption-text">Introduction</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="A0_Setup.html">1. Working with JupyterLab</a></li>
+<li class="toctree-l1"><a class="reference internal" href="A1_Tutorial.html">2. Tutorial on Python</a></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Methods</span></p>
+<ul class="current nav bd-sidenav">
+<li class="toctree-l1 current active"><a class="current reference internal" href="#">3. The Laplace transform</a></li>
+<li class="toctree-l1"><a class="reference internal" href="L0_Harmonic_Scalar.html">4. Spherical harmonics</a></li>
+<li class="toctree-l1"><a class="reference internal" href="L0_Harmonic_Vectors.html">5. Spherical harmonic vectors</a></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Theory</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="T1_Potentials.html">6. Gravitatational potentials</a></li>
+<li class="toctree-l1"><a class="reference internal" href="T2_Kinematics.html">7. Kinematics and reference systems</a></li>
+<li class="toctree-l1"><a class="reference internal" href="T2_Reference.html">8. The Earth reference system</a></li>
+<li class="toctree-l1"><a class="reference internal" href="T2_Equations.html">9. Momentum and Poisson equations</a></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Solution</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="L3_Self.html">10. Perturbation theory</a></li>
+<li class="toctree-l1"><a class="reference internal" href="L4_Analytical.html">11. Analytical solutions</a></li>
+<li class="toctree-l1"><a class="reference internal" href="L5_Euler.html">12. Rotational dynamics</a></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Codes</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="C1_Codes.html">13. Homogeneous incompressible Earth model</a></li>
+
+
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Appendix</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="Z0_Dirac.html">16. Dirac delta function</a></li>
+</ul>
+
+    </div>
+</nav></div>
+    </div>
+  
+  
+  <div class="sidebar-primary-items__end sidebar-primary__section">
+  </div>
+  
+  <div id="rtd-footer-container"></div>
+
+
+      </div>
+      
+      <main id="main-content" class="bd-main">
+        
+        
+
+<div class="sbt-scroll-pixel-helper"></div>
+
+          <div class="bd-content">
+            <div class="bd-article-container">
+              
+              <div class="bd-header-article">
+<div class="header-article-items header-article__inner">
+  
+    <div class="header-article-items__start">
+      
+        <div class="header-article-item"><label class="sidebar-toggle primary-toggle btn btn-sm" for="__primary" title="Toggle primary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+  <span class="fa-solid fa-bars"></span>
+</label></div>
+      
+    </div>
+  
+  
+    <div class="header-article-items__end">
+      
+        <div class="header-article-item">
+
+<div class="article-header-buttons">
+
+
+
+
+
+<div class="dropdown dropdown-download-buttons">
+  <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Download this page">
+    <i class="fas fa-download"></i>
+  </button>
+  <ul class="dropdown-menu">
+      
+      
+      
+      <li><a href="../_sources/files/L1_Laplace.ipynb" target="_blank"
+   class="btn btn-sm btn-download-source-button dropdown-item"
+   title="Download source file"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-file"></i>
+  </span>
+<span class="btn__text-container">.ipynb</span>
+</a>
+</li>
+      
+      
+      
+      
+      <li>
+<button onclick="window.print()"
+  class="btn btn-sm btn-download-pdf-button dropdown-item"
+  title="Print to PDF"
+  data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-file-pdf"></i>
+  </span>
+<span class="btn__text-container">.pdf</span>
+</button>
+</li>
+      
+  </ul>
+</div>
+
+
+
+
+<button onclick="toggleFullScreen()"
+  class="btn btn-sm btn-fullscreen-button"
+  title="Fullscreen mode"
+  data-bs-placement="bottom" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-expand"></i>
+  </span>
+
+</button>
+
+
+<script>
+document.write(`
+  <button class="theme-switch-button btn btn-sm btn-outline-primary navbar-btn rounded-circle" title="light/dark" aria-label="light/dark" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <span class="theme-switch" data-mode="light"><i class="fa-solid fa-sun"></i></span>
+    <span class="theme-switch" data-mode="dark"><i class="fa-solid fa-moon"></i></span>
+    <span class="theme-switch" data-mode="auto"><i class="fa-solid fa-circle-half-stroke"></i></span>
+  </button>
+`);
+</script>
+
+<script>
+document.write(`
+  <button class="btn btn-sm navbar-btn search-button search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass"></i>
+  </button>
+`);
+</script>
+<label class="sidebar-toggle secondary-toggle btn btn-sm" for="__secondary"title="Toggle secondary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <span class="fa-solid fa-list"></span>
+</label>
+</div></div>
+      
+    </div>
+  
+</div>
+</div>
+              
+              
+
+<div id="jb-print-docs-body" class="onlyprint">
+    <h1>The Laplace transform</h1>
+    <!-- Table of contents -->
+    <div id="print-main-content">
+        <div id="jb-print-toc">
+            
+            <div>
+                <h2> Contents </h2>
+            </div>
+            <nav aria-label="Page">
+                <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#complex-functions">3.1. Complex functions</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#analyticity-of-holomorphic-functions">3.1.1. Analyticity of holomorphic functions</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#cauchy-integral-theorem">3.1.2. Cauchy integral theorem</a><ul class="nav section-nav flex-column">
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#residue-theorem">3.1.2.1. Residue theorem</a></li>
+</ul>
+</li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#analytic-continuation">3.1.3. Analytic continuation</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#laplace-transform">3.2. Laplace transform</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#properties-of-the-laplace-transform">3.2.1. Properties of the Laplace transform</a><ul class="nav section-nav flex-column">
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#shift-in-time">3.2.1.1. Shift in time</a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#derivatives">3.2.1.2. Derivatives</a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#convolution">3.2.1.3. Convolution</a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#real-functions">3.2.1.4. Real functions</a></li>
+</ul>
+</li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#inverse-laplace-transform">3.2.2. Inverse Laplace transform</a></li>
+</ul>
+</li>
+</ul>
+            </nav>
+        </div>
+    </div>
+</div>
+
+              
+                
+<div id="searchbox"></div>
+                <article class="bd-article" role="main">
+                  
+  <section class="tex2jax_ignore mathjax_ignore" id="the-laplace-transform">
+<h1><span class="section-number">3. </span>The Laplace transform<a class="headerlink" href="#the-laplace-transform" title="Permalink to this headline">#</a></h1>
+<div class="contents local topic" id="sections">
+<p class="topic-title">Sections</p>
+<ul class="simple">
+<li><p><a class="reference internal" href="#complex-functions" id="id1">Complex functions</a></p>
+<ul>
+<li><p><a class="reference internal" href="#analyticity-of-holomorphic-functions" id="id2">Analyticity of holomorphic functions</a></p></li>
+<li><p><a class="reference internal" href="#cauchy-integral-theorem" id="id3">Cauchy integral theorem</a></p></li>
+<li><p><a class="reference internal" href="#analytic-continuation" id="id4">Analytic continuation</a></p></li>
+</ul>
+</li>
+<li><p><a class="reference internal" href="#laplace-transform" id="id5">Laplace transform</a></p>
+<ul>
+<li><p><a class="reference internal" href="#properties-of-the-laplace-transform" id="id6">Properties of the Laplace transform</a></p></li>
+<li><p><a class="reference internal" href="#inverse-laplace-transform" id="id7">Inverse Laplace transform</a></p></li>
+</ul>
+</li>
+</ul>
+</div>
+<p><span class="math notranslate nohighlight">\(\newcommand{\md}{\mathrm{d}\hspace{0cm}}\)</span>
+<span class="math notranslate nohighlight">\(\newcommand{\mdd}{\mathrm{d}\hspace{0cm}^2}\)</span>
+<span class="math notranslate nohighlight">\(\newcommand{\grad}{\boldsymbol{\nabla}\hspace{-0.01cm}}\)</span>
+<span class="math notranslate nohighlight">\(\newcommand{\stress}{\boldsymbol{\sigma}}\)</span>
+<span class="math notranslate nohighlight">\(\newcommand{\bn}[1]{\hat{\mathbf{#1}}}\)</span>
+<span class="math notranslate nohighlight">\(\newcommand{\bb}[1]{\mathbf{#1}}\)</span>
+<span class="math notranslate nohighlight">\(\newcommand{\sn}[1]{\hat{\boldsymbol{#1}}}\)</span>
+<span class="math notranslate nohighlight">\(\newcommand{\sb}[1]{\boldsymbol{#1}}\)</span>
+<span class="math notranslate nohighlight">\(\newcommand{\zero}{\mathbf{0}}\)</span>
+<span class="math notranslate nohighlight">\(\newcommand{\one}{\mathbf{1}}\)</span>
+<span class="math notranslate nohighlight">\(\newcommand{\loc}{\Delta\hspace{0cm}}\)</span>
+<span class="math notranslate nohighlight">\(\newcommand{\mat}{\delta\hspace{0cm}}\)</span>
+<span class="math notranslate nohighlight">\(\newcommand{\det}{\mathrm{\det}\hspace{0cm}}\)</span>
+<span class="math notranslate nohighlight">\(\newcommand{\cm}[1]{\bar{\bb{#1}}}\)</span>
+<span class="math notranslate nohighlight">\(\newcommand{\lmsum}{\sum_{n=0}^\infty\sum_{m=-n}^n}\)</span>
+<span class="math notranslate nohighlight">\(\newcommand{\kqsum}{\sum_{k=0}^\infty\sum_{q=-k}^k}\)</span>
+<span class="math notranslate nohighlight">\(\newcommand{\dif}[1]{#1\hspace{0cm}\prime}\)</span>
+<span class="math notranslate nohighlight">\(\newcommand{\lap}{\nabla^2\hspace{0cm}}\)</span>
+<span class="math notranslate nohighlight">\(\newcommand{\dermat}[1]{\frac{\mathrm{D}\hspace{0.02cm}#1}{\mathrm{D}\hspace{0.02cm} t}}\)</span>
+<span class="math notranslate nohighlight">\(\newcommand{\dercla}[1]{\frac{\mathrm{d}\hspace{0.02cm}#1}{\mathrm{d}\hspace{0.02cm} t}}\)</span>
+<span class="math notranslate nohighlight">\(\newcommand{\derpar}[1]{\frac{\partial\hspace{0.02cm}#1}{\partial\hspace{0.02cm} t}}\)</span>
+<span class="math notranslate nohighlight">\(\newcommand{\rpar}[2]{\frac{\partial\hspace{0.02cm}#1}{\partial\hspace{0.02cm} r_{#2}}}\)</span>
+<span class="math notranslate nohighlight">\(\newcommand{\xpar}[2]{\frac{\partial\hspace{0.02cm}#1}{\partial\hspace{0.02cm} x_{#2}}}\)</span>
+<span class="math notranslate nohighlight">\(\newcommand{\ddermat}[1]{\frac{\mathrm{D}^2\hspace{0.02cm}#1}{\mathrm{D}\hspace{0.02cm} t^2}}\)</span>
+<span class="math notranslate nohighlight">\(\newcommand{\ddercla}[1]{\frac{\mathrm{d}^2\hspace{0.02cm}#1}{\mathrm{d}\hspace{0.02cm} t^2}}\)</span>
+<span class="math notranslate nohighlight">\(\newcommand{\dderpar}[1]{\frac{\partial^2\hspace{0.02cm}#1}{\partial\hspace{0.02cm} t^2}}\)</span>
+<span class="math notranslate nohighlight">\(\newcommand{\drpar}[2]{\frac{\partial^2\hspace{0.02cm}#1}{\partial\hspace{0.02cm} r_{#2}^2}}\)</span>
+<span class="math notranslate nohighlight">\(\newcommand{\dxpar}[2]{\frac{\partial^2\hspace{0.02cm}#1}{\partial\hspace{0.02cm} x_{#2}^2}}\)</span></p>
+<section id="complex-functions">
+<h2><a class="toc-backref" href="#id1"><span class="section-number">3.1. </span>Complex functions</a><a class="headerlink" href="#complex-functions" title="Permalink to this headline">#</a></h2>
+<div class="full-width docutils">
+<p>Let us considering a complex-valued function <span class="math notranslate nohighlight">\(f\)</span> of a complex variable <span class="math notranslate nohighlight">\(s\)</span></p>
+<div class="math notranslate nohighlight" id="equation-l-14">
+<span class="eqno">(3.1)<a class="headerlink" href="#equation-l-14" title="Permalink to this equation">#</a></span>\[\begin{align}
+f:\mathbb{C}\rightarrow\mathbb{C}
+\end{align}
+\]</div>
+<p>By considering the real, <span class="math notranslate nohighlight">\(x\)</span>, and imaginary, <span class="math notranslate nohighlight">\(y\)</span>, parts of the complex variable <span class="math notranslate nohighlight">\(s=x+i\,y\)</span>, we can look at the real, <span class="math notranslate nohighlight">\(u\)</span>, and imaginary, <span class="math notranslate nohighlight">\(v\)</span>, parts of the function <span class="math notranslate nohighlight">\(f=u+i\,v\)</span> as a function of both <span class="math notranslate nohighlight">\(x\)</span> and <span class="math notranslate nohighlight">\(y\)</span></p>
+<div class="math notranslate nohighlight" id="equation-l-15">
+<span class="eqno">(3.2)<a class="headerlink" href="#equation-l-15" title="Permalink to this equation">#</a></span>\[\begin{align}
+f(s) = f(x+i\,y) = u(x,y) + i\,v(x,y)
+\end{align}
+\]</div>
+<p>Let us now define the derivative of <span class="math notranslate nohighlight">\(f\)</span> at a point <span class="math notranslate nohighlight">\(s_0\)</span> s the incremental ratio</p>
+<div class="math notranslate nohighlight" id="equation-l-16">
+<span class="eqno">(3.3)<a class="headerlink" href="#equation-l-16" title="Permalink to this equation">#</a></span>\[\begin{align}
+\frac{d f(s_0)}{d s} = \lim_{s\rightarrow s_0}\frac{f(s)-f(s_0)}{s-s_0}
+\end{align}
+\]</div>
+<p>and consider the partial derivatives with respect to <span class="math notranslate nohighlight">\(x\)</span> and <span class="math notranslate nohighlight">\(y\)</span></p>
+<div class="math notranslate nohighlight" id="equation-l-17">
+<span class="eqno">(3.4)<a class="headerlink" href="#equation-l-17" title="Permalink to this equation">#</a></span>\[\begin{align}
+\frac{\partial f(x+i\,y)}{\partial x} = \frac{\partial u(x,y)}{\partial x} + i\,\frac{\partial v(x,y)}{\partial y}
+\qquad
+\frac{\partial f(x+i\,y)}{\partial y} = \frac{\partial u(x,y)}{\partial y} + i\,\frac{\partial v(x,y)}{\partial y}
+\end{align}
+\]</div>
+<p>In view of the fact that</p>
+<div class="math notranslate nohighlight" id="equation-l-18">
+<span class="eqno">(3.5)<a class="headerlink" href="#equation-l-18" title="Permalink to this equation">#</a></span>\[\begin{align}
+\frac{\partial f(x+i\,y)}{\partial x} = \frac{1}{i}\,\frac{\partial f(x+i\,y)}{\partial y}
+\end{align}
+\]</div>
+<p>we thus obtain</p>
+<div class="math notranslate nohighlight" id="equation-l-19">
+<span class="eqno">(3.6)<a class="headerlink" href="#equation-l-19" title="Permalink to this equation">#</a></span>\[\begin{align}
+\frac{\partial u(x,y)}{\partial x} = \frac{\partial v(x,y)}{\partial y}
+\qquad
+\frac{\partial v(x,y)}{\partial y} = -\frac{\partial u(x,y)}{\partial x}
+\end{align}
+\]</div>
+<p>In this respect, differentiable complex function have specific constraints on how the partial derivative of its real and complex parts behave.</p>
+</div>
+<section id="analyticity-of-holomorphic-functions">
+<h3><a class="toc-backref" href="#id2"><span class="section-number">3.1.1. </span>Analyticity of holomorphic functions</a><a class="headerlink" href="#analyticity-of-holomorphic-functions" title="Permalink to this headline">#</a></h3>
+<div class="full-width docutils">
+<p>In complex analysis, a complex-valued function f of a complex variable s:</p>
+<ul class="simple">
+<li><p>is said to be holomorphic at a point <span class="math notranslate nohighlight">\(s_0\in\mathbb{C}\)</span> if it is differentiable at every point within a neighborhood of <span class="math notranslate nohighlight">\(s_0\)</span></p></li>
+<li><p>is said to be analytic at <span class="math notranslate nohighlight">\(s_0\)</span> if in a neighborhood centered at <span class="math notranslate nohighlight">\(s_0\)</span> it can be expanded as a convergent power series</p></li>
+</ul>
+<div class="math notranslate nohighlight" id="equation-l-20">
+<span class="eqno">(3.7)<a class="headerlink" href="#equation-l-20" title="Permalink to this equation">#</a></span>\[\begin{align}
+f (s) = \sum_{n=0}^\infty f_n ( s − s_0 )^n 
+\end{align}
+\]</div>
+<p>with <span class="math notranslate nohighlight">\(f_n\)</span> being complex coefficients.</p>
+<p>One of the most important theorems of complex analysis is that holomorphic functions are analytic and vice versa. From this theorem follows that holomorphic (differentiable) function in an open set <span class="math notranslate nohighlight">\(\mathcal{U}\subseteq \mathbb{C}\)</span> are infinitely differentiable and that the coefficients <span class="math notranslate nohighlight">\(f_n\)</span> are given by</p>
+<div class="math notranslate nohighlight" id="equation-l-21">
+<span class="eqno">(3.8)<a class="headerlink" href="#equation-l-21" title="Permalink to this equation">#</a></span>\[\begin{align}
+f_n = \frac{d^n f(s_0)}{d s^n}
+\end{align}
+\]</div>
+<p><img alt="start" src="../_images/Connected.png" /></p>
+</div>
+</section>
+<section id="cauchy-integral-theorem">
+<h3><a class="toc-backref" href="#id3"><span class="section-number">3.1.2. </span>Cauchy integral theorem</a><a class="headerlink" href="#cauchy-integral-theorem" title="Permalink to this headline">#</a></h3>
+<div class="full-width docutils">
+<p>Simply speaking, a simply connected region <span class="math notranslate nohighlight">\(\mathcal{U}\subseteq \mathbb{C}\)</span> is a region of the complex plane in which there are no holes, so that any closed path <span class="math notranslate nohighlight">\(\Gamma\)</span> can be contracted to a point. As stated by the Cauchy integral theorem, holomorphic functions on a simply connected region satisfy the following closed contour integral</p>
+<div class="math notranslate nohighlight" id="equation-l-22">
+<span class="eqno">(3.9)<a class="headerlink" href="#equation-l-22" title="Permalink to this equation">#</a></span>\[\begin{align}
+\oint_{\Gamma} f(s)\,ds = 0
+\end{align}
+\]</div>
+<p>In presences of holes, instead, the closed contour can be transformed as follows</p>
+<div class="math notranslate nohighlight" id="equation-l-2">
+<span class="eqno">(3.10)<a class="headerlink" href="#equation-l-2" title="Permalink to this equation">#</a></span>\[\begin{align}
+\oint_{\Gamma} f(s)\,ds = \sum_k \oint_{\gamma_k} f(s)\,ds
+\end{align}
+\]</div>
+<p>where <span class="math notranslate nohighlight">\(\gamma_k\subset\mathbb{C}\)</span> is a closed contour surrodining the <span class="math notranslate nohighlight">\(k\)</span>-th hole.</p>
+</div>
+<section id="residue-theorem">
+<h4><span class="section-number">3.1.2.1. </span>Residue theorem<a class="headerlink" href="#residue-theorem" title="Permalink to this headline">#</a></h4>
+<div class="full-width docutils">
+<p>When the holes are just a series of point <span class="math notranslate nohighlight">\(s_k\in\mathcal{U}\)</span>, the closed contour <span class="math notranslate nohighlight">\(\gamma_k\)</span> can be chosen as a small circle <span class="math notranslate nohighlight">\(c_k\)</span> of radius <span class="math notranslate nohighlight">\(r\)</span> centred at <span class="math notranslate nohighlight">\(s_k\)</span> and, according to the residue theorem, one gets</p>
+<div class="math notranslate nohighlight" id="equation-l-23">
+<span class="eqno">(3.11)<a class="headerlink" href="#equation-l-23" title="Permalink to this equation">#</a></span>\[\begin{align}
+\oint_{\gamma_k} f(s)\,ds = \oint_{c_k} f(s)\,ds = 2\,\pi\,i\,\mathrm{Res}(f,s_k)
+\end{align}
+\]</div>
+<p>with <span class="math notranslate nohighlight">\(\mathrm{Res}(f,s_k)\)</span> being the residue of <span class="math notranslate nohighlight">\(f\)</span> at <span class="math notranslate nohighlight">\(s_k\)</span> defined as</p>
+<div class="math notranslate nohighlight" id="equation-l-24">
+<span class="eqno">(3.12)<a class="headerlink" href="#equation-l-24" title="Permalink to this equation">#</a></span>\[\begin{align}
+\mathrm{Res}(f,s_k) = \frac{1}{2\,\pi\,i}\,\oint_{c_k} f(s)\,ds = \frac{1}{2\,\pi}\,\int_{0}^{2\,\pi} f\big(s_k+z(\theta)\big)\,z(\theta)\,d\theta
+\end{align}
+\]</div>
+<p>with <span class="math notranslate nohighlight">\(z(\theta) = r\,e^{i\,\theta}\)</span>.</p>
+<p>For first-order poles, it can be shown that</p>
+<div class="math notranslate nohighlight" id="equation-l-5">
+<span class="eqno">(3.13)<a class="headerlink" href="#equation-l-5" title="Permalink to this equation">#</a></span>\[\begin{align}
+\mathrm{Res}(f,s_k) = \lim_{s\rightarrow s_k} (s-s_k)\,f(s)
+\end{align}
+\]</div>
+<p>while, for general <span class="math notranslate nohighlight">\(n\)</span>-order poles, with <span class="math notranslate nohighlight">\(n\geq0\)</span>, we have</p>
+<div class="math notranslate nohighlight" id="equation-l-25">
+<span class="eqno">(3.14)<a class="headerlink" href="#equation-l-25" title="Permalink to this equation">#</a></span>\[\begin{align}
+\mathrm{Res}(f,s_k) = \frac{1}{(n-1)!}\,\lim_{s\rightarrow s_k} \frac{d^{n-1} (s-s_k)^n\,f(s)}{d s^{n-1}}
+\end{align}
+\]</div>
+</div>
+</section>
+</section>
+<section id="analytic-continuation">
+<h3><a class="toc-backref" href="#id4"><span class="section-number">3.1.3. </span>Analytic continuation</a><a class="headerlink" href="#analytic-continuation" title="Permalink to this headline">#</a></h3>
+<div class="full-width docutils">
+<p>Analytic continuation is a technique to extend the domain of definition of a given analytic (or holomorphic) function. Suppose <span class="math notranslate nohighlight">\(f\)</span> is an analytic function defined on a non-empty open subset <span class="math notranslate nohighlight">\(\mathcal{U}\subset\mathbb{C}\)</span>. If <span class="math notranslate nohighlight">\(\mathcal{V}\)</span> is a larger open subset containg the former, <span class="math notranslate nohighlight">\(\mathcal{U}\subset\mathbb{V}\)</span> and <span class="math notranslate nohighlight">\(F\)</span> is an analytic (or holomorphic) function defined on <span class="math notranslate nohighlight">\(\mathcal{V}\)</span> such that</p>
+<div class="math notranslate nohighlight" id="equation-l-26">
+<span class="eqno">(3.15)<a class="headerlink" href="#equation-l-26" title="Permalink to this equation">#</a></span>\[\begin{align}
+F( s ) = f ( s ) \qquad \forall\,s\in\mathcal{U} 
+\end{align}
+\]</div>
+<p>then <span class="math notranslate nohighlight">\(F\)</span> is called an analytic continuation of <span class="math notranslate nohighlight">\(f\)</span>. In other words, the restriction of <span class="math notranslate nohighlight">\(F\)</span> to <span class="math notranslate nohighlight">\(\mathcal{U}\)</span> is the function <span class="math notranslate nohighlight">\(f\)</span> we started with. The import asdpect of analytic continuation (which follows directly from the identiy theorem for holomorphic function) is that is unique, in the sense that there exists only one holomorphic function <span class="math notranslate nohighlight">\(F\)</span> which, once restricted to <span class="math notranslate nohighlight">\(\mathcal{U}\)</span>, coincides with <span class="math notranslate nohighlight">\(f\)</span>.</p>
+</div>
+</section>
+</section>
+<section id="laplace-transform">
+<h2><a class="toc-backref" href="#id5"><span class="section-number">3.2. </span>Laplace transform</a><a class="headerlink" href="#laplace-transform" title="Permalink to this headline">#</a></h2>
+<div class="full-width docutils">
+<p>The  Laplace transform is defined as follows</p>
+<div class="math notranslate nohighlight" id="equation-l-1">
+<span class="eqno">(3.16)<a class="headerlink" href="#equation-l-1" title="Permalink to this equation">#</a></span>\[\begin{align}
+\tilde{f}(s) = \int_{-\infty}^\infty f(t)\,e^{-s\,t}\,dt
+\end{align}
+\]</div>
+<p>where <span class="math notranslate nohighlight">\(s\)</span> is a complex angular function (or Laplace variable)</p>
+<div class="math notranslate nohighlight" id="equation-l-27">
+<span class="eqno">(3.17)<a class="headerlink" href="#equation-l-27" title="Permalink to this equation">#</a></span>\[\begin{align}
+s = \sigma+i\,\omega
+\end{align}
+\]</div>
+<p>and it is assumed that the function is zero at negative times</p>
+<div class="math notranslate nohighlight" id="equation-l-7">
+<span class="eqno">(3.18)<a class="headerlink" href="#equation-l-7" title="Permalink to this equation">#</a></span>\[\begin{align}
+f(t) = 0 \qquad \forall t&lt;0
+\end{align}
+\]</div>
+<p>A necessary condition for existence of the integral in eq. <a class="reference internal" href="#equation-l-1">(3.16)</a> is that <span class="math notranslate nohighlight">\(f\)</span> must be locally integrable on <span class="math notranslate nohighlight">\([0, \infty)\)</span>. Also, the integral can converge only within some subset <span class="math notranslate nohighlight">\(\mathcal{U}\)</span> of the complex plane. In this case, however, the complex function, as far as it is differetiable in <span class="math notranslate nohighlight">\(\mathcal{U}\)</span> is also holomorphic (or analytic) and, so, by analytic continuation can be extended to the whole complex plane.</p>
+<p>As example, let us consider the Laplace transform of the following function</p>
+<div class="math notranslate nohighlight" id="equation-l-28">
+<span class="eqno">(3.19)<a class="headerlink" href="#equation-l-28" title="Permalink to this equation">#</a></span>\[\begin{align}
+f(t) = H(t)\,e^{\alpha\,t}
+\end{align}
+\]</div>
+<p>In particular, we obtain that the integral in eq. <a class="reference internal" href="#equation-l-1">(3.16)</a> converges</p>
+<div class="math notranslate nohighlight" id="equation-l-29">
+<span class="eqno">(3.20)<a class="headerlink" href="#equation-l-29" title="Permalink to this equation">#</a></span>\[\begin{align}
+\tilde{f}(s) = \int_{0}^\infty e^{(\alpha-s)\,t}\,dt = \left. \frac{e^{(\alpha-s)\,t}}{\alpha-s} \right|_{t=0}^\infty = \frac{1}{s-\alpha}  \qquad \Leftrightarrow\qquad \Re[s] &gt; \alpha
+\end{align}
+\]</div>
+<p>only assuming that <span class="math notranslate nohighlight">\(\Re[s] &gt; \alpha\)</span>, i.e, in the open subset</p>
+<div class="math notranslate nohighlight" id="equation-l-30">
+<span class="eqno">(3.21)<a class="headerlink" href="#equation-l-30" title="Permalink to this equation">#</a></span>\[\begin{align}
+\mathcal{U}=\big\{s\in\mathbb{C}\,\mid \Re[s]&gt;\alpha\big\}
+\end{align}
+\]</div>
+<p>By analytic continuation, however, we can set</p>
+<div class="math notranslate nohighlight" id="equation-l-31">
+<span class="eqno">(3.22)<a class="headerlink" href="#equation-l-31" title="Permalink to this equation">#</a></span>\[\begin{align}
+\tilde{f}(s) =  \frac{1}{s-\alpha}  \qquad \forall s \in\mathbb{C}
+\end{align}
+\]</div>
+<p>Another import example is the Laplace transform of the Dirac delta which yields</p>
+<div class="math notranslate nohighlight" id="equation-l-3">
+<span class="eqno">(3.23)<a class="headerlink" href="#equation-l-3" title="Permalink to this equation">#</a></span>\[\begin{align}
+\tilde{\delta}(s) =  \int_{-\infty}^\infty \delta(t)\,e^{-s\,t}\,dt = 1
+\end{align}
+\]</div>
+<p>The definition of Laplace transform given by eq. <a class="reference internal" href="#equation-l-1">(3.16)</a> is the bilateral one, which differs by the definition of unilateral Laplace transform where the time integration is restricted to non-negative times, from <span class="math notranslate nohighlight">\(0\)</span> to <span class="math notranslate nohighlight">\(\infty\)</span>, instead of the whole real axis, from <span class="math notranslate nohighlight">\(-\infty\)</span> to <span class="math notranslate nohighlight">\(\infty\)</span>. Among the bilateral and unilateral definitions, the former has the advantage that it is strictly related to the Fourier transform and allows us to deal with the Dirac delta as well, without making further considerations. We have to keep in mind, however, that we shall apply the bilateral Laplace transform to functions which are zero for negative time, eq. <a class="reference internal" href="#equation-l-7">(3.18)</a>.</p>
+</div>
+<section id="properties-of-the-laplace-transform">
+<h3><a class="toc-backref" href="#id6"><span class="section-number">3.2.1. </span>Properties of the Laplace transform</a><a class="headerlink" href="#properties-of-the-laplace-transform" title="Permalink to this headline">#</a></h3>
+<div class="full-width docutils">
+<p>Hereinafter we list the main properties of the Laplace transform which are closely related to those of the Fourier transform</p>
+</div>
+<section id="shift-in-time">
+<h4><span class="section-number">3.2.1.1. </span>Shift in time<a class="headerlink" href="#shift-in-time" title="Permalink to this headline">#</a></h4>
+<div class="full-width docutils">
+<p>The Laplace transform of a function shifted in time <span class="math notranslate nohighlight">\(f(t+t_0)\)</span> yields the Lalace transform <span class="math notranslate nohighlight">\(\tilde{f}(s)\)</span> multiplied by <span class="math notranslate nohighlight">\(e^{s\,t_0}\)</span></p>
+<div class="math notranslate nohighlight" id="equation-l-8a">
+<span class="eqno">(3.24)<a class="headerlink" href="#equation-l-8a" title="Permalink to this equation">#</a></span>\[
+\begin{align}
+\int_{-\infty}^\infty f(t+t_0)\,e^{-s\,t}\,\mathrm{d}t 
+= e^{s\,t_0}\,\tilde{f}(s)
+\end{align}
+\]</div>
+</div>
+</section>
+<section id="derivatives">
+<h4><span class="section-number">3.2.1.2. </span>Derivatives<a class="headerlink" href="#derivatives" title="Permalink to this headline">#</a></h4>
+<div class="full-width docutils">
+<p>The Laplace transform of a <span class="math notranslate nohighlight">\(n\)</span>-th order time derivative of a function <span class="math notranslate nohighlight">\(f(t)\)</span> yields the Laplace transform <span class="math notranslate nohighlight">\(\tilde{f}(\omega)\)</span> multiplied by <span class="math notranslate nohighlight">\(s^n\)</span></p>
+<div class="math notranslate nohighlight" id="equation-l-9">
+<span class="eqno">(3.25)<a class="headerlink" href="#equation-l-9" title="Permalink to this equation">#</a></span>\[
+\begin{align}
+\int_{-\infty}^\infty \frac{\mathrm{d}^n f(t)}{\mathrm{d} t^n}\,e^{-s\,t}\,\mathrm{d}t = s^n\,\tilde{f}(\omega)
+\end{align}
+\]</div>
+</div>
+</section>
+<section id="convolution">
+<h4><span class="section-number">3.2.1.3. </span>Convolution<a class="headerlink" href="#convolution" title="Permalink to this headline">#</a></h4>
+<div class="full-width docutils">
+<p>The Laplace transform of the convolution between two functions <span class="math notranslate nohighlight">\(f(t)\)</span> and <span class="math notranslate nohighlight">\(g(t)\)</span></p>
+<div class="math notranslate nohighlight" id="equation-l-10">
+<span class="eqno">(3.26)<a class="headerlink" href="#equation-l-10" title="Permalink to this equation">#</a></span>\[
+\begin{align}
+h(t) = \int_{-\infty}^\infty f(\tau)\,g(t-\tau)\,\mathrm{d}\tau 
+\end{align}
+\]</div>
+<p>yields the product of the two Laplace transforms <span class="math notranslate nohighlight">\(\tilde{f}(\omega)\)</span> and <span class="math notranslate nohighlight">\(\tilde{g}(\omega)\)</span></p>
+<div class="math notranslate nohighlight" id="equation-l-11">
+<span class="eqno">(3.27)<a class="headerlink" href="#equation-l-11" title="Permalink to this equation">#</a></span>\[
+\begin{align}
+\int_{-\infty}^\infty h(t)\,e^{-s\,t}\,\mathrm{d}t = \tilde{f}(s)\,\tilde{g}(s)
+\end{align}
+\]</div>
+</div>
+</section>
+<section id="real-functions">
+<h4><span class="section-number">3.2.1.4. </span>Real functions<a class="headerlink" href="#real-functions" title="Permalink to this headline">#</a></h4>
+<div class="full-width docutils">
+<p>The Laplace transform of a real-valued function <span class="math notranslate nohighlight">\(f(t)\)</span> has the following property</p>
+<div class="math notranslate nohighlight" id="equation-l-12">
+<span class="eqno">(3.28)<a class="headerlink" href="#equation-l-12" title="Permalink to this equation">#</a></span>\[
+\begin{align}
+\tilde{f}^*(s) = \tilde{f}(s^*)
+\end{align}
+\]</div>
+<p>with the asterisk <span class="math notranslate nohighlight">\(*\)</span> stands for the complex conjugate, as proved hereinafter</p>
+<div class="math notranslate nohighlight" id="equation-l-13">
+<span class="eqno">(3.29)<a class="headerlink" href="#equation-l-13" title="Permalink to this equation">#</a></span>\[
+\begin{align}
+&amp; \tilde{f}^*(t) = \int_{-\infty}^\infty f(t)\,e^{s^*\,t}\,d t = \tilde{f}(s^*)
+\end{align}
+\]</div>
+<p>By denoting the real and imaginary parts of the Laplace variable <span class="math notranslate nohighlight">\(s\)</span> with <span class="math notranslate nohighlight">\(x\)</span> and <span class="math notranslate nohighlight">\(y\)</span>, and the real and imaginary parts of the Laplace transform <span class="math notranslate nohighlight">\(\tilde{f}(s)\)</span> with <span class="math notranslate nohighlight">\(u\)</span> and <span class="math notranslate nohighlight">\(v\)</span></p>
+<div class="math notranslate nohighlight" id="equation-l-32">
+<span class="eqno">(3.30)<a class="headerlink" href="#equation-l-32" title="Permalink to this equation">#</a></span>\[
+s=x+i\,y \qquad \tilde{f}(s) = u(x,y)+i\,v(x,y)
+\]</div>
+<p>we can write eq. <a class="reference internal" href="#equation-l-12">(3.28)</a> as follows</p>
+<div class="math notranslate nohighlight" id="equation-l-33">
+<span class="eqno">(3.31)<a class="headerlink" href="#equation-l-33" title="Permalink to this equation">#</a></span>\[
+\begin{align}
+u(x,y) = u(x,-y) \qquad v(x,y) = -v(x,-y)
+\end{align}
+\]</div>
+<p>which shows how the real part <span class="math notranslate nohighlight">\(u\)</span> is symmetric with respect to the real axis, while the imaginary part <span class="math notranslate nohighlight">\(v\)</span> is anti-symmetric. In this respect, the Laplace transform of a real-valued function is real on the real axis of the complex plane, i.e., for <span class="math notranslate nohighlight">\(s\in\mathbb{R}\)</span>.</p>
+</div>
+<hr class="docutils" />
+<div class="full-width dropdown admonition">
+<p class="admonition-title">Jordan lemma</p>
+<p>The Jordan lemma states that</p>
+<div class="math notranslate nohighlight" id="equation-l-34">
+<span class="eqno">(3.32)<a class="headerlink" href="#equation-l-34" title="Permalink to this equation">#</a></span>\[
+\begin{align}
+\bigg\|\int_{C_R} f(\omega)\,e^{i\,\omega\,t}\,d \omega \bigg\| \leq \frac{\pi}{\|t\|}\,M_R\qquad M_R = \max_{\omega\in C_R} \big\| f(\omega)\,\big\| 
+\end{align}
+\]</div>
+<p>where the contour path of integration <span class="math notranslate nohighlight">\(C_R\)</span> is chosen depending whether the time <span class="math notranslate nohighlight">\(t\)</span> is positive or negative</p>
+<div class="math notranslate nohighlight" id="equation-l-35">
+<span class="eqno">(3.33)<a class="headerlink" href="#equation-l-35" title="Permalink to this equation">#</a></span>\[\begin{split}
+\begin{align}
+&amp; C_R = \begin{cases}
+\Big\{\omega=R\,e^{i\,\theta}\,\mid\,\forall\,\theta\in[0,\pi] \Big\} 
+ &amp; t&gt;0
+\\ 
+\Big\{\omega=R\,e^{i\,\theta}\,\mid\,\forall\,\theta\in[\pi,2\,\pi] \Big\} 
+&amp; t&lt;0 
+\end{cases}
+\end{align}
+\end{split}\]</div>
+<p>To be applied to the inverse Laplace transform, it can be recast in the following form</p>
+<div class="math notranslate nohighlight" id="equation-l-36">
+<span class="eqno">(3.34)<a class="headerlink" href="#equation-l-36" title="Permalink to this equation">#</a></span>\[
+\begin{align}
+\bigg\|\int_{C_R} f(s)\,e^{s\,t}\,d s \bigg\| \leq \frac{\pi}{a}\,M_R\qquad M_R = \max_{\omega\in C_R} \big\| f(s)\,\big\| 
+\end{align}
+\]</div>
+<div class="math notranslate nohighlight" id="equation-l-37">
+<span class="eqno">(3.35)<a class="headerlink" href="#equation-l-37" title="Permalink to this equation">#</a></span>\[\begin{split}
+\begin{align}
+&amp; C_R = \begin{cases}
+\Big\{s=c+R\,e^{i\,\theta}\,\mid\,\forall\,\theta\in\big[\tfrac{1}{2}\pi,\tfrac{3}{2}\pi\big] \Big\} 
+ &amp; t&gt;0
+\\ 
+\Big\{s=c+R\,e^{i\,\theta}\,\mid\,\forall\,\theta\in\big[-\tfrac{1}{2}\pi,\tfrac{1}{2}\pi\big] \Big\} 
+&amp; t&lt;0 
+\end{cases}
+\end{align}
+\end{split}\]</div>
+</div>
+</section>
+</section>
+<section id="inverse-laplace-transform">
+<h3><a class="toc-backref" href="#id7"><span class="section-number">3.2.2. </span>Inverse Laplace transform</a><a class="headerlink" href="#inverse-laplace-transform" title="Permalink to this headline">#</a></h3>
+<div class="full-width docutils">
+<p><img alt="start" src="../_images/Bromwich.png" /></p>
+<p>The inverse Laplace transform is defined as follows</p>
+<div class="math notranslate nohighlight" id="equation-l-4">
+<span class="eqno">(3.36)<a class="headerlink" href="#equation-l-4" title="Permalink to this equation">#</a></span>\[
+\begin{align}
+f(t) = \frac{1}{2\,\pi\,i}\,\lim_{R\rightarrow\infty} \int_{c-i\,R}^{c+i\,R} \tilde{f}(s)\,e^{s\,t}\,d s
+\end{align}
+\]</div>
+<p>where <span class="math notranslate nohighlight">\(c\)</span> is a real number so that the contour path of integration is in the region of convergence of <span class="math notranslate nohighlight">\(\tilde{f}(s)\)</span>. In light of this, we note that the inverse Laplace transform is obtained by integrating a path parallel to the imaginary axis of the complex domain, the so called Bromwich path.</p>
+<p>A common case  is when the Laplace transform <span class="math notranslate nohighlight">\(\tilde{f}(s)\)</span> converges to a (same) constant value in the limit of <span class="math notranslate nohighlight">\(s\)</span> going to infinity (in all the directions of the complex plane)</p>
+<div class="math notranslate nohighlight" id="equation-l-38">
+<span class="eqno">(3.37)<a class="headerlink" href="#equation-l-38" title="Permalink to this equation">#</a></span>\[
+\begin{align}
+\lim_{\|s\|\rightarrow \infty} \tilde{f}(s) = f_E
+\end{align}
+\]</div>
+<p>We will refer to this contant value as the <em>elastic limit</em>. In this case, eq. <a class="reference internal" href="#equation-l-4">(3.36)</a> can be written as follows</p>
+<div class="math notranslate nohighlight" id="equation-l-39">
+<span class="eqno">(3.38)<a class="headerlink" href="#equation-l-39" title="Permalink to this equation">#</a></span>\[
+\begin{align}
+f(t) = f_E\,\delta(t) + \frac{1}{2\,\pi\,i}\,\lim_{R\rightarrow\infty} \int_{c-i\,R}^{c+i\,R} \tilde{f}(s)\,e^{s\,t}\,d s
+\end{align}
+\]</div>
+<p>where we make use of the fact that, according to eq. <a class="reference internal" href="#equation-l-3">(3.23)</a>, the inverse Laplace transform of <span class="math notranslate nohighlight">\(1\)</span> is the Dirac delta <span class="math notranslate nohighlight">\(\delta(t)\)</span>. After that,  as depicted in Figure X for positive times, <span class="math notranslate nohighlight">\(t&gt;0\)</span>, the integral along the Bromwich path is subsituted by an integral along a closed contour <span class="math notranslate nohighlight">\(\Gamma_R\)</span> minus the integral along the half circle <span class="math notranslate nohighlight">\(C_R\)</span> of radius <span class="math notranslate nohighlight">\(R\)</span> used to closed the Bromwich path.</p>
+<div class="math notranslate nohighlight" id="equation-l-40">
+<span class="eqno">(3.39)<a class="headerlink" href="#equation-l-40" title="Permalink to this equation">#</a></span>\[
+\begin{align}
+f(t) = f_E\,\delta(t) + \frac{1}{2\,\pi\,i}\,\lim_{T\rightarrow\infty} \left(\int_{\Gamma_R} \big(\tilde{f}(s)-f_E)\,e^{s\,t}\,d s - \int_{C_R} \big(\tilde{f}(s)-f_E\big)\,e^{s\,t}\,d s\right)
+\end{align}
+\]</div>
+<p>and the two integrals are performed making use of the residue theorem and the Jordan lemma discussed above. In particular, in the limit of <span class="math notranslate nohighlight">\(R\rightarrow\infty\)</span> and thanks to eq. <a class="reference internal" href="#equation-l-2">(3.10)</a>, the first contribution becomes the summation over closed contour path enclosing the the regions where <span class="math notranslate nohighlight">\(\tilde{f}(s)\)</span> is not analytic, i.e. the holes of the open subset where <span class="math notranslate nohighlight">\(\tilde{f}(s)\)</span> is not analytic after analytic continuation. The Jordan lemma, instead, guarantees that the second contribution yields zero because</p>
+<div class="math notranslate nohighlight" id="equation-l-41">
+<span class="eqno">(3.40)<a class="headerlink" href="#equation-l-41" title="Permalink to this equation">#</a></span>\[
+\begin{align}
+\lim_{R\rightarrow\infty} M_R = \lim_{\|s\,\|\rightarrow\infty} \big(\tilde{f}(s)-f_E\big) = 0
+\end{align}
+\]</div>
+<div class="math notranslate nohighlight" id="equation-l-42">
+<span class="eqno">(3.41)<a class="headerlink" href="#equation-l-42" title="Permalink to this equation">#</a></span>\[
+\begin{align}
+f(t) = f_E\,\delta(t) + \sum_k \int_{\gamma_k} \big(f(s)-f_E\big)\,e^{s\,t}\,ds
+\end{align}
+\]</div>
+<p>Assuming that <span class="math notranslate nohighlight">\(\tilde{f}(s)\)</span> has only first-order poles <span class="math notranslate nohighlight">\(s_k\)</span> and making use of the Residue theorem and of eq. <a class="reference internal" href="#equation-l-5">(3.13)</a>, we obtain</p>
+<div class="math notranslate nohighlight" id="equation-l-6">
+<span class="eqno">(3.42)<a class="headerlink" href="#equation-l-6" title="Permalink to this equation">#</a></span>\[
+\begin{align}
+f(t) = f_E\,\delta(t) + \sum_k f_k\,e^{s_k\,t}\,H(t)
+\end{align}
+\]</div>
+<p>with <span class="math notranslate nohighlight">\(f_k\)</span> being the residues associated to the pole <span class="math notranslate nohighlight">\(s_k\)</span></p>
+<div class="math notranslate nohighlight" id="equation-l-43">
+<span class="eqno">(3.43)<a class="headerlink" href="#equation-l-43" title="Permalink to this equation">#</a></span>\[
+\begin{align}
+f_k = \lim_{s\rightarrow s_k} (s-s_k)\,\tilde{f}(s)
+\end{align}
+\]</div>
+</div>
+</section>
+</section>
+</section>
+
+    <script type="text/x-thebe-config">
+    {
+        requestKernel: true,
+        binderOptions: {
+            repo: "binder-examples/jupyter-stacks-datascience",
+            ref: "master",
+        },
+        codeMirrorConfig: {
+            theme: "abcdef",
+            mode: "python"
+        },
+        kernelOptions: {
+            name: "python3",
+            path: "./files"
+        },
+        predefinedOutput: true
+    }
+    </script>
+    <script>kernelName = 'python3'</script>
+
+                </article>
+              
+
+              
+              
+                <footer class="bd-footer-article">
+                  <!-- Previous / next buttons -->
+<div class="prev-next-area">
+    <a class="left-prev"
+       href="A1_Tutorial.html"
+       title="previous page">
+      <i class="fa-solid fa-angle-left"></i>
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">previous</p>
+        <p class="prev-next-title"><span class="section-number">2. </span>Tutorial on Python</p>
+      </div>
+    </a>
+    <a class="right-next"
+       href="L0_Harmonic_Scalar.html"
+       title="next page">
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">next</p>
+        <p class="prev-next-title"><span class="section-number">4. </span>Spherical harmonics</p>
+      </div>
+      <i class="fa-solid fa-angle-right"></i>
+    </a>
+</div>
+                </footer>
+              
+            </div>
+            
+            
+              
+                <div class="bd-sidebar-secondary bd-toc"><div class="sidebar-secondary-items sidebar-secondary__inner">
+
+  <div class="sidebar-secondary-item">
+  <div class="page-toc tocsection onthispage">
+    <i class="fa-solid fa-list"></i> Contents
+  </div>
+  <nav class="bd-toc-nav page-toc">
+    <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#complex-functions">3.1. Complex functions</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#analyticity-of-holomorphic-functions">3.1.1. Analyticity of holomorphic functions</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#cauchy-integral-theorem">3.1.2. Cauchy integral theorem</a><ul class="nav section-nav flex-column">
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#residue-theorem">3.1.2.1. Residue theorem</a></li>
+</ul>
+</li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#analytic-continuation">3.1.3. Analytic continuation</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#laplace-transform">3.2. Laplace transform</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#properties-of-the-laplace-transform">3.2.1. Properties of the Laplace transform</a><ul class="nav section-nav flex-column">
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#shift-in-time">3.2.1.1. Shift in time</a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#derivatives">3.2.1.2. Derivatives</a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#convolution">3.2.1.3. Convolution</a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#real-functions">3.2.1.4. Real functions</a></li>
+</ul>
+</li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#inverse-laplace-transform">3.2.2. Inverse Laplace transform</a></li>
+</ul>
+</li>
+</ul>
+  </nav></div>
+
+</div></div>
+              
+            
+          </div>
+          <footer class="bd-footer-content">
+            <div class="bd-footer-content__inner">
+<div class="bd-footer-content__inner container">
+  
+  <div class="footer-item">
+    
+<p class="component-author">
+By <a href="https://sites.unimi.it/gcambiotti/">Gabriele Cambiotti</a>
+</p>
+
+  </div>
+  
+  <div class="footer-item">
+    
+  <p class="copyright">
+    
+      © Copyright 2022.
+      <br/>
+    
+  </p>
+
+  </div>
+  
+  <div class="footer-item">
+    
+  </div>
+  
+  <div class="footer-item">
+    
+  </div>
+  
+</div></div>
+          </footer>
+        
+
+      </main>
+    </div>
+  </div>
+  
+  <!-- Scripts loaded after <body> so the DOM is not blocked -->
+  <script src="../_static/scripts/bootstrap.js?digest=12da95d707ffb74b382d"></script>
+<script src="../_static/scripts/pydata-sphinx-theme.js?digest=12da95d707ffb74b382d"></script>
+
+  <footer class="bd-footer">
+  </footer>
+  </body>
+</html>

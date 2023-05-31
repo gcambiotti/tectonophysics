@@ -1,0 +1,1109 @@
+
+
+<!DOCTYPE html>
+
+
+<html >
+
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
+
+    <title>6. Gravitatational potentials &#8212; Tectonophysics</title>
+  
+  
+  
+  <script data-cfasync="false">
+    document.documentElement.dataset.mode = localStorage.getItem("mode") || "";
+    document.documentElement.dataset.theme = localStorage.getItem("theme") || "light";
+  </script>
+  
+  <!-- Loaded before other Sphinx assets -->
+  <link href="../_static/styles/theme.css?digest=12da95d707ffb74b382d" rel="stylesheet" />
+<link href="../_static/styles/bootstrap.css?digest=12da95d707ffb74b382d" rel="stylesheet" />
+<link href="../_static/styles/pydata-sphinx-theme.css?digest=12da95d707ffb74b382d" rel="stylesheet" />
+
+  
+  <link href="../_static/vendor/fontawesome/6.1.2/css/all.min.css?digest=12da95d707ffb74b382d" rel="stylesheet" />
+  <link rel="preload" as="font" type="font/woff2" crossorigin href="../_static/vendor/fontawesome/6.1.2/webfonts/fa-solid-900.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="../_static/vendor/fontawesome/6.1.2/webfonts/fa-brands-400.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="../_static/vendor/fontawesome/6.1.2/webfonts/fa-regular-400.woff2" />
+
+    <link rel="stylesheet" type="text/css" href="../_static/pygments.css" />
+    <link rel="stylesheet" href="../_static/styles/sphinx-book-theme.css?digest=14f4ca6b54d191a8c7657f6c759bf11a5fb86285" type="text/css" />
+    <link rel="stylesheet" type="text/css" href="../_static/togglebutton.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/copybutton.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/mystnb.4510f1fc1dee50b3e5859aac5469c37c29e427902b24a333a5f9fcb2f0b3ac41.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/sphinx-thebe.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/design-style.4045f2051d55cab465a707391d5b2007.min.css" />
+  
+  <!-- Pre-loaded scripts that we'll load fully later -->
+  <link rel="preload" as="script" href="../_static/scripts/bootstrap.js?digest=12da95d707ffb74b382d" />
+<link rel="preload" as="script" href="../_static/scripts/pydata-sphinx-theme.js?digest=12da95d707ffb74b382d" />
+
+    <script data-url_root="../" id="documentation_options" src="../_static/documentation_options.js"></script>
+    <script src="../_static/jquery.js"></script>
+    <script src="../_static/underscore.js"></script>
+    <script src="../_static/doctools.js"></script>
+    <script src="../_static/clipboard.min.js"></script>
+    <script src="../_static/copybutton.js"></script>
+    <script src="../_static/scripts/sphinx-book-theme.js?digest=5a5c038af52cf7bc1a1ec88eea08e6366ee68824"></script>
+    <script>let toggleHintShow = 'Click to show';</script>
+    <script>let toggleHintHide = 'Click to hide';</script>
+    <script>let toggleOpenOnPrint = 'true';</script>
+    <script src="../_static/togglebutton.js"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
+    <script src="../_static/design-tabs.js"></script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"
+const thebe_selector = ".thebe,.cell"
+const thebe_selector_input = "pre"
+const thebe_selector_output = ".output, .cell_output"
+</script>
+    <script async="async" src="../_static/sphinx-thebe.js"></script>
+    <script>window.MathJax = {"options": {"processHtmlClass": "tex2jax_process|mathjax_process|math|output_area"}}</script>
+    <script defer="defer" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+    <script>DOCUMENTATION_OPTIONS.pagename = 'files/T1_Potentials';</script>
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
+    <link rel="next" title="7. Kinematics and reference systems" href="T2_Kinematics.html" />
+    <link rel="prev" title="5. Spherical harmonic vectors" href="L0_Harmonic_Vectors.html" />
+  <meta name="viewport" content="width=device-width, initial-scale=1"/>
+  <meta name="docsearch:language" content="None"/>
+  </head>
+  
+  
+  <body data-bs-spy="scroll" data-bs-target=".bd-toc-nav" data-offset="180" data-bs-root-margin="0px 0px -60%" data-default-mode="">
+
+  
+  
+  <a class="skip-link" href="#main-content">Skip to main content</a>
+  
+  <input type="checkbox"
+          class="sidebar-toggle"
+          name="__primary"
+          id="__primary"/>
+  <label class="overlay overlay-primary" for="__primary"></label>
+  
+  <input type="checkbox"
+          class="sidebar-toggle"
+          name="__secondary"
+          id="__secondary"/>
+  <label class="overlay overlay-secondary" for="__secondary"></label>
+  
+  <div class="search-button__wrapper">
+    <div class="search-button__overlay"></div>
+    <div class="search-button__search-container">
+<form class="bd-search d-flex align-items-center"
+      action="../search.html"
+      method="get">
+  <i class="fa-solid fa-magnifying-glass"></i>
+  <input type="search"
+         class="form-control"
+         name="q"
+         id="search-input"
+         placeholder="Search this book..."
+         aria-label="Search this book..."
+         autocomplete="off"
+         autocorrect="off"
+         autocapitalize="off"
+         spellcheck="false"/>
+  <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd>K</kbd></span>
+</form></div>
+  </div>
+  
+    <nav class="bd-header navbar navbar-expand-lg bd-navbar">
+    </nav>
+  
+  <div class="bd-container">
+    <div class="bd-container__inner bd-page-width">
+      
+      <div class="bd-sidebar-primary bd-sidebar">
+        
+
+  
+  <div class="sidebar-header-items sidebar-primary__section">
+    
+    
+    
+    
+  </div>
+  
+    <div class="sidebar-primary-items__start sidebar-primary__section">
+        <div class="sidebar-primary-item">
+  
+
+<a class="navbar-brand logo" href="../intro.html">
+  
+  
+  
+  
+    
+    
+      
+    
+    
+    <img src="../_static/gc_logo.png" class="logo__image only-light" alt="Logo image"/>
+    <script>document.write(`<img src="../_static/gc_logo.png" class="logo__image only-dark" alt="Logo image"/>`);</script>
+  
+  
+</a></div>
+        <div class="sidebar-primary-item"><nav class="bd-links" id="bd-docs-nav" aria-label="Main">
+    <div class="bd-toc-item navbar-nav active">
+        <p aria-level="2" class="caption" role="heading"><span class="caption-text">Introduction</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="A0_Setup.html">1. Working with JupyterLab</a></li>
+<li class="toctree-l1"><a class="reference internal" href="A1_Tutorial.html">2. Tutorial on Python</a></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Methods</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="L1_Laplace.html">3. The Laplace transform</a></li>
+<li class="toctree-l1"><a class="reference internal" href="L0_Harmonic_Scalar.html">4. Spherical harmonics</a></li>
+<li class="toctree-l1"><a class="reference internal" href="L0_Harmonic_Vectors.html">5. Spherical harmonic vectors</a></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Theory</span></p>
+<ul class="current nav bd-sidenav">
+<li class="toctree-l1 current active"><a class="current reference internal" href="#">6. Gravitatational potentials</a></li>
+<li class="toctree-l1"><a class="reference internal" href="T2_Kinematics.html">7. Kinematics and reference systems</a></li>
+<li class="toctree-l1"><a class="reference internal" href="T2_Reference.html">8. The Earth reference system</a></li>
+<li class="toctree-l1"><a class="reference internal" href="T2_Equations.html">9. Momentum and Poisson equations</a></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Solution</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="L3_Self.html">10. Perturbation theory</a></li>
+<li class="toctree-l1"><a class="reference internal" href="L4_Analytical.html">11. Analytical solutions</a></li>
+<li class="toctree-l1"><a class="reference internal" href="L5_Euler.html">12. Rotational dynamics</a></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Codes</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="C1_Codes.html">13. Homogeneous incompressible Earth model</a></li>
+
+
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Appendix</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="Z0_Dirac.html">16. Dirac delta function</a></li>
+</ul>
+
+    </div>
+</nav></div>
+    </div>
+  
+  
+  <div class="sidebar-primary-items__end sidebar-primary__section">
+  </div>
+  
+  <div id="rtd-footer-container"></div>
+
+
+      </div>
+      
+      <main id="main-content" class="bd-main">
+        
+        
+
+<div class="sbt-scroll-pixel-helper"></div>
+
+          <div class="bd-content">
+            <div class="bd-article-container">
+              
+              <div class="bd-header-article">
+<div class="header-article-items header-article__inner">
+  
+    <div class="header-article-items__start">
+      
+        <div class="header-article-item"><label class="sidebar-toggle primary-toggle btn btn-sm" for="__primary" title="Toggle primary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+  <span class="fa-solid fa-bars"></span>
+</label></div>
+      
+    </div>
+  
+  
+    <div class="header-article-items__end">
+      
+        <div class="header-article-item">
+
+<div class="article-header-buttons">
+
+
+
+
+
+<div class="dropdown dropdown-download-buttons">
+  <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Download this page">
+    <i class="fas fa-download"></i>
+  </button>
+  <ul class="dropdown-menu">
+      
+      
+      
+      <li><a href="../_sources/files/T1_Potentials.ipynb" target="_blank"
+   class="btn btn-sm btn-download-source-button dropdown-item"
+   title="Download source file"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-file"></i>
+  </span>
+<span class="btn__text-container">.ipynb</span>
+</a>
+</li>
+      
+      
+      
+      
+      <li>
+<button onclick="window.print()"
+  class="btn btn-sm btn-download-pdf-button dropdown-item"
+  title="Print to PDF"
+  data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-file-pdf"></i>
+  </span>
+<span class="btn__text-container">.pdf</span>
+</button>
+</li>
+      
+  </ul>
+</div>
+
+
+
+
+<button onclick="toggleFullScreen()"
+  class="btn btn-sm btn-fullscreen-button"
+  title="Fullscreen mode"
+  data-bs-placement="bottom" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-expand"></i>
+  </span>
+
+</button>
+
+
+<script>
+document.write(`
+  <button class="theme-switch-button btn btn-sm btn-outline-primary navbar-btn rounded-circle" title="light/dark" aria-label="light/dark" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <span class="theme-switch" data-mode="light"><i class="fa-solid fa-sun"></i></span>
+    <span class="theme-switch" data-mode="dark"><i class="fa-solid fa-moon"></i></span>
+    <span class="theme-switch" data-mode="auto"><i class="fa-solid fa-circle-half-stroke"></i></span>
+  </button>
+`);
+</script>
+
+<script>
+document.write(`
+  <button class="btn btn-sm navbar-btn search-button search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass"></i>
+  </button>
+`);
+</script>
+<label class="sidebar-toggle secondary-toggle btn btn-sm" for="__secondary"title="Toggle secondary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <span class="fa-solid fa-list"></span>
+</label>
+</div></div>
+      
+    </div>
+  
+</div>
+</div>
+              
+              
+
+<div id="jb-print-docs-body" class="onlyprint">
+    <h1>Gravitatational potentials</h1>
+    <!-- Table of contents -->
+    <div id="print-main-content">
+        <div id="jb-print-toc">
+            
+            <div>
+                <h2> Contents </h2>
+            </div>
+            <nav aria-label="Page">
+                <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#poisson-equation">6.1. Poisson equation</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#spherical-harmonic-expansion">6.1.1. Spherical harmonic expansion</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#laplace-equation">6.1.2. Laplace equation</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#solid-earth-and-load-system">6.2. Solid Earth (and load) system</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#maccullagh-theorem">6.2.1. MacCullagh theorem</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#celestial-bodies">6.3. Celestial bodies</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#total-force">6.3.1. Total force</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#total-torque">6.3.2. Total torque</a></li>
+</ul>
+</li>
+</ul>
+            </nav>
+        </div>
+    </div>
+</div>
+
+              
+                
+<div id="searchbox"></div>
+                <article class="bd-article" role="main">
+                  
+  <section class="tex2jax_ignore mathjax_ignore" id="gravitatational-potentials">
+<span id="chap-potentials"></span><h1><span class="section-number">6. </span>Gravitatational potentials<a class="headerlink" href="#gravitatational-potentials" title="Permalink to this headline">#</a></h1>
+<div class="contents local topic" id="sections">
+<p class="topic-title">Sections</p>
+<ul class="simple">
+<li><p><a class="reference internal" href="#poisson-equation" id="id1">Poisson equation</a></p>
+<ul>
+<li><p><a class="reference internal" href="#spherical-harmonic-expansion" id="id2">Spherical harmonic expansion</a></p></li>
+<li><p><a class="reference internal" href="#laplace-equation" id="id3">Laplace equation</a></p></li>
+</ul>
+</li>
+<li><p><a class="reference internal" href="#solid-earth-and-load-system" id="id4">Solid Earth (and load) system</a></p>
+<ul>
+<li><p><a class="reference internal" href="#maccullagh-theorem" id="id5">MacCullagh theorem</a></p></li>
+</ul>
+</li>
+<li><p><a class="reference internal" href="#celestial-bodies" id="id6">Celestial bodies</a></p>
+<ul>
+<li><p><a class="reference internal" href="#total-force" id="id7">Total force</a></p></li>
+<li><p><a class="reference internal" href="#total-torque" id="id8">Total torque</a></p></li>
+</ul>
+</li>
+</ul>
+</div>
+<div class="full-width docutils">
+<p>This lecture deals with density distributions and the gravitational potentials and define the main integral and differential equations governing them. Furthermore, making use of the spherical harmonic expansion, it discuss some specific results, such as the MacCullagh theorem, and uses them for specifying the link between the mass, the centre of mass and the inertia moment of the Earth and load system, as well as to discuss the gravitational potential due to celestial bodies and define the so called tidal potential.</p>
+</div>
+<p><span class="math notranslate nohighlight">\(\newcommand{\md}{\mathrm{d}\hspace{0cm}}\)</span>
+<span class="math notranslate nohighlight">\(\newcommand{\mdd}{\mathrm{d}\hspace{0cm}^2}\)</span>
+<span class="math notranslate nohighlight">\(\newcommand{\grad}{\boldsymbol{\nabla}\hspace{-0.01cm}}\)</span>
+<span class="math notranslate nohighlight">\(\newcommand{\stress}{\boldsymbol{\sigma}}\)</span>
+<span class="math notranslate nohighlight">\(\newcommand{\bn}[1]{\hat{\mathbf{#1}}}\)</span>
+<span class="math notranslate nohighlight">\(\newcommand{\bb}[1]{\mathbf{#1}}\)</span>
+<span class="math notranslate nohighlight">\(\newcommand{\sn}[1]{\hat{\boldsymbol{#1}}}\)</span>
+<span class="math notranslate nohighlight">\(\newcommand{\sb}[1]{\boldsymbol{#1}}\)</span>
+<span class="math notranslate nohighlight">\(\newcommand{\zero}{\mathbf{0}}\)</span>
+<span class="math notranslate nohighlight">\(\newcommand{\one}{\mathbf{1}}\)</span>
+<span class="math notranslate nohighlight">\(\newcommand{\lap}{\nabla^2\hspace{0cm}}\)</span>
+<span class="math notranslate nohighlight">\(\newcommand{\loc}{\Delta\hspace{0cm}}\)</span>
+<span class="math notranslate nohighlight">\(\newcommand{\mat}{\delta\hspace{0cm}}\)</span>
+<span class="math notranslate nohighlight">\(\newcommand{\det}{\mathrm{\det}\hspace{0cm}}\)</span>
+<span class="math notranslate nohighlight">\(\newcommand{\cm}[1]{\bar{\bb{#1}}}\)</span>
+<span class="math notranslate nohighlight">\(\newcommand{\lmsum}{\sum_{n=0}^\infty\sum_{m=-n}^n}\)</span>
+<span class="math notranslate nohighlight">\(\newcommand{\kqsum}{\sum_{k=0}^\infty\sum_{q=-k}^k}\)</span>
+<span class="math notranslate nohighlight">\(\newcommand{\dif}[1]{#1\hspace{0cm}\prime}\)</span>
+<span class="math notranslate nohighlight">\(\newcommand{\dermat}[1]{\frac{\mathrm{D}\hspace{0.02cm}#1}{\mathrm{D}\hspace{0.02cm} t}}\)</span>
+<span class="math notranslate nohighlight">\(\newcommand{\dercla}[1]{\frac{\mathrm{d}\hspace{0.02cm}#1}{\mathrm{d}\hspace{0.02cm} t}}\)</span>
+<span class="math notranslate nohighlight">\(\newcommand{\derpar}[1]{\frac{\partial\hspace{0.02cm}#1}{\partial\hspace{0.02cm} t}}\)</span>
+<span class="math notranslate nohighlight">\(\newcommand{\rpar}[2]{\frac{\partial\hspace{0.02cm}#1}{\partial\hspace{0.02cm} r_{#2}}}\)</span>
+<span class="math notranslate nohighlight">\(\newcommand{\xpar}[2]{\frac{\partial\hspace{0.02cm}#1}{\partial\hspace{0.02cm} x_{#2}}}\)</span>
+<span class="math notranslate nohighlight">\(\newcommand{\ddermat}[1]{\frac{\mathrm{D}^2\hspace{0.02cm}#1}{\mathrm{D}\hspace{0.02cm} t^2}}\)</span>
+<span class="math notranslate nohighlight">\(\newcommand{\ddercla}[1]{\frac{\mathrm{d}^2\hspace{0.02cm}#1}{\mathrm{d}\hspace{0.02cm} t^2}}\)</span>
+<span class="math notranslate nohighlight">\(\newcommand{\dderpar}[1]{\frac{\partial^2\hspace{0.02cm}#1}{\partial\hspace{0.02cm} t^2}}\)</span>
+<span class="math notranslate nohighlight">\(\newcommand{\drpar}[2]{\frac{\partial^2\hspace{0.02cm}#1}{\partial\hspace{0.02cm} r_{#2}^2}}\)</span>
+<span class="math notranslate nohighlight">\(\newcommand{\dxpar}[2]{\frac{\partial^2\hspace{0.02cm}#1}{\partial\hspace{0.02cm} x_{#2}^2}}\)</span></p>
+<section id="poisson-equation">
+<h2><a class="toc-backref" href="#id1"><span class="section-number">6.1. </span>Poisson equation</a><a class="headerlink" href="#poisson-equation" title="Permalink to this headline">#</a></h2>
+<div class="full-width docutils">
+<p>Let us consider the gravitational potential <span class="math notranslate nohighlight">\(\phi\)</span> due to a continuum body with density distribution <span class="math notranslate nohighlight">\(\rho\)</span> at the present time <span class="math notranslate nohighlight">\(t\)</span>. In classical physics, the link between these two fields is instantaneous and does not depend on the motion of the particles, but just on their current positions. In this respect, the spatial coordinates used for  identify the position in the three-dimensional space can be arbitrarly choosen, even adopting non-inertial reference frame with rotating unit vectors referred to a time-dependent translating origin. We will come back on this issue in section <a class="reference internal" href="T2_Kinematics.html#chap-kinematics"><span class="std std-numref">Chapter 7</span></a> - <a class="reference internal" href="T2_Kinematics.html#chap-kinematics"><span class="std std-ref">Kinematics and reference systems</span></a> and, for now, we will simply assume that the points of the three-dimensional space can be identified by a vector position</p>
+<div class="math notranslate nohighlight" id="equation-g-0">
+<span class="eqno">(6.1)<a class="headerlink" href="#equation-g-0" title="Permalink to this equation">#</a></span>\[ 
+\bb{x} = x_i\,\bn{x}_i = x\,\bn{r}(\vartheta,\varphi)
+\]</div>
+<p>with <span class="math notranslate nohighlight">\(x_i\)</span> and <span class="math notranslate nohighlight">\(\bn{x}_i\)</span> being the Cartesian coordinates and unit vectors, and <span class="math notranslate nohighlight">\((x,\vartheta,\varphi)\)</span> being the spherical coordinates and <span class="math notranslate nohighlight">\(\bn{r}\)</span> being the radial unit vector pointing towards <span class="math notranslate nohighlight">\(\bb{x}\)</span>.</p>
+<p>The definition of the gravitational potential in terms of the density distribution reads</p>
+<div class="math notranslate nohighlight" id="equation-g-1">
+<span class="eqno">(6.2)<a class="headerlink" href="#equation-g-1" title="Permalink to this equation">#</a></span>\[
+\phi(\bb{x}) = -G\,\int_{\mathbb{R}^3}\frac{\rho(\dif{\bb{x}})}{\|\bb{x}-\dif{\bb{x}}\|}\,\md \dif{V}
+\]</div>
+<p>where <span class="math notranslate nohighlight">\(G\)</span> is the universal gravitational constant. By introducing the gradient and the Laplacian operators</p>
+<div class="math notranslate nohighlight" id="equation-g-2">
+<span class="eqno">(6.3)<a class="headerlink" href="#equation-g-2" title="Permalink to this equation">#</a></span>\[
+\grad = \bn{x}_i\,\frac{\partial}{\partial x_i} \qquad \lap  = \grad\cdot\grad = \frac{\partial^2}{\partial x_i\,\partial x_i}
+\]</div>
+<p>and applying the Laplacian operator to eq. <a class="reference internal" href="#equation-g-1">(6.2)</a>, we obtain the Poisson equation</p>
+<div class="math notranslate nohighlight" id="equation-g-3">
+<span class="eqno">(6.4)<a class="headerlink" href="#equation-g-3" title="Permalink to this equation">#</a></span>\[
+\lap\phi(\bb{x}) = C\,\rho(\bb{x})
+\]</div>
+<p>where we have made use of the following identity</p>
+<div class="math notranslate nohighlight" id="equation-g-4">
+<span class="eqno">(6.5)<a class="headerlink" href="#equation-g-4" title="Permalink to this equation">#</a></span>\[
+\lap\frac{1}{\|\bb{x}-\dif{\bb{x}}\|} = - 4\,\pi\,\delta(\bb{x}-\dif{\bb{x}})
+\]</div>
+<p>and</p>
+<div class="math notranslate nohighlight" id="equation-g-4a">
+<span class="eqno">(6.6)<a class="headerlink" href="#equation-g-4a" title="Permalink to this equation">#</a></span>\[
+C=4\,\pi\,G
+\]</div>
+</div>
+<section id="spherical-harmonic-expansion">
+<h3><a class="toc-backref" href="#id2"><span class="section-number">6.1.1. </span>Spherical harmonic expansion</a><a class="headerlink" href="#spherical-harmonic-expansion" title="Permalink to this headline">#</a></h3>
+<div class="full-width docutils">
+<p>Let us now adopt consider the spherical coordinates <span class="math notranslate nohighlight">\((x,\vartheta,\varphi)\)</span> and introduce the following spherical harmonic expansions</p>
+<div class="math notranslate nohighlight" id="equation-g-5">
+<span class="eqno">(6.7)<a class="headerlink" href="#equation-g-5" title="Permalink to this equation">#</a></span>\[
+\phi(\bb{x}) = \sum_n\sum_m \phi_{n,m}(x)\,Y_n^m(\vartheta,\varphi) \qquad \rho(\bb{x}) = \sum_n\sum_m \rho_{n,m}(x)\,Y_n^m(\vartheta,\varphi) 
+\]</div>
+<p>By noting that</p>
+<div class="math notranslate nohighlight" id="equation-g-6">
+<span class="eqno">(6.8)<a class="headerlink" href="#equation-g-6" title="Permalink to this equation">#</a></span>\[
+\lap \big(\phi_{n,m}(x)\,Y_n^m(\vartheta,\varphi)\big) = \big(\nabla_n^2\phi_{n,m}(x)\big)\,Y_n^m(\vartheta,\varphi)
+\]</div>
+<p>with <span class="math notranslate nohighlight">\(\nabla_n^2\)</span> being the degree-<span class="math notranslate nohighlight">\(n\)</span> radial Laplacian operator</p>
+<div class="math notranslate nohighlight" id="equation-g-7">
+<span class="eqno">(6.9)<a class="headerlink" href="#equation-g-7" title="Permalink to this equation">#</a></span>\[
+\nabla_n^2 = \frac{\partial^2}{\partial x^2}+\frac{2}{x}\,\frac{\partial x}{\partial x} - \frac{n\,(n+1)}{x^2}
+\]</div>
+<p>and considering that the spherical harmonics are orthogonal to each other, eq. <a class="reference internal" href="L0_Harmonic_Scalar.html#equation-p-33">(4.35)</a> the Poisson equation <a class="reference internal" href="#equation-g-3">(6.4)</a> becomes</p>
+<div class="math notranslate nohighlight" id="equation-g-8">
+<span class="eqno">(6.10)<a class="headerlink" href="#equation-g-8" title="Permalink to this equation">#</a></span>\[
+\nabla_n^2\phi_{n,m}(r) = c\,\rho_{n,m}(x)
+\]</div>
+</div>
+</section>
+<section id="laplace-equation">
+<h3><a class="toc-backref" href="#id3"><span class="section-number">6.1.2. </span>Laplace equation</a><a class="headerlink" href="#laplace-equation" title="Permalink to this headline">#</a></h3>
+<div class="full-width docutils">
+<p>We note the Laplace equation (i.e., the Possion equation with the density set to zero) reads</p>
+<div class="math notranslate nohighlight" id="equation-g-9">
+<span class="eqno">(6.11)<a class="headerlink" href="#equation-g-9" title="Permalink to this equation">#</a></span>\[
+\nabla\phi(\bb{x}) = 0 \qquad \nabla_r^2\phi_{n,m}(x) = 0
+\]</div>
+<p>and it admits the following two independent solutions</p>
+<div class="math notranslate nohighlight" id="equation-g-10">
+<span class="eqno">(6.12)<a class="headerlink" href="#equation-g-10" title="Permalink to this equation">#</a></span>\[
+\phi_{n,m}(x) = A^+_{n,m}\,x^n + A^-_{n,m}\,x^{-(n+1)}
+\]</div>
+</div>
+</section>
+</section>
+<section id="solid-earth-and-load-system">
+<h2><a class="toc-backref" href="#id4"><span class="section-number">6.2. </span>Solid Earth (and load) system</a><a class="headerlink" href="#solid-earth-and-load-system" title="Permalink to this headline">#</a></h2>
+<div class="full-width docutils">
+<p>Let us now assume that the density distribution <span class="math notranslate nohighlight">\(\rho\)</span> describes mass of the solid Earth and loads and that differs from zero only with a sphere of radius <span class="math notranslate nohighlight">\(a\)</span> containing them</p>
+<div class="math notranslate nohighlight" id="equation-g-11">
+<span class="eqno">(6.13)<a class="headerlink" href="#equation-g-11" title="Permalink to this equation">#</a></span>\[
+\rho(x&gt;a,\vartheta,\varphi) = 0
+\]</div>
+<p>In this case, the Poisson equation becomes the Laplace equation outside the sphere of radius <span class="math notranslate nohighlight">\(a\)</span></p>
+<div class="math notranslate nohighlight" id="equation-g-12">
+<span class="eqno">(6.14)<a class="headerlink" href="#equation-g-12" title="Permalink to this equation">#</a></span>\[
+\nabla_x^2\phi_{n,m}(x) = 0 \qquad\mathrm{with}\qquad x &gt; a
+\]</div>
+<p>In view of eqs. <a class="reference internal" href="#equation-g-10">(6.12)</a>  and requiring the regularity of the solution at the infinity, <span class="math notranslate nohighlight">\(r\rightarrow \infty\)</span>, we thus obtain</p>
+<div class="math notranslate nohighlight" id="equation-g-13">
+<span class="eqno">(6.15)<a class="headerlink" href="#equation-g-13" title="Permalink to this equation">#</a></span>\[
+\phi_{n,m}(x) = A^-_{n,m}\,x^{-(n+1)} \qquad\mathrm{with}\qquad x &gt; a
+\]</div>
+<p>Furthermore, because the gravitational potential is continuous, we can evaluate eq. <a class="reference internal" href="#equation-g-13">(6.15)</a> over the sphere of radius <span class="math notranslate nohighlight">\(a\)</span></p>
+<div class="math notranslate nohighlight" id="equation-g-14">
+<span class="eqno">(6.16)<a class="headerlink" href="#equation-g-14" title="Permalink to this equation">#</a></span>\[
+\phi_{n,m}(a) = A^-_{n,m}\,a^{-(n+1)}
+\]</div>
+<p>and rewrite eq. <a class="reference internal" href="#equation-g-13">(6.15)</a> as follows</p>
+<div class="math notranslate nohighlight" id="equation-g-15">
+<span class="eqno">(6.17)<a class="headerlink" href="#equation-g-15" title="Permalink to this equation">#</a></span>\[
+\phi_{n,m}(x) = \phi_{n,m}(a)\,\left(\frac{x}{a}\right)^{-(n+1)} \qquad\mathrm{with}\qquad x\geq a
+\]</div>
+</div>
+<section id="maccullagh-theorem">
+<h3><a class="toc-backref" href="#id5"><span class="section-number">6.2.1. </span>MacCullagh theorem</a><a class="headerlink" href="#maccullagh-theorem" title="Permalink to this headline">#</a></h3>
+<div class="full-width docutils">
+<p>Let us now specify eq. <a class="reference internal" href="#equation-g-1">(6.2)</a> to the present case and perform the volume integral in spherical coordinates</p>
+<div class="math notranslate nohighlight" id="equation-g-16">
+<span class="eqno">(6.18)<a class="headerlink" href="#equation-g-16" title="Permalink to this equation">#</a></span>\[
+\phi(\bb{x}) = -G\,\int_{0}^{a^+}\Bigg(\int_{\Omega}\frac{\rho(\dif{\bb{x}})}{\|\bb{x}-\dif{\bb{x}}\|}\,\md\dif{\Omega}\Bigg)\,\dif{x}^2\,\md \dif{x}
+\]</div>
+<p>By considering that the inverse of the distance is the generating function of the Laplacian operator and making use of the spherical harmonic addition theorem</p>
+<div class="math notranslate nohighlight" id="equation-g-17">
+<span class="eqno">(6.19)<a class="headerlink" href="#equation-g-17" title="Permalink to this equation">#</a></span>\[\begin{split}
+\begin{align}
+\frac{1}{\|\bb{x}-\dif{\bb{x}}\|} &amp;= \frac{1}{\sqrt{x^2+\dif{x}^2+\cos\gamma\,x\,\dif{x} }} =  \frac{1}{x}\,\sum_{n=0}^\infty \left(\frac{\dif{x}}{x}\right)^n\,P_n(\cos\gamma) 
+\\
+&amp;= \frac{1}{x}\,\sum_n\sum_m\left(\frac{\dif{x}}{x}\right)^n\,\frac{Y_n^m(\dif{\vartheta},\dif{\varphi})\,Y_n^m(\vartheta,\varphi)}{2\,n+1}  \qquad\mathrm{with}\qquad x\geq a
+\end{align}
+\end{split}\]</div>
+<p>with</p>
+<div class="math notranslate nohighlight" id="equation-g-18">
+<span class="eqno">(6.20)<a class="headerlink" href="#equation-g-18" title="Permalink to this equation">#</a></span>\[
+\cos\gamma = \bn{x}(\vartheta,\varphi)\cdot\bn{r}(\dif{\vartheta},\dif{\varphi}) = \cos\vartheta\,\cos\dif{\vartheta} +  \sin\vartheta\,\sin\dif{\vartheta}\,\cos(\varphi-\dif{\varphi})
+\]</div>
+<p>eq. <a class="reference internal" href="#equation-g-16">(6.18)</a> gives</p>
+<div class="math notranslate nohighlight" id="equation-g-19">
+<span class="eqno">(6.21)<a class="headerlink" href="#equation-g-19" title="Permalink to this equation">#</a></span>\[\begin{split}
+\begin{align}
+\phi(\bb{x}) &amp;= -\frac{G}{x}\,\sum_n\sum_m \frac{Y_n^m(\vartheta,\varphi)}{2\,n+1}\,\int_{0}^{a^+}\Bigg(\int_{\Omega} \rho(\dif{\bb{x}})\,Y_n^m(\dif{\vartheta},\dif{\varphi})\,\md\Omega\Bigg)\,\left(\frac{\dif{x}}{x}\right)^n\,\dif{x}^2\,\md \dif{x}
+\\
+&amp;= -\frac{C}{x}\,\sum_n\sum_m \frac{Y_n^m(\vartheta,\varphi)}{2\,n+1}\,\int_{0}^{a^+}\rho_{n,m}(\dif{x})\,\left(\frac{\dif{x}}{x}\right)^n\,\dif{x}^2\,\md \dif{x}    \qquad\mathrm{with}\qquad x\geq a
+\end{align}
+\end{split}\]</div>
+<p>From the comparison with eq. <a class="reference internal" href="#equation-g-5">(6.7)</a> we thus obtain the so called MacCullagh theorem linking <span class="math notranslate nohighlight">\(\phi_{n,m}\)</span> to <span class="math notranslate nohighlight">\(\rho_{n,m}\)</span></p>
+<div class="math notranslate nohighlight" id="equation-g-21">
+<span class="eqno">(6.22)<a class="headerlink" href="#equation-g-21" title="Permalink to this equation">#</a></span>\[
+\begin{align}
+\phi_{n,m}(x) &amp;= -\frac{C}{x^{n+1}\,(2\,n+1)}\,\int_{0}^{a^+}\rho_{n,m}(\dif{x})\,\dif{x}^{n+2}\,\md \dif{x}    \qquad\mathrm{with}\qquad x\geq a
+\end{align}
+\]</div>
+</div>
+<div class="full-width dropdown admonition">
+<p class="admonition-title">Surface density distribution</p>
+<p>Let us now consider the case in which the density distribution <span class="math notranslate nohighlight">\(\rho\)</span> describe a load localized over a sphere of radius <span class="math notranslate nohighlight">\(a\)</span></p>
+<div class="math notranslate nohighlight" id="equation-g-22">
+<span class="eqno">(6.23)<a class="headerlink" href="#equation-g-22" title="Permalink to this equation">#</a></span>\[
+\rho(\bb{x}) = \sigma(\vartheta,\varphi)\,\delta(x-a) \qquad\mathrm{with}\qquad \sigma(\vartheta,\varphi) = \lmsum\sigma_{n,m}\,Y_n^m(\vartheta,\varphi)
+\]</div>
+<p>where <span class="math notranslate nohighlight">\(\sigma\)</span> is the surface density distribution which we can expand in spherical harmonics. This case fits the requirement of the MacCullagh theorem and, so, from eq. <a class="reference internal" href="#equation-g-21">(6.22)</a> we obtain</p>
+<div class="math notranslate nohighlight" id="equation-g-23">
+<span class="eqno">(6.24)<a class="headerlink" href="#equation-g-23" title="Permalink to this equation">#</a></span>\[
+\begin{align}
+\phi_{n,m}(x) &amp;= -\frac{C\,\sigma_{n,m}\,a}{2\,n+1}\,\left(\frac{a}{x}\right)^{n+1}  \qquad\mathrm{with}\qquad x\geq a
+\end{align}
+\]</div>
+<p>Furthermore, by considering that the surface density distribution is zero also within the sphere of radius <span class="math notranslate nohighlight">\(a\)</span>, the gravitational potential solve the Laplace equation within this sphere and, for the regularity at the Earth centre, <span class="math notranslate nohighlight">\(r=0\)</span>, we can write</p>
+<div class="math notranslate nohighlight" id="equation-g-25">
+<span class="eqno">(6.25)<a class="headerlink" href="#equation-g-25" title="Permalink to this equation">#</a></span>\[
+\phi_{n,m}(x) = A^+_{n,m}\,x^n = \phi_{n,m}(a)\,\left(\frac{x}{a}\right)^n = -\frac{C\,\sigma_{n,m}\,a}{2\,n+1}\,\left(\frac{x}{a}\right)^n \qquad\mathrm{with}\qquad x\leq a
+\]</div>
+<p>In light of eqs. <a class="reference internal" href="#equation-g-23">(6.24)</a> and <a class="reference internal" href="#equation-g-25">(6.25)</a>, we thus can write</p>
+<div class="math notranslate nohighlight" id="equation-g-26">
+<span class="eqno">(6.26)<a class="headerlink" href="#equation-g-26" title="Permalink to this equation">#</a></span>\[\begin{split}
+\phi_{n,m}(x) = \phi_{n,m}(a)\,\begin{cases} \left(\frac{x}{a}\right)^n &amp; x\leq a \\ 
+\left(\frac{x}{a}\right)^{-(n+1)} &amp; x\geq a
+\end{cases} 
+\end{split}\]</div>
+<p>with</p>
+<div class="math notranslate nohighlight" id="equation-g-24">
+<span class="eqno">(6.27)<a class="headerlink" href="#equation-g-24" title="Permalink to this equation">#</a></span>\[
+\phi_{n,m}(a) = -\frac{C\,\sigma_{n,m}\,a}{2\,n+1}
+\]</div>
+</div>
+<div class="full-width dropdown admonition">
+<p class="admonition-title">Mass and centre of mass</p>
+<p>Let us now calculate the first moment of the Earth density distribution</p>
+<div class="math notranslate nohighlight" id="equation-g-27">
+<span class="eqno">(6.28)<a class="headerlink" href="#equation-g-27" title="Permalink to this equation">#</a></span>\[
+M\,\bb{Z} = \int \rho(\bb{x})\,\bb{x}\,\md V \qquad\mathrm{with}\qquad M = \int \rho(\bb{x})\,\md V 
+\]</div>
+<p>with <span class="math notranslate nohighlight">\(M\)</span> and <span class="math notranslate nohighlight">\(\bb{Z}\)</span> being the total mass and the centre of mass. After spherical harmonic expansion and noting that</p>
+<div class="math notranslate nohighlight" id="equation-g-27a">
+<span class="eqno">(6.29)<a class="headerlink" href="#equation-g-27a" title="Permalink to this equation">#</a></span>\[
+\bb{x}\,Y_{n,m}=x\,\bb{P}_n^m
+\]</div>
+<p>we obtain</p>
+<div class="math notranslate nohighlight" id="equation-g-28">
+<span class="eqno">(6.30)<a class="headerlink" href="#equation-g-28" title="Permalink to this equation">#</a></span>\[\begin{split}
+\begin{align}
+&amp; M = \int \rho(\bb{x})\,\md V = 4\,\pi\,\int \rho_{0,0}(x)\,x^2\,\md x = -\frac{a}{G}\,\phi_{0,0}(a)
+\\
+&amp; M\,\bb{Z} = \sum_n\sum_m \left(\int\rho_{n,m}(x)\,x^{3}\,\md x\right)\,\left(\int_\Omega \bb{P}_n^m(\vartheta,\varphi)\,\md \Omega\right) = \frac{4\,\pi}{\sqrt{3}}\sum_m \bb{p}_m\,\int\rho_{1,m}(x)\,x^3\,\md x 
+\\
+&amp;\qquad\qquad = -\frac{\sqrt{3}\,a^2}{G}\sum_m \bb{p}_m\,\phi_{1,m}(a) 
+\end{align}
+\end{split}\]</div>
+<p>where we made use of the MacCullagh theorem for the degrees <span class="math notranslate nohighlight">\(n=0\)</span> and <span class="math notranslate nohighlight">\(1\)</span></p>
+<div class="math notranslate nohighlight" id="equation-g-29">
+<span class="eqno">(6.31)<a class="headerlink" href="#equation-g-29" title="Permalink to this equation">#</a></span>\[
+\begin{align}
+&amp; 4\,\pi\,\int_{0}^{a^+}\rho_{0,0}(x)\,x^{2}\,\md x  =- \frac{a}{G}\,\phi_{0,0}(a) 
+\qquad
+4\,\pi\,\int_{0}^{a^+}\rho_{1,m}(x)\,x^{3}\,\md x  =- \frac{3\,a^{2}}{G}\,\phi_{1,m}(a) 
+\end{align}
+\]</div>
+<p>and of the following identity (from eq. <a class="reference internal" href="L0_Harmonic_Vectors.html#equation-v-12">(5.13)</a>)</p>
+<div class="math notranslate nohighlight" id="equation-g-30">
+<span class="eqno">(6.32)<a class="headerlink" href="#equation-g-30" title="Permalink to this equation">#</a></span>\[
+\begin{align}
+&amp; \int_{\Omega}\mathbf{P}_n^m(\vartheta,\varphi,t)\,\mathrm{d}\Omega = \frac{4\,\pi}{\sqrt{3}}\,\mathbf{p}_m(t)\,\delta_{n,1}
+\end{align}
+\]</div>
+<p>In this respect, the degree-<span class="math notranslate nohighlight">\(0\)</span> coefficient <span class="math notranslate nohighlight">\(\phi_{0,0}(a)\)</span> describe the total mass of the density distribution, while the degree-<span class="math notranslate nohighlight">\(1\)</span> coefficients <span class="math notranslate nohighlight">\(\phi_{1,m}(a)\)</span> describe the position of the centre of mass. In the following lectures, we will assume that the origin of the reference system coincides with the centre of mass of the solid Earth and load system and, so, the degree-<span class="math notranslate nohighlight">\(1\)</span> spherical harmonic coefficients of the gravitational potential will be constrained to zero, <span class="math notranslate nohighlight">\(\phi_{1,m}(a) =0\)</span>.</p>
+</div>
+<div class="full-width dropdown admonition">
+<p class="admonition-title">Inertia tensor</p>
+<p>When we will discuss the dynamics of the rotation of the Earth and load system, we will introduce the inertia tensor <span class="math notranslate nohighlight">\(\bb{I}\)</span> defined as follows</p>
+<div class="math notranslate nohighlight" id="equation-g-31">
+<span class="eqno">(6.33)<a class="headerlink" href="#equation-g-31" title="Permalink to this equation">#</a></span>\[
+\bb{I} = \int \rho(\bb{x})\,\big(x^2\,\one-\bb{x}\,\bb{x}\big)\,\md V
+\]</div>
+<p>Let us now introduce the following deviatoric tensor and consider its spherical harmonic expansion which only involves degree-<span class="math notranslate nohighlight">\(2\)</span> terms</p>
+<div class="math notranslate nohighlight" id="equation-g-32">
+<span class="eqno">(6.34)<a class="headerlink" href="#equation-g-32" title="Permalink to this equation">#</a></span>\[
+\bb{Q}(\vartheta,\varphi) = \frac{1}{3}\,\one - \bn{r}(\vartheta,\varphi)\,\bn{r}(\vartheta,\varphi) = \sum_m \bb{Q}_m\,Y_2^m(\vartheta,\varphi)
+\]</div>
+<p>and note that</p>
+<div class="math notranslate nohighlight" id="equation-g-33">
+<span class="eqno">(6.35)<a class="headerlink" href="#equation-g-33" title="Permalink to this equation">#</a></span>\[
+x^2\,\one-\bb{x}\,\bb{x} = x^2\,\left(\frac{2}{3}\,\one + \bb{Q}(\vartheta,\varphi)\right) 
+\]</div>
+<p>Here, <span class="math notranslate nohighlight">\(\bb{Q}_m\)</span> are the following constant deviatoric tensors</p>
+<div class="math notranslate nohighlight" id="equation-g-34">
+<span class="eqno">(6.36)<a class="headerlink" href="#equation-g-34" title="Permalink to this equation">#</a></span>\[\begin{split}
+\begin{align}
+&amp; \bb{Q}_0 = \frac{\bn{x}_1\,\bn{x}_1+\bn{x}_2\,\bn{x}_2-2\,\bn{x}_3\,\bn{x}_3}{3\,\sqrt{5}}
+&amp; \bb{Q}_{\pm1} = -\frac{\bn{x}_3\,\bb{p}_{\pm1} + \bb{p}_{\pm1}\,\bn{x}_3}{\sqrt{15}} \\
+&amp; \bb{Q}_{-2} = -\frac{\bn{x}_2\,\bn{x}_2 -\bn{x}_1\,\bn{x}_1}{\sqrt{15}}
+&amp; \bb{Q}_{2} =-\frac{ \bn{x}_1\,\bn{x}_2 + \bn{x}_2\,\bn{x}_1}{\sqrt{15}}
+\end{align}
+\end{split}\]</div>
+<p>or, in matrix notation,</p>
+<div class="math notranslate nohighlight" id="equation-g-34a">
+<span class="eqno">(6.37)<a class="headerlink" href="#equation-g-34a" title="Permalink to this equation">#</a></span>\[\begin{split}
+\begin{align}
+&amp; \bb{Q}_0 = \frac{1}{3\,\sqrt{5}}\left(\begin{matrix} 1 &amp; 0 &amp; 0 \\ 0 &amp; 1 &amp; 0 \\ 0 &amp; 0 &amp; -2\end{matrix}\right) \\
+&amp; \bb{Q}_{-1} = -\frac{1}{\sqrt{15}}\left(\begin{matrix} 0 &amp; 0 &amp; 1 \\ 0 &amp; 0 &amp; 0 \\ 1 &amp; 0 &amp; 0\end{matrix}\right)
+\qquad  \bb{Q}_1 = -\frac{1}{\sqrt{15}}\left(\begin{matrix} 0 &amp; 0 &amp; 0 \\ 0 &amp; 0 &amp; 1 \\ 0 &amp; 1 &amp; 0\end{matrix}\right)
+\\
+&amp;\bb{Q}_{-2} = -\frac{1}{\sqrt{15}}\left(\begin{matrix} 1 &amp; 0 &amp; 0 \\ 0 &amp; -1 &amp; 0 \\ 0 &amp; 0 &amp; 0\end{matrix}\right)
+\qquad  \bb{Q}_2 = -\frac{1}{\sqrt{15}}\left(\begin{matrix} 0 &amp; 1 &amp; 0 \\ 1 &amp; 0 &amp; 0 \\ 0 &amp; 0 &amp; 0 \end{matrix}\right)
+\end{align}
+\end{split}\]</div>
+<p>Thanks to this decomposition, after spherical harmonic expansion and making use of the MacCullagh theorem for the degree <span class="math notranslate nohighlight">\(n=2\)</span>, eq. <a class="reference internal" href="#equation-g-31">(6.33)</a> becomes</p>
+<div class="math notranslate nohighlight" id="equation-g-35">
+<span class="eqno">(6.38)<a class="headerlink" href="#equation-g-35" title="Permalink to this equation">#</a></span>\[\begin{split}
+\begin{align}
+\bb{I} &amp;= \sum_n\sum_m\Bigg(\int \rho_{n,m}(x)\,x^4\Bigg)\,\int\Bigg(\frac{2}{3}\,\one + \bb{Q}(\vartheta,\varphi)\Bigg)\,Y_{n,m}(\vartheta,\varphi)\,\md \Omega 
+\\
+&amp;= I\,\one + 4\,\pi\,\sum_m \Bigg(\int \rho_{2,m}(x)\,x^4\Bigg)\,\bb{Q}_m = I\,\one + \bb{D}
+\end{align}
+\end{split}\]</div>
+<p>with <span class="math notranslate nohighlight">\(I\)</span> and <span class="math notranslate nohighlight">\(\bb{D}\)</span> being the scalar inertia moment and deviatoric inertia tensor of the solid Earth and load system</p>
+<div class="math notranslate nohighlight" id="equation-g-36">
+<span class="eqno">(6.39)<a class="headerlink" href="#equation-g-36" title="Permalink to this equation">#</a></span>\[
+I = \frac{8\,\pi}{3}\,\int \rho_{0,0}(x)\,x^4\,\md x \qquad \bb{D} = - \frac{5\,a^3}{G}\,\sum_m \phi_{2,m}(a)\,\bb{Q}_m
+\]</div>
+</div>
+<div class="full-width dropdown admonition">
+<p class="admonition-title">Gravity acceleration</p>
+<p>The gravitational acceleration <span class="math notranslate nohighlight">\(\bb{g}\)</span> corresponds to minus the gradient of the gravitational potential</p>
+<div class="math notranslate nohighlight" id="equation-g-37">
+<span class="eqno">(6.40)<a class="headerlink" href="#equation-g-37" title="Permalink to this equation">#</a></span>\[
+\bb{g}(\bb{x}) = -\grad\phi(\bb{x}) 
+\]</div>
+<p>that, after expansion in spherical harmonics, reads</p>
+<div class="math notranslate nohighlight" id="equation-g-38">
+<span class="eqno">(6.41)<a class="headerlink" href="#equation-g-38" title="Permalink to this equation">#</a></span>\[\begin{split}
+\begin{align}
+\bb{g}(\bb{x}) &amp;= -\sum_n\sum_m\left(\frac{\partial \phi_{n,m}(x)}{\partial x}\,\bn{r}(\vartheta,\varphi)\,Y_n^m(\vartheta,\varphi) + \phi_{n,m}(x)\,\grad Y_n^m(\vartheta,\varphi)\right)
+\\
+&amp;= -\sum_n\sum_m\left(\frac{\partial \phi_{n,m}(x)}{\partial x}\,\bb{P}_n^m(\vartheta,\varphi) + \frac{\gamma_n}{x}\,\phi_{n,m}(x)\,\bb{B}_n^m(\vartheta,\varphi)\right)
+\end{align}
+\end{split}\]</div>
+<p>where <span class="math notranslate nohighlight">\(\bb{P}_n^m\)</span> and <span class="math notranslate nohighlight">\(\bb{B}_n^m\)</span> are the first two spherical harmonic vectors and <span class="math notranslate nohighlight">\(\gamma_n=\sqrt{n\,(n+1)}\)</span>. For the case of the solid Earth and load system and focusing only outside the sphere of radius <span class="math notranslate nohighlight">\(a\)</span>, in view of eqs. <a class="reference internal" href="L0_Harmonic_Vectors.html#equation-v-14">(5.15)</a> and <a class="reference internal" href="#equation-g-15">(6.17)</a>, we can write</p>
+<div class="math notranslate nohighlight" id="equation-g-39">
+<span class="eqno">(6.42)<a class="headerlink" href="#equation-g-39" title="Permalink to this equation">#</a></span>\[\begin{split}
+\begin{align}
+\bb{g}(\bb{x}) 
+&amp;= \frac{a}{x^2}\,\sum_n\sum_m\left(\frac{a}{x}\right)^{n}\,\phi_{n,m}(a)\,\left((n+1)\,\bb{P}_n^m(\vartheta,\varphi) - \gamma_n\,\bb{B}_n^m(\vartheta,\varphi)\right)
+\\
+&amp;= -\frac{G\,M}{x^2}\,\bn{r}(\vartheta,\varphi) + \frac{a}{x^2}\,\sum_{n\geq 1}\sum_m\left(\frac{a}{x}\right)^{n}\,\phi_{n,m}(a)\,\left((n+1)\,\bb{P}_n^m(\vartheta,\varphi) - \gamma_n\,\bb{B}_n^m(\vartheta,\varphi)\right)
+\end{align}
+\end{split}\]</div>
+<p>This result shows how the gravity acceleration for a general density distribution is characterized by both radial and tangential components. In particular, by definition, the degree-<span class="math notranslate nohighlight">\(0\)</span> contribution is along the radial direction while those from the higher harmonic degrees <span class="math notranslate nohighlight">\(n\geq1\)</span> have also the tangential component. We note also that, within the assumption that the origin of the reference system coincide with the centre of mass, <span class="math notranslate nohighlight">\(\phi_{1,m}(a)=0\)</span>, the summation of the second term in the right-hand side involves degrees <span class="math notranslate nohighlight">\(n\geq 2\)</span>.</p>
+</div>
+</section>
+</section>
+<section id="celestial-bodies">
+<span id="sec-celestial"></span><h2><a class="toc-backref" href="#id6"><span class="section-number">6.3. </span>Celestial bodies</a><a class="headerlink" href="#celestial-bodies" title="Permalink to this headline">#</a></h2>
+<div class="full-width docutils">
+<p>Let us now assume that the density distribution <span class="math notranslate nohighlight">\(\rho^T\)</span> describes the celestial body mass distribution and that differs from zero inside the sphere of radius <span class="math notranslate nohighlight">\(R\)</span> containing the Earth and load system, <span class="math notranslate nohighlight">\(a&lt;R\)</span></p>
+<div class="math notranslate nohighlight" id="equation-g-40">
+<span class="eqno">(6.43)<a class="headerlink" href="#equation-g-40" title="Permalink to this equation">#</a></span>\[
+\rho^T(x\leq R,\vartheta,\varphi) = 0 
+\]</div>
+<p>In this case, the gravitational potential <span class="math notranslate nohighlight">\(\phi^T\)</span> solves the Laplace equation inside the sphere of radius <span class="math notranslate nohighlight">\(R\)</span> and, so, following similar arguments of the previous sections, we can write</p>
+<div class="math notranslate nohighlight" id="equation-g-41">
+<span class="eqno">(6.44)<a class="headerlink" href="#equation-g-41" title="Permalink to this equation">#</a></span>\[
+\phi^T_{n,m}(x) = \phi^T_{n,m}(a)\,\left(\frac{x}{a}\right)^n  \qquad \mathrm{with}\qquad x &lt; R
+\]</div>
+</div>
+<div class="full-width dropdown admonition">
+<p class="admonition-title">Point-like celestial bodies</p>
+<p>Let us approximate the celestial body to a point-like mass <span class="math notranslate nohighlight">\(M_T\)</span> centred at the position <span class="math notranslate nohighlight">\(\bb{x}_T\)</span> which corresponds to its  (time-dependent) centre of mass</p>
+<div class="math notranslate nohighlight" id="equation-g-42">
+<span class="eqno">(6.45)<a class="headerlink" href="#equation-g-42" title="Permalink to this equation">#</a></span>\[
+\rho^T(\bb{x}) = M_T\,\delta(\bb{x}-\bb{x}_T)  \qquad\mathrm{with}\qquad \bb{x}_T = x_T\,\bn{r}(\vartheta_T,\varphi_T)
+\]</div>
+<p>and define its gravitational potential</p>
+<div class="math notranslate nohighlight" id="equation-g-43">
+<span class="eqno">(6.46)<a class="headerlink" href="#equation-g-43" title="Permalink to this equation">#</a></span>\[
+\phi^T(\bb{x}) = -G\,\int\frac{\rho^T(\dif{\bb{x}})}{\|\bb{x}-\dif{\bb{x}}\|}\,\md \dif{V} = -\frac{G\,M_T}{\left\|\bb{x}-\bb{x}_T\right\|}
+\]</div>
+<p>By considering that the inverse of the distance is the generating function of the Legendre polynomials and making use of the spherical harmonic addition theorem, we obtain</p>
+<div class="math notranslate nohighlight" id="equation-g-44">
+<span class="eqno">(6.47)<a class="headerlink" href="#equation-g-44" title="Permalink to this equation">#</a></span>\[
+\frac{1}{\left\|\bb{x}-\bb{x}_T\right\|} = \frac{1}{x_T}\,\sum_n\left(\frac{x}{x_T}\right)^n\,P_n(\cos\gamma) = \frac{1}{x_T}\,\sum_n\sum_m \left(\frac{x}{x_T}\right)^n\,\frac{Y_n^m(\vartheta_T,\varphi_T)\,Y_n^m(\vartheta,\varphi)}{2\,n+1}
+\]</div>
+<p>and, so, the spherical harmonic expansion of gravitation potential of the celestial bodies reads</p>
+<div class="math notranslate nohighlight" id="equation-g-45">
+<span class="eqno">(6.48)<a class="headerlink" href="#equation-g-45" title="Permalink to this equation">#</a></span>\[
+\phi^T(\bb{x}) = \sum_n\sum_m \phi_{n,m}^T(x)\,Y_n^m(\vartheta,\varphi)
+\qquad
+\mathrm{with}
+\qquad \phi^T_{n,m}(x) = -\frac{G\,M_T}{x_T}\,\left(\frac{x}{x_T}\right)^n\,\frac{Y_n^m(\vartheta_T,\varphi_T)}{2\,n+1}
+\]</div>
+<p>Thanks to this result (which holds also in the case of a spherically syemmtric celestial body, without requiring that it is a point-like mass) we can understand the gravitational potential of the celestial body acting on the Earth, i.e., for <span class="math notranslate nohighlight">\(x \leq a&lt;R\)</span>, decrease as <span class="math notranslate nohighlight">\(\left(x/x_T\right)^n\)</span> and, so, it becomes negligible already starting from the first few harmonic degrees, considering that <span class="math notranslate nohighlight">\(x/x_T\ll 1\)</span>.</p>
+</div>
+<div class="full-width dropdown admonition">
+<p class="admonition-title">General celestial bodies (optional)</p>
+<p>Let us express the density distribution <span class="math notranslate nohighlight">\(\rho^T\)</span> of the celestial body with respect to a (time-dependent) origin <span class="math notranslate nohighlight">\(\bb{x}_T\)</span>. In order to fix the ideas, we can consider the origin <span class="math notranslate nohighlight">\(\bb{x}=\zero\)</span> of the spherical coordinate system as the centre of mass of the solid Earth, while <span class="math notranslate nohighlight">\(\bb{x}_T\)</span> is the time-dependent centre of mass of the celestial body relative to it. Within this framework, we denote with a breve accent the relative observation point <span class="math notranslate nohighlight">\(\breve{\bb{x}}\)</span> with respect to <span class="math notranslate nohighlight">\(\bb{x}_T\)</span></p>
+<div class="math notranslate nohighlight" id="equation-g-46">
+<span class="eqno">(6.49)<a class="headerlink" href="#equation-g-46" title="Permalink to this equation">#</a></span>\[
+\bb{x} = \bb{x}_T+\breve{\bb{x}}  \qquad\mathrm{with}\qquad \breve{\bb{x}} = \breve{x}\,\bn{r}(\breve{\vartheta},\breve{\varphi})
+\]</div>
+<p>and we consider the following spherical harmonic expansion of the density distribution and of the associated gravitational potential</p>
+<div class="math notranslate nohighlight" id="equation-g-47">
+<span class="eqno">(6.50)<a class="headerlink" href="#equation-g-47" title="Permalink to this equation">#</a></span>\[\begin{split}
+\begin{align}
+&amp; \rho^T(\bb{x}) = \breve{\rho}^T(\breve{\bb{x}}) = \sum_n\sum_m \breve{\rho}_{n,m}^T(\breve{x})\,Y_n^m(\breve{\vartheta},\breve{\varphi})
+\\
+&amp; \phi^T(\bb{x}) = \breve{\phi}^T(\breve{\bb{x}}) = \sum_n\sum_m \breve{\phi}_{n,m}^T(\breve{x})\,Y_n^m(\breve{\vartheta},\breve{\varphi})
+\end{align}
+\end{split}\]</div>
+<p>Here and hereinafter, we will use the breve accent to denote quantities with respect to <span class="math notranslate nohighlight">\(\bb{x}_T\)</span>, including the spherical coordinate <span class="math notranslate nohighlight">\((\breve{x},\breve{\vartheta},\breve{\varphi})\)</span>. Within this framework, we can write</p>
+<div class="math notranslate nohighlight" id="equation-g-48">
+<span class="eqno">(6.51)<a class="headerlink" href="#equation-g-48" title="Permalink to this equation">#</a></span>\[
+\bb{x}_T = x_T\,\bn{r}(\breve{\vartheta}_T,\breve{\varphi}_T) \qquad \mathrm{with} \qquad  \breve{\vartheta}_T=-\vartheta_T\qquad \breve{\varphi}_T =-\varphi_T
+\]</div>
+<p>By requiring that the total mass <span class="math notranslate nohighlight">\(M_T\)</span> conserves through time and that the centre of mass of the celestial body coincides with <span class="math notranslate nohighlight">\(\bb{x}_T\)</span></p>
+<div class="math notranslate nohighlight" id="equation-g-49">
+<span class="eqno">(6.52)<a class="headerlink" href="#equation-g-49" title="Permalink to this equation">#</a></span>\[
+M_T = \int \rho^T(\bb{x})\,\md V 
+\qquad
+M_T\,\bb{x}_T = \int \rho^T(\bb{x})\,\bb{x}\,\md V 
+\]</div>
+<p>we thus obtain the following constraints on the degree-0 and -1 spherical harmonic coefficients of the density distribution</p>
+<div class="math notranslate nohighlight" id="equation-g-51">
+<span class="eqno">(6.53)<a class="headerlink" href="#equation-g-51" title="Permalink to this equation">#</a></span>\[
+4\,\pi\,\int \breve{\rho}_{0,0}(\breve{x},t)\,\breve{x}^2\,\md \breve{x}= M_T
+\qquad
+\int \breve{\rho}_{1,m}(\breve{x},t)\,\breve{x}^3\,\md \breve{x} = 0
+\]</div>
+<p>Let us now consider the gravitational potential due to the celestial body and expand it in spherical harmonics</p>
+<div class="math notranslate nohighlight" id="equation-g-52">
+<span class="eqno">(6.54)<a class="headerlink" href="#equation-g-52" title="Permalink to this equation">#</a></span>\[\begin{split}
+\begin{align}
+\phi^T(\bb{x},t) =  \breve{\phi}^T(\breve{\bb{x}},t) &amp;= - G\,\int\frac{\rho^T(\dif{\bb{x}},t)}{\|\bb{x}-\dif{\bb{x}}\|}\,\md \dif{V} = - G\,\int\frac{\breve{\rho}^T(\dif{\breve{\bb{x}}},t)}{\|\breve{\bb{x}}-\dif{\breve{\bb{x}}}\|}\,\md \dif{\breve{V}} 
+\\
+&amp; = - \sum_n\sum_m \frac{G\,Y_{n,m}(\breve{\vartheta},\breve{\varphi})}{(2\,n+1)\,\breve{x}^{n+1}}\int Y_{n,m}(\dif{\breve{\vartheta}},\dif{\breve{\varphi}})\,\breve{\rho}^T(\dif{\breve{\bb{x}}},t)\,\dif{\breve{x}}^n\,\md \dif{\breve{V}}
+\\
+&amp;= - \sum_n\sum_m \frac{4\,\pi\,G\,Y_{n,m}(\breve{\vartheta},\breve{\varphi})}{(2\,n+1)\,\breve{x}^{n+1}}\int \breve{\rho}_{n,m}^T(\dif{\breve{x}},t)\,\dif{\breve{x}}^{n+2}\,\md\dif{\breve{x}}
+\end{align}
+\end{split}\]</div>
+<p>Within the assumption that <span class="math notranslate nohighlight">\(\breve{x}&gt;\breve{a}_T\)</span>, with <span class="math notranslate nohighlight">\(\breve{a}_T\)</span> being the radius of the sphere centred in <span class="math notranslate nohighlight">\(\bb{x}_T\)</span> and containing the celestial body, we can write</p>
+<div class="math notranslate nohighlight" id="equation-g-53">
+<span class="eqno">(6.55)<a class="headerlink" href="#equation-g-53" title="Permalink to this equation">#</a></span>\[
+\breve{\phi}_{n,m}^T(\breve{x},t) = \breve{\phi}_{n,m}(\breve{x}_T,t)\,\left(\frac{\breve{x}}{\breve{a}_T}\right)^{-(n+1)}
+\]</div>
+<p>Then, making use of the MacCullach theorem</p>
+<div class="math notranslate nohighlight" id="equation-g-54">
+<span class="eqno">(6.56)<a class="headerlink" href="#equation-g-54" title="Permalink to this equation">#</a></span>\[
+4\,\pi\,G\,\int \breve{\rho}_{n,m}^T(\dif{\breve{x}},t)\,\dif{\breve{x}}^{n+2}\,\md \dif{\breve{x}} = -(2\,n+1)\,\breve{a}_T^{n+1}\,\breve{\phi}_{n,m}^T(\breve{a}_T,t)
+\]</div>
+<p>eq. <a class="reference internal" href="#equation-g-52">(6.54)</a> becomes</p>
+<div class="math notranslate nohighlight" id="equation-g-55a">
+<span class="eqno">(6.57)<a class="headerlink" href="#equation-g-55a" title="Permalink to this equation">#</a></span>\[
+\begin{align}
+\phi^T(\bb{x},t) 
+&amp;= \breve{\phi}_{0,0}(\breve{a}_T,t)\,\left(\frac{\breve{a}_T}{\breve{r}}\right) + \sum_{n\geq 2}\sum_m Y_{n,m}(\breve{\vartheta},\breve{\varphi})\,\breve{\phi}_{n,m}(\breve{a}_T,t)\,\left(\frac{\breve{a}_T}{\breve{r}}\right)^{n+1}
+\end{align}
+\]</div>
+<p>where the degree-1 term does not contribute in view of eq. <a class="reference internal" href="#equation-g-51">(6.53)</a>. This result show that the departure from the spherical symmetry are a minor correction to the gravitational potential of the celestial body because <span class="math notranslate nohighlight">\(\breve{\phi}_{n,m}(\breve{a}_T,t)\ll \breve{\phi}_{0,0}(\breve{x},t)\)</span> and the dependence on <span class="math notranslate nohighlight">\((\breve{a}_T/\breve{x})^{n+1}\)</span>, with <span class="math notranslate nohighlight">\(\breve{a}_T\ll \breve{x}\)</span>. In this respect, we can neglect the contributions from harmonic degrees <span class="math notranslate nohighlight">\(n\geq 2\)</span>. Also, by considering that</p>
+<div class="math notranslate nohighlight" id="equation-g-55b">
+<span class="eqno">(6.58)<a class="headerlink" href="#equation-g-55b" title="Permalink to this equation">#</a></span>\[
+\breve{\phi}_{0,0}(\breve{a}_T) = -\frac{G\,M_T}{\breve{a}_T}
+\]</div>
+<p>eq. <a class="reference internal" href="#equation-g-55b">(6.58)</a> becomes</p>
+<div class="math notranslate nohighlight" id="equation-g-55c">
+<span class="eqno">(6.59)<a class="headerlink" href="#equation-g-55c" title="Permalink to this equation">#</a></span>\[
+\breve{\phi}_{0,0}(\breve{x}) = -\frac{G\,M_T}{\breve{x}}
+\]</div>
+<p>which coincides with the result already discussed for the point-like celestal body, eq. <a class="reference internal" href="#equation-g-43">(6.46)</a>, because <span class="math notranslate nohighlight">\(\breve{x} = \left\|\bb{x}-\bb{x}_T\right\|\)</span>.</p>
+</div>
+<div class="full-width docutils">
+<p>For later convenience, let us decompose this gravitational potential into the degree-<span class="math notranslate nohighlight">\(0\)</span> and -<span class="math notranslate nohighlight">\(1\)</span> contributions and the so-called tidal potential <span class="math notranslate nohighlight">\(\psi^T\)</span> as follows</p>
+<div class="math notranslate nohighlight" id="equation-g-56">
+<span class="eqno">(6.60)<a class="headerlink" href="#equation-g-56" title="Permalink to this equation">#</a></span>\[
+\phi^T(\bb{x}) = \phi^T_0(\bb{x}) + \phi^T_1(\bb{x}) + \psi^T(\bb{x})
+\]</div>
+<p>where, according to eq. <a class="reference internal" href="#equation-g-41">(6.44)</a>, <span class="math notranslate nohighlight">\(\phi_0^T\)</span>, <span class="math notranslate nohighlight">\(\phi_1^T\)</span> and <span class="math notranslate nohighlight">\(\psi^T\)</span> are given by</p>
+<div class="math notranslate nohighlight" id="equation-g-57">
+<span class="eqno">(6.61)<a class="headerlink" href="#equation-g-57" title="Permalink to this equation">#</a></span>\[\begin{split}
+\begin{align} &amp;
+\phi^T_0(\bb{x}) = \phi^T_{0,0}(a)
+\qquad
+\phi^T_1(\bb{x}) = \sum_m \frac{x}{a}\,\phi^T_{1,m}(a)\,Y_1^m(\vartheta,\varphi) 
+\\
+&amp; \psi^T(\bb{x}) = \sum_{n\geq 2}\sum_m \left(\frac{x}{a}\right)^n\,\psi^T_{n,m}(a)\,Y_n^m(\vartheta,\varphi)
+ \qquad\mathrm{with}\qquad x\leq R
+ \end{align}
+\end{split}\]</div>
+<p>According to this decomposition, the spherical harmonic coefficients of the tidal potential are given by</p>
+<div class="math notranslate nohighlight" id="equation-g-58">
+<span class="eqno">(6.62)<a class="headerlink" href="#equation-g-58" title="Permalink to this equation">#</a></span>\[\begin{split}
+\psi^T_{n,m}(x) = \begin{cases} 0 &amp; n=0,1 \\ \phi^T_{n,m}(x) &amp; n\geq 2 \end{cases}
+\end{split}\]</div>
+<p>The gravity acceleration due to celestial body inside the sphere of radius <span class="math notranslate nohighlight">\(R\)</span> yields</p>
+<div class="math notranslate nohighlight" id="equation-g-59">
+<span class="eqno">(6.63)<a class="headerlink" href="#equation-g-59" title="Permalink to this equation">#</a></span>\[
+\bb{g}^T(\bb{x})= -\grad\phi^T(\bb{x}) = \bb{g}^T_1 + \bb{f}^T(\bb{x})  \qquad\mathrm{with}\qquad x\leq R
+\]</div>
+<p>Here, <span class="math notranslate nohighlight">\(\bb{f}^T\)</span> is the tidal acceleration</p>
+<div class="math notranslate nohighlight" id="equation-g-60">
+<span class="eqno">(6.64)<a class="headerlink" href="#equation-g-60" title="Permalink to this equation">#</a></span>\[
+\bb{f}^T(\bb{x}) = -\grad\psi^T(\bb{x}) = -\sum_{n\geq 2}\sum_m \frac{\psi^T_{n,m}(a)}{a}\,\left(\frac{x}{a}\right)^{n-1}\,\bb{V}_n^m(\vartheta,\varphi)
+\]</div>
+<p>and <span class="math notranslate nohighlight">\(\bb{g}_1^T\)</span> is gravity acceleration due to the degree-<span class="math notranslate nohighlight">\(1\)</span> contribution</p>
+<div class="math notranslate nohighlight" id="equation-g-61">
+<span class="eqno">(6.65)<a class="headerlink" href="#equation-g-61" title="Permalink to this equation">#</a></span>\[
+\begin{align}
+\bb{g}_1^T = -\grad\phi^T_1(\bb{x}) = -\sum_m \frac{\phi^T_{1,m}(a)}{a}\,\bb{V}_1^m(\vartheta,\varphi) = -\sqrt{3}\,\sum_m \frac{\phi^T_{1,m}(a)}{a}\,\bb{p}_m
+\end{align}
+\]</div>
+<p>Here, <span class="math notranslate nohighlight">\(\bb{V}_n^m\)</span> is given by</p>
+<div class="math notranslate nohighlight">
+\[
+\bb{V}_n^m(\vartheta,\varphi) = n\,\bb{P}_{n,m}(\vartheta,\varphi)+\gamma_n\,\bb{B}_{n,m}(\vartheta,\varphi)
+\]</div>
+<p>and we have made use of the following identity</p>
+<div class="math notranslate nohighlight" id="equation-g-62">
+<span class="eqno">(6.66)<a class="headerlink" href="#equation-g-62" title="Permalink to this equation">#</a></span>\[
+\bb{V}_1^m(\vartheta,\varphi) = \bb{P}_1^m(\vartheta,\varphi) + \gamma_1\,\bb{B}_1^m(\vartheta,\varphi) = \sqrt{3}\,\bb{p}_m
+\]</div>
+<p>It is notewothy that <span class="math notranslate nohighlight">\(\bb{g}_1^T\)</span> is just a constant (in space) vector which does not depend on the spatial coordinates. This decomposition of the gravitational potential of the celestial body into the degree-<span class="math notranslate nohighlight">\(0\)</span> and -<span class="math notranslate nohighlight">\(1\)</span> contributions and the tidal potential is usefull when we will consider the forces acting on the Earth system. Indeed, as we will show, the tidal potential <span class="math notranslate nohighlight">\(\psi^T\)</span> is responsible for deformations of the Earth and, so, they can be only of degree <span class="math notranslate nohighlight">\(n\geq 2\)</span>. Different, the degree-1 contribution <span class="math notranslate nohighlight">\(\phi_1^T\)</span> is responsible for the orbital motion of the Earth around the celestial body (or viceversa).</p>
+<p>We note that, within the (reasonable) approximation of a point-like (or spherically symmetric) celestial body, the constant (in space) vector <span class="math notranslate nohighlight">\(\bb{g}_1^T\)</span> becomes</p>
+<div class="math notranslate nohighlight" id="equation-g-63">
+<span class="eqno">(6.67)<a class="headerlink" href="#equation-g-63" title="Permalink to this equation">#</a></span>\[
+\bb{g}_1^T  = \frac{G\,M_T}{x_T^2}\,\frac{1}{\sqrt{3}}\,\sum_m  Y_1^m(\vartheta_T,\varphi_T)\,\bb{p}_m  = \frac{G\,M_T}{x_T^2}\,\bn{r}(\vartheta_T,\varphi_T)
+\]</div>
+</div>
+<section id="total-force">
+<span id="sec-total-force"></span><h3><a class="toc-backref" href="#id7"><span class="section-number">6.3.1. </span>Total force</a><a class="headerlink" href="#total-force" title="Permalink to this headline">#</a></h3>
+<div class="full-width docutils">
+<p>Let us now evaluate the total force acting on the Earth due to the celestial body</p>
+<div class="math notranslate nohighlight" id="equation-g-64">
+<span class="eqno">(6.68)<a class="headerlink" href="#equation-g-64" title="Permalink to this equation">#</a></span>\[
+\bb{F}^T = -\int \rho(\bb{x})\,\grad\phi^T(\bb{x})\,\md V = M\,\bb{g}_1^T + \int \rho(\bb{x})\,\bb{f}^T(\bb{x})\,\md V
+\]</div>
+<p>where it is understood that <span class="math notranslate nohighlight">\(\rho\)</span> is the density distribution of the Earth system and <span class="math notranslate nohighlight">\(M\)</span> is its total mass. After spherical harmonic expansion and making use of the decomposition given by eq. <a class="reference internal" href="#equation-g-60">(6.64)</a>, eq. <a class="reference internal" href="#equation-g-64">(6.68)</a> becomes</p>
+<div class="math notranslate nohighlight" id="equation-g-65">
+<span class="eqno">(6.69)<a class="headerlink" href="#equation-g-65" title="Permalink to this equation">#</a></span>\[\begin{split}
+\begin{align}
+\bb{F}^T &amp;= M\,\bb{g}_1^T -\sum_{n\geq 2}\sum_m \sum_k\sum_q \frac{\psi^T_{n,m}(a)}{a^n}\,\Bigg(\int \rho_{k,q}(x)\,x^{n+1}\,\md x \Bigg)
+\Bigg(\int_\Omega \bb{V}_{n,m}(\vartheta,\varphi)\,Y_{k,q}(\vartheta,\varphi)\,\md \Omega\Bigg)
+\\
+&amp;= M\,\bb{g}_1^T + \sum_{n\geq 2}\sum_m \sum_q \frac{\psi^T_{n,m}(a)\,\phi_{n-1,q}(a)}{G}\,\bb{p}^n_{m,q}
+\end{align}
+\end{split}\]</div>
+<p>where we made use of the MacCullagh theorem for the degree <span class="math notranslate nohighlight">\(n-1\)</span></p>
+<div class="math notranslate nohighlight" id="equation-g-66">
+<span class="eqno">(6.70)<a class="headerlink" href="#equation-g-66" title="Permalink to this equation">#</a></span>\[
+4\,\pi\,\int \rho_{n-1,m}(x)\,x^{n+1}\,\md x = - \frac{(2\,n-1)\,a^{n}\,\phi_{n-1,m}(a)}{G}
+\]</div>
+<p>and of the following identity</p>
+<div class="math notranslate nohighlight" id="equation-g-67">
+<span class="eqno">(6.71)<a class="headerlink" href="#equation-g-67" title="Permalink to this equation">#</a></span>\[
+\int_\Omega \bb{V}_{n,m}(\vartheta,\varphi)\,Y_{k,q}(\vartheta,\varphi)\,\md \Omega = \frac{4\,\pi}{2\,n-1}\,\bb{p}^n_{m,q}\,\delta_{n,k+1}
+\]</div>
+<p>with <span class="math notranslate nohighlight">\(\bb{p}^{n}_{m,q}\)</span> being constant vectors.</p>
+<p>We note that, once fixed the origin of the reference system with the centre of mass of the Earth system, we have that <span class="math notranslate nohighlight">\(\phi_{1,m}(a)=0\)</span> and, so, the summation over the harmonic degrees <span class="math notranslate nohighlight">\(n\geq 2\)</span> in the right-hand side of eq. <a class="reference internal" href="#equation-g-65">(6.69)</a> will start actually from <span class="math notranslate nohighlight">\(n\geq 3\)</span>. Moreover, within the (reasonable) approximation of a point-like (or spherically symmetric) celestial body, we can also write</p>
+<div class="math notranslate nohighlight" id="equation-g-68">
+<span class="eqno">(6.72)<a class="headerlink" href="#equation-g-68" title="Permalink to this equation">#</a></span>\[
+\begin{align}
+\bb{F}^T &amp;= \frac{G\,M\,M_T}{x_T^2}\,\bn{r}(\vartheta_T,\varphi_T) + \sum_{n\geq 3}\sum_m \sum_q (2\,n-1)\,\frac{\psi^T_{n,m}(a)\,\phi_{n-1,q}(a)}{G}\,\bb{p}^n_{m,q}
+\end{align}
+\]</div>
+<p>The first term in the right-hand side is a simple statement of the gravitational force between two (spherically symmetric) massive objects at the distance <span class="math notranslate nohighlight">\(x_T\)</span>. The second term, instead, show how departures from the spherical symmetry of the Earth starting from the degree <span class="math notranslate nohighlight">\(n\geq 2\)</span> can be responsible for some corrections to the first term. On the other hand, when these departures and the tidal potential are considered infinitesimal first-order terms, these corrections can be neglected and, so, correct to the first-order, we can write</p>
+<div class="math notranslate nohighlight" id="equation-g-69">
+<span class="eqno">(6.73)<a class="headerlink" href="#equation-g-69" title="Permalink to this equation">#</a></span>\[
+\begin{align}
+\bb{F}^T &amp;\approx M\,\bb{g}_1^T = \frac{G\,M\,M_T}{x_T^2}\,\bn{r}(\vartheta_T,\varphi_T) 
+\end{align}
+\]</div>
+</div>
+</section>
+<section id="total-torque">
+<span id="sec-total-torque"></span><h3><a class="toc-backref" href="#id8"><span class="section-number">6.3.2. </span>Total torque</a><a class="headerlink" href="#total-torque" title="Permalink to this headline">#</a></h3>
+<div class="full-width docutils">
+<p>Let us now evaluate the total force acting on the Earth due to the celestial body</p>
+<div class="math notranslate nohighlight" id="equation-g-70">
+<span class="eqno">(6.74)<a class="headerlink" href="#equation-g-70" title="Permalink to this equation">#</a></span>\[\begin{split}
+\begin{align}
+\bb{K}^T &amp;= -\int \rho(\bb{x})\,\bb{r}\times\grad\phi^T(\bb{x})\,\md V = \Bigg(\int \rho(\bb{x})\,\bb{r}\,\md V\Bigg)\times\bb{g}_1^T + \int \rho(\bb{x})\,\bb{r}\times\bb{f}^T(\bb{x})\,\md V \\
+&amp;= M\,\bb{Z}\times\bb{g}_1^T + \int \rho(\bb{x})\,\bb{r}\times\bb{f}^T(\bb{x})\,\md V
+\end{align}
+\end{split}\]</div>
+<p>After spherical harmonic expansion and making use of the decomposition given by eq. <a class="reference internal" href="#equation-g-60">(6.64)</a>, eq. <a class="reference internal" href="#equation-g-70">(6.74)</a> becomes</p>
+<div class="math notranslate nohighlight" id="equation-g-70a">
+<span class="eqno">(6.75)<a class="headerlink" href="#equation-g-70a" title="Permalink to this equation">#</a></span>\[\begin{split}
+\begin{align}
+\bb{K}^T &amp;= M\,\bb{Z}\times\bb{g}_1^T -\sum_{n\geq 2}\sum_m \sum_k\sum_q \frac{\psi^T_{n,m}(a)}{a^n}\,\Bigg(\int \rho_{k,q}(x)\,x^{n+2}\,\md x \Bigg)\Bigg(\int_\Omega\bn{r}(\vartheta,\varphi)\times\bb{V}_{n,m}(\vartheta,\varphi)\,Y_{k,q}(\vartheta,\varphi)\,\md \Omega\Bigg)
+\\
+&amp;= M\,\bb{Z}\times\bb{g}_1^T  + \sum_{n\geq 2}\sum_m \sum_k\sum_q \frac{\psi^T_{n,m}(a)}{a^n}\,\Bigg(\int \rho_{k,q}(x)\,x^{n+2}\,\md x \Bigg)\,\Bigg(\gamma_n\,\int_\Omega \bb{C}_{n,m}(\vartheta,\varphi)\,Y_{k,q}(\vartheta,\varphi)\,\md \Omega\Bigg)
+\\
+&amp;= M\,\bb{Z}\times\bb{g}_1^T  - \sum_{n\geq 2}\sum_m \sum_k\sum_q a\,\frac{\psi^T_{n,m}(a)\,\phi_{n,q}(a)}{G}\,\bb{q}_{m,q}^n
+\end{align}
+\end{split}\]</div>
+<p>where we made use of the MacCullagh theorem for the degree <span class="math notranslate nohighlight">\(n\)</span></p>
+<div class="math notranslate nohighlight" id="equation-g-71">
+<span class="eqno">(6.76)<a class="headerlink" href="#equation-g-71" title="Permalink to this equation">#</a></span>\[
+4\,\pi\,\int \rho_{n,m}(x)\,x^{n+2}\,\md x = - \frac{(2\,n+1)\,a^{n+1}\,\phi_{n,m}(a)}{G}
+\]</div>
+<p>and of the following identities</p>
+<div class="math notranslate nohighlight" id="equation-g-72">
+<span class="eqno">(6.77)<a class="headerlink" href="#equation-g-72" title="Permalink to this equation">#</a></span>\[
+\begin{align}
+\bn{r}(\vartheta,\varphi)\times\bb{V}_{n,m}(\vartheta,\varphi) = -\gamma_n\,\bb{C}_{n,m}(\vartheta,\varphi)
+\qquad
+\gamma_n\,\int_\Omega \bb{C}_{n,m}(\vartheta,\varphi)\,Y_{k,q}(\vartheta,\varphi)\,\md \Omega = \frac{4\,\pi}{(2\,n+1)}\,\bb{q}^n_{m,q}\,\delta_{n,k}
+\end{align}
+\]</div>
+<p>with <span class="math notranslate nohighlight">\(\bb{q}^{n}_{m,q}\)</span> being constant vectors.</p>
+<p>We note that, once fixed the origin of the reference system with the centre of mass of the Earth, we have that <span class="math notranslate nohighlight">\(\bb{Z}=\zero\)</span> and <span class="math notranslate nohighlight">\(\phi_{1,m}(a)=0\)</span> and, so, the first term in the right-hand side of eq. <a class="reference internal" href="#equation-g-70a">(6.75)</a> is zero. The second term, instead, show how departures from the spherical symmetry of the Earth starting from the degree <span class="math notranslate nohighlight">\(n\geq 2\)</span> can be responsible for some corrections to the first term. On the other hand, when these departures and the tidal potential are considered infinitesimal first-order terms, these corrections can be neglected and, so, correct to the first-order, we can write</p>
+<div class="math notranslate nohighlight" id="equation-g-73">
+<span class="eqno">(6.78)<a class="headerlink" href="#equation-g-73" title="Permalink to this equation">#</a></span>\[
+\begin{align}
+\bb{K}^T &amp;\approx \zero
+\end{align}
+\]</div>
+<p>In this respect, within a first-order approximation theory, the total torque acting on the Earth is zero and there is no exchange of angular momentum between the Earth and the celestial bodies. In order to describe such a process, we shall at least develop a second-order perturbation theory where the degree-2 potential of the Earth related to its equatorial bulge and its deviatoric inertia tensor is taken into account.</p>
+</div>
+</section>
+</section>
+</section>
+
+    <script type="text/x-thebe-config">
+    {
+        requestKernel: true,
+        binderOptions: {
+            repo: "binder-examples/jupyter-stacks-datascience",
+            ref: "master",
+        },
+        codeMirrorConfig: {
+            theme: "abcdef",
+            mode: "python"
+        },
+        kernelOptions: {
+            name: "python3",
+            path: "./files"
+        },
+        predefinedOutput: true
+    }
+    </script>
+    <script>kernelName = 'python3'</script>
+
+                </article>
+              
+
+              
+              
+                <footer class="bd-footer-article">
+                  <!-- Previous / next buttons -->
+<div class="prev-next-area">
+    <a class="left-prev"
+       href="L0_Harmonic_Vectors.html"
+       title="previous page">
+      <i class="fa-solid fa-angle-left"></i>
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">previous</p>
+        <p class="prev-next-title"><span class="section-number">5. </span>Spherical harmonic vectors</p>
+      </div>
+    </a>
+    <a class="right-next"
+       href="T2_Kinematics.html"
+       title="next page">
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">next</p>
+        <p class="prev-next-title"><span class="section-number">7. </span>Kinematics and reference systems</p>
+      </div>
+      <i class="fa-solid fa-angle-right"></i>
+    </a>
+</div>
+                </footer>
+              
+            </div>
+            
+            
+              
+                <div class="bd-sidebar-secondary bd-toc"><div class="sidebar-secondary-items sidebar-secondary__inner">
+
+  <div class="sidebar-secondary-item">
+  <div class="page-toc tocsection onthispage">
+    <i class="fa-solid fa-list"></i> Contents
+  </div>
+  <nav class="bd-toc-nav page-toc">
+    <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#poisson-equation">6.1. Poisson equation</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#spherical-harmonic-expansion">6.1.1. Spherical harmonic expansion</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#laplace-equation">6.1.2. Laplace equation</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#solid-earth-and-load-system">6.2. Solid Earth (and load) system</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#maccullagh-theorem">6.2.1. MacCullagh theorem</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#celestial-bodies">6.3. Celestial bodies</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#total-force">6.3.1. Total force</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#total-torque">6.3.2. Total torque</a></li>
+</ul>
+</li>
+</ul>
+  </nav></div>
+
+</div></div>
+              
+            
+          </div>
+          <footer class="bd-footer-content">
+            <div class="bd-footer-content__inner">
+<div class="bd-footer-content__inner container">
+  
+  <div class="footer-item">
+    
+<p class="component-author">
+By <a href="https://sites.unimi.it/gcambiotti/">Gabriele Cambiotti</a>
+</p>
+
+  </div>
+  
+  <div class="footer-item">
+    
+  <p class="copyright">
+    
+      © Copyright 2022.
+      <br/>
+    
+  </p>
+
+  </div>
+  
+  <div class="footer-item">
+    
+  </div>
+  
+  <div class="footer-item">
+    
+  </div>
+  
+</div></div>
+          </footer>
+        
+
+      </main>
+    </div>
+  </div>
+  
+  <!-- Scripts loaded after <body> so the DOM is not blocked -->
+  <script src="../_static/scripts/bootstrap.js?digest=12da95d707ffb74b382d"></script>
+<script src="../_static/scripts/pydata-sphinx-theme.js?digest=12da95d707ffb74b382d"></script>
+
+  <footer class="bd-footer">
+  </footer>
+  </body>
+</html>

@@ -1,0 +1,651 @@
+
+
+<!DOCTYPE html>
+
+
+<html >
+
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
+
+    <title>5. Spherical harmonic vectors &#8212; Tectonophysics</title>
+  
+  
+  
+  <script data-cfasync="false">
+    document.documentElement.dataset.mode = localStorage.getItem("mode") || "";
+    document.documentElement.dataset.theme = localStorage.getItem("theme") || "light";
+  </script>
+  
+  <!-- Loaded before other Sphinx assets -->
+  <link href="../_static/styles/theme.css?digest=12da95d707ffb74b382d" rel="stylesheet" />
+<link href="../_static/styles/bootstrap.css?digest=12da95d707ffb74b382d" rel="stylesheet" />
+<link href="../_static/styles/pydata-sphinx-theme.css?digest=12da95d707ffb74b382d" rel="stylesheet" />
+
+  
+  <link href="../_static/vendor/fontawesome/6.1.2/css/all.min.css?digest=12da95d707ffb74b382d" rel="stylesheet" />
+  <link rel="preload" as="font" type="font/woff2" crossorigin href="../_static/vendor/fontawesome/6.1.2/webfonts/fa-solid-900.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="../_static/vendor/fontawesome/6.1.2/webfonts/fa-brands-400.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="../_static/vendor/fontawesome/6.1.2/webfonts/fa-regular-400.woff2" />
+
+    <link rel="stylesheet" type="text/css" href="../_static/pygments.css" />
+    <link rel="stylesheet" href="../_static/styles/sphinx-book-theme.css?digest=14f4ca6b54d191a8c7657f6c759bf11a5fb86285" type="text/css" />
+    <link rel="stylesheet" type="text/css" href="../_static/togglebutton.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/copybutton.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/mystnb.4510f1fc1dee50b3e5859aac5469c37c29e427902b24a333a5f9fcb2f0b3ac41.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/sphinx-thebe.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/design-style.4045f2051d55cab465a707391d5b2007.min.css" />
+  
+  <!-- Pre-loaded scripts that we'll load fully later -->
+  <link rel="preload" as="script" href="../_static/scripts/bootstrap.js?digest=12da95d707ffb74b382d" />
+<link rel="preload" as="script" href="../_static/scripts/pydata-sphinx-theme.js?digest=12da95d707ffb74b382d" />
+
+    <script data-url_root="../" id="documentation_options" src="../_static/documentation_options.js"></script>
+    <script src="../_static/jquery.js"></script>
+    <script src="../_static/underscore.js"></script>
+    <script src="../_static/doctools.js"></script>
+    <script src="../_static/clipboard.min.js"></script>
+    <script src="../_static/copybutton.js"></script>
+    <script src="../_static/scripts/sphinx-book-theme.js?digest=5a5c038af52cf7bc1a1ec88eea08e6366ee68824"></script>
+    <script>let toggleHintShow = 'Click to show';</script>
+    <script>let toggleHintHide = 'Click to hide';</script>
+    <script>let toggleOpenOnPrint = 'true';</script>
+    <script src="../_static/togglebutton.js"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
+    <script src="../_static/design-tabs.js"></script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"
+const thebe_selector = ".thebe,.cell"
+const thebe_selector_input = "pre"
+const thebe_selector_output = ".output, .cell_output"
+</script>
+    <script async="async" src="../_static/sphinx-thebe.js"></script>
+    <script>window.MathJax = {"options": {"processHtmlClass": "tex2jax_process|mathjax_process|math|output_area"}}</script>
+    <script defer="defer" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+    <script>DOCUMENTATION_OPTIONS.pagename = 'files/L0_Harmonic_Vectors';</script>
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
+    <link rel="next" title="6. Gravitatational potentials" href="T1_Potentials.html" />
+    <link rel="prev" title="4. Spherical harmonics" href="L0_Harmonic_Scalar.html" />
+  <meta name="viewport" content="width=device-width, initial-scale=1"/>
+  <meta name="docsearch:language" content="None"/>
+  </head>
+  
+  
+  <body data-bs-spy="scroll" data-bs-target=".bd-toc-nav" data-offset="180" data-bs-root-margin="0px 0px -60%" data-default-mode="">
+
+  
+  
+  <a class="skip-link" href="#main-content">Skip to main content</a>
+  
+  <input type="checkbox"
+          class="sidebar-toggle"
+          name="__primary"
+          id="__primary"/>
+  <label class="overlay overlay-primary" for="__primary"></label>
+  
+  <input type="checkbox"
+          class="sidebar-toggle"
+          name="__secondary"
+          id="__secondary"/>
+  <label class="overlay overlay-secondary" for="__secondary"></label>
+  
+  <div class="search-button__wrapper">
+    <div class="search-button__overlay"></div>
+    <div class="search-button__search-container">
+<form class="bd-search d-flex align-items-center"
+      action="../search.html"
+      method="get">
+  <i class="fa-solid fa-magnifying-glass"></i>
+  <input type="search"
+         class="form-control"
+         name="q"
+         id="search-input"
+         placeholder="Search this book..."
+         aria-label="Search this book..."
+         autocomplete="off"
+         autocorrect="off"
+         autocapitalize="off"
+         spellcheck="false"/>
+  <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd>K</kbd></span>
+</form></div>
+  </div>
+  
+    <nav class="bd-header navbar navbar-expand-lg bd-navbar">
+    </nav>
+  
+  <div class="bd-container">
+    <div class="bd-container__inner bd-page-width">
+      
+      <div class="bd-sidebar-primary bd-sidebar">
+        
+
+  
+  <div class="sidebar-header-items sidebar-primary__section">
+    
+    
+    
+    
+  </div>
+  
+    <div class="sidebar-primary-items__start sidebar-primary__section">
+        <div class="sidebar-primary-item">
+  
+
+<a class="navbar-brand logo" href="../intro.html">
+  
+  
+  
+  
+    
+    
+      
+    
+    
+    <img src="../_static/gc_logo.png" class="logo__image only-light" alt="Logo image"/>
+    <script>document.write(`<img src="../_static/gc_logo.png" class="logo__image only-dark" alt="Logo image"/>`);</script>
+  
+  
+</a></div>
+        <div class="sidebar-primary-item"><nav class="bd-links" id="bd-docs-nav" aria-label="Main">
+    <div class="bd-toc-item navbar-nav active">
+        <p aria-level="2" class="caption" role="heading"><span class="caption-text">Introduction</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="A0_Setup.html">1. Working with JupyterLab</a></li>
+<li class="toctree-l1"><a class="reference internal" href="A1_Tutorial.html">2. Tutorial on Python</a></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Methods</span></p>
+<ul class="current nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="L1_Laplace.html">3. The Laplace transform</a></li>
+<li class="toctree-l1"><a class="reference internal" href="L0_Harmonic_Scalar.html">4. Spherical harmonics</a></li>
+<li class="toctree-l1 current active"><a class="current reference internal" href="#">5. Spherical harmonic vectors</a></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Theory</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="T1_Potentials.html">6. Gravitatational potentials</a></li>
+<li class="toctree-l1"><a class="reference internal" href="T2_Kinematics.html">7. Kinematics and reference systems</a></li>
+<li class="toctree-l1"><a class="reference internal" href="T2_Reference.html">8. The Earth reference system</a></li>
+<li class="toctree-l1"><a class="reference internal" href="T2_Equations.html">9. Momentum and Poisson equations</a></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Solution</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="L3_Self.html">10. Perturbation theory</a></li>
+<li class="toctree-l1"><a class="reference internal" href="L4_Analytical.html">11. Analytical solutions</a></li>
+<li class="toctree-l1"><a class="reference internal" href="L5_Euler.html">12. Rotational dynamics</a></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Codes</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="C1_Codes.html">13. Homogeneous incompressible Earth model</a></li>
+
+
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Appendix</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="Z0_Dirac.html">16. Dirac delta function</a></li>
+</ul>
+
+    </div>
+</nav></div>
+    </div>
+  
+  
+  <div class="sidebar-primary-items__end sidebar-primary__section">
+  </div>
+  
+  <div id="rtd-footer-container"></div>
+
+
+      </div>
+      
+      <main id="main-content" class="bd-main">
+        
+        
+
+<div class="sbt-scroll-pixel-helper"></div>
+
+          <div class="bd-content">
+            <div class="bd-article-container">
+              
+              <div class="bd-header-article">
+<div class="header-article-items header-article__inner">
+  
+    <div class="header-article-items__start">
+      
+        <div class="header-article-item"><label class="sidebar-toggle primary-toggle btn btn-sm" for="__primary" title="Toggle primary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+  <span class="fa-solid fa-bars"></span>
+</label></div>
+      
+    </div>
+  
+  
+    <div class="header-article-items__end">
+      
+        <div class="header-article-item">
+
+<div class="article-header-buttons">
+
+
+
+
+
+<div class="dropdown dropdown-download-buttons">
+  <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Download this page">
+    <i class="fas fa-download"></i>
+  </button>
+  <ul class="dropdown-menu">
+      
+      
+      
+      <li><a href="../_sources/files/L0_Harmonic_Vectors.ipynb" target="_blank"
+   class="btn btn-sm btn-download-source-button dropdown-item"
+   title="Download source file"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-file"></i>
+  </span>
+<span class="btn__text-container">.ipynb</span>
+</a>
+</li>
+      
+      
+      
+      
+      <li>
+<button onclick="window.print()"
+  class="btn btn-sm btn-download-pdf-button dropdown-item"
+  title="Print to PDF"
+  data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-file-pdf"></i>
+  </span>
+<span class="btn__text-container">.pdf</span>
+</button>
+</li>
+      
+  </ul>
+</div>
+
+
+
+
+<button onclick="toggleFullScreen()"
+  class="btn btn-sm btn-fullscreen-button"
+  title="Fullscreen mode"
+  data-bs-placement="bottom" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-expand"></i>
+  </span>
+
+</button>
+
+
+<script>
+document.write(`
+  <button class="theme-switch-button btn btn-sm btn-outline-primary navbar-btn rounded-circle" title="light/dark" aria-label="light/dark" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <span class="theme-switch" data-mode="light"><i class="fa-solid fa-sun"></i></span>
+    <span class="theme-switch" data-mode="dark"><i class="fa-solid fa-moon"></i></span>
+    <span class="theme-switch" data-mode="auto"><i class="fa-solid fa-circle-half-stroke"></i></span>
+  </button>
+`);
+</script>
+
+<script>
+document.write(`
+  <button class="btn btn-sm navbar-btn search-button search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass"></i>
+  </button>
+`);
+</script>
+<label class="sidebar-toggle secondary-toggle btn btn-sm" for="__secondary"title="Toggle secondary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <span class="fa-solid fa-list"></span>
+</label>
+</div></div>
+      
+    </div>
+  
+</div>
+</div>
+              
+              
+
+<div id="jb-print-docs-body" class="onlyprint">
+    <h1>Spherical harmonic vectors</h1>
+    <!-- Table of contents -->
+    <div id="print-main-content">
+        <div id="jb-print-toc">
+            
+            <div>
+                <h2> Contents </h2>
+            </div>
+            <nav aria-label="Page">
+                <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id1">5.1. Spherical harmonic vectors</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#basic-properties">5.1.1. Basic properties</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#identities">5.1.2. Identities</a></li>
+</ul>
+</li>
+</ul>
+            </nav>
+        </div>
+    </div>
+</div>
+
+              
+                
+<div id="searchbox"></div>
+                <article class="bd-article" role="main">
+                  
+  <section class="tex2jax_ignore mathjax_ignore" id="spherical-harmonic-vectors">
+<span id="chap-vectors"></span><h1><span class="section-number">5. </span>Spherical harmonic vectors<a class="headerlink" href="#spherical-harmonic-vectors" title="Permalink to this headline">#</a></h1>
+<div class="contents local topic" id="sections">
+<p class="topic-title">Sections</p>
+<ul class="simple">
+<li><p><a class="reference internal" href="#id1" id="id2">Spherical harmonic vectors</a></p>
+<ul>
+<li><p><a class="reference internal" href="#basic-properties" id="id3">Basic properties</a></p></li>
+<li><p><a class="reference internal" href="#identities" id="id4">Identities</a></p></li>
+</ul>
+</li>
+</ul>
+</div>
+<div class="full-width docutils">
+<p>In this lecture we will introduce the Legendre polynomial and we will use them for representing axially symmetric functions defined over the sphere. Then, we will consider the spherical harmonics for representing general function on the sphere.</p>
+</div>
+<p><span class="math notranslate nohighlight">\(\newcommand{\md}{\mathrm{d}\hspace{0cm}}\)</span>
+<span class="math notranslate nohighlight">\(\newcommand{\mdd}{\mathrm{d}\hspace{0cm}^2}\)</span>
+<span class="math notranslate nohighlight">\(\newcommand{\grad}{\boldsymbol{\nabla}\hspace{-0.01cm}}\)</span>
+<span class="math notranslate nohighlight">\(\newcommand{\stress}{\boldsymbol{\sigma}}\)</span>
+<span class="math notranslate nohighlight">\(\newcommand{\bn}[1]{\hat{\mathbf{#1}}}\)</span>
+<span class="math notranslate nohighlight">\(\newcommand{\bb}[1]{\mathbf{#1}}\)</span>
+<span class="math notranslate nohighlight">\(\newcommand{\sn}[1]{\hat{\boldsymbol{#1}}}\)</span>
+<span class="math notranslate nohighlight">\(\newcommand{\sb}[1]{\boldsymbol{#1}}\)</span>
+<span class="math notranslate nohighlight">\(\newcommand{\zero}{\mathbf{0}}\)</span>
+<span class="math notranslate nohighlight">\(\newcommand{\one}{\mathbf{1}}\)</span>
+<span class="math notranslate nohighlight">\(\newcommand{\loc}{\Delta\hspace{0cm}}\)</span>
+<span class="math notranslate nohighlight">\(\newcommand{\mat}{\delta\hspace{0cm}}\)</span>
+<span class="math notranslate nohighlight">\(\newcommand{\det}{\mathrm{\det}\hspace{0cm}}\)</span>
+<span class="math notranslate nohighlight">\(\newcommand{\cm}[1]{\bar{\bb{#1}}}\)</span>
+<span class="math notranslate nohighlight">\(\newcommand{\lmsum}{\sum_{n=0}^\infty\sum_{m=-n}^n}\)</span>
+<span class="math notranslate nohighlight">\(\newcommand{\kqsum}{\sum_{k=0}^\infty\sum_{q=-k}^k}\)</span>
+<span class="math notranslate nohighlight">\(\newcommand{\dif}[1]{#1\hspace{0cm}\prime}\)</span>
+<span class="math notranslate nohighlight">\(\newcommand{\lap}{\nabla^2\hspace{0cm}}\)</span>
+<span class="math notranslate nohighlight">\(\newcommand{\dermat}[1]{\frac{\mathrm{D}\hspace{0.02cm}#1}{\mathrm{D}\hspace{0.02cm} t}}\)</span>
+<span class="math notranslate nohighlight">\(\newcommand{\dercla}[1]{\frac{\mathrm{d}\hspace{0.02cm}#1}{\mathrm{d}\hspace{0.02cm} t}}\)</span>
+<span class="math notranslate nohighlight">\(\newcommand{\derpar}[1]{\frac{\partial\hspace{0.02cm}#1}{\partial\hspace{0.02cm} t}}\)</span>
+<span class="math notranslate nohighlight">\(\newcommand{\rpar}[2]{\frac{\partial\hspace{0.02cm}#1}{\partial\hspace{0.02cm} r_{#2}}}\)</span>
+<span class="math notranslate nohighlight">\(\newcommand{\xpar}[2]{\frac{\partial\hspace{0.02cm}#1}{\partial\hspace{0.02cm} x_{#2}}}\)</span>
+<span class="math notranslate nohighlight">\(\newcommand{\ddermat}[1]{\frac{\mathrm{D}^2\hspace{0.02cm}#1}{\mathrm{D}\hspace{0.02cm} t^2}}\)</span>
+<span class="math notranslate nohighlight">\(\newcommand{\ddercla}[1]{\frac{\mathrm{d}^2\hspace{0.02cm}#1}{\mathrm{d}\hspace{0.02cm} t^2}}\)</span>
+<span class="math notranslate nohighlight">\(\newcommand{\dderpar}[1]{\frac{\partial^2\hspace{0.02cm}#1}{\partial\hspace{0.02cm} t^2}}\)</span>
+<span class="math notranslate nohighlight">\(\newcommand{\drpar}[2]{\frac{\partial^2\hspace{0.02cm}#1}{\partial\hspace{0.02cm} r_{#2}^2}}\)</span>
+<span class="math notranslate nohighlight">\(\newcommand{\dxpar}[2]{\frac{\partial^2\hspace{0.02cm}#1}{\partial\hspace{0.02cm} x_{#2}^2}}\)</span></p>
+<section id="id1">
+<h2><a class="toc-backref" href="#id2"><span class="section-number">5.1. </span>Spherical harmonic vectors</a><a class="headerlink" href="#id1" title="Permalink to this headline">#</a></h2>
+<div class="full-width docutils">
+<p>Starting from the spherical harmonics, we can define the three spherical harmonics vectors</p>
+<div class="math notranslate nohighlight" id="equation-v-1">
+<span class="eqno">(5.1)<a class="headerlink" href="#equation-v-1" title="Permalink to this equation">#</a></span>\[\begin{split}
+\begin{align}
+&amp; \mathbf{P}_n^m(\vartheta,\varphi) = \hat{\mathbf{r}}\,Y_n^m(\vartheta,\varphi)
+\\
+&amp; \mathbf{B}_n^m(\vartheta,\varphi) = \frac{x}{\gamma_n}\,\boldsymbol{\nabla} Y_n^m(\vartheta,\varphi) = \frac{1}{\gamma_n}\,\left(\hat{\boldsymbol{\vartheta}}\,\frac{\partial Y_n^m(\vartheta,\varphi)}{\partial \theta} + \hat{\boldsymbol{\varphi}}\,\csc\vartheta\,\frac{\partial Y_n^m(\vartheta,\varphi)}{\partial \varphi}\right)
+\\
+&amp; \mathbf{C}_n^m(\vartheta,\varphi) = \mathbf{B}_n^m(\vartheta,\varphi)\times\hat{\mathbf{r}} = \frac{\boldsymbol{\nabla}\times(x\,\mathbf{P}_n^m(\vartheta,\varphi))}{\gamma_n}  = \frac{1}{\gamma_n}\,\left(\hat{\boldsymbol{\vartheta}}\,\csc\vartheta\,\frac{\partial Y_n^m(\vartheta,\varphi)}{\partial \varphi} - \hat{\boldsymbol{\varphi}}\,\frac{\partial Y_n^m(\vartheta,\varphi)}{\partial \vartheta}\right)
+\end{align}
+\end{split}\]</div>
+<p>with</p>
+<div class="math notranslate nohighlight" id="equation-v-2">
+<span class="eqno">(5.2)<a class="headerlink" href="#equation-v-2" title="Permalink to this equation">#</a></span>\[
+\gamma_n=\sqrt{n\,(n+1)}
+\]</div>
+<p>Similar to the spherical harmonics, which can be used for representing scalar functions over the sphere, the spherical harmonic vectors can be used for representing vector fields</p>
+<div class="math notranslate nohighlight" id="equation-v-3">
+<span class="eqno">(5.3)<a class="headerlink" href="#equation-v-3" title="Permalink to this equation">#</a></span>\[
+\begin{align}
+&amp; \mathbf{f}(\vartheta,\varphi) = \sum_{n=0}^\infty\sum_{m=-n}^n \big(f_{n,m}^P\,\mathbf{P}_{n}^m(\vartheta,\varphi)+ f_{n,m}^B\,\mathbf{B}_{n}^m(\vartheta,\varphi)+f_{n,m}^C\,\mathbf{C}_{n}^m(\vartheta,\varphi)\big)
+\end{align}
+\]</div>
+<p>where <span class="math notranslate nohighlight">\(f_{n,m}^X\)</span> (with <span class="math notranslate nohighlight">\(X=P,B\)</span> or <span class="math notranslate nohighlight">\(C\)</span>) are the spherical harmonic coefficients. We note that <span class="math notranslate nohighlight">\(\mathbf{B}_{0,0}=\mathbf{C}_{0,0}=\mathbf{0}\)</span> because <span class="math notranslate nohighlight">\(Y_0^0=1\)</span> does not depend on the angular coordinates <span class="math notranslate nohighlight">\((\vartheta,\varphi)\)</span>. In this respect, the spherical harmonic coefficients <span class="math notranslate nohighlight">\(f_{0,0}^B\)</span> and <span class="math notranslate nohighlight">\(f_{0,0}^C\)</span> have no meaning and, by convenction, we set them to zero</p>
+<div class="math notranslate nohighlight" id="equation-v-4">
+<span class="eqno">(5.4)<a class="headerlink" href="#equation-v-4" title="Permalink to this equation">#</a></span>\[
+\begin{align}
+&amp; f_{0,0}^B = f_{0,0}^C = 0
+\end{align}
+\]</div>
+<p>Like the spherical harmonics, the spherical harmonic vectors are orthogonal in the following senses</p>
+<div class="math notranslate nohighlight" id="equation-v-5">
+<span class="eqno">(5.5)<a class="headerlink" href="#equation-v-5" title="Permalink to this equation">#</a></span>\[
+\int_{\mathcal{\Omega}} \mathbf{P}_n^m(\vartheta,\varphi)\cdot\mathbf{P}_p^q(\vartheta,\varphi)\,\mathrm{d} \Omega = 4\,\pi\,\delta_{n,p}\,\delta_{m,q}
+\qquad
+\int_{\mathcal{\Omega}} \mathbf{B}_n^m(\vartheta,\varphi)\cdot\mathbf{B}_p^q(\vartheta,\varphi)\,\mathrm{d} \Omega = 4\,\pi\,\delta_{n,p}\,\delta_{m,q}
+\qquad
+\int_{\mathcal{\Omega}} \mathbf{C}_n^m(\vartheta,\varphi)\cdot\mathbf{C}_p^q(\vartheta,\varphi)\,\mathrm{d} \Omega = 4\,\pi\,\delta_{n,p}\,\delta_{m,q}
+\]</div>
+<div class="math notranslate nohighlight" id="equation-v-6">
+<span class="eqno">(5.6)<a class="headerlink" href="#equation-v-6" title="Permalink to this equation">#</a></span>\[
+\mathbf{P}_n^m(\vartheta,\varphi)\cdot\mathbf{B}_p^q(\vartheta,\varphi) = 0
+\qquad
+\mathbf{P}_n^m(\vartheta,\varphi)\cdot\mathbf{C}_p^q(\vartheta,\varphi) = 0
+\qquad
+\int_{\mathcal{\Omega}} \mathbf{B}_n^m(\vartheta,\varphi)\cdot\mathbf{C}_p^q(\vartheta,\varphi)\,\mathrm{d} \Omega = 0
+\]</div>
+<p>and, so, we can obtain the spherical harmonic coefficients of a vector field as follows</p>
+<div class="math notranslate nohighlight" id="equation-v-7">
+<span class="eqno">(5.7)<a class="headerlink" href="#equation-v-7" title="Permalink to this equation">#</a></span>\[
+f_{n,m}^X = \frac{1}{4\,\pi}\int_{\mathcal{\Omega}} \mathbf{f}(\vartheta,\varphi)\cdot\mathbf{X}_n^m(\vartheta,\varphi)\,\mathrm{d} \Omega
+\]</div>
+</div>
+<div class="full-width dropdown admonition">
+<p class="admonition-title">A useful formalism</p>
+<p>By noting that</p>
+<div class="math notranslate nohighlight" id="equation-v-8">
+<span class="eqno">(5.8)<a class="headerlink" href="#equation-v-8" title="Permalink to this equation">#</a></span>\[\begin{split}
+\frac{\partial \mathrm{tri}_{m}(\varphi)}{\partial \varphi}  = m\,\mathrm{tri}_{-m}(\varphi)
+= \begin{cases} m\,\sin(-m\,\varphi) = -m\,\sin(m\,\varphi)  &amp; m &lt; 0 \\
+m\,\cos(-m\,\varphi) = m\,\cos(m\,\varphi) &amp; m\geq 0
+\end{cases}
+\end{split}\]</div>
+<p>with <span class="math notranslate nohighlight">\(\mathrm{tri}_m\)</span> given by eq. <a class="reference internal" href="L0_Harmonic_Scalar.html#equation-p-29">(4.30)</a>, the derivative of the spherical harmonics with respect to the longitude become</p>
+<div class="math notranslate nohighlight" id="equation-v-9">
+<span class="eqno">(5.9)<a class="headerlink" href="#equation-v-9" title="Permalink to this equation">#</a></span>\[
+\frac{\partial Y_n^m(\vartheta,\varphi)}{\partial \varphi} = m\,P_n^{\mid m \mid}(\cos\theta)\,\mathrm{tri}_{-m}(\varphi) = m\,Y_n^{-m}(\vartheta,\varphi) 
+\]</div>
+<p>In this respect, the spherical harmonic vectors <span class="math notranslate nohighlight">\(\bb{B}_n^m\)</span> and <span class="math notranslate nohighlight">\(\bb{C}_n^m\)</span> yields</p>
+<div class="math notranslate nohighlight" id="equation-v-10">
+<span class="eqno">(5.10)<a class="headerlink" href="#equation-v-10" title="Permalink to this equation">#</a></span>\[\begin{split}
+\begin{align}
+&amp; \mathbf{B}_n^m(\vartheta,\varphi) =  \frac{1}{\gamma_n}\,\left(\hat{\boldsymbol{\vartheta}}\,\frac{\partial Y_n^m(\vartheta,\varphi)}{\partial \theta} + m\,\hat{\boldsymbol{\varphi}}\,\csc\vartheta\,Y_n^{-m}(\vartheta,\varphi)\right)
+\\
+&amp; \mathbf{C}_n^m(\vartheta,\varphi) = \frac{1}{\gamma_n}\,\left(\hat{\boldsymbol{\vartheta}}\,\csc\vartheta\,m\,Y_n^{-m}(\vartheta,\varphi) - \hat{\boldsymbol{\varphi}}\,\frac{\partial Y_n^m(\vartheta,\varphi)}{\partial \vartheta}\right)
+\end{align}
+\end{split}\]</div>
+</div>
+<section id="basic-properties">
+<h3><a class="toc-backref" href="#id3"><span class="section-number">5.1.1. </span>Basic properties</a><a class="headerlink" href="#basic-properties" title="Permalink to this headline">#</a></h3>
+<div class="full-width docutils">
+<p>In the following we shall consider the following expressions for the divergence and the curl of the spherical harmonic vectors multiplied by a function <span class="math notranslate nohighlight">\(f\)</span> that depends only on the radial distance <span class="math notranslate nohighlight">\(x\)</span> yield</p>
+<div class="math notranslate nohighlight" id="equation-v-11">
+<span class="eqno">(5.11)<a class="headerlink" href="#equation-v-11" title="Permalink to this equation">#</a></span>\[\begin{split}
+\begin{align}
+&amp;\boldsymbol{\nabla}\cdot\big(f(x)\,\mathbf{P}_n^m(\vartheta,\varphi)\big)= \left(\dot{f}(x)+\frac{2}{x}\,f(x)\right)\,Y_n^m(\vartheta,\varphi) 
+\\
+&amp; \boldsymbol{\nabla}\cdot\big(f(x)\,\mathbf{B}_n^m(\vartheta,\varphi)\big) = -\frac{f(x)}{x}\,\gamma_n\,Y_n^m(\vartheta,\varphi) 
+\\
+&amp;\boldsymbol{\nabla}\cdot\big(f(x)\,\mathbf{C}_n^m(\vartheta,\varphi)\big) = 0
+\end{align}
+\end{split}\]</div>
+<p>and</p>
+<div class="math notranslate nohighlight" id="equation-v-11a">
+<span class="eqno">(5.12)<a class="headerlink" href="#equation-v-11a" title="Permalink to this equation">#</a></span>\[\begin{split}
+\begin{align}
+&amp; \boldsymbol{\nabla}\times\big(f(x)\,\mathbf{P}_n^m(\vartheta,\varphi)\big)= \gamma_n\,\frac{f(x)}{r}\,\mathbf{C}_n^m(\vartheta,\varphi) 
+\\
+&amp;\boldsymbol{\nabla}\times\big(f(x)\,\mathbf{B}_n^m(\vartheta,\varphi)\big) = -\left(\dot{f}(x)+\frac{f(x)}{x}\right)\,\mathbf{C}_n^m(\vartheta,\varphi)
+\\
+&amp; \boldsymbol{\nabla}\times\big(f(x)\,\mathbf{C}_n^m(\vartheta,\varphi)\big) = \gamma_n\,\frac{f(x)}{r}\,\mathbf{P}_n^m(\vartheta,\varphi) + \left(\dot{f}(x) + \frac{f(x)}{x}\right)\,\mathbf{B}_n^m(\vartheta,\varphi)
+\end{align}
+\end{split}\]</div>
+</div>
+</section>
+<section id="identities">
+<h3><a class="toc-backref" href="#id4"><span class="section-number">5.1.2. </span>Identities</a><a class="headerlink" href="#identities" title="Permalink to this headline">#</a></h3>
+<div class="full-width docutils">
+<p>In the following, we shall consider the following identities for the integrals of the spherical harmonic vector over the unit sphere</p>
+<div class="math notranslate nohighlight" id="equation-v-12">
+<span class="eqno">(5.13)<a class="headerlink" href="#equation-v-12" title="Permalink to this equation">#</a></span>\[
+\int_{\Omega}\mathbf{P}_n^m(\vartheta,\varphi)\,\mathrm{d}\Omega = \frac{4\,\pi}{\sqrt{3}}\,\mathbf{p}_m\,\delta_{n,1}
+\qquad
+\int_{\Omega}\mathbf{B}_n^m(\vartheta,\varphi)\,\mathrm{d}\Omega = \frac{4\,\pi\,\sqrt{2}}{\sqrt{3}}\,\mathbf{p}_m\,\delta_{n,1}
+\qquad
+\int_{\Omega}\mathbf{C}_n^m(\vartheta,\varphi)\,\mathrm{d}\Omega =\mathbf{0}
+\]</div>
+<p>with</p>
+<div class="math notranslate nohighlight" id="equation-v-13">
+<span class="eqno">(5.14)<a class="headerlink" href="#equation-v-13" title="Permalink to this equation">#</a></span>\[
+\bb{p}_0 = \bn{x}_3 \qquad \bb{p}_{-1} = \bn{x}_1 \qquad \bb{p}_1 = \bn{x}_2
+\]</div>
+<p>We note also that</p>
+<div class="math notranslate nohighlight" id="equation-v-14">
+<span class="eqno">(5.15)<a class="headerlink" href="#equation-v-14" title="Permalink to this equation">#</a></span>\[
+\bb{P}_1^m(\vartheta,\varphi)+ \gamma_1\,\bb{B}_1^m = \bb{p}_m \qquad Y_1^m(\vartheta,\varphi)\,\bb{p}_m = \bn{r}(\vartheta,\varphi)
+\]</div>
+<p>Additional usefull identities are</p>
+<div class="math notranslate nohighlight" id="equation-v-15">
+<span class="eqno">(5.16)<a class="headerlink" href="#equation-v-15" title="Permalink to this equation">#</a></span>\[
+\int_{\Omega}\mathbf{P}_n^m(\vartheta,\varphi)\,Y_{k,q}(\vartheta,\varphi)\,\mathrm{d}\Omega = \frac{4\,\pi}{\sqrt{3}}\,\mathbf{p}^n_{m,q}\,\delta_{n,k+1}
+\]</div>
+<p>with <span class="math notranslate nohighlight">\(\bb{p}^n_{m,q}\)</span> being constant vectors with <span class="math notranslate nohighlight">\(m=-n,\cdots,n\)</span> and <span class="math notranslate nohighlight">\(q=-(n-1),\cdots,n-1\)</span> at fixed <span class="math notranslate nohighlight">\(n\)</span>.</p>
+</div>
+</section>
+</section>
+</section>
+
+    <script type="text/x-thebe-config">
+    {
+        requestKernel: true,
+        binderOptions: {
+            repo: "binder-examples/jupyter-stacks-datascience",
+            ref: "master",
+        },
+        codeMirrorConfig: {
+            theme: "abcdef",
+            mode: "python"
+        },
+        kernelOptions: {
+            name: "python3",
+            path: "./files"
+        },
+        predefinedOutput: true
+    }
+    </script>
+    <script>kernelName = 'python3'</script>
+
+                </article>
+              
+
+              
+              
+                <footer class="bd-footer-article">
+                  <!-- Previous / next buttons -->
+<div class="prev-next-area">
+    <a class="left-prev"
+       href="L0_Harmonic_Scalar.html"
+       title="previous page">
+      <i class="fa-solid fa-angle-left"></i>
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">previous</p>
+        <p class="prev-next-title"><span class="section-number">4. </span>Spherical harmonics</p>
+      </div>
+    </a>
+    <a class="right-next"
+       href="T1_Potentials.html"
+       title="next page">
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">next</p>
+        <p class="prev-next-title"><span class="section-number">6. </span>Gravitatational potentials</p>
+      </div>
+      <i class="fa-solid fa-angle-right"></i>
+    </a>
+</div>
+                </footer>
+              
+            </div>
+            
+            
+              
+                <div class="bd-sidebar-secondary bd-toc"><div class="sidebar-secondary-items sidebar-secondary__inner">
+
+  <div class="sidebar-secondary-item">
+  <div class="page-toc tocsection onthispage">
+    <i class="fa-solid fa-list"></i> Contents
+  </div>
+  <nav class="bd-toc-nav page-toc">
+    <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id1">5.1. Spherical harmonic vectors</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#basic-properties">5.1.1. Basic properties</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#identities">5.1.2. Identities</a></li>
+</ul>
+</li>
+</ul>
+  </nav></div>
+
+</div></div>
+              
+            
+          </div>
+          <footer class="bd-footer-content">
+            <div class="bd-footer-content__inner">
+<div class="bd-footer-content__inner container">
+  
+  <div class="footer-item">
+    
+<p class="component-author">
+By <a href="https://sites.unimi.it/gcambiotti/">Gabriele Cambiotti</a>
+</p>
+
+  </div>
+  
+  <div class="footer-item">
+    
+  <p class="copyright">
+    
+      © Copyright 2022.
+      <br/>
+    
+  </p>
+
+  </div>
+  
+  <div class="footer-item">
+    
+  </div>
+  
+  <div class="footer-item">
+    
+  </div>
+  
+</div></div>
+          </footer>
+        
+
+      </main>
+    </div>
+  </div>
+  
+  <!-- Scripts loaded after <body> so the DOM is not blocked -->
+  <script src="../_static/scripts/bootstrap.js?digest=12da95d707ffb74b382d"></script>
+<script src="../_static/scripts/pydata-sphinx-theme.js?digest=12da95d707ffb74b382d"></script>
+
+  <footer class="bd-footer">
+  </footer>
+  </body>
+</html>
