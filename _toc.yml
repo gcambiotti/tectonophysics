@@ -1,0 +1,44 @@
+# Table of contents
+# Learn more at https://jupyterbook.org/customize/toc.html
+
+format: jb-book
+root: intro
+parts:
+  - caption: Introduction
+    maxdepth: 2
+    numbered: true
+    chapters:
+    - file: files/A0_Setup
+    - file: files/A1_Tutorial
+  - caption: Methods
+    maxdepth: 2
+    numbered: true
+    chapters:
+    - file: files/L1_Laplace
+    - file: files/L0_Harmonic_Scalar
+    - file: files/L0_Harmonic_Vectors
+  - caption: Theory
+    maxdepth: 2
+    numbered: true
+    chapters:
+    - file: files/T1_Potentials
+    - file: files/T2_Kinematics
+    - file: files/T2_Reference
+    - file: files/T2_Equations
+  - caption: Solution
+    maxdepth: 2
+    numbered: true
+    chapters:  
+    - file: files/L3_Self
+    - file: files/L4_Analytical
+    - file: files/L5_Euler
+  - caption: Codes
+    maxdepth: 2
+    numbered: true
+    chapters:  
+    - file: files/C1_Codes
+  - caption: Appendix
+    maxdepth: 2
+    numbered: true
+    chapters:
+    - file: files/Z0_Dirac

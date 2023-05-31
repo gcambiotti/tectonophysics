@@ -1,0 +1,991 @@
+
+
+<!DOCTYPE html>
+
+
+<html >
+
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
+
+    <title>11. Analytical solutions &#8212; Tectonophysics</title>
+  
+  
+  
+  <script data-cfasync="false">
+    document.documentElement.dataset.mode = localStorage.getItem("mode") || "";
+    document.documentElement.dataset.theme = localStorage.getItem("theme") || "light";
+  </script>
+  
+  <!-- Loaded before other Sphinx assets -->
+  <link href="../_static/styles/theme.css?digest=12da95d707ffb74b382d" rel="stylesheet" />
+<link href="../_static/styles/bootstrap.css?digest=12da95d707ffb74b382d" rel="stylesheet" />
+<link href="../_static/styles/pydata-sphinx-theme.css?digest=12da95d707ffb74b382d" rel="stylesheet" />
+
+  
+  <link href="../_static/vendor/fontawesome/6.1.2/css/all.min.css?digest=12da95d707ffb74b382d" rel="stylesheet" />
+  <link rel="preload" as="font" type="font/woff2" crossorigin href="../_static/vendor/fontawesome/6.1.2/webfonts/fa-solid-900.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="../_static/vendor/fontawesome/6.1.2/webfonts/fa-brands-400.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="../_static/vendor/fontawesome/6.1.2/webfonts/fa-regular-400.woff2" />
+
+    <link rel="stylesheet" type="text/css" href="../_static/pygments.css" />
+    <link rel="stylesheet" href="../_static/styles/sphinx-book-theme.css?digest=14f4ca6b54d191a8c7657f6c759bf11a5fb86285" type="text/css" />
+    <link rel="stylesheet" type="text/css" href="../_static/togglebutton.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/copybutton.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/mystnb.4510f1fc1dee50b3e5859aac5469c37c29e427902b24a333a5f9fcb2f0b3ac41.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/sphinx-thebe.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/design-style.4045f2051d55cab465a707391d5b2007.min.css" />
+  
+  <!-- Pre-loaded scripts that we'll load fully later -->
+  <link rel="preload" as="script" href="../_static/scripts/bootstrap.js?digest=12da95d707ffb74b382d" />
+<link rel="preload" as="script" href="../_static/scripts/pydata-sphinx-theme.js?digest=12da95d707ffb74b382d" />
+
+    <script data-url_root="../" id="documentation_options" src="../_static/documentation_options.js"></script>
+    <script src="../_static/jquery.js"></script>
+    <script src="../_static/underscore.js"></script>
+    <script src="../_static/doctools.js"></script>
+    <script src="../_static/clipboard.min.js"></script>
+    <script src="../_static/copybutton.js"></script>
+    <script src="../_static/scripts/sphinx-book-theme.js?digest=5a5c038af52cf7bc1a1ec88eea08e6366ee68824"></script>
+    <script>let toggleHintShow = 'Click to show';</script>
+    <script>let toggleHintHide = 'Click to hide';</script>
+    <script>let toggleOpenOnPrint = 'true';</script>
+    <script src="../_static/togglebutton.js"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
+    <script src="../_static/design-tabs.js"></script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"
+const thebe_selector = ".thebe,.cell"
+const thebe_selector_input = "pre"
+const thebe_selector_output = ".output, .cell_output"
+</script>
+    <script async="async" src="../_static/sphinx-thebe.js"></script>
+    <script>window.MathJax = {"options": {"processHtmlClass": "tex2jax_process|mathjax_process|math|output_area"}}</script>
+    <script defer="defer" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+    <script>DOCUMENTATION_OPTIONS.pagename = 'files/L4_Analytical';</script>
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
+    <link rel="next" title="12. Rotational dynamics" href="L5_Euler.html" />
+    <link rel="prev" title="10. Perturbation theory" href="L3_Self.html" />
+  <meta name="viewport" content="width=device-width, initial-scale=1"/>
+  <meta name="docsearch:language" content="None"/>
+  </head>
+  
+  
+  <body data-bs-spy="scroll" data-bs-target=".bd-toc-nav" data-offset="180" data-bs-root-margin="0px 0px -60%" data-default-mode="">
+
+  
+  
+  <a class="skip-link" href="#main-content">Skip to main content</a>
+  
+  <input type="checkbox"
+          class="sidebar-toggle"
+          name="__primary"
+          id="__primary"/>
+  <label class="overlay overlay-primary" for="__primary"></label>
+  
+  <input type="checkbox"
+          class="sidebar-toggle"
+          name="__secondary"
+          id="__secondary"/>
+  <label class="overlay overlay-secondary" for="__secondary"></label>
+  
+  <div class="search-button__wrapper">
+    <div class="search-button__overlay"></div>
+    <div class="search-button__search-container">
+<form class="bd-search d-flex align-items-center"
+      action="../search.html"
+      method="get">
+  <i class="fa-solid fa-magnifying-glass"></i>
+  <input type="search"
+         class="form-control"
+         name="q"
+         id="search-input"
+         placeholder="Search this book..."
+         aria-label="Search this book..."
+         autocomplete="off"
+         autocorrect="off"
+         autocapitalize="off"
+         spellcheck="false"/>
+  <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd>K</kbd></span>
+</form></div>
+  </div>
+  
+    <nav class="bd-header navbar navbar-expand-lg bd-navbar">
+    </nav>
+  
+  <div class="bd-container">
+    <div class="bd-container__inner bd-page-width">
+      
+      <div class="bd-sidebar-primary bd-sidebar">
+        
+
+  
+  <div class="sidebar-header-items sidebar-primary__section">
+    
+    
+    
+    
+  </div>
+  
+    <div class="sidebar-primary-items__start sidebar-primary__section">
+        <div class="sidebar-primary-item">
+  
+
+<a class="navbar-brand logo" href="../intro.html">
+  
+  
+  
+  
+    
+    
+      
+    
+    
+    <img src="../_static/gc_logo.png" class="logo__image only-light" alt="Logo image"/>
+    <script>document.write(`<img src="../_static/gc_logo.png" class="logo__image only-dark" alt="Logo image"/>`);</script>
+  
+  
+</a></div>
+        <div class="sidebar-primary-item"><nav class="bd-links" id="bd-docs-nav" aria-label="Main">
+    <div class="bd-toc-item navbar-nav active">
+        <p aria-level="2" class="caption" role="heading"><span class="caption-text">Introduction</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="A0_Setup.html">1. Working with JupyterLab</a></li>
+<li class="toctree-l1"><a class="reference internal" href="A1_Tutorial.html">2. Tutorial on Python</a></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Methods</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="L1_Laplace.html">3. The Laplace transform</a></li>
+<li class="toctree-l1"><a class="reference internal" href="L0_Harmonic_Scalar.html">4. Spherical harmonics</a></li>
+<li class="toctree-l1"><a class="reference internal" href="L0_Harmonic_Vectors.html">5. Spherical harmonic vectors</a></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Theory</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="T1_Potentials.html">6. Gravitatational potentials</a></li>
+<li class="toctree-l1"><a class="reference internal" href="T2_Kinematics.html">7. Kinematics and reference systems</a></li>
+<li class="toctree-l1"><a class="reference internal" href="T2_Reference.html">8. The Earth reference system</a></li>
+<li class="toctree-l1"><a class="reference internal" href="T2_Equations.html">9. Momentum and Poisson equations</a></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Solution</span></p>
+<ul class="current nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="L3_Self.html">10. Perturbation theory</a></li>
+<li class="toctree-l1 current active"><a class="current reference internal" href="#">11. Analytical solutions</a></li>
+<li class="toctree-l1"><a class="reference internal" href="L5_Euler.html">12. Rotational dynamics</a></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Codes</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="C1_Codes.html">13. Homogeneous incompressible Earth model</a></li>
+
+
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Appendix</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="Z0_Dirac.html">16. Dirac delta function</a></li>
+</ul>
+
+    </div>
+</nav></div>
+    </div>
+  
+  
+  <div class="sidebar-primary-items__end sidebar-primary__section">
+  </div>
+  
+  <div id="rtd-footer-container"></div>
+
+
+      </div>
+      
+      <main id="main-content" class="bd-main">
+        
+        
+
+<div class="sbt-scroll-pixel-helper"></div>
+
+          <div class="bd-content">
+            <div class="bd-article-container">
+              
+              <div class="bd-header-article">
+<div class="header-article-items header-article__inner">
+  
+    <div class="header-article-items__start">
+      
+        <div class="header-article-item"><label class="sidebar-toggle primary-toggle btn btn-sm" for="__primary" title="Toggle primary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+  <span class="fa-solid fa-bars"></span>
+</label></div>
+      
+    </div>
+  
+  
+    <div class="header-article-items__end">
+      
+        <div class="header-article-item">
+
+<div class="article-header-buttons">
+
+
+
+
+
+<div class="dropdown dropdown-download-buttons">
+  <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Download this page">
+    <i class="fas fa-download"></i>
+  </button>
+  <ul class="dropdown-menu">
+      
+      
+      
+      <li><a href="../_sources/files/L4_Analytical.ipynb" target="_blank"
+   class="btn btn-sm btn-download-source-button dropdown-item"
+   title="Download source file"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-file"></i>
+  </span>
+<span class="btn__text-container">.ipynb</span>
+</a>
+</li>
+      
+      
+      
+      
+      <li>
+<button onclick="window.print()"
+  class="btn btn-sm btn-download-pdf-button dropdown-item"
+  title="Print to PDF"
+  data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-file-pdf"></i>
+  </span>
+<span class="btn__text-container">.pdf</span>
+</button>
+</li>
+      
+  </ul>
+</div>
+
+
+
+
+<button onclick="toggleFullScreen()"
+  class="btn btn-sm btn-fullscreen-button"
+  title="Fullscreen mode"
+  data-bs-placement="bottom" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-expand"></i>
+  </span>
+
+</button>
+
+
+<script>
+document.write(`
+  <button class="theme-switch-button btn btn-sm btn-outline-primary navbar-btn rounded-circle" title="light/dark" aria-label="light/dark" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <span class="theme-switch" data-mode="light"><i class="fa-solid fa-sun"></i></span>
+    <span class="theme-switch" data-mode="dark"><i class="fa-solid fa-moon"></i></span>
+    <span class="theme-switch" data-mode="auto"><i class="fa-solid fa-circle-half-stroke"></i></span>
+  </button>
+`);
+</script>
+
+<script>
+document.write(`
+  <button class="btn btn-sm navbar-btn search-button search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass"></i>
+  </button>
+`);
+</script>
+<label class="sidebar-toggle secondary-toggle btn btn-sm" for="__secondary"title="Toggle secondary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <span class="fa-solid fa-list"></span>
+</label>
+</div></div>
+      
+    </div>
+  
+</div>
+</div>
+              
+              
+
+<div id="jb-print-docs-body" class="onlyprint">
+    <h1>Analytical solutions</h1>
+    <!-- Table of contents -->
+    <div id="print-main-content">
+        <div id="jb-print-toc">
+            
+            <div>
+                <h2> Contents </h2>
+            </div>
+            <nav aria-label="Page">
+                <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#layered-earth-models">11.1. Layered Earth models</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#toroidal-analytical-solutions">11.1.1. Toroidal analytical solutions</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#spheroidal-analytical-solutions">11.1.2. Spheroidal analytical solutions</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#incompressible-layered-earth-models">11.2. Incompressible layered Earth models</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id1">11.2.1. Spheroidal analytical solutions</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#homogeneous-incompressible-earth-model">11.2.2. Homogeneous incompressible Earth model</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#viscoelastic-response">11.2.3. Viscoelastic response</a><ul class="nav section-nav flex-column">
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#step-like-time-history">11.2.3.1. Step-like time history</a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+            </nav>
+        </div>
+    </div>
+</div>
+
+              
+                
+<div id="searchbox"></div>
+                <article class="bd-article" role="main">
+                  
+  <section class="tex2jax_ignore mathjax_ignore" id="analytical-solutions">
+<h1><span class="section-number">11. </span>Analytical solutions<a class="headerlink" href="#analytical-solutions" title="Permalink to this headline">#</a></h1>
+<div class="contents local topic" id="sections">
+<p class="topic-title">Sections</p>
+<ul class="simple">
+<li><p><a class="reference internal" href="#layered-earth-models" id="id2">Layered Earth models</a></p>
+<ul>
+<li><p><a class="reference internal" href="#toroidal-analytical-solutions" id="id3">Toroidal analytical solutions</a></p></li>
+<li><p><a class="reference internal" href="#spheroidal-analytical-solutions" id="id4">Spheroidal analytical solutions</a></p></li>
+</ul>
+</li>
+<li><p><a class="reference internal" href="#incompressible-layered-earth-models" id="id5">Incompressible layered Earth models</a></p>
+<ul>
+<li><p><a class="reference internal" href="#id1" id="id6">Spheroidal analytical solutions</a></p></li>
+<li><p><a class="reference internal" href="#homogeneous-incompressible-earth-model" id="id7">Homogeneous incompressible Earth model</a></p></li>
+<li><p><a class="reference internal" href="#viscoelastic-response" id="id8">Viscoelastic response</a></p></li>
+</ul>
+</li>
+</ul>
+</div>
+<p><span class="math notranslate nohighlight">\(\newcommand{\md}{\mathrm{d} \hspace{0cm}}\)</span>
+<span class="math notranslate nohighlight">\(\newcommand{\mdd}{\mathrm{d}\hspace{0cm}^2}\)</span>
+<span class="math notranslate nohighlight">\(\newcommand{\grad}{\sb{\nabla}\hspace{-0.01cm}}\)</span>
+<span class="math notranslate nohighlight">\(\newcommand{\stress}{\sb{\sigma}}\)</span>
+<span class="math notranslate nohighlight">\(\newcommand{\bn}[1]{\hat{\bb{#1}}}\)</span>
+<span class="math notranslate nohighlight">\(\newcommand{\bb}[1]{\mathbf{#1}}\)</span>
+<span class="math notranslate nohighlight">\(\newcommand{\lap}{\nabla^2\hspace{0cm}}\)</span>
+<span class="math notranslate nohighlight">\(\newcommand{\nlap}{\nabla_n^2\hspace{0cm}}\)</span>
+<span class="math notranslate nohighlight">\(\newcommand{\sn}[1]{\hat{\sb{#1}}}\)</span>
+<span class="math notranslate nohighlight">\(\newcommand{\sb}[1]{\boldsymbol{#1}}\)</span>
+<span class="math notranslate nohighlight">\(\newcommand{\zero}{\bb{0}}\)</span>
+<span class="math notranslate nohighlight">\(\newcommand{\one}{\bb{1}}\)</span>
+<span class="math notranslate nohighlight">\(\newcommand{\loc}{\Delta \hspace{0cm}}\)</span>
+<span class="math notranslate nohighlight">\(\newcommand{\mat}{\delta \hspace{0cm}}\)</span>
+<span class="math notranslate nohighlight">\(\newcommand{\det}{\mathrm{\det}\hspace{0cm}}\)</span>
+<span class="math notranslate nohighlight">\(\newcommand{\cm}[1]{\bar{\bb{#1}}}\)</span>
+<span class="math notranslate nohighlight">\(\newcommand{\lmsum}{\sum_{n=0}^\infty\sum_{m=-n}^n}\)</span>
+<span class="math notranslate nohighlight">\(\newcommand{\kqsum}{\sum_{k=0}^\infty\sum_{q=-k}^k}\)</span>
+<span class="math notranslate nohighlight">\(\newcommand{\dif}[1]{#1\hspace{0cm}\prime}\)</span>
+<span class="math notranslate nohighlight">\(\newcommand{\dermat}[1]{\frac{\mathrm{D}\hspace{0.02cm}#1}{\mathrm{D}\hspace{0.02cm} t}}\)</span>
+<span class="math notranslate nohighlight">\(\newcommand{\dercla}[1]{\frac{\md \hspace{0.02cm}#1}{\md \hspace{0.02cm} t}}\)</span>
+<span class="math notranslate nohighlight">\(\newcommand{\derpar}[1]{\frac{\partial\hspace{0.02cm}#1}{\partial\hspace{0.02cm} t}}\)</span>
+<span class="math notranslate nohighlight">\(\newcommand{\rpar}[2]{\frac{\partial\hspace{0.02cm}#1}{\partial\hspace{0.02cm} r_{#2}}}\)</span>
+<span class="math notranslate nohighlight">\(\newcommand{\xpar}[2]{\frac{\partial\hspace{0.02cm}#1}{\partial\hspace{0.02cm} x_{#2}}}\)</span>
+<span class="math notranslate nohighlight">\(\newcommand{\ddermat}[1]{\frac{\mathrm{D}^2\hspace{0.02cm}#1}{\mathrm{D}\hspace{0.02cm} t^2}}\)</span>
+<span class="math notranslate nohighlight">\(\newcommand{\ddercla}[1]{\frac{\md ^2\hspace{0.02cm}#1}{\md \hspace{0.02cm} t^2}}\)</span>
+<span class="math notranslate nohighlight">\(\newcommand{\dderpar}[1]{\frac{\partial^2\hspace{0.02cm}#1}{\partial\hspace{0.02cm} t^2}}\)</span>
+<span class="math notranslate nohighlight">\(\newcommand{\drpar}[2]{\frac{\partial^2\hspace{0.02cm}#1}{\partial\hspace{0.02cm} r_{#2}^2}}\)</span>
+<span class="math notranslate nohighlight">\(\newcommand{\dxpar}[2]{\frac{\partial^2\hspace{0.02cm}#1}{\partial\hspace{0.02cm} x_{#2}^2}}\)</span></p>
+<section id="layered-earth-models">
+<h2><a class="toc-backref" href="#id2"><span class="section-number">11.1. </span>Layered Earth models</a><a class="headerlink" href="#layered-earth-models" title="Permalink to this headline">#</a></h2>
+<div class="full-width docutils">
+<p>In the perspective of obtaining the propagator matrix, let us consider the homogeneous incremental Poisson and momentum equations (i.e., we set to zero the forcing terms <span class="math notranslate nohighlight">\(\rho_{n,m}^I\)</span> and <span class="math notranslate nohighlight">\(f_{n,m}^X\)</span>, with <span class="math notranslate nohighlight">\(X=P,\,B\)</span> and <span class="math notranslate nohighlight">\(C\)</span>) within the assumption that the Lamè parameters are constant within each layer of the Earth, i.e,</p>
+<div class="math notranslate nohighlight" id="equation-a-1">
+<span class="eqno">(11.1)<a class="headerlink" href="#equation-a-1" title="Permalink to this equation">#</a></span>\[
+\dot{\mu} = \dot{\lambda} = 0
+\]</div>
+<p>from one interface to another. In this case, the incremental Poisson and momentum equations, eq. <a class="reference internal" href="T2_Equations.html#equation-m-25">(9.26)</a>, simplify as follows</p>
+<div class="math notranslate nohighlight" id="equation-a-2">
+<span class="eqno">(11.2)<a class="headerlink" href="#equation-a-2" title="Permalink to this equation">#</a></span>\[\begin{split}
+\begin{align}
+&amp; \nlap \loc \Psi_{n,m} + C\,\big(\varrho_0\,\chi_{n,m}+\dot{\varrho}_0\,U_{n,m}\big) = 0
+\\
+&amp; \beta\,\dot{\chi}_{n,m} +\frac{\mu\,\gamma_n\,H_{n,m}}{x}
+ -\varrho_0\,\frac{\partial \big(g_0\,U_{n,m}+ \loc \Psi_{n,m}\big)}{\partial x} +\varrho_0\,\chi_{n,m}\,g_0= 0
+\\
+&amp; \beta\,\gamma_n\,\chi_{n,m} + \mu\,\big(H_{n,m}+x\,\dot{H}_{n,m}\big) -\gamma_n\,\varrho_0\,\big(g_0\,U_{n,m}+\loc \Psi_{n,m}\big)  = 0
+\\
+&amp; \nlap  W_{n,m} = 0
+\end{align}
+\end{split}\]</div>
+<p>For the sake of brevity, we have multiplied by <span class="math notranslate nohighlight">\(r\)</span> the <span class="math notranslate nohighlight">\(B\)</span>-component of the momentum equation and divided by <span class="math notranslate nohighlight">\(\mu\)</span> the <span class="math notranslate nohighlight">\(C\)</span>-component.</p>
+</div>
+<section id="toroidal-analytical-solutions">
+<span id="sec-a-toro"></span><h3><a class="toc-backref" href="#id3"><span class="section-number">11.1.1. </span>Toroidal analytical solutions</a><a class="headerlink" href="#toroidal-analytical-solutions" title="Permalink to this headline">#</a></h3>
+<div class="full-width docutils">
+<p>We note that, in this case, the analytical solution of the toroidal component of the displacement reads</p>
+<div class="math notranslate nohighlight" id="equation-a-3">
+<span class="eqno">(11.3)<a class="headerlink" href="#equation-a-3" title="Permalink to this equation">#</a></span>\[
+W_{n,m} = C_+\,x^n + C_-\,x^{-(n+1)} 
+\]</div>
+<p>and, according to eq. <a class="reference internal" href="T2_Equations.html#equation-m-20">(9.21)</a>, the incremental traction gives</p>
+<div class="math notranslate nohighlight" id="equation-a-4">
+<span class="eqno">(11.4)<a class="headerlink" href="#equation-a-4" title="Permalink to this equation">#</a></span>\[
+T_{n,m} = C_+\,(n-1)\,x^{n-1}  - C_{-}\,(n+2)\,x^{-(n+2)}
+\]</div>
+<p>We thus can write the homogeneous toroidal vector solution as follows</p>
+<div class="math notranslate nohighlight" id="equation-a-5">
+<span class="eqno">(11.5)<a class="headerlink" href="#equation-a-5" title="Permalink to this equation">#</a></span>\[
+\bb{y}_{n,m}^h(x) = \bb{Y}_n(x)\,\bb{C}
+\]</div>
+<p>where <span class="math notranslate nohighlight">\(\bb{C}\)</span> is the <span class="math notranslate nohighlight">\(2\)</span>-vector collecting the integration constants and <span class="math notranslate nohighlight">\(\bb{Y}_n\)</span> is the so-called toroidal fundamental <span class="math notranslate nohighlight">\(2\times 2\)</span>-matrix</p>
+<div class="math notranslate nohighlight" id="equation-a-6">
+<span class="eqno">(11.6)<a class="headerlink" href="#equation-a-6" title="Permalink to this equation">#</a></span>\[\begin{split}
+\bb{C} = \left(\begin{matrix} C_+ \\ C_- \end{matrix}\right) 
+\qquad 
+\bb{Y}_{n,m}(x) = \left(\begin{matrix} x^n &amp; x^{-(n+1)} \\ \mu\,(n-1)\,x^{n-1} &amp; -\mu\,(n+2)\,x^{-(n+2)}\end{matrix}\right)
+\end{split}\]</div>
+<p>Once determined the fundamental matrix, the propagator matrix can be obtained as follows</p>
+<div class="math notranslate nohighlight" id="equation-a-7">
+<span class="eqno">(11.7)<a class="headerlink" href="#equation-a-7" title="Permalink to this equation">#</a></span>\[
+\sb{\Pi}_n(x,x_0) = \bb{Y}_n(x)\,\bb{Y}_n^{-1}(x_0)
+\]</div>
+<p>Some times, it can be convinient to recast the fundamental matrix in the following form</p>
+<div class="math notranslate nohighlight" id="equation-a-8a">
+<span class="eqno">(11.8)<a class="headerlink" href="#equation-a-8a" title="Permalink to this equation">#</a></span>\[
+\bb{Y}_{n,m}(x) = \bar{\bb{Y}}_n(x)\,\bb{D}_n(x)
+\]</div>
+<p>with</p>
+<div class="math notranslate nohighlight" id="equation-a-8">
+<span class="eqno">(11.9)<a class="headerlink" href="#equation-a-8" title="Permalink to this equation">#</a></span>\[\begin{split}
+\bar{\bb{Y}}_n(x) = \left(\begin{matrix} 1 &amp; 1 \\ \mu\,\frac{n-1}{x}\, &amp; -\mu\,\frac{n+2}{x} \end{matrix}\right)\qquad\mathrm{and}\qquad \bb{D}_n(x) = \mathrm{Diag}\left(\begin{matrix} x^n &amp; x^{-(n+1)} \end{matrix}\right)
+\end{split}\]</div>
+<p>and cast the propagator matrix as follows</p>
+<div class="math notranslate nohighlight" id="equation-a-7a">
+<span class="eqno">(11.10)<a class="headerlink" href="#equation-a-7a" title="Permalink to this equation">#</a></span>\[
+\sb{\Pi}_n(x,x_0) = \bar{\bb{Y}}_n(x)\,\bb{D}(x/x_0)\,\bar{\bb{Y}}_n^{-1}(x_0)
+\]</div>
+</div>
+</section>
+<section id="spheroidal-analytical-solutions">
+<h3><a class="toc-backref" href="#id4"><span class="section-number">11.1.2. </span>Spheroidal analytical solutions</a><a class="headerlink" href="#spheroidal-analytical-solutions" title="Permalink to this headline">#</a></h3>
+<div class="full-width docutils">
+<p>So far, the spheroidal analytical solution for layered Earth models have been obtained only in a few cases: incompressible layared Earth model and the homogeneous compressible Earth model and the homogeneous self-compressed compressible Earth model. These special cases are discussed in the next sections.</p>
+</div>
+</section>
+</section>
+<section id="incompressible-layered-earth-models">
+<h2><a class="toc-backref" href="#id5"><span class="section-number">11.2. </span>Incompressible layered Earth models</a><a class="headerlink" href="#incompressible-layered-earth-models" title="Permalink to this headline">#</a></h2>
+<div class="full-width docutils">
+<p>Let us now assume material incompressibility. In this case the bulk modulus <span class="math notranslate nohighlight">\(\kappa\)</span> goes to infinity and the relative volume variations <span class="math notranslate nohighlight">\(\chi\)</span> goes to zero in such a way that their product converge to a finite value which can be seen as minus the material incremental pressure</p>
+<div class="math notranslate nohighlight" id="equation-a-9">
+<span class="eqno">(11.11)<a class="headerlink" href="#equation-a-9" title="Permalink to this equation">#</a></span>\[
+\kappa\,\chi\rightarrow -\mat  p
+\]</div>
+<p>In this respect, we also have</p>
+<div class="math notranslate nohighlight" id="equation-a-10">
+<span class="eqno">(11.12)<a class="headerlink" href="#equation-a-10" title="Permalink to this equation">#</a></span>\[
+\begin{align}
+&amp; \chi_{n,m} \rightarrow 0 
+\qquad
+&amp;\kappa\,\chi_{n,m}\rightarrow -\mat  p_{n,m}
+\qquad 
+&amp;\lambda\,\chi_{n,m}\rightarrow -\mat  p_{n,m}
+\end{align}
+\]</div>
+<p>where <span class="math notranslate nohighlight">\(p_{n,m}\)</span> are the spherical harmonic coefficients of the material incremental pressure</p>
+<div class="math notranslate nohighlight" id="equation-a-11">
+<span class="eqno">(11.13)<a class="headerlink" href="#equation-a-11" title="Permalink to this equation">#</a></span>\[
+\mat  p = \sum_{n=0}^\infty\sum_{m=-n}^n \mat  p_{n,m}\,Y_n^m
+\]</div>
+<p>In view of eq. <a class="reference internal" href="#equation-a-10">(11.12)</a>, we can also write</p>
+<div class="math notranslate nohighlight" id="equation-a-12">
+<span class="eqno">(11.14)<a class="headerlink" href="#equation-a-12" title="Permalink to this equation">#</a></span>\[
+\begin{align}
+&amp; V_{n,m} = \frac{r\,\dot{U}_{n,m}+2\,U_{n,m}}{\gamma_n}
+\qquad
+&amp; H_{n,m} = \frac{1}{\gamma_n}\,\nlap (x\,U_{n,m})
+\qquad
+&amp; R_{n,m} = -\mat  p_{n,m} + 2\,\mu\,\dot{U}_{n,m}
+\end{align}
+\]</div>
+<p>Let us also assume that the shear modulus <span class="math notranslate nohighlight">\(\mu\)</span> and the initial density <span class="math notranslate nohighlight">\(\varrho_0\)</span> are constant within each layer of the Earth so that we can write</p>
+<div class="math notranslate nohighlight" id="equation-a-13">
+<span class="eqno">(11.15)<a class="headerlink" href="#equation-a-13" title="Permalink to this equation">#</a></span>\[
+\dot{\mu} = 0 \qquad \dot{\varrho}_0 = 0
+\]</div>
+<p>but at the interface between the different layers of the Earth, where they can be discontinuous.</p>
+<p>Within these assumptions, the homogeneous Poisson equation and the spheroidal components of the momentum equation become</p>
+<div class="math notranslate nohighlight" id="equation-a-14">
+<span class="eqno">(11.16)<a class="headerlink" href="#equation-a-14" title="Permalink to this equation">#</a></span>\[\begin{split}
+\begin{align}
+&amp; \nlap \loc \Psi_{n,m}  = 0 
+\\
+&amp;\frac{\partial \big(p_{n,m} + \varrho_0\,g_0\,U_{n,m} +\varrho_0\,\loc \Psi_{n,m}\big)}{\partial x} = \frac{\mu}{x}\,\gamma_n\,H_{n,m}  
+\\
+&amp; \gamma_n\,\left(\mat  p_{n,m}+\varrho_0\,g_0\,U_{n,m}+\varrho_0\,\loc \Psi_{n,m}\right) = \mu\,\left(H_{n,m}+x\,\dot{H}_{n,m}\right)  
+\end{align}
+\end{split}\]</div>
+</div>
+<section id="id1">
+<h3><a class="toc-backref" href="#id6"><span class="section-number">11.2.1. </span>Spheroidal analytical solutions</a><a class="headerlink" href="#id1" title="Permalink to this headline">#</a></h3>
+<div class="full-width docutils">
+<p>By defining</p>
+<div class="math notranslate nohighlight" id="equation-a-15">
+<span class="eqno">(11.17)<a class="headerlink" href="#equation-a-15" title="Permalink to this equation">#</a></span>\[
+\begin{align}
+\Gamma_{n,m} = \mat  p_{n,m}+\varrho_0\,g_0\,U_{n,m}+\varrho_0\,\loc \Psi_{n,m}
+\end{align}
+\]</div>
+<p>eq. <a class="reference internal" href="#equation-a-14">(11.16)</a> can be recast as follows</p>
+<div class="math notranslate nohighlight" id="equation-a-16">
+<span class="eqno">(11.18)<a class="headerlink" href="#equation-a-16" title="Permalink to this equation">#</a></span>\[
+\begin{align}
+&amp; \nlap \loc \Psi_{n,m}  = 0
+\qquad
+&amp;\dot{\Gamma}_{n,m} = \frac{\mu}{r}\,\gamma_n\,H_{n,m} 
+\qquad
+&amp;\gamma_n\,\Gamma_{n,m} = \mu\,\left(H_{n,m}+x\,\dot{H}_{n,m}\right)
+\end{align}
+\]</div>
+<p>Let us now apply the operator <span class="math notranslate nohighlight">\(-\partial/\partial x - 2/x\)</span> to the <span class="math notranslate nohighlight">\(P\)</span> component of the momentum equation</p>
+<div class="math notranslate nohighlight" id="equation-a-17">
+<span class="eqno">(11.19)<a class="headerlink" href="#equation-a-17" title="Permalink to this equation">#</a></span>\[
+\begin{align}
+\ddot{\Gamma}_{n,m} +\frac{2}{x}\,\dot{\Gamma}_{n,m} = \frac{\mu}{x^2}\,\gamma_n\,\big(H_{n,m}+x\,\dot{H}_{n,m}\big) 
+\end{align}
+\]</div>
+<p>and add the <span class="math notranslate nohighlight">\(B\)</span>-component of the momentum equation multiplied by <span class="math notranslate nohighlight">\(\gamma_n/x^2\)</span></p>
+<div class="math notranslate nohighlight" id="equation-a-18">
+<span class="eqno">(11.20)<a class="headerlink" href="#equation-a-18" title="Permalink to this equation">#</a></span>\[
+\begin{align}
+\frac{\gamma_n^2}{x^2}\,\Gamma_{n,m} = \frac{\mu}{x^2}\,\gamma_n\,\left(H_{n,m}+x\,\dot{H}_{n,m}\right) 
+\end{align}
+\]</div>
+<p>in order to obtain the following differential equation</p>
+<div class="math notranslate nohighlight" id="equation-a-19">
+<span class="eqno">(11.21)<a class="headerlink" href="#equation-a-19" title="Permalink to this equation">#</a></span>\[
+\begin{align}
+\nlap  \Gamma_{n,m} = 0
+\end{align}
+\]</div>
+<p>In this respect and making use of eq. <a class="reference internal" href="#equation-a-12">(11.14)</a> for substituting <span class="math notranslate nohighlight">\(H_{n,m}\)</span>, rather than solving eq. <a class="reference internal" href="#equation-a-16">(11.18)</a>, we can solve the following one</p>
+<div class="math notranslate nohighlight" id="equation-a-20">
+<span class="eqno">(11.22)<a class="headerlink" href="#equation-a-20" title="Permalink to this equation">#</a></span>\[
+\begin{align}
+&amp; \nlap \loc \Psi_{n,m}  = 0
+\qquad
+&amp;\nlap \Gamma_{n,m} = 0 
+\qquad
+&amp;\nlap  (x\,U_{n,m}) =  \frac{x}{\mu}\,\dot{\Gamma}_{n,m} 
+\end{align}
+\]</div>
+<p>For <span class="math notranslate nohighlight">\(\loc  \Psi_{n,m}\)</span> and <span class="math notranslate nohighlight">\(\Gamma_{n,m}\)</span> we thus can write</p>
+<div class="math notranslate nohighlight" id="equation-a-21">
+<span class="eqno">(11.23)<a class="headerlink" href="#equation-a-21" title="Permalink to this equation">#</a></span>\[
+\begin{align}
+\loc \Psi_{n,m} = C_+\,x^n + C_-\,x^{-(n+1)}
+\qquad
+\Gamma_{n,m} = D_+\,x^n +D_-\,x^{-(n+1)}
+\end{align}
+\]</div>
+<p>and the third differential equation of the differential system given by eq. <a class="reference internal" href="#equation-a-20">(11.22)</a> becomes</p>
+<div class="math notranslate nohighlight" id="equation-a-22">
+<span class="eqno">(11.24)<a class="headerlink" href="#equation-a-22" title="Permalink to this equation">#</a></span>\[
+\begin{align}
+\nlap (x\,U_{n,m}) = \frac{x}{\mu}\,\dot{\Gamma}_{n,m} = D_+\,\frac{n}{\mu}\,x^{n} - D_-\,\frac{n+1}{\mu}\,x^{-(n+1)}
+\end{align}
+\]</div>
+<p>In this respect, the solution for <span class="math notranslate nohighlight">\(U_{n,m}\)</span> must be composed by the two indepepent solution of the homogeneous differential equation (i.e., eq. <a class="reference internal" href="#equation-a-22">(11.24)</a> with <span class="math notranslate nohighlight">\(D_\pm=0\)</span>), and of two particular solutions. We thus write</p>
+<div class="math notranslate nohighlight" id="equation-a-23">
+<span class="eqno">(11.25)<a class="headerlink" href="#equation-a-23" title="Permalink to this equation">#</a></span>\[
+\begin{align}
+U_{n,m} =  A_+\,x^{n+1}+ A_-\,x^{-n}  + B_+\,x^{n-1}+B_-\,x^{-(n+2)}
+\end{align}
+\]</div>
+<p>with</p>
+<div class="math notranslate nohighlight" id="equation-a-24">
+<span class="eqno">(11.26)<a class="headerlink" href="#equation-a-24" title="Permalink to this equation">#</a></span>\[
+\begin{align}
+D_+ = \mu\,\frac{2\,(2\,n+3)}{n}\,A_+
+\qquad
+D_- = \mu\,\frac{2\,(2\,n-1)}{n+1}\,A_-
+\end{align}
+\]</div>
+<p>At this stage, we dispose of all the quantities that we need for obtaining all the components of the spheroidal vector solution. For instance, from eq.  <a class="reference internal" href="#equation-a-15">(11.17)</a>, we obtain the material incremental pressure</p>
+<div class="math notranslate nohighlight" id="equation-a-26">
+<span class="eqno">(11.27)<a class="headerlink" href="#equation-a-26" title="Permalink to this equation">#</a></span>\[\begin{split}
+\begin{align}
+ \mat  p_{n,m} &amp;= \Gamma_{n,m} - \varrho_0\,g_0\,U_{n,m} - \varrho_0\,\loc \Psi_{n,m}
+ =  \left(\frac{D_+}{x} - A_+\,\varrho_0\,g_0\right)\,x^{n+1} +  \left(\frac{D_-}{x} - A_-\,\varrho_0\,g_0\right)\,x^{-n}
+ \\
+ &amp; -B_+\,\varrho_0\,g_0\,x^{n-1} -B_-\,\varrho_0\,g_0\,x^{-(n+2)} - C_+\,\varrho_0\,x^n - C_-\,\varrho_0\,x^{-(n+1)}
+\end{align}
+\end{split}\]</div>
+<p>Similar to the toroidal case discussed in <a class="reference internal" href="#sec-a-toro"><span class="std std-numref">Section 11.1.1</span></a> <a class="reference internal" href="#sec-a-toro"><span class="std std-ref">Toroidal analytical solutions</span></a> and after some straightfoward algebra, we can write the homogeneous spheroidal vector solution as follows</p>
+<div class="math notranslate nohighlight" id="equation-a-27">
+<span class="eqno">(11.28)<a class="headerlink" href="#equation-a-27" title="Permalink to this equation">#</a></span>\[
+\bb{y}_{n,m}^h(x,t) = \bb{Y}_{n}(x)\,\bb{C}(t)
+\]</div>
+<p>where <span class="math notranslate nohighlight">\(\bb{Y}_n\)</span> is the spheroidal fundamental <span class="math notranslate nohighlight">\(6\times 6\)</span>-matrix</p>
+<div class="math notranslate nohighlight" id="equation-a-28">
+<span class="eqno">(11.29)<a class="headerlink" href="#equation-a-28" title="Permalink to this equation">#</a></span>\[
+\bb{Y}_n(x) = \bar{\bb{Y}}_n(x)\,\bb{D}_n(x)
+\]</div>
+<p>with</p>
+<div class="math notranslate nohighlight" id="equation-a-29">
+<span class="eqno">(11.30)<a class="headerlink" href="#equation-a-29" title="Permalink to this equation">#</a></span>\[\begin{split}
+\begin{align}
+\bar{\bb{Y}}_n(x) = \left(\begin{matrix}
+1 &amp; 1 &amp; 0 &amp; 1 &amp; 1 &amp; 0 \\
+\frac{n+3}{\gamma} &amp; \frac{n+1}{\gamma} &amp; 0 &amp; \frac{2-n}{\gamma} &amp; -\frac{n}{\gamma} &amp; 0 \\
+0 &amp; 0 &amp; 1 &amp; 0 &amp; 0 &amp; 1 \\
+\varrho_0\,g_0 + \frac{2\,(n\,(n-1)-3)\,\mu}{n\,x} &amp; \varrho_0\,g_0 + \frac{2\,(n-1)\,\mu}{x}   &amp; \varrho_0 &amp; \varrho_0\,g_0-\frac{2\,(n\,(n+3)-1)\,\mu}{(n+1)\,x} &amp; \varrho_0\,g_0-\frac{2\,(n+2)\,\mu}{x}   &amp; \varrho_0 \\
+\frac{2\,n\,(n+2)\,\mu}{x\,\gamma} &amp; \frac{2\,(n^2-1)\,\mu}{x\,\gamma} &amp; 0 &amp; \frac{2\,(n^2-1),\mu}{x\,\gamma} &amp; \frac{2\,n\,(n+2)\,\mu}{x\,\gamma} &amp; 0 \\
+C\,\varrho_0 &amp; C\,\varrho_0 &amp; \frac{2\,n+1}{x} &amp; C\,\varrho_0 &amp; C\,\varrho_0 &amp; 0 
+\end{matrix}\right)
+\end{align}
+\end{split}\]</div>
+<p>and</p>
+<div class="math notranslate nohighlight" id="equation-a-30">
+<span class="eqno">(11.31)<a class="headerlink" href="#equation-a-30" title="Permalink to this equation">#</a></span>\[\begin{split}
+\begin{align}
+&amp; \bb{C}(t) = \left(\begin{matrix} A_+(t) &amp; B_+(t) &amp; C_+(t) &amp; A_-(t) &amp; B_-(t) &amp; C_-(t) \end{matrix}\right)^\mathrm{T}
+\\
+&amp; \bb{D}_n(x) = \mathrm{Diag}\big(\begin{matrix} x^{n+1} &amp; x^{n-1} &amp; x^n &amp; x^{-n} &amp; x^{-(n+2)} &amp; x^{-(n+1)}\end{matrix}\big)
+\end{align}
+\end{split}\]</div>
+</div>
+</section>
+<section id="homogeneous-incompressible-earth-model">
+<h3><a class="toc-backref" href="#id7"><span class="section-number">11.2.2. </span>Homogeneous incompressible Earth model</a><a class="headerlink" href="#homogeneous-incompressible-earth-model" title="Permalink to this headline">#</a></h3>
+<div class="full-width docutils">
+<p>Let us now consider an homogeneous incompressible model extending from the Earth centre to the Earth surface, without the presence of a inviscid fluid core. In this case, the initial gravity reads</p>
+<div class="math notranslate nohighlight" id="equation-a-31">
+<span class="eqno">(11.32)<a class="headerlink" href="#equation-a-31" title="Permalink to this equation">#</a></span>\[
+g_0(r) = \frac{C\,\varrho_0\,x}{3}
+\]</div>
+<p>and we have to consider the only regual solutions at the Earth centre. In this respect, the homogeneous spheroidal vector solution can be written as follows</p>
+<div class="math notranslate nohighlight" id="equation-a-32">
+<span class="eqno">(11.33)<a class="headerlink" href="#equation-a-32" title="Permalink to this equation">#</a></span>\[
+\bb{y}_{n,m}^h(x,t) = \bar{\bb{Y}}_{n}^+(x)\,\bb{D}_n^+(x)\,\bb{C}_+(t)
+\]</div>
+<p>with <span class="math notranslate nohighlight">\(\bar{\bb{Y}}_{n}^+\)</span> being the <span class="math notranslate nohighlight">\(6\times 3\)</span>-matrix consisting of the first three column of the matrix <span class="math notranslate nohighlight">\(\bar{\bb{Y}}_n\)</span></p>
+<div class="math notranslate nohighlight" id="equation-a-33">
+<span class="eqno">(11.34)<a class="headerlink" href="#equation-a-33" title="Permalink to this equation">#</a></span>\[\begin{split}
+\begin{align}
+\bar{\bb{Y}}^+_n(x) = \left(\begin{matrix}
+1 &amp; 1 &amp; 0 \\
+\frac{n+3}{\gamma} &amp; \frac{n+1}{\gamma} &amp; 0  \\
+0 &amp; 0 &amp; 1   \\
+\varrho_0\,g_0 + \frac{2\,(n\,(n-1)-3)\,\mu}{n\,x}&amp; \varrho_0\,g_0  + \frac{2\,(n-1)\,\mu}{x}   &amp; \varrho_0  \\
+\frac{2\,n\,(n+2)\,\mu}{x\,\gamma} &amp; \frac{2\,(n^2-1)\,\mu}{x\,\gamma} &amp; 0 \\
+C\,\varrho_0 &amp; C\,\varrho_0 &amp; \frac{2\,n+1}{x} 
+\end{matrix}\right)
+\end{align}
+\end{split}\]</div>
+<p>with</p>
+<div class="math notranslate nohighlight" id="equation-a-34">
+<span class="eqno">(11.35)<a class="headerlink" href="#equation-a-34" title="Permalink to this equation">#</a></span>\[\begin{split}
+\begin{align}
+&amp; \bb{C}_+(t) = \left(\begin{matrix} A_+(t) &amp; B_+(t) &amp; C_+(t) \end{matrix}\right)^\mathrm{T}
+\\
+&amp; \bb{D}_n^+(r) = \mathrm{Diag}\big(\begin{matrix} r^{n+1} &amp; r^{n-1} &amp; r^n \end{matrix}\big)
+\end{align}
+\end{split}\]</div>
+<p>By considering only surface loads and tidal and centrifugal forcings, we can establish the only three constants of integration <span class="math notranslate nohighlight">\(\bb{C}_+\)</span></p>
+<div class="math notranslate nohighlight" id="equation-a-35">
+<span class="eqno">(11.36)<a class="headerlink" href="#equation-a-35" title="Permalink to this equation">#</a></span>\[
+\bb{C}_+(t) = \big[\bb{P}_2\,\bar{\bb{Y}}_n^+(a)\,\bb{D}_n^+(a)\big]^{-1}\,\bb{b}_{n,m}(t)
+\]</div>
+<p>and obtain the spheroidal vector soltion</p>
+<div class="math notranslate nohighlight" id="equation-a-36">
+<span class="eqno">(11.37)<a class="headerlink" href="#equation-a-36" title="Permalink to this equation">#</a></span>\[
+\bb{y}_{n,m}(r,t) = \bar{\bb{Y}}_{n}^+(r)\,\bb{D}_n^+\big(r/a\big)\,\big[\bb{P}_2\,\bar{\bb{Y}}_n^+(a)\big]^{-1}\,\bb{b}_{n,m}(t)
+\]</div>
+<p>After some straightforward algebra and defining the following parameter</p>
+<div class="math notranslate nohighlight" id="equation-a-37">
+<span class="eqno">(11.38)<a class="headerlink" href="#equation-a-37" title="Permalink to this equation">#</a></span>\[
+\begin{align}
+\alpha_n = 1 + \frac{(2\,n^2+4\,n+3)\,\mu}{n\,a\,\varrho_0\,g_0(a)}
+\end{align}
+\]</div>
+<p>we can write the radial and tangential spheroidal displacement and the total potential pertubation at the Earth surface as follows</p>
+<div class="math notranslate nohighlight" id="equation-a-38">
+<span class="eqno">(11.39)<a class="headerlink" href="#equation-a-38" title="Permalink to this equation">#</a></span>\[\begin{split}
+\begin{align}
+\left(\begin{matrix} 
+U_{n,m}(a,t)
+\\
+V_{n,m} (a,t)
+\\
+\loc G_{n,m}(a,t)
+\end{matrix}\right) 
+&amp;=\bb{k}_n^{L,E}(a)\,\loc G_{n,m}^S(a,t) + \bb{k}_n^{T,E}(a)\,\big(\loc G_{n,m}^{T}(a,t) +\loc G_{n,m}^{C}(a,t) \big)
+\end{align}
+\end{split}\]</div>
+<p>where, according to eq. <a class="reference internal" href="L3_Self.html#equation-mm-8sol">(10.93)</a>, the elastic radial, <span class="math notranslate nohighlight">\(h_n^{X,E}\)</span>, tangential, <span class="math notranslate nohighlight">\(l_n^{X,E}\)</span>, and gravitational, <span class="math notranslate nohighlight">\(k_n^{X,E}\)</span>, components of the Love numbers are given by</p>
+<div class="math notranslate nohighlight" id="equation-a-39">
+<span class="eqno">(11.40)<a class="headerlink" href="#equation-a-39" title="Permalink to this equation">#</a></span>\[\begin{split}
+\begin{align}
+&amp; \bb{k}_n^{L,E}(a) = \left(\begin{matrix} h_n^{L,E}(a) \\ l_n^{L,E}(a) \\ 1+k_n^{L,E}(a)\end{matrix}\right) = \left(\begin{matrix}
+0 \\ 0 \\ 1
+\end{matrix}
+\right) + \mat\bb{k}_n^L(a)
+\\
+&amp; \bb{k}_n^{T,E}(a) = \left(\begin{matrix} h_n^{T,E}(a) \\ l_n^{T,E}(a) \\ 1+k_n^{T,E}(a)\end{matrix}\right) = \left(\begin{matrix}0 \\ 0 \\ 1
+\end{matrix}
+\right) + \mat\bb{k}_n^T(a)
+\end{align}
+\end{split}\]</div>
+<p>with</p>
+<div class="math notranslate nohighlight" id="equation-a-39a">
+<span class="eqno">(11.41)<a class="headerlink" href="#equation-a-39a" title="Permalink to this equation">#</a></span>\[\begin{split}
+\begin{align}
+&amp; \mat\bb{k}_n^L(a) = -\frac{1}{\alpha_n}\,\left(\begin{matrix}
+\frac{2\,n+1}{3} \\ \frac{1+n}{\gamma_n} \\  1
+\end{matrix}\right)
+\qquad \mat\bb{k}_n^T(a) = \frac{1}{\alpha_n\,(n-1)}\,\left(\begin{matrix}
+\frac{2\,n+1}{2} \\ \frac{3\,(n+1)}{2\,\gamma_n} \\ \frac{3}{2} 
+\end{matrix}\right)
+\end{align}
+\end{split}\]</div>
+</div>
+</section>
+<section id="viscoelastic-response">
+<h3><a class="toc-backref" href="#id8"><span class="section-number">11.2.3. </span>Viscoelastic response</a><a class="headerlink" href="#viscoelastic-response" title="Permalink to this headline">#</a></h3>
+<div class="full-width docutils">
+<p>According to the Corresponde Principle discussed in  <a class="reference internal" href="T2_Kinematics.html#sec-linear-viscoelastic"><span class="std std-numref">Section 7.4.2</span></a> <a class="reference internal" href="T2_Kinematics.html#sec-linear-viscoelastic"><span class="std std-ref">Linear viscoelastic materials</span></a> the viscoelastic response in the Laplace domain reads</p>
+<div class="math notranslate nohighlight" id="equation-a-40">
+<span class="eqno">(11.42)<a class="headerlink" href="#equation-a-40" title="Permalink to this equation">#</a></span>\[\begin{split}
+\begin{align}
+&amp; \left(\begin{matrix} \tilde{U}_{n,m}(a,s) 
+\\
+\tilde{V}_{n,m}(a,s)
+\\
+ \loc \tilde{G}_{n,m}(a,s)\end{matrix}\right) = \tilde{\bb{k}}_n^L(a,s)\,\,\loc\tilde{G}_{n,m}^S(a,s) +   \tilde{\bb{k}}_n^T(a,s)\,\big(\loc\tilde{G}_{n,m}^T(a,s)+\loc\tilde{G}_{n,m}^C(a,s)\big)
+\end{align}
+\end{split}\]</div>
+<p>where <span class="math notranslate nohighlight">\(\tilde{\bb{k}}_n^X\)</span> are given by eqs. <a class="reference internal" href="#equation-a-39">(11.40)</a> and <a class="reference internal" href="#equation-a-39a">(11.41)</a> with the substitution <span class="math notranslate nohighlight">\(\alpha_n\rightarrow \hat{\alpha}_n\)</span>, with</p>
+<div class="math notranslate nohighlight" id="equation-a-41">
+<span class="eqno">(11.43)<a class="headerlink" href="#equation-a-41" title="Permalink to this equation">#</a></span>\[
+\hat{\alpha}_n(s) = 1 + \frac{(2\,n^2+4\,n+3)\,\hat{\mu}(s)}{n\,a\,\varrho_0\,g_0(a)} = \frac{\alpha_n\,s+\frac{1}{\tau_m}}{s+\frac{1}{\tau_m}}
+\]</div>
+<p>In particular, we note that</p>
+<div class="math notranslate nohighlight" id="equation-a-42">
+<span class="eqno">(11.44)<a class="headerlink" href="#equation-a-42" title="Permalink to this equation">#</a></span>\[\begin{split}
+\begin{align}
+&amp; \tilde{\bb{k}}_n^X(a,s) = \bb{k}_n^{X,E}(a) + \tilde{f}_n(s)\,\mat\bb{k}_n^X(a)
+\\
+&amp; \bb{k}_n^X(a,t) = \delta(t)\,\bb{k}_n^{X,E}(a) + f_n(t)\,\mat\bb{k}_n^X(a)
+\end{align}
+\end{split}\]</div>
+<p>with</p>
+<div class="math notranslate nohighlight" id="equation-a-43">
+<span class="eqno">(11.45)<a class="headerlink" href="#equation-a-43" title="Permalink to this equation">#</a></span>\[\begin{split}
+\begin{align}
+&amp; \tilde{f}_n(s) = \frac{\alpha_n}{\tilde{\alpha}_n(s)}-1 = \frac{s+\frac{1}{\tau}}{s+\frac{1}{\tau_n}}-1 = \frac{1}{\tau_m}\,\frac{\alpha_n-1}{\alpha_n\,s+\frac{1}{\tau_m}}
+\\
+&amp; f_n(t) = \frac{1}{\tau_m}\,\left(1-\frac{1}{\alpha_n}\right)\,e^{-\frac{t}{\alpha_n\,\tau_m}}\,H(t)
+\end{align}
+\end{split}\]</div>
+<p>In this respect, we note that <span class="math notranslate nohighlight">\(\alpha_n\,\tau_m\)</span> is the caracteristic relaxation time of the viscoelastic relaxation of the homogeneous incompressible Earth model.</p>
+<p>Then, making use of eq. <a class="reference internal" href="#equation-a-42">(11.44)</a> into eq. <a class="reference internal" href="#equation-a-40">(11.42)</a>, we obtain</p>
+<div class="math notranslate nohighlight" id="equation-a-44">
+<span class="eqno">(11.46)<a class="headerlink" href="#equation-a-44" title="Permalink to this equation">#</a></span>\[\begin{split}
+\begin{align}
+\left(\begin{matrix} 
+U_{n,m}(a,t)
+\\
+V_{n,m} (a,t)
+\\
+\loc G_{n,m}(a,t)
+\end{matrix}\right) 
+&amp;=\bb{k}_n^{L,E}(a)\,\loc G_{n,m}^S(a,t) + \bb{k}_n^{T,E}(a)\,\big(\loc G_{n,m}^{T}(a,t) +\loc G_{n,m}^{C}(a,t) \big)
+\\
+&amp;+ \mat\bb{k}_n^{L}\,\int_{-\infty}^\infty f(\tau)\,\loc  G_{n,m}^S(a,t-\tau)\,\md \tau +  \mat\bb{k}_n^{T}\,\int_{-\infty}^\infty f(\tau)\,\big(\loc  G_{n,m}^{C}(a,t-\tau)+\loc  G_{n,m}^{T}(a,t-\tau)\big)\,\md \tau
+\end{align}
+\end{split}\]</div>
+</div>
+<section id="step-like-time-history">
+<h4><span class="section-number">11.2.3.1. </span>Step-like time history<a class="headerlink" href="#step-like-time-history" title="Permalink to this headline">#</a></h4>
+<div class="full-width docutils">
+<p>In the simple case in which the time history of the forcings is step-like</p>
+<div class="math notranslate nohighlight" id="equation-a-45">
+<span class="eqno">(11.47)<a class="headerlink" href="#equation-a-45" title="Permalink to this equation">#</a></span>\[
+\loc  G^X(a,t) = \loc  \bar{G}^X(a)\,H(t)
+\]</div>
+<p>and considering that the time convolution between <span class="math notranslate nohighlight">\(f\)</span> and <span class="math notranslate nohighlight">\(H\)</span> reads</p>
+<div class="math notranslate nohighlight" id="equation-a-46">
+<span class="eqno">(11.48)<a class="headerlink" href="#equation-a-46" title="Permalink to this equation">#</a></span>\[
+F(t) = \int_{-\infty}^\infty f(\tau)\,H(t-\tau)\,\md  t = \bigg(\alpha_n-1\bigg)\,\bigg(1-e^{-\frac{t}{\alpha_n\,\tau}}\bigg)\,H(t)
+\]</div>
+<p>eq. <a class="reference internal" href="#equation-a-44">(11.46)</a> becomes</p>
+<div class="math notranslate nohighlight" id="equation-a-47">
+<span class="eqno">(11.49)<a class="headerlink" href="#equation-a-47" title="Permalink to this equation">#</a></span>\[\begin{split}
+\begin{align}
+\left(\begin{matrix} 
+U_{n,m}(a,t)
+\\
+V_{n,m} (a,t)
+\\
+\loc G_{n,m}(a,t)
+\end{matrix}\right) 
+&amp;=\big(\bb{k}_n^{L,E}(a)\,H(t)+\mat\bb{k}_n^{L}\,F(t)\big)\,\loc \bar{G}_{n,m}^S(a) + \big(\bb{k}_n^{T,E}(a)\,H(t)+\mat\bb{k}_n^{T}\,F(t)\big)\,\big(\loc \bar{G}_{n,m}^{T}(a) +\loc \bar{G}_{n,m}^{C}(a) \big)
+\end{align}
+\end{split}\]</div>
+<p>By considering the following elastic (<span class="math notranslate nohighlight">\(t\rightarrow 0^+\)</span>) and fluid (<span class="math notranslate nohighlight">\(t\rightarrow \infty\)</span>) limits</p>
+<div class="math notranslate nohighlight" id="equation-a-48">
+<span class="eqno">(11.50)<a class="headerlink" href="#equation-a-48" title="Permalink to this equation">#</a></span>\[
+\lim_{t\rightarrow 0^+} F(t) = 0 \qquad \lim_{t\rightarrow \infty} F(t) = \alpha_n-1
+\]</div>
+<p>we can verify that the elastic and fluid responses coincide with our previous results. Indeed, in the elastic limit, eq. <a class="reference internal" href="#equation-a-47">(11.49)</a> coincides with eq. <a class="reference internal" href="#equation-a-38">(11.39)</a>, while in the fluid limit, we obtain the same results discussed in <a class="reference internal" href="L3_Self.html#sec-fluid-earth"><span class="std std-numref">Section 10.5.1</span></a> <a class="reference internal" href="L3_Self.html#sec-fluid-earth"><span class="std std-ref">The Fluid Earth</span></a>, eq. <a class="reference internal" href="L3_Self.html#equation-mm-5flua">(10.102)</a>. In particular, the radial displacement and total potential perturbation in the fluid limit yields</p>
+<div class="math notranslate nohighlight" id="equation-a-49">
+<span class="eqno">(11.51)<a class="headerlink" href="#equation-a-49" title="Permalink to this equation">#</a></span>\[\begin{split}
+\begin{align}
+&amp; \lim_{t\rightarrow\infty} U_{n,m}(a,t) = -\frac{2\,n+1}{3}\,\loc  G_{n,m}^S(a)+  \frac{2\,n+1}{2\,(n-1)}\,\big(\loc  G_{n,m}^{C}(a)+\loc  G_{n,m}^{T}(a)\big)
+\\
+&amp;  \lim_{t\rightarrow\infty} \loc G_{n,m}(a,t) =  \frac{2\,n+1}{2\,(n-1)}\,\big(\loc \bar{G}_{n,m}^{C}(a)+\loc \bar{G}_{n,m}^{T}(a)\big)
+\end{align}
+\end{split}\]</div>
+</div>
+</section>
+</section>
+</section>
+</section>
+
+    <script type="text/x-thebe-config">
+    {
+        requestKernel: true,
+        binderOptions: {
+            repo: "binder-examples/jupyter-stacks-datascience",
+            ref: "master",
+        },
+        codeMirrorConfig: {
+            theme: "abcdef",
+            mode: "python"
+        },
+        kernelOptions: {
+            name: "python3",
+            path: "./files"
+        },
+        predefinedOutput: true
+    }
+    </script>
+    <script>kernelName = 'python3'</script>
+
+                </article>
+              
+
+              
+              
+                <footer class="bd-footer-article">
+                  <!-- Previous / next buttons -->
+<div class="prev-next-area">
+    <a class="left-prev"
+       href="L3_Self.html"
+       title="previous page">
+      <i class="fa-solid fa-angle-left"></i>
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">previous</p>
+        <p class="prev-next-title"><span class="section-number">10. </span>Perturbation theory</p>
+      </div>
+    </a>
+    <a class="right-next"
+       href="L5_Euler.html"
+       title="next page">
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">next</p>
+        <p class="prev-next-title"><span class="section-number">12. </span>Rotational dynamics</p>
+      </div>
+      <i class="fa-solid fa-angle-right"></i>
+    </a>
+</div>
+                </footer>
+              
+            </div>
+            
+            
+              
+                <div class="bd-sidebar-secondary bd-toc"><div class="sidebar-secondary-items sidebar-secondary__inner">
+
+  <div class="sidebar-secondary-item">
+  <div class="page-toc tocsection onthispage">
+    <i class="fa-solid fa-list"></i> Contents
+  </div>
+  <nav class="bd-toc-nav page-toc">
+    <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#layered-earth-models">11.1. Layered Earth models</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#toroidal-analytical-solutions">11.1.1. Toroidal analytical solutions</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#spheroidal-analytical-solutions">11.1.2. Spheroidal analytical solutions</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#incompressible-layered-earth-models">11.2. Incompressible layered Earth models</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id1">11.2.1. Spheroidal analytical solutions</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#homogeneous-incompressible-earth-model">11.2.2. Homogeneous incompressible Earth model</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#viscoelastic-response">11.2.3. Viscoelastic response</a><ul class="nav section-nav flex-column">
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#step-like-time-history">11.2.3.1. Step-like time history</a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+  </nav></div>
+
+</div></div>
+              
+            
+          </div>
+          <footer class="bd-footer-content">
+            <div class="bd-footer-content__inner">
+<div class="bd-footer-content__inner container">
+  
+  <div class="footer-item">
+    
+<p class="component-author">
+By <a href="https://sites.unimi.it/gcambiotti/">Gabriele Cambiotti</a>
+</p>
+
+  </div>
+  
+  <div class="footer-item">
+    
+  <p class="copyright">
+    
+      © Copyright 2022.
+      <br/>
+    
+  </p>
+
+  </div>
+  
+  <div class="footer-item">
+    
+  </div>
+  
+  <div class="footer-item">
+    
+  </div>
+  
+</div></div>
+          </footer>
+        
+
+      </main>
+    </div>
+  </div>
+  
+  <!-- Scripts loaded after <body> so the DOM is not blocked -->
+  <script src="../_static/scripts/bootstrap.js?digest=12da95d707ffb74b382d"></script>
+<script src="../_static/scripts/pydata-sphinx-theme.js?digest=12da95d707ffb74b382d"></script>
+
+  <footer class="bd-footer">
+  </footer>
+  </body>
+</html>

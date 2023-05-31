@@ -1,0 +1,812 @@
+
+
+<!DOCTYPE html>
+
+
+<html >
+
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
+
+    <title>8. The Earth reference system &#8212; Tectonophysics</title>
+  
+  
+  
+  <script data-cfasync="false">
+    document.documentElement.dataset.mode = localStorage.getItem("mode") || "";
+    document.documentElement.dataset.theme = localStorage.getItem("theme") || "light";
+  </script>
+  
+  <!-- Loaded before other Sphinx assets -->
+  <link href="../_static/styles/theme.css?digest=12da95d707ffb74b382d" rel="stylesheet" />
+<link href="../_static/styles/bootstrap.css?digest=12da95d707ffb74b382d" rel="stylesheet" />
+<link href="../_static/styles/pydata-sphinx-theme.css?digest=12da95d707ffb74b382d" rel="stylesheet" />
+
+  
+  <link href="../_static/vendor/fontawesome/6.1.2/css/all.min.css?digest=12da95d707ffb74b382d" rel="stylesheet" />
+  <link rel="preload" as="font" type="font/woff2" crossorigin href="../_static/vendor/fontawesome/6.1.2/webfonts/fa-solid-900.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="../_static/vendor/fontawesome/6.1.2/webfonts/fa-brands-400.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="../_static/vendor/fontawesome/6.1.2/webfonts/fa-regular-400.woff2" />
+
+    <link rel="stylesheet" type="text/css" href="../_static/pygments.css" />
+    <link rel="stylesheet" href="../_static/styles/sphinx-book-theme.css?digest=14f4ca6b54d191a8c7657f6c759bf11a5fb86285" type="text/css" />
+    <link rel="stylesheet" type="text/css" href="../_static/togglebutton.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/copybutton.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/mystnb.4510f1fc1dee50b3e5859aac5469c37c29e427902b24a333a5f9fcb2f0b3ac41.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/sphinx-thebe.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/design-style.4045f2051d55cab465a707391d5b2007.min.css" />
+  
+  <!-- Pre-loaded scripts that we'll load fully later -->
+  <link rel="preload" as="script" href="../_static/scripts/bootstrap.js?digest=12da95d707ffb74b382d" />
+<link rel="preload" as="script" href="../_static/scripts/pydata-sphinx-theme.js?digest=12da95d707ffb74b382d" />
+
+    <script data-url_root="../" id="documentation_options" src="../_static/documentation_options.js"></script>
+    <script src="../_static/jquery.js"></script>
+    <script src="../_static/underscore.js"></script>
+    <script src="../_static/doctools.js"></script>
+    <script src="../_static/clipboard.min.js"></script>
+    <script src="../_static/copybutton.js"></script>
+    <script src="../_static/scripts/sphinx-book-theme.js?digest=5a5c038af52cf7bc1a1ec88eea08e6366ee68824"></script>
+    <script>let toggleHintShow = 'Click to show';</script>
+    <script>let toggleHintHide = 'Click to hide';</script>
+    <script>let toggleOpenOnPrint = 'true';</script>
+    <script src="../_static/togglebutton.js"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
+    <script src="../_static/design-tabs.js"></script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"
+const thebe_selector = ".thebe,.cell"
+const thebe_selector_input = "pre"
+const thebe_selector_output = ".output, .cell_output"
+</script>
+    <script async="async" src="../_static/sphinx-thebe.js"></script>
+    <script>window.MathJax = {"options": {"processHtmlClass": "tex2jax_process|mathjax_process|math|output_area"}}</script>
+    <script defer="defer" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+    <script>DOCUMENTATION_OPTIONS.pagename = 'files/T2_Reference';</script>
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
+    <link rel="next" title="9. Momentum and Poisson equations" href="T2_Equations.html" />
+    <link rel="prev" title="7. Kinematics and reference systems" href="T2_Kinematics.html" />
+  <meta name="viewport" content="width=device-width, initial-scale=1"/>
+  <meta name="docsearch:language" content="None"/>
+  </head>
+  
+  
+  <body data-bs-spy="scroll" data-bs-target=".bd-toc-nav" data-offset="180" data-bs-root-margin="0px 0px -60%" data-default-mode="">
+
+  
+  
+  <a class="skip-link" href="#main-content">Skip to main content</a>
+  
+  <input type="checkbox"
+          class="sidebar-toggle"
+          name="__primary"
+          id="__primary"/>
+  <label class="overlay overlay-primary" for="__primary"></label>
+  
+  <input type="checkbox"
+          class="sidebar-toggle"
+          name="__secondary"
+          id="__secondary"/>
+  <label class="overlay overlay-secondary" for="__secondary"></label>
+  
+  <div class="search-button__wrapper">
+    <div class="search-button__overlay"></div>
+    <div class="search-button__search-container">
+<form class="bd-search d-flex align-items-center"
+      action="../search.html"
+      method="get">
+  <i class="fa-solid fa-magnifying-glass"></i>
+  <input type="search"
+         class="form-control"
+         name="q"
+         id="search-input"
+         placeholder="Search this book..."
+         aria-label="Search this book..."
+         autocomplete="off"
+         autocorrect="off"
+         autocapitalize="off"
+         spellcheck="false"/>
+  <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd>K</kbd></span>
+</form></div>
+  </div>
+  
+    <nav class="bd-header navbar navbar-expand-lg bd-navbar">
+    </nav>
+  
+  <div class="bd-container">
+    <div class="bd-container__inner bd-page-width">
+      
+      <div class="bd-sidebar-primary bd-sidebar">
+        
+
+  
+  <div class="sidebar-header-items sidebar-primary__section">
+    
+    
+    
+    
+  </div>
+  
+    <div class="sidebar-primary-items__start sidebar-primary__section">
+        <div class="sidebar-primary-item">
+  
+
+<a class="navbar-brand logo" href="../intro.html">
+  
+  
+  
+  
+    
+    
+      
+    
+    
+    <img src="../_static/gc_logo.png" class="logo__image only-light" alt="Logo image"/>
+    <script>document.write(`<img src="../_static/gc_logo.png" class="logo__image only-dark" alt="Logo image"/>`);</script>
+  
+  
+</a></div>
+        <div class="sidebar-primary-item"><nav class="bd-links" id="bd-docs-nav" aria-label="Main">
+    <div class="bd-toc-item navbar-nav active">
+        <p aria-level="2" class="caption" role="heading"><span class="caption-text">Introduction</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="A0_Setup.html">1. Working with JupyterLab</a></li>
+<li class="toctree-l1"><a class="reference internal" href="A1_Tutorial.html">2. Tutorial on Python</a></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Methods</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="L1_Laplace.html">3. The Laplace transform</a></li>
+<li class="toctree-l1"><a class="reference internal" href="L0_Harmonic_Scalar.html">4. Spherical harmonics</a></li>
+<li class="toctree-l1"><a class="reference internal" href="L0_Harmonic_Vectors.html">5. Spherical harmonic vectors</a></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Theory</span></p>
+<ul class="current nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="T1_Potentials.html">6. Gravitatational potentials</a></li>
+<li class="toctree-l1"><a class="reference internal" href="T2_Kinematics.html">7. Kinematics and reference systems</a></li>
+<li class="toctree-l1 current active"><a class="current reference internal" href="#">8. The Earth reference system</a></li>
+<li class="toctree-l1"><a class="reference internal" href="T2_Equations.html">9. Momentum and Poisson equations</a></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Solution</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="L3_Self.html">10. Perturbation theory</a></li>
+<li class="toctree-l1"><a class="reference internal" href="L4_Analytical.html">11. Analytical solutions</a></li>
+<li class="toctree-l1"><a class="reference internal" href="L5_Euler.html">12. Rotational dynamics</a></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Codes</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="C1_Codes.html">13. Homogeneous incompressible Earth model</a></li>
+
+
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Appendix</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="Z0_Dirac.html">16. Dirac delta function</a></li>
+</ul>
+
+    </div>
+</nav></div>
+    </div>
+  
+  
+  <div class="sidebar-primary-items__end sidebar-primary__section">
+  </div>
+  
+  <div id="rtd-footer-container"></div>
+
+
+      </div>
+      
+      <main id="main-content" class="bd-main">
+        
+        
+
+<div class="sbt-scroll-pixel-helper"></div>
+
+          <div class="bd-content">
+            <div class="bd-article-container">
+              
+              <div class="bd-header-article">
+<div class="header-article-items header-article__inner">
+  
+    <div class="header-article-items__start">
+      
+        <div class="header-article-item"><label class="sidebar-toggle primary-toggle btn btn-sm" for="__primary" title="Toggle primary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+  <span class="fa-solid fa-bars"></span>
+</label></div>
+      
+    </div>
+  
+  
+    <div class="header-article-items__end">
+      
+        <div class="header-article-item">
+
+<div class="article-header-buttons">
+
+
+
+
+
+<div class="dropdown dropdown-download-buttons">
+  <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Download this page">
+    <i class="fas fa-download"></i>
+  </button>
+  <ul class="dropdown-menu">
+      
+      
+      
+      <li><a href="../_sources/files/T2_Reference.ipynb" target="_blank"
+   class="btn btn-sm btn-download-source-button dropdown-item"
+   title="Download source file"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-file"></i>
+  </span>
+<span class="btn__text-container">.ipynb</span>
+</a>
+</li>
+      
+      
+      
+      
+      <li>
+<button onclick="window.print()"
+  class="btn btn-sm btn-download-pdf-button dropdown-item"
+  title="Print to PDF"
+  data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-file-pdf"></i>
+  </span>
+<span class="btn__text-container">.pdf</span>
+</button>
+</li>
+      
+  </ul>
+</div>
+
+
+
+
+<button onclick="toggleFullScreen()"
+  class="btn btn-sm btn-fullscreen-button"
+  title="Fullscreen mode"
+  data-bs-placement="bottom" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-expand"></i>
+  </span>
+
+</button>
+
+
+<script>
+document.write(`
+  <button class="theme-switch-button btn btn-sm btn-outline-primary navbar-btn rounded-circle" title="light/dark" aria-label="light/dark" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <span class="theme-switch" data-mode="light"><i class="fa-solid fa-sun"></i></span>
+    <span class="theme-switch" data-mode="dark"><i class="fa-solid fa-moon"></i></span>
+    <span class="theme-switch" data-mode="auto"><i class="fa-solid fa-circle-half-stroke"></i></span>
+  </button>
+`);
+</script>
+
+<script>
+document.write(`
+  <button class="btn btn-sm navbar-btn search-button search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass"></i>
+  </button>
+`);
+</script>
+<label class="sidebar-toggle secondary-toggle btn btn-sm" for="__secondary"title="Toggle secondary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <span class="fa-solid fa-list"></span>
+</label>
+</div></div>
+      
+    </div>
+  
+</div>
+</div>
+              
+              
+
+<div id="jb-print-docs-body" class="onlyprint">
+    <h1>The Earth reference system</h1>
+    <!-- Table of contents -->
+    <div id="print-main-content">
+        <div id="jb-print-toc">
+            
+            <div>
+                <h2> Contents </h2>
+            </div>
+            <nav aria-label="Page">
+                <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#mass-conservation">8.1. Mass conservation</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#centre-of-mass-and-orbital-motion">8.2. Centre of mass and orbital motion</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#linear-momentum">8.2.1. Linear momentum</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#solid-earth-and-athmosphere">8.2.2. Solid earth and athmosphere</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#the-choice-of-the-angular-velocity">8.3. The choice of the angular velocity</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#rotational-euler-equation">8.3.1. Rotational Euler equation</a></li>
+</ul>
+</li>
+</ul>
+            </nav>
+        </div>
+    </div>
+</div>
+
+              
+                
+<div id="searchbox"></div>
+                <article class="bd-article" role="main">
+                  
+  <section class="tex2jax_ignore mathjax_ignore" id="the-earth-reference-system">
+<span id="chap-reference"></span><h1><span class="section-number">8. </span>The Earth reference system<a class="headerlink" href="#the-earth-reference-system" title="Permalink to this headline">#</a></h1>
+<div class="contents local topic" id="sections">
+<p class="topic-title">Sections</p>
+<ul class="simple">
+<li><p><a class="reference internal" href="#mass-conservation" id="id1">Mass conservation</a></p></li>
+<li><p><a class="reference internal" href="#centre-of-mass-and-orbital-motion" id="id2">Centre of mass and orbital motion</a></p>
+<ul>
+<li><p><a class="reference internal" href="#linear-momentum" id="id3">Linear momentum</a></p></li>
+<li><p><a class="reference internal" href="#solid-earth-and-athmosphere" id="id4">Solid earth and athmosphere</a></p></li>
+</ul>
+</li>
+<li><p><a class="reference internal" href="#the-choice-of-the-angular-velocity" id="id5">The choice of the angular velocity</a></p>
+<ul>
+<li><p><a class="reference internal" href="#rotational-euler-equation" id="id6">Rotational Euler equation</a></p></li>
+</ul>
+</li>
+</ul>
+</div>
+<p><span class="math notranslate nohighlight">\(\newcommand{\md}{\mathrm{d}\hspace{0cm}}\)</span>
+<span class="math notranslate nohighlight">\(\newcommand{\mdd}{\mathrm{d}\hspace{0cm}^2}\)</span>
+<span class="math notranslate nohighlight">\(\newcommand{\grad}{\boldsymbol{\nabla}\hspace{-0.01cm}}\)</span>
+<span class="math notranslate nohighlight">\(\newcommand{\stress}{\boldsymbol{\sigma}}\)</span>
+<span class="math notranslate nohighlight">\(\newcommand{\bn}[1]{\hat{\mathbf{#1}}}\)</span>
+<span class="math notranslate nohighlight">\(\newcommand{\bb}[1]{\mathbf{#1}}\)</span>
+<span class="math notranslate nohighlight">\(\newcommand{\sn}[1]{\hat{\boldsymbol{#1}}}\)</span>
+<span class="math notranslate nohighlight">\(\newcommand{\sb}[1]{\boldsymbol{#1}}\)</span>
+<span class="math notranslate nohighlight">\(\newcommand{\zero}{\mathbf{0}}\)</span>
+<span class="math notranslate nohighlight">\(\newcommand{\one}{\mathbf{1}}\)</span>
+<span class="math notranslate nohighlight">\(\newcommand{\loc}{\Delta\hspace{0cm}}\)</span>
+<span class="math notranslate nohighlight">\(\newcommand{\mat}{\delta\hspace{0cm}}\)</span>
+<span class="math notranslate nohighlight">\(\newcommand{\det}{\mathrm{\det}\hspace{0cm}}\)</span>
+<span class="math notranslate nohighlight">\(\newcommand{\cm}[1]{\bar{\bb{#1}}}\)</span>
+<span class="math notranslate nohighlight">\(\newcommand{\lmsum}{\sum_{n=0}^\infty\sum_{m=-n}^n}\)</span>
+<span class="math notranslate nohighlight">\(\newcommand{\kqsum}{\sum_{k=0}^\infty\sum_{q=-k}^k}\)</span>
+<span class="math notranslate nohighlight">\(\newcommand{\dif}[1]{#1\hspace{0cm}\prime}\)</span>
+<span class="math notranslate nohighlight">\(\newcommand{\lap}{\nabla^2\hspace{0cm}}\)</span>
+<span class="math notranslate nohighlight">\(\newcommand{\dermat}[1]{\frac{\mathrm{D}\hspace{0.02cm}#1}{\mathrm{D}\hspace{0.02cm} t}}\)</span>
+<span class="math notranslate nohighlight">\(\newcommand{\dercla}[1]{\frac{\mathrm{d}\hspace{0.02cm}#1}{\mathrm{d}\hspace{0.02cm} t}}\)</span>
+<span class="math notranslate nohighlight">\(\newcommand{\derpar}[1]{\frac{\partial\hspace{0.02cm}#1}{\partial\hspace{0.02cm} t}}\)</span>
+<span class="math notranslate nohighlight">\(\newcommand{\rpar}[2]{\frac{\partial\hspace{0.02cm}#1}{\partial\hspace{0.02cm} r_{#2}}}\)</span>
+<span class="math notranslate nohighlight">\(\newcommand{\xpar}[2]{\frac{\partial\hspace{0.02cm}#1}{\partial\hspace{0.02cm} x_{#2}}}\)</span>
+<span class="math notranslate nohighlight">\(\newcommand{\ddermat}[1]{\frac{\mathrm{D}^2\hspace{0.02cm}#1}{\mathrm{D}\hspace{0.02cm} t^2}}\)</span>
+<span class="math notranslate nohighlight">\(\newcommand{\ddercla}[1]{\frac{\mathrm{d}^2\hspace{0.02cm}#1}{\mathrm{d}\hspace{0.02cm} t^2}}\)</span>
+<span class="math notranslate nohighlight">\(\newcommand{\dderpar}[1]{\frac{\partial^2\hspace{0.02cm}#1}{\partial\hspace{0.02cm} t^2}}\)</span>
+<span class="math notranslate nohighlight">\(\newcommand{\drpar}[2]{\frac{\partial^2\hspace{0.02cm}#1}{\partial\hspace{0.02cm} r_{#2}^2}}\)</span>
+<span class="math notranslate nohighlight">\(\newcommand{\dxpar}[2]{\frac{\partial^2\hspace{0.02cm}#1}{\partial\hspace{0.02cm} x_{#2}^2}}\)</span></p>
+<section id="mass-conservation">
+<h2><a class="toc-backref" href="#id1"><span class="section-number">8.1. </span>Mass conservation</a><a class="headerlink" href="#mass-conservation" title="Permalink to this headline">#</a></h2>
+<div class="full-width docutils">
+<p>The mass contained with a time-dependent region <span class="math notranslate nohighlight">\(\mathcal{V}_t\)</span> of a deformable continuum body evolving according to the displacement field  <span class="math notranslate nohighlight">\(\bb{u}\)</span> can be obtained as</p>
+<div class="math notranslate nohighlight" id="equation-e-3">
+<span class="eqno">(8.1)<a class="headerlink" href="#equation-e-3" title="Permalink to this equation">#</a></span>\[
+M = \int_{\mathcal{V}_t} \bar{\rho}(\bb{r},t)\,\md \bar{V}
+\]</div>
+<p>where <span class="math notranslate nohighlight">\(\md \bar{V}=\md r_1\,\md r_2\,\md r_3\)</span> being the infinitesimal volume element. By noting that</p>
+<div class="math notranslate nohighlight" id="equation-e-4">
+<span class="eqno">(8.2)<a class="headerlink" href="#equation-e-4" title="Permalink to this equation">#</a></span>\[
+\md \bar{V} = J(\bb{x},t)\,\md V
+\]</div>
+<p>with <span class="math notranslate nohighlight">\(\md V=\md x_1\,\md x_2\,\md x_3\)</span> and <span class="math notranslate nohighlight">\(J\)</span> being the Jacobian of the transformation <span class="math notranslate nohighlight">\(\bb{r}\rightarrow \bb{x}\)</span> as in eq. <a class="reference internal" href="T2_Kinematics.html#equation-oc-4">(7.25)</a></p>
+<div class="math notranslate nohighlight" id="equation-e-5">
+<span class="eqno">(8.3)<a class="headerlink" href="#equation-e-5" title="Permalink to this equation">#</a></span>\[
+J(\bb{x},t) = \mathrm{det}\big(\bb{J}(\bb{x},t)\big) \approx 1+\grad\bb{u}(\bb{x},t) \qquad \mathrm{with}\qquad \bb{J}(\bb{x},t) = \grad\bb{r} = \one + \grad\bb{u}(\bb{x},t)
+\]</div>
+<p>where the approximation holds at the first-order approximation. In light of this, after the change of variable, eq. <a class="reference internal" href="#equation-e-3">(8.1)</a> becomes</p>
+<div class="math notranslate nohighlight" id="equation-e-6">
+<span class="eqno">(8.4)<a class="headerlink" href="#equation-e-6" title="Permalink to this equation">#</a></span>\[
+M = \int_{\mathcal{V}_0} \rho(\bb{x},t)\,J(\bb{x},t)\,\md V
+\]</div>
+<p>In this respect and requiring the mass conservation of any deformed region system, we thus understand that the product between <span class="math notranslate nohighlight">\(\rho\)</span> and <span class="math notranslate nohighlight">\(J\)</span> corresponds to the initial density distribution <span class="math notranslate nohighlight">\(\rho_0\)</span> that, by definition, does not depend on time</p>
+<div class="math notranslate nohighlight" id="equation-e-8">
+<span class="eqno">(8.5)<a class="headerlink" href="#equation-e-8" title="Permalink to this equation">#</a></span>\[
+\rho_0(\bb{x}) =  \rho(\bb{x},t)\,J(\bb{x},t)
+\]</div>
+<p>This interpretation is correct also in view of the fact that <span class="math notranslate nohighlight">\(J\)</span> represent the relative volume variations of the infinitesimal volume element of the deformable continuum body.</p>
+</div>
+</section>
+<section id="centre-of-mass-and-orbital-motion">
+<h2><a class="toc-backref" href="#id2"><span class="section-number">8.2. </span>Centre of mass and orbital motion</a><a class="headerlink" href="#centre-of-mass-and-orbital-motion" title="Permalink to this headline">#</a></h2>
+<div class="full-width docutils">
+<p>Let us now consider the mass, <span class="math notranslate nohighlight">\(M\)</span> and the centre of mass, <span class="math notranslate nohighlight">\(\bb{Z}\)</span>, of the Earth system</p>
+<div class="math notranslate nohighlight" id="equation-e-9">
+<span class="eqno">(8.6)<a class="headerlink" href="#equation-e-9" title="Permalink to this equation">#</a></span>\[\begin{split}
+\begin{align}
+&amp; M = \int \bar{\rho}(\bb{r},t)\,\md \bar{V} = \int \rho_0(\bb{x})\,\md V
+\\
+&amp; M\,\bb{Z}(t) = \int \bar{\rho}(\bb{r},t)\,\bb{R}(\bb{r},t)\,\md \bar{V} = M\,\bb{X}_O(t) + \bb{C}(t)
+\end{align}
+\end{split}\]</div>
+<p>with <span class="math notranslate nohighlight">\(\bb{C}\)</span> being the first moment of the density distribution with respect to the translating origin</p>
+<div class="math notranslate nohighlight" id="equation-e-10">
+<span class="eqno">(8.7)<a class="headerlink" href="#equation-e-10" title="Permalink to this equation">#</a></span>\[
+\bb{C}(t) = \int \bar{\rho}(\bb{r},t)\,\bb{r}\,\md \bar{V} = \int \rho_0(\bb{x})\,\bb{r}\,\md V
+\]</div>
+</div>
+<div class="full-width dropdown admonition">
+<p class="admonition-title">Time derivatives of the density first moment </p>
+<p>We note that</p>
+<div class="math notranslate nohighlight" id="equation-e-11">
+<span class="eqno">(8.8)<a class="headerlink" href="#equation-e-11" title="Permalink to this equation">#</a></span>\[\begin{split}
+\begin{align}
+&amp;\dercla{\bb{C}(t)} = \int \rho_0(\bb{x})\,\big(\sb{\omega}\times\bb{r}+\bb{v}(\bb{r},t)\big)\,\md V = \sb{\omega}\times\bb{C}(t) + \derpar{\bb{C}(t)}
+\\
+&amp; \ddercla{\bb{C}(t)} = \sb{\omega}(t)\times\sb{\omega}(t)\times\bb{C}(t) + \derpar{\sb{\omega}(t)}\times\bb{C} + 2\,\sb{\omega}(t)\times\derpar{\bb{C}(t)} + \dderpar{\bb{C}(t)}
+\end{align}
+\end{split}\]</div>
+<p>with</p>
+<div class="math notranslate nohighlight" id="equation-e-12">
+<span class="eqno">(8.9)<a class="headerlink" href="#equation-e-12" title="Permalink to this equation">#</a></span>\[\begin{split}
+\begin{align}
+&amp;\derpar{\bb{C}(t)} = \int \bar{\rho}(\bb{r},t)\,\bb{v}(\bb{r},t)\,\md \bar{V} = \int \rho_0(\bb{x})\,\bb{v}(\bb{r},t)\,\md V 
+\\
+&amp; 
+\dderpar{\bb{C}(t)} = \int \bar{\rho}(\bb{r},t)\,\bb{a}(\bb{r},t)\,\md \bar{V} = \int \rho_0(\bb{x})\,\bb{a}(\bb{r},t)\,\md V
+\end{align} 
+\end{split}\]</div>
+</div>
+<section id="linear-momentum">
+<h3><a class="toc-backref" href="#id3"><span class="section-number">8.2.1. </span>Linear momentum</a><a class="headerlink" href="#linear-momentum" title="Permalink to this headline">#</a></h3>
+<div class="full-width docutils">
+<p>The total linear momentum and its time derivative read</p>
+<div class="math notranslate nohighlight" id="equation-e-13">
+<span class="eqno">(8.10)<a class="headerlink" href="#equation-e-13" title="Permalink to this equation">#</a></span>\[\begin{split}
+\begin{align}
+&amp;\bb{P}(t) = \int \bar{\rho}(\bb{r},t)\,\bb{V}(\bb{r},t)\,\md \bar{V} = M\,\dercla{\bb{X}_O(t)} +\dercla{\bb{C}(t)}
+\\
+&amp; \dercla{\bb{P}(t)} = \int \bar{\rho}(\bb{r},t)\,\bb{A}(\bb{r},t)\,\md \bar{V} = M\,\ddercla{\bb{X}_O(t)} +\ddercla{\bb{C}(t)}
+\end{align}
+\end{split}\]</div>
+<p>As first choice, we fix the translating origin <span class="math notranslate nohighlight">\(\bb{X}_O\)</span> so that it coincides with the centre of mass</p>
+<div class="math notranslate nohighlight" id="equation-e-14">
+<span class="eqno">(8.11)<a class="headerlink" href="#equation-e-14" title="Permalink to this equation">#</a></span>\[
+\bb{Z}(t) = \bb{X}_O(t) \qquad \bb{C}(t) = \zero
+\]</div>
+<p>and write the total linear momentum and its derivative simply as</p>
+<div class="math notranslate nohighlight" id="equation-e-15">
+<span class="eqno">(8.12)<a class="headerlink" href="#equation-e-15" title="Permalink to this equation">#</a></span>\[
+\bb{P}(t) =  M\,\dercla{\bb{Z}(t)}\qquad
+\dercla{\bb{P}(t)} = M\,\ddercla{\bb{Z}(t)} 
+\]</div>
+<p>Then by considering that the total forces from the celestial body acting on nearly spherical density distribution of total mass <span class="math notranslate nohighlight">\(M\)</span> reads</p>
+<div class="math notranslate nohighlight" id="equation-e-16">
+<span class="eqno">(8.13)<a class="headerlink" href="#equation-e-16" title="Permalink to this equation">#</a></span>\[
+\bb{F}_T(t) = M\,\bb{g}_1(t)
+\]</div>
+<p>from the second Newton law, we obatin the acceleration of the centre of mass in the inertial frame</p>
+<div class="math notranslate nohighlight" id="equation-e-17">
+<span class="eqno">(8.14)<a class="headerlink" href="#equation-e-17" title="Permalink to this equation">#</a></span>\[
+\ddercla{\bb{P}(t)} = \bb{F}_T(t)
+\qquad \Rightarrow \qquad 
+\ddercla{\bb{Z}(t)}  = \bb{g}_1^T(t)
+\]</div>
+<p>Note that <span class="math notranslate nohighlight">\(\bb{g}_1^T\)</span> depends on time because the spherical coordinate of the celestial body with respect to Earth system can vary throug time and due to fact that we are considering the rotating unit vectors</p>
+<div class="math notranslate nohighlight" id="equation-e-16a">
+<span class="eqno">(8.15)<a class="headerlink" href="#equation-e-16a" title="Permalink to this equation">#</a></span>\[
+\bb{g}_1^T = \frac{G\,M_T}{x_T^2(t)}\,\bn{r}(\vartheta_T(t),\varphi_T(t),t) = \frac{G\,M_T}{x_T^2(t)}\,\Big[\sin\vartheta_T(t)\,\big(\sin\varphi_T(t)\,\bb{e}_1(t)+\cos\varphi_T(t)\,\bn{e}_2(t)\big)+\cos\vartheta_T(t)\,\bn{e}_3(t)\Big]
+\]</div>
+</div>
+</section>
+<section id="solid-earth-and-athmosphere">
+<h3><a class="toc-backref" href="#id4"><span class="section-number">8.2.2. </span>Solid earth and athmosphere</a><a class="headerlink" href="#solid-earth-and-athmosphere" title="Permalink to this headline">#</a></h3>
+<div class="full-width docutils">
+<p>Let us now distinguish the density distribution <span class="math notranslate nohighlight">\(\rho\)</span> into the solid Earth, <span class="math notranslate nohighlight">\(\rho^E\)</span>, and athmosphere, <span class="math notranslate nohighlight">\(\rho^A\)</span>, contributions</p>
+<div class="math notranslate nohighlight" id="equation-e-18">
+<span class="eqno">(8.16)<a class="headerlink" href="#equation-e-18" title="Permalink to this equation">#</a></span>\[
+\rho(\bb{x},t) = \rho^E(\bb{x},t) + \rho^A(\bb{x},t)
+\]</div>
+<p>and write the centres of mass and the linear momenta of the solid Earth or the athmosphere</p>
+<div class="math notranslate nohighlight" id="equation-e-19">
+<span class="eqno">(8.17)<a class="headerlink" href="#equation-e-19" title="Permalink to this equation">#</a></span>\[
+\begin{align}
+&amp;M_X\,\bb{Z}_X(t) = M_X\,\bb{Z}(t)+\bb{C}_X(t)
+\qquad
+\bb{P}_X(t) = M_X\,\dercla{Z}(t) + \dercla{\bb{C}_X(t)}
+\end{align}
+\]</div>
+<p>with <span class="math notranslate nohighlight">\(X=E\)</span> or <span class="math notranslate nohighlight">\(A\)</span>, and</p>
+<div class="math notranslate nohighlight" id="equation-e-20">
+<span class="eqno">(8.18)<a class="headerlink" href="#equation-e-20" title="Permalink to this equation">#</a></span>\[
+\bb{C}_X(t) = \int \bar{\rho}^X(\bb{r},t)\,\bb{r}\,\md \bar{V}
+\]</div>
+<p>By definition, the following relation between the masses, centres of mass and linear momenta of the Earth system, of the solid Earth and of the athmosphere hold</p>
+<div class="math notranslate nohighlight" id="equation-e-21">
+<span class="eqno">(8.19)<a class="headerlink" href="#equation-e-21" title="Permalink to this equation">#</a></span>\[
+M_E + M_A = M
+\qquad
+M_E\,\bb{Z}_E(t) + M_A\,\bb{Z}_A(t) = M\,\bb{Z}(t)
+\qquad
+\bb{P}_E(t) + \bb{P}_A(t) = \bb{P}(t)
+\]</div>
+<p>We note that, from eq. <a class="reference internal" href="#equation-e-17">(8.14)</a>, we can obtain</p>
+<div class="math notranslate nohighlight" id="equation-e-22">
+<span class="eqno">(8.20)<a class="headerlink" href="#equation-e-22" title="Permalink to this equation">#</a></span>\[
+\bb{C}_E(t) = - \bb{C}_A(t)
+\]</div>
+<p>Let us now consider the total force from the athmosphere on the Earth</p>
+<div class="math notranslate nohighlight" id="equation-e-23">
+<span class="eqno">(8.21)<a class="headerlink" href="#equation-e-23" title="Permalink to this equation">#</a></span>\[
+\bb{F}_{AE}(t) =  \int_{\partial V_t}\bb{T}^A(\bb{r},t)\,\md S - \int  \bar{\rho}^E(\bb{r},t)\,\bar{\grad}\bar{\phi}^A(\bb{r},t)\,\md \bar{V}
+\]</div>
+<p>where <span class="math notranslate nohighlight">\(\phi^A\)</span> and <span class="math notranslate nohighlight">\(\bb{T}^A\)</span> being the athmosphere gravitational potential and the traction of the athmosphere acting on the solid Earth. Also, let us consider the total force from the celestial body on the solid Earth, <span class="math notranslate nohighlight">\(\bb{F}_{TE}\)</span>, and on the athmosphere, <span class="math notranslate nohighlight">\(\bb{F}_{TA}\)</span>,</p>
+<div class="math notranslate nohighlight" id="equation-e-24">
+<span class="eqno">(8.22)<a class="headerlink" href="#equation-e-24" title="Permalink to this equation">#</a></span>\[
+\bb{F}_{TX}(t) = M_X\,\bb{g}_1^T(t)
+\]</div>
+<p>with <span class="math notranslate nohighlight">\(X=E\)</span> or <span class="math notranslate nohighlight">\(A\)</span>. In view of the second Newton law applied to the solid Earth or athmosphere</p>
+<div class="math notranslate nohighlight" id="equation-e-25">
+<span class="eqno">(8.23)<a class="headerlink" href="#equation-e-25" title="Permalink to this equation">#</a></span>\[
+\dercla{\bb{P}_E(t)} = \bb{F}_{TE}(t) + \bb{F}_{AE}(t)  \qquad \dercla{\bb{P}_A(t)} = \bb{F}_{TA}(t) - \bb{F}_{AE}(t)
+\]</div>
+<p>we obatin the following relation between the acceleration of the density first momenta of the solid Earth and the athmosphere and the total force between them</p>
+<div class="math notranslate nohighlight" id="equation-e-26">
+<span class="eqno">(8.24)<a class="headerlink" href="#equation-e-26" title="Permalink to this equation">#</a></span>\[
+\ddercla{\bb{C}_E(t)} = -\ddercla{\bb{C}_A(t)} = \bb{F}_{AE}(t) 
+\]</div>
+<p>Note that the total force from the solid Earth to the athmosphere used in eq. <a class="reference internal" href="#equation-e-25">(8.23)</a> is just <span class="math notranslate nohighlight">\(-\bb{F}_{AE}\)</span>.</p>
+</div>
+</section>
+</section>
+<section id="the-choice-of-the-angular-velocity">
+<h2><a class="toc-backref" href="#id5"><span class="section-number">8.3. </span>The choice of the angular velocity</a><a class="headerlink" href="#the-choice-of-the-angular-velocity" title="Permalink to this headline">#</a></h2>
+<div class="full-width docutils">
+<p>Let us now consider the total linear momenta of the solid Earth or the athmosphere under the assumption that <span class="math notranslate nohighlight">\(\bb{Z}=\bb{X}_O\)</span></p>
+<div class="math notranslate nohighlight" id="equation-e-27">
+<span class="eqno">(8.25)<a class="headerlink" href="#equation-e-27" title="Permalink to this equation">#</a></span>\[\begin{split}
+\begin{align}
+\bb{H}_X(t) &amp;= \int\bar{\rho}^X(\bb{r},t)\,\bar{\bb{R}}(\bb{r},t)\times\bar{\bb{V}}(\bb{r},t)\,\md \bar{V} = \bb{X}_O(t)\times\bb{P} + \int\bar{\rho}^X(\bb{r},t)\,\bb{r}\times\bar{\bb{V}}(\bb{r},t)\,\md \bar{V}
+\\
+&amp;= \bb{Z}(t)\times\bb{P}_X(t) + \bb{C}_X(t)\times\dercla{\bb{Z}(t)} + \int\bar{\rho}^X(\bb{r},t)\,\bb{r}\times\big(\sb{\omega}(t)\times\bb{r}+\bar{\bb{v}}(\bb{r},t)\big)\,\md \bar{V}
+\\
+&amp;= \bb{Z}(t)\times\bb{P}_X(t) + \bb{C}_X(t)\times\dercla{\bb{Z}(t)} + \bb{I}_X(t)\cdot\sb{\omega}(t) + \bb{h}_X(t)
+\end{align}
+\end{split}\]</div>
+<p>with <span class="math notranslate nohighlight">\(\bb{I}_X\)</span> and <span class="math notranslate nohighlight">\(\bb{h}_X\)</span> being the inertia tensor and the relative angular momentum</p>
+<div class="math notranslate nohighlight" id="equation-e-28">
+<span class="eqno">(8.26)<a class="headerlink" href="#equation-e-28" title="Permalink to this equation">#</a></span>\[\begin{split}
+\begin{align}
+&amp; \bb{I}_X(t) = \int\bar{\rho}^X(\bb{r},t)\,\big(r^2\,\one - \bb{r}\,\bb{r}\big)\,\md \bar{V}
+\\
+&amp; \bb{h}_X(t) = \int\bar{\rho}^X(\bb{r},t)\,\bb{r}\times\bar{\bb{v}}(\bb{r},t)\,\md \bar{V} 
+\end{align}
+\end{split}\]</div>
+<p>In order to define the angular velocity, we adopt the Tisserand reference frame in which the angular velocity <span class="math notranslate nohighlight">\(\sb{\omega}\)</span> is choosen in such a way that relative angular momentum of the solid Earth is zero</p>
+<div class="math notranslate nohighlight" id="equation-e-29">
+<span class="eqno">(8.27)<a class="headerlink" href="#equation-e-29" title="Permalink to this equation">#</a></span>\[
+\bb{h}_E(t) = \zero
+\]</div>
+</div>
+<div class="full-width dropdown admonition note">
+<p class="admonition-title">Note</p>
+<p>This choice is always possible. Let us indeed consider the following angular velocity</p>
+<div class="math notranslate nohighlight" id="equation-e-30">
+<span class="eqno">(8.28)<a class="headerlink" href="#equation-e-30" title="Permalink to this equation">#</a></span>\[
+\sb{\omega}^*(t) = \sb{\omega}(t)+\mat\sb{\omega}(t)
+\]</div>
+<p>and denote with <span class="math notranslate nohighlight">\(\bb{e}^*_i\)</span> the respective rotating unit vectors. Then, let us expresse the velocity in the two distinct rotating reference frame</p>
+<div class="math notranslate nohighlight" id="equation-e-31">
+<span class="eqno">(8.29)<a class="headerlink" href="#equation-e-31" title="Permalink to this equation">#</a></span>\[
+\bb{V}(\bb{x},t) = \dercla{\bb{Z}(t)} + \sb{\omega}^*(t)\times\bb{r} + \bb{v}^*(\bb{x},t) = \dercla{\bb{Z}(t)} + \sb{\omega}(t)\times\bb{r} + \bb{v}(\bb{x},t)
+\]</div>
+<p>We thus understand that</p>
+<div class="math notranslate nohighlight" id="equation-e-32">
+<span class="eqno">(8.30)<a class="headerlink" href="#equation-e-32" title="Permalink to this equation">#</a></span>\[
+\bb{v}^*(\bb{x},t) = \bb{v}(\bb{x},t) - \mat\sb{\omega}(t)\times\bb{r}
+\]</div>
+<p>and the relative angular momentum can be arrange as follows</p>
+<div class="math notranslate nohighlight" id="equation-e-33">
+<span class="eqno">(8.31)<a class="headerlink" href="#equation-e-33" title="Permalink to this equation">#</a></span>\[
+\bb{h}_E^*(t) = \int\bar{\rho}^E(\bb{r},t)\,\bb{r}\times\bar{\bb{v}}^*(\bb{r},t)\,\md \bar{V} =  \bb{h}_E(t) - \int \bar{\rho}^E(\bb{r},t)\,\bb{r}\times \mat\sb{\omega}(t)\times\bb{r}\,\md \bar{V} = \bb{h}_E(t) - \bb{I}_E(t)\cdot\mat\sb{\omega}(t)
+\]</div>
+<p>In this respect, we thus understand that it can be set to zero by properly choosing <span class="math notranslate nohighlight">\(\mat\sb{\omega}\)</span></p>
+<div class="math notranslate nohighlight" id="equation-e-34">
+<span class="eqno">(8.32)<a class="headerlink" href="#equation-e-34" title="Permalink to this equation">#</a></span>\[
+\mat\sb{\omega}(t) = \bb{I}_E(t)^{-1}(t)\cdot\bb{h}_E(t) = \zero  \qquad\Rightarrow \qquad \bb{h}_E^*(t)
+\]</div>
+<p>and, so, there exist an angular velocity vector <span class="math notranslate nohighlight">\(\sb{\omega}^*\)</span> such that the relative angular momentum is zero.</p>
+</div>
+<div class="full-width docutils">
+<p>This choice of the angulra velocity <span class="math notranslate nohighlight">\(\sb{\omega}\)</span> based on the solid Earth system, along with the choice of the translating origin <span class="math notranslate nohighlight">\(\bb{X}_O\)</span> taken as the centre of mass of the Earth system (including the athmosphere), fully defines the translating and rotating reference system discussed in  <a class="reference internal" href="T2_Kinematics.html#chap-kinematics"><span class="std std-numref">Chapter 7</span></a> - <a class="reference internal" href="T2_Kinematics.html#chap-kinematics"><span class="std std-ref">Kinematics and reference systems</span></a>.</p>
+</div>
+<section id="rotational-euler-equation">
+<h3><a class="toc-backref" href="#id6"><span class="section-number">8.3.1. </span>Rotational Euler equation</a><a class="headerlink" href="#rotational-euler-equation" title="Permalink to this headline">#</a></h3>
+<div class="full-width docutils">
+<p>Within this framework, the angular momentum of the solid Earth becomes</p>
+<div class="math notranslate nohighlight" id="equation-e-35">
+<span class="eqno">(8.33)<a class="headerlink" href="#equation-e-35" title="Permalink to this equation">#</a></span>\[
+\bb{H}_E(t) = \bb{Z}(t)\times\bb{P}_E(t) + \bb{C}_E(t)\times\dercla{\bb{Z}(t)} + \bb{I}_E(t)\cdot\sb{\omega}(t) 
+\]</div>
+<p>and its time derivative yields</p>
+<div class="math notranslate nohighlight" id="equation-e-36">
+<span class="eqno">(8.34)<a class="headerlink" href="#equation-e-36" title="Permalink to this equation">#</a></span>\[\begin{split}
+\begin{align}
+\dercla{\bb{H}_E} &amp;= \dercla{\bb{Z}(t)}\times\bb{P}_E(t) + \bb{Z}\times\dercla{\bb{P}_E} + \dercla{\bb{C}_E(t)}\times\dercla{\bb{Z}(t)} + \bb{C}_E\times\ddercla{\bb{Z}} + \dercla{\big(\bb{I}_E(t)\cdot\sb{\omega}(t) \big)} 
+\\
+&amp;= \dercla{\bb{Z}(t)}\times\left(M_E\,\dercla{\bb{Z}} + \dercla{\bb{C}_E}\right) + \bb{Z}\times\left(M_E\,\bb{g}_1^T + \bb{F}_{AE}\right) + \dercla{\bb{C}_E(t)}\times\dercla{\bb{Z}(t)} + \bb{C}_E\times\ddercla{\bb{Z}} + \dercla{\big(\bb{I}_E(t)\cdot\sb{\omega}(t) \big)} 
+\\
+&amp;= \big(M_E\,\bb{Z}+\bb{C}_E\big)\times\bb{g}_1^T + \bb{Z}\times\ddercla{\bb{C}_E} + \dercla{\big(\bb{I}_E(t)\cdot\sb{\omega}(t) \big)} 
+\end{align}
+\end{split}\]</div>
+<p>Let us now consider the torque from the athmosphere and from the celestial bodies acting on the solid Earth</p>
+<div class="math notranslate nohighlight" id="equation-e-37">
+<span class="eqno">(8.35)<a class="headerlink" href="#equation-e-37" title="Permalink to this equation">#</a></span>\[\begin{split}
+\begin{align}
+\bb{K}_{AE}(t) &amp;= \int_{\partial V_t} \bar{\bb{R}}(\bb{r},t)\times\bb{T}^A(\bb{r},t)\,\md S - \int  \bar{\rho}^E(\bb{r},t)\,\bar{\bb{R}}(\bb{r},t)\times\bar{\grad}\bar{\phi}^A(\bb{r},t)\,\md \bar{V} = \bb{Z}\times\bb{F}_{AE} + \bb{k}_{AE}
+\\
+&amp;= \bb{Z}(t)\times\ddercla{\bb{C}_E(t)} + \bb{k}_A(t)
+\\
+\bb{K}_{TX}(t) &amp;= -\int \bar{\rho}^X(\bb{r},t)\,\bar{\bb{R}}(\bb{r},t)\times\bar{\grad}\bar{\phi}^T(\bb{r},t)\,\md \bar{V} = \big(M_X\,\bb{Z} +\bb{C}_X\big)\times\bb{g}_1 -\int \bar{\rho}^X(\bb{r},t)\,\bar{\bb{R}}(\bb{r},t)\times\bar{\grad}\bar{\psi}^T(\bb{r},t)\,\md \bar{V}
+\\
+&amp;= \big(M_X\,\bb{Z}(t) +\bb{C}_X(t)\big)\times\bb{g}_1^T(t) + \bb{Z}(t)\times\int \bar{\rho}^X(\bb{r},t)\,\bar{\grad}\bar{\psi}^T(\bb{r},t)\,\md\bar{V} + \int \bar{\rho}^X(\bb{r},t)\,\bb{r}\times\bar{\grad}\bar{\psi}^T(\bb{r},t)\,\md \bar{V}
+\\
+&amp;= \big(M_X\,\bb{Z}(t) +\bb{C}_X(t)\big)\times\bb{g}_1^T(t) 
+\end{align}
+\end{split}\]</div>
+<p>where, in the last identities for <span class="math notranslate nohighlight">\(\bb{K}_{TX}\)</span>, we have neglected the remaining volume integrals in view of the results of <a class="reference internal" href="T1_Potentials.html#sec-total-force"><span class="std std-numref">Section 6.3.1</span></a> - <a class="reference internal" href="T1_Potentials.html#sec-total-force"><span class="std std-ref">Total force</span></a> and <a class="reference internal" href="T1_Potentials.html#sec-total-torque"><span class="std std-numref">Section 6.3.2</span></a> - <a class="reference internal" href="T1_Potentials.html#sec-total-torque"><span class="std std-ref">Total torque</span></a>, and defined the relative torque <span class="math notranslate nohighlight">\(\bb{k}_{AE}\)</span> from the athmosphere with respect to the centre of mass on the solid Earth</p>
+<div class="math notranslate nohighlight" id="equation-e-38">
+<span class="eqno">(8.36)<a class="headerlink" href="#equation-e-38" title="Permalink to this equation">#</a></span>\[
+\bb{k}_{AE}(t) = \int_{\partial V_t} \bb{r}\times\bb{T}^A(\bb{r},t)\,\md S - \int  \bar{\rho}^E(\bb{r},t)\,\bb{r}\times\bar{\grad}\bar{\phi}^A(\bb{r},t)\,\md \bar{V} 
+\]</div>
+<p>In light of this, the conservation of the angular momentum of the solid Earth system</p>
+<div class="math notranslate nohighlight" id="equation-e-39">
+<span class="eqno">(8.37)<a class="headerlink" href="#equation-e-39" title="Permalink to this equation">#</a></span>\[
+\dercla{\bb{H}_E(t)} = \bb{K}_{TE}(t) + \bb{K}_{AE}(t)
+\]</div>
+<p>yields the so called Euler rotational equation</p>
+<div class="math notranslate nohighlight" id="equation-e-40">
+<span class="eqno">(8.38)<a class="headerlink" href="#equation-e-40" title="Permalink to this equation">#</a></span>\[
+\dercla{\big(\bb{I}_E(t)\cdot\sb{\omega}(t) \big)}  = \derpar{\big(\bb{I}_E(t)\cdot\sb{\omega}(t) \big)} + \sb{\omega}\times\big(\bb{I}_E(t)\cdot\sb{\omega}(t) \big) = \bb{k}_{AE}(t)
+\]</div>
+<p>We note that the relative torques of the athmosphere can thus change the angular momentum of the solid Earth. Different, the relative torque from celestial bodies does not enter the above equation because, within the assumption of infinitesimal departure from the spherical symmetry and as already pointed out by eq. <a class="reference internal" href="T1_Potentials.html#equation-g-73">(6.78)</a>, it is zero at the first order.</p>
+</div>
+</section>
+</section>
+</section>
+
+    <script type="text/x-thebe-config">
+    {
+        requestKernel: true,
+        binderOptions: {
+            repo: "binder-examples/jupyter-stacks-datascience",
+            ref: "master",
+        },
+        codeMirrorConfig: {
+            theme: "abcdef",
+            mode: "python"
+        },
+        kernelOptions: {
+            name: "python3",
+            path: "./files"
+        },
+        predefinedOutput: true
+    }
+    </script>
+    <script>kernelName = 'python3'</script>
+
+                </article>
+              
+
+              
+              
+                <footer class="bd-footer-article">
+                  <!-- Previous / next buttons -->
+<div class="prev-next-area">
+    <a class="left-prev"
+       href="T2_Kinematics.html"
+       title="previous page">
+      <i class="fa-solid fa-angle-left"></i>
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">previous</p>
+        <p class="prev-next-title"><span class="section-number">7. </span>Kinematics and reference systems</p>
+      </div>
+    </a>
+    <a class="right-next"
+       href="T2_Equations.html"
+       title="next page">
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">next</p>
+        <p class="prev-next-title"><span class="section-number">9. </span>Momentum and Poisson equations</p>
+      </div>
+      <i class="fa-solid fa-angle-right"></i>
+    </a>
+</div>
+                </footer>
+              
+            </div>
+            
+            
+              
+                <div class="bd-sidebar-secondary bd-toc"><div class="sidebar-secondary-items sidebar-secondary__inner">
+
+  <div class="sidebar-secondary-item">
+  <div class="page-toc tocsection onthispage">
+    <i class="fa-solid fa-list"></i> Contents
+  </div>
+  <nav class="bd-toc-nav page-toc">
+    <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#mass-conservation">8.1. Mass conservation</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#centre-of-mass-and-orbital-motion">8.2. Centre of mass and orbital motion</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#linear-momentum">8.2.1. Linear momentum</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#solid-earth-and-athmosphere">8.2.2. Solid earth and athmosphere</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#the-choice-of-the-angular-velocity">8.3. The choice of the angular velocity</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#rotational-euler-equation">8.3.1. Rotational Euler equation</a></li>
+</ul>
+</li>
+</ul>
+  </nav></div>
+
+</div></div>
+              
+            
+          </div>
+          <footer class="bd-footer-content">
+            <div class="bd-footer-content__inner">
+<div class="bd-footer-content__inner container">
+  
+  <div class="footer-item">
+    
+<p class="component-author">
+By <a href="https://sites.unimi.it/gcambiotti/">Gabriele Cambiotti</a>
+</p>
+
+  </div>
+  
+  <div class="footer-item">
+    
+  <p class="copyright">
+    
+      © Copyright 2022.
+      <br/>
+    
+  </p>
+
+  </div>
+  
+  <div class="footer-item">
+    
+  </div>
+  
+  <div class="footer-item">
+    
+  </div>
+  
+</div></div>
+          </footer>
+        
+
+      </main>
+    </div>
+  </div>
+  
+  <!-- Scripts loaded after <body> so the DOM is not blocked -->
+  <script src="../_static/scripts/bootstrap.js?digest=12da95d707ffb74b382d"></script>
+<script src="../_static/scripts/pydata-sphinx-theme.js?digest=12da95d707ffb74b382d"></script>
+
+  <footer class="bd-footer">
+  </footer>
+  </body>
+</html>
